@@ -1,0 +1,1248 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-tw">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JS,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Bryan's Notes" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="第一天">
+<meta name="keywords" content="JS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript - 從零開始 Day1">
+<meta property="og:url" content="http://yoursite.com/2019/07/20/JS-Starting from scratch D1/index.html">
+<meta property="og:site_name" content="Bryan&#39;s Notes">
+<meta property="og:description" content="第一天">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://i.imgur.com/MJxvBKq.jpg">
+<meta property="og:image" content="https://i.imgur.com/Pqofn77.gif">
+<meta property="og:image" content="https://i.imgur.com/TH0JSlq.gif">
+<meta property="og:image" content="https://i.imgur.com/hdWhJDE.jpg">
+<meta property="og:image" content="https://i.imgur.com/6grzsUo.jpg">
+<meta property="og:image" content="https://i.imgur.com/DSIyJy0.gif">
+<meta property="og:image" content="https://i.imgur.com/3Sjp1Dp.gif">
+<meta property="og:image" content="https://i.imgur.com/GSAc1ac.gif">
+<meta property="og:image" content="https://i.imgur.com/IBigYax.gif">
+<meta property="og:updated_time" content="2021-07-17T18:24:52.486Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Javascript - 從零開始 Day1">
+<meta name="twitter:description" content="第一天">
+<meta name="twitter:image" content="https://i.imgur.com/MJxvBKq.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/07/20/JS-Starting from scratch D1/">
+
+
+
+
+
+  <title>Javascript - 從零開始 Day1 | Bryan's Notes</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Bryan's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">學習筆記</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            檢索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/20/JS-Starting from scratch D1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bryan Hsiao">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bryan's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Javascript - 從零開始 Day1</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-07-20T10:00:00+08:00">
+                2019-07-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JS/" itemprop="url" rel="index">
+                    <span itemprop="name">JS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="第一天"><a href="#第一天" class="headerlink" title="第一天"></a>第一天</h2><a id="more"></a>
+<h2 id="你不可不知的那些小事情-生態現況與基本常識"><a href="#你不可不知的那些小事情-生態現況與基本常識" class="headerlink" title="你不可不知的那些小事情 - 生態現況與基本常識"></a>你不可不知的那些小事情 - 生態現況與基本常識</h2><h2 id="敘事與程式的關係"><a href="#敘事與程式的關係" class="headerlink" title="敘事與程式的關係"></a>敘事與程式的關係</h2><p>故事 1:<br>角色:<br>Alex =&gt; father<br>Howard =&gt; son<br>故事:<br>Howard =&gt; 肚子餓 =&gt; 叫爸爸 =&gt; Alex 煮飯</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Howard.addEventListener(肚子餓,叫爸爸)</span><br><span class="line"></span><br><span class="line">叫爸爸() &#123;</span><br><span class="line">  Alex.煮飯</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="ECMAScript-vs-JavaScript"><a href="#ECMAScript-vs-JavaScript" class="headerlink" title="ECMAScript vs JavaScript"></a>ECMAScript vs JavaScript</h2><p>LiveScript 跟風 Java 改名 JavaScript</p>
+<p>ECMAScript 是規範版本的名稱 Ex : ECMAScript 6</p>
+<h2 id="網頁三腳督"><a href="#網頁三腳督" class="headerlink" title="網頁三腳督"></a>網頁三腳督</h2><p>HTML + CSS + JavaScript</p>
+<p>Javascript 負責事情 1.功能操作 2.動畫 (能用 Css 做就用 Css 做)css 效能比較好用 3.資料處理</p>
+<p><img src="https://i.imgur.com/MJxvBKq.jpg" alt></p>
+<h2 id="BOM-vs-DOM"><a href="#BOM-vs-DOM" class="headerlink" title="BOM vs DOM"></a>BOM vs DOM</h2><p>BOM(Browser Object Model):操作瀏覽器<br>Ex: window.navigator , window.location … 等</p>
+<p>DOM(Document Object Model):操作網頁內容(大部分是標籤)<br>Ex: div, style … 等 tag<br>資料處理<br>一般在撰寫上要考量要操作哪部分</p>
+<h3 id="範例-1"><a href="#範例-1" class="headerlink" title="範例 1"></a>範例 1</h3><p>JavaScript 寫在哪裡? 都可以?<br>位置:</p>
+<ol>
+<li>HTML 外面</li>
+<li>HTML 裡面</li>
+<li>HTML 裡面 HEAD 裡面</li>
+<li>HTML 裡面 BODY 裡面</li>
+</ol>
+<p>瀏覽器會將上面全都拉近 BODY 裡面 =&gt; 建議放在 BODY 結束前</p>
+<p>script 包出一個區域做撰寫程式地方<br>依照順序由上到下的方式去依序執行</p>
+<p>最基本類型</p>
+<ol>
+<li>文字 String</li>
+<li>數字 Number</li>
+<li>布林 Boolean</li>
+<li>空值 Null</li>
+<li>未定義 Undefined</li>
+</ol>
+<p>如果 HTML 畫面完成再執行 document.write,會把整個畫面清掉從 write</p>
+<h3 id="範例-2"><a href="#範例-2" class="headerlink" title="範例 2"></a>範例 2</h3><p>1.宣告:新增(取名字) 2.先宣告後使用！ （重要<br>3.var(可改變) let(可改變) const(常數不會變) 4.資料轉換 5.作用域</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">123</span>; <span class="comment">// 宣告 a 變數 等於 123</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 宣告 a 變數，將 123 設定到 a 變數 //</span></span><br><span class="line"></span><br><span class="line">a = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">//在console 面板印出內容</span></span><br></pre></td></tr></table></figure>
+<p>a += 2;(簡寫) =&gt; a = a + 2;(完整) //在不熟的狀態下不要用簡寫</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//作用域範圍</span></span><br><span class="line"><span class="comment">//建議使用let方式去宣告 (因為會鎖作用域)</span></span><br><span class="line"><span class="comment">//function作用區塊</span></span><br><span class="line"> <span class="function"><span class="keyword">function</span> <span class="title">example_var</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"===== var start ====="</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(a); <span class="comment">// undefined</span></span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(a); <span class="comment">// 1</span></span><br><span class="line">    a += <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(a); <span class="comment">// 3</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"===== var end ====="</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">example_let</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"===== let start ====="</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(a); <span class="comment">// Error 不往下做 註解後可以往下做</span></span><br><span class="line">    <span class="keyword">let</span> a = <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">    a += <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(a);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"===== let end ====="</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//常數</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">example_const</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"===== const start ====="</span>);</span><br><span class="line">    <span class="keyword">const</span> a = <span class="number">1</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(a); <span class="comment">// 1</span></span><br><span class="line">    a += <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(a); <span class="comment">// Error 常數不可改</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"===== const end ====="</span>);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> a =&gt; <span class="literal">undefined</span> <span class="comment">//不建議去這樣使用</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">let</span> a =<span class="string">''</span> <span class="comment">// 預設文字 String</span></span><br><span class="line">  <span class="keyword">let</span> b =<span class="literal">null</span> <span class="comment">// 預設物件 Object</span></span><br><span class="line">  <span class="keyword">let</span> c =<span class="number">0</span> <span class="comment">// 預設數字 Number</span></span><br><span class="line">  <span class="keyword">let</span> d = <span class="literal">false</span> <span class="comment">// 預設布林值 Boolean</span></span><br><span class="line">  <span class="keyword">let</span> e = [] <span class="comment">// 預設陣列 Array (有時設 null)</span></span><br></pre></td></tr></table></figure>
+<h3 id="作用域使用"><a href="#作用域使用" class="headerlink" title="作用域使用"></a>作用域使用</h3><p>Why 使用作用域 : 因為網頁內容若能被調整, 容易造成網頁內容不安全</p>
+<ol>
+<li>block<br>es6 使用一對大括號{} =&gt;裡面只能用 let 跟 const</li>
+<li>IIFE<br>(function(){…})();</li>
+</ol>
+<h2 id="function-函式"><a href="#function-函式" class="headerlink" title="function 函式"></a>function 函式</h2><h3 id="宣告方式"><a href="#宣告方式" class="headerlink" title="宣告方式"></a>宣告方式</h3><h4 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> 函式名稱(<span class="params">...參數</span>) </span>&#123;</span><br><span class="line">  <span class="comment">//執行內容..</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>它會有提升 (hoisting) 現象，，像這樣：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">greet();</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">greet</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">//執行內容..</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h4><ul>
+<li>優點<ul>
+<li>函式在宣告時,才產生出來</li>
+<li>較符合<strong>先宣告後使用</strong>的習慣</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> xxx = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 宣告一個名稱設定一個function</span></span><br><span class="line">  <span class="comment">// ....</span></span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h2 id="Chrome-amp-Vscode-Tips"><a href="#Chrome-amp-Vscode-Tips" class="headerlink" title="Chrome &amp; Vscode Tips"></a>Chrome &amp; Vscode Tips</h2><h3 id="Chrome-下斷點"><a href="#Chrome-下斷點" class="headerlink" title="Chrome 下斷點"></a>Chrome 下斷點</h3><p>記得要重新整理</p>
+<p><img src="https://i.imgur.com/Pqofn77.gif" alt></p>
+<h3 id="vscode-快捷鍵"><a href="#vscode-快捷鍵" class="headerlink" title="vscode 快捷鍵"></a>vscode 快捷鍵</h3><p>左方小齒輪 -&gt; 中文 : 使用者程式碼片段 , 英文 : User Snippets</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">"IIFE": &#123;</span><br><span class="line">  "prefix": "iife",</span><br><span class="line">  "body": [</span><br><span class="line">      "(function() &#123;",</span><br><span class="line">      "  $1",</span><br><span class="line">      <span class="string">"&#125;)();"</span></span><br><span class="line">  ],</span><br><span class="line">  "description": "IIFE"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="vscode-顯示設定-專案"><a href="#vscode-顯示設定-專案" class="headerlink" title="vscode 顯示設定 (專案)"></a>vscode 顯示設定 (專案)</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"editor.fontFamily"</span>: <span class="string">"Fira Code,Microsoft JhengHei"</span>,</span><br><span class="line">  <span class="attr">"editor.fontLigatures"</span>: <span class="literal">true</span>,</span><br><span class="line"></span><br><span class="line">  "editor.fontSize": 14,  //字體大小</span><br><span class="line">  "window.zoomLevel": 3, // 字體縮放大小</span><br><span class="line"></span><br><span class="line">  "editor.rulers" : [80,120]</span><br><span class="line">  "prettier.printWidth": 120 // prettier 換行設定 (幾個字換行)</span><br><span class="line"></span><br><span class="line">  "explorer.openEditors.visible": 0, // 旁邊檔案開的資料夾數</span><br><span class="line"></span><br><span class="line">  "files.autoSave": "afterDelay",</span><br><span class="line">  "editor.formatOnSave": true,</span><br><span class="line"></span><br><span class="line">  "editor.tabSize": 2,</span><br><span class="line">  "editor.insertSpaces": true,</span><br><span class="line"></span><br><span class="line">  "emmet.triggerExpansionOnTab": true, //觸發emmet</span><br><span class="line"></span><br><span class="line">  "liveServer.settings.donotShowInfoMsg": true,</span><br><span class="line">  "liveServer.settings.ignoreFiles": [".vscode/**", ".data/**"],</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h3><ul>
+<li><a href="https://codepen.io/" target="_blank" rel="noopener">CodePen</a></li>
+<li><a href="https://codesandbox.io/" target="_blank" rel="noopener">CodeSandbox - 線上編碼協作</a></li>
+<li><a href="https://caniuse.com/" target="_blank" rel="noopener">Can I Use - 查詢相容性</a></li>
+<li><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Operators/Operator_Precedence" target="_blank" rel="noopener">優先性參考</a></li>
+</ul>
+<h2 id="那些該死的運算與轉換-資料類型與操作"><a href="#那些該死的運算與轉換-資料類型與操作" class="headerlink" title="那些該死的運算與轉換 - 資料類型與操作"></a>那些該死的運算與轉換 - 資料類型與操作</h2><h3 id="數學運算與回傳"><a href="#數學運算與回傳" class="headerlink" title="數學運算與回傳"></a>數學運算與回傳</h3><p><img src="https://i.imgur.com/TH0JSlq.gif" alt></p>
+<p>運算式<br>運算元(運算的值 ex:數字<br>運算子(怎麼算 ex:+-=</p>
+<ol>
+<li>賦值運算子 (一般都會改變內容)</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">1</span> <span class="comment">// 將1賦予a</span></span><br><span class="line">a += <span class="number">1</span> <span class="comment">// a = a + 1 =&gt; 2</span></span><br><span class="line">a -= <span class="number">1</span> <span class="comment">// a = a - 1 =&gt; 1</span></span><br><span class="line">a *= <span class="number">10</span> <span class="comment">// a = a * 10 =&gt; 10</span></span><br><span class="line">a /= <span class="number">5</span> <span class="comment">// a = a/5 =&gt; 2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//a++ =&gt; a +=1 =&gt; a = a+1</span></span><br><span class="line"><span class="keyword">let</span> b = a++ <span class="comment">// 先做b=a (a賦值於b) 後做 a=a+1 a,b = 3,2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> c = --a <span class="comment">// 先做 a=a-1 後做 c=(a-1) 此時a-1已先算完，帶入C即可</span></span><br><span class="line"><span class="comment">//a,b,c = 2,2,2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> d1 = b+=<span class="number">1</span> <span class="comment">// b,d1 = 3,3</span></span><br><span class="line"><span class="comment">// 逗號 : 接著做</span></span><br><span class="line"><span class="keyword">let</span> d2 = ( b+=<span class="number">1</span> , c+=<span class="number">2</span> , a+b+c) <span class="comment">// a,b,c,d2 = 2,3,4,9</span></span><br><span class="line"><span class="keyword">let</span> d =b+<span class="number">1</span>,c+<span class="number">2</span>,a+b+c <span class="comment">// error 這部分切為 let d =b+1 (賦值) / c+2,a+b+c</span></span><br><span class="line"><span class="comment">//除了a++ 這種剩下都是先算完再拿 += 跟++是不相等的</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><p>算術運算子</p>
+</li>
+<li><p>字串運算子</p>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">如果有字串會字串優先;</span><br><span class="line"><span class="keyword">let</span> x = <span class="number">1</span> + <span class="string">"1"</span>; <span class="comment">// =&gt;"1"="1"=&gt;"11"</span></span><br><span class="line"><span class="keyword">let</span> y = <span class="number">1</span> + <span class="literal">true</span>; <span class="comment">// =&gt; 1+1=&gt;2</span></span><br><span class="line"><span class="keyword">let</span> z = <span class="number">1</span> + !<span class="string">"3"</span>; <span class="comment">//=&gt; 1+!true =&gt; 1+false=&gt;1+0=&gt;1</span></span><br><span class="line"><span class="comment">//上面會優先做驚嘆號部分 (反轉)</span></span><br><span class="line"><span class="number">3</span> + <span class="number">1</span> + <span class="string">"2"</span>; <span class="comment">//=&gt; 4 + "2" =&gt; "42"</span></span><br><span class="line"><span class="number">3</span> + <span class="function">(<span class="params"><span class="number">1</span> + <span class="string">"2"</span></span>); // =&gt;</span> <span class="number">3</span> + <span class="function">(<span class="params"><span class="string">"1"</span> + <span class="string">"2"</span></span>) =&gt;</span> <span class="number">3</span> + <span class="string">"12"</span> =&gt; <span class="string">"3"</span> + <span class="string">"12"</span> =&gt; <span class="string">"312"</span></span><br></pre></td></tr></table></figure>
+<h4 id="轉換表"><a href="#轉換表" class="headerlink" title="轉換表"></a><strong>轉換表</strong></h4><p><img src="https://i.imgur.com/hdWhJDE.jpg" alt></p>
+<h3 id="if-條件判斷式"><a href="#if-條件判斷式" class="headerlink" title="if 條件判斷式"></a>if 條件判斷式</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 肚子餓</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// No.1 =&gt; 做事情或不做</span></span><br><span class="line">如果 肚子餓 =&gt; 吃</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>（肚子餓）&#123;</span><br><span class="line">  吃</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// No.2 =&gt; 做a or 做b</span></span><br><span class="line">如果 肚子餓 =&gt; 吃</span><br><span class="line">不然 =&gt; 不吃</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>( 肚子餓 ) &#123;</span><br><span class="line"> 吃</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line"> 不吃</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// No.3 =&gt; 條件1 做A / 條件2 做B / 做C</span></span><br><span class="line">如果 肚子很餓 =&gt; 吃多一點</span><br><span class="line">不然如果 普通餓 =&gt; 吃一點點</span><br><span class="line">不然 不吃</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>( 肚子很餓 ) &#123;</span><br><span class="line"> 吃多一點</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>( 普通餓 )&#123;</span><br><span class="line"> 吃一點點</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line"> 不吃</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> 肚子 = <span class="number">40</span>;</span><br><span class="line"><span class="keyword">let</span> 吃 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  肚子 += <span class="number">20</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (肚子 &lt; <span class="number">60</span>) &#123;</span><br><span class="line">  吃();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(肚子); <span class="comment">// 60</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (肚子 &lt; <span class="number">60</span>) &#123;</span><br><span class="line">  吃();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(肚子); <span class="comment">// 60</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> 肚子 = <span class="number">60</span>;</span><br><span class="line"><span class="keyword">let</span> 吃 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  肚子 += <span class="number">20</span>;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (肚子 &lt; <span class="number">60</span>) &#123;</span><br><span class="line">  吃();</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  不吃(); <span class="comment">// 當肚子40不會進來 如果60 會抱錯</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> 肚子 = <span class="number">70</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> 客製吃 = <span class="function"><span class="keyword">function</span>(<span class="params">食物量</span>) </span>&#123;</span><br><span class="line">  肚子 += 食物量;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">if</span> (肚子 &lt;= <span class="number">40</span>) &#123;</span><br><span class="line">  客製吃(<span class="number">40</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (肚子 &lt;= <span class="number">60</span>) &#123;</span><br><span class="line">  客製吃(<span class="number">20</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  客製吃(<span class="number">-10</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="完整-Code-Alex-版"><a href="#完整-Code-Alex-版" class="headerlink" title="完整 Code (Alex 版)"></a>完整 Code (Alex 版)</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 肚子餓</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> 肚子 = <span class="number">40</span>;</span><br><span class="line"><span class="keyword">let</span> 吃 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  肚子 += <span class="number">20</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">let</span> 不吃 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  肚子 -= <span class="number">10</span>;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// No.1 =&gt; 做事情 OR 不做</span></span><br><span class="line"><span class="comment">//如果 肚子 &lt; 60 =&gt; 吃</span></span><br><span class="line"><span class="comment">// if (肚子 &lt; 60) &#123;</span></span><br><span class="line"><span class="comment">//   吃();</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"><span class="comment">// console.log(肚子); // 60</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// if (肚子 &lt; 60) &#123;</span></span><br><span class="line"><span class="comment">//   吃();</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"><span class="comment">// console.log(肚子); // 60</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// No.2 =&gt; 做A OR 做B</span></span><br><span class="line"><span class="comment">//如果 肚子餓 =&gt; 吃</span></span><br><span class="line"><span class="comment">//不然 =&gt; 不吃</span></span><br><span class="line"><span class="comment">// 肚子 = 60;</span></span><br><span class="line"><span class="comment">// if (肚子 &lt;= 60) &#123;</span></span><br><span class="line"><span class="comment">//   吃();</span></span><br><span class="line"><span class="comment">// &#125; else &#123;</span></span><br><span class="line"><span class="comment">//   不吃();</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// console.log(肚子); // 80</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// No.3 =&gt; 條件1 做A 條件2 做B 做C</span></span><br><span class="line"><span class="comment">//如果 肚子很餓 =&gt; 吃多一點</span></span><br><span class="line"><span class="comment">//不然如果 普通餓 =&gt; 吃一點點</span></span><br><span class="line"><span class="comment">//不然 不吃</span></span><br><span class="line"></span><br><span class="line">肚子 = <span class="number">70</span>;</span><br><span class="line"><span class="keyword">let</span> 客製吃 = <span class="function"><span class="keyword">function</span>(<span class="params">食物量</span>) </span>&#123;</span><br><span class="line">  肚子 += 食物量;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">if</span> (肚子 &lt;= <span class="number">40</span>) &#123;</span><br><span class="line">  客製吃(<span class="number">40</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (肚子 &lt;= <span class="number">60</span>) &#123;</span><br><span class="line">  客製吃(<span class="number">20</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  客製吃(<span class="number">-10</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(肚子); <span class="comment">// 60</span></span><br></pre></td></tr></table></figure>
+<h3 id="switch-條件判斷式（進入點）"><a href="#switch-條件判斷式（進入點）" class="headerlink" title="switch 條件判斷式（進入點）"></a>switch 條件判斷式（進入點）</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> 肚子飢餓程度 = <span class="number">4</span>; <span class="comment">// 4,3,2,1</span></span><br><span class="line"><span class="comment">// 沒有break 會一路吃到底</span></span><br><span class="line"><span class="keyword">switch</span> (肚子飢餓程度) &#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">4</span>:</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"20顆水餃"</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"三片披薩"</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"一個便當"</span>);</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">  <span class="keyword">default</span>:</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"喝杯飲料"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 刷牙洗臉 =&gt; 換衣服 =&gt; 穿鞋 =&gt; 出門</span></span><br></pre></td></tr></table></figure>
+<h2 id="補充-二進位-與-Bitwise"><a href="#補充-二進位-與-Bitwise" class="headerlink" title="補充 (二進位 與 Bitwise)"></a>補充 (二進位 與 Bitwise)</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 二進位</span></span><br><span class="line"><span class="comment">// 1:1</span></span><br><span class="line"><span class="comment">// 2:10</span></span><br><span class="line"><span class="comment">// 3:11</span></span><br><span class="line"><span class="comment">// 4:100</span></span><br><span class="line"><span class="comment">// 5:101</span></span><br><span class="line"><span class="keyword">let</span> a = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">let</span> b = <span class="number">5</span>;</span><br><span class="line"><span class="built_in">console</span>.log(a.toString(<span class="number">2</span>), b.toString(<span class="number">2</span>)); <span class="comment">// 10,101</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// toString(2) -&gt; 2進位的意思</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Bitwise</span></span><br><span class="line"><span class="number">10</span> &gt;&gt; <span class="number">1</span>; <span class="comment">// 5 (去小數點除2)  // 01010 的全部位元向右移動一位數變成 00101</span></span><br><span class="line"><span class="number">13</span> &lt;&lt; <span class="number">1</span>; <span class="comment">// 26    //01101的全部位元向左移動一位數變成 11010</span></span><br><span class="line"><span class="number">13.9</span> &lt;&lt; <span class="number">1</span>; <span class="comment">// 26 (去小數點乘2)</span></span><br><span class="line"><span class="number">20.8</span> &gt;&gt; <span class="number">0</span>; <span class="comment">// 20</span></span><br><span class="line"><span class="number">20.3</span> &lt;&lt; <span class="number">0</span>; <span class="comment">// 20</span></span><br><span class="line"><span class="comment">// &gt;&gt;0 與 &lt;&lt;0 會無條件捨去小數點後面</span></span><br></pre></td></tr></table></figure>
+<h3 id="寫程式建議步驟"><a href="#寫程式建議步驟" class="headerlink" title="寫程式建議步驟"></a>寫程式建議步驟</h3><p>1.思考 2.畫圖 3.寫程式</p>
+<p><img src="https://i.imgur.com/6grzsUo.jpg" alt></p>
+<h3 id="範例-3-window"><a href="#範例-3-window" class="headerlink" title="範例 3 window"></a>範例 3 window</h3><ol>
+<li>window.alert ( 跳訊息 )</li>
+<li>window.confirm ( 跳確認，回傳布林值 )</li>
+<li>window.prompt ( 跳輸入框，回傳輸入內容 )</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 請輸入你的程式</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> checkName = <span class="built_in">window</span>.confirm(<span class="string">"願意告訴我名字嗎?"</span>); <span class="comment">// true / false</span></span><br><span class="line">  <span class="keyword">if</span> (checkName) &#123;</span><br><span class="line">    <span class="comment">// 給</span></span><br><span class="line">    <span class="keyword">let</span> input = <span class="built_in">window</span>.prompt(<span class="string">"請輸入名字"</span>); <span class="comment">// 輸入的內容</span></span><br><span class="line">    customHi(input);</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="comment">// 不給</span></span><br><span class="line">    customHi(<span class="string">"No Name"</span>);</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">customHi</span>(<span class="params">message</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// window.alert("Hi!!! " + message);</span></span><br><span class="line">    <span class="built_in">window</span>.alert(<span class="string">`Hi!!! <span class="subst">$&#123;message&#125;</span>`</span>); <span class="comment">// ES6 寫法</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// customHi("Alex");</span></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<h2 id="來人阿-開工吧-DOM-與事件操作"><a href="#來人阿-開工吧-DOM-與事件操作" class="headerlink" title="來人阿!開工吧 - DOM 與事件操作"></a>來人阿!開工吧 - DOM 與事件操作</h2><h3 id="三劍客"><a href="#三劍客" class="headerlink" title="三劍客"></a>三劍客</h3><p>1.Who<br>2.What<br>3.When</p>
+<h3 id="認識-function-做點事"><a href="#認識-function-做點事" class="headerlink" title="認識 function 做點事"></a>認識 function 做點事</h3><p>加上小括號會馬上做<br>所以在監聽後面不需要加括號<br>ex: <code>addEventListener(&quot;click&quot;, greeting);</code></p>
+<h3 id="getElement-與-query"><a href="#getElement-與-query" class="headerlink" title="getElement 與 query"></a>getElement 與 query</h3><p>getElement:<br>1.getElementById (效能較佳，但須考量效率)<br>2.getElementByClassName =&gt; collection (動態更新/無法跑迴圈)<br>3.getElementByTagName</p>
+<p>query:<br>1.querySelector<br>2.querySelectorAll =&gt; list (靜態不變/有 forEach)</p>
+<h3 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h3><h3 id="範例-4"><a href="#範例-4" class="headerlink" title="範例 4"></a>範例 4</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">greeting</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> name = <span class="string">"無名氏"</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> (<span class="built_in">window</span>.confirm(<span class="string">"願意告訴我你的稱呼嗎？"</span>)) &#123;</span><br><span class="line">    <span class="comment">// name = window.prompt("請輸入姓名：", "").trim() || name;</span></span><br><span class="line">    <span class="comment">// null.trim() =&gt; ERROR</span></span><br><span class="line">    <span class="keyword">let</span> input = <span class="built_in">window</span>.prompt(<span class="string">"請輸入姓名："</span>, <span class="string">""</span>); <span class="comment">// null,"","   ","ALEX","  ALEX  "</span></span><br><span class="line">    name = (input &amp;&amp; input.trim()) || name;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">window</span>.alert(<span class="string">`嗨，<span class="subst">$&#123;name&#125;</span>！`</span>);</span><br><span class="line">&#125;</span><br><span class="line">trim =&gt; 可以使用這個來去頭尾;</span><br></pre></td></tr></table></figure>
+<h3 id="amp-amp"><a href="#amp-amp" class="headerlink" title="&amp;&amp; / ||"></a>&amp;&amp; / ||</h3><p>可以拿來做判斷式 , 也能拿來流程控管</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 有不做就不做</span></span><br><span class="line">case1 <span class="literal">true</span> &amp;&amp; case2 <span class="literal">true</span>  <span class="comment">// case1 與 case2 都會做 -&gt; 回傳case2 做</span></span><br><span class="line">case1 <span class="literal">true</span> &amp;&amp; case2 <span class="literal">false</span> <span class="comment">// case1做 但 case2 不做 -&gt; 回傳case2 不做</span></span><br><span class="line">case1 <span class="literal">false</span> &amp;&amp; case2 <span class="literal">true</span> <span class="comment">// case1不做 ,case2 做 -&gt; 回傳case1 不做</span></span><br><span class="line">case1 <span class="literal">false</span> &amp;&amp; case2 <span class="literal">false</span> <span class="comment">// case1 與 case2 都不做 -&gt; 回傳case1 不做</span></span><br><span class="line"><span class="comment">// 有中即離開</span></span><br><span class="line">case1 <span class="literal">true</span> || case2 <span class="literal">true</span>  <span class="comment">// case1中即離開 -&gt; 回傳case1 中</span></span><br><span class="line">case1 <span class="literal">true</span> || case2 <span class="literal">false</span> <span class="comment">// case1中即離開 -&gt; 回傳case1 中</span></span><br><span class="line">case1 <span class="literal">false</span> || case2 <span class="literal">true</span>  <span class="comment">// case1沒中 ,但case2中 -&gt; 回傳case2 中</span></span><br><span class="line">case1 <span class="literal">false</span> || case2 <span class="literal">false</span> <span class="comment">// case1 與 case2 都沒做 -&gt; 回傳false</span></span><br><span class="line"><span class="comment">// 範例</span></span><br><span class="line"><span class="number">1</span>&amp;&amp;<span class="number">2</span>&amp;&amp;<span class="number">3</span> <span class="comment">// =&gt; 3</span></span><br><span class="line"><span class="number">1</span>&amp;&amp;<span class="number">2</span>||<span class="number">3</span> <span class="comment">// =&gt; 2  // 2 中  且 後面為or運算子 ,即跳開</span></span><br><span class="line"><span class="number">1</span>&amp;&amp;<span class="number">0</span>||<span class="number">3</span> <span class="comment">// =&gt; 3  // 數字0 Boolean為false</span></span><br><span class="line"><span class="number">1</span>||<span class="number">2</span>&amp;&amp;<span class="number">0</span>  <span class="comment">//  =&gt; 1 後面為or運算子 ,即跳開</span></span><br><span class="line"><span class="number">3</span> &amp;&amp; <span class="number">5</span> <span class="comment">//=&gt; 5</span></span><br><span class="line"><span class="number">3</span> || <span class="number">5</span> <span class="comment">//=&gt; 3</span></span><br></pre></td></tr></table></figure>
+<h3 id="範例-5"><a href="#範例-5" class="headerlink" title="範例 5"></a>範例 5</h3><ol>
+<li>程式盡量不要有大量相同的 Code =&gt; 整理</li>
+<li>快速大量選取快捷鍵 =&gt; ctrl+d (選) ctrl+k(不選)</li>
+<li>怎麼選東西很重要</li>
+<li>forEach 參數名稱是自己取的</li>
+<li>capture =&gt; target =&gt; bubble<br>滑鼠進入/離開事件<br>1.mouseover/mouseout =&gt;<br>(1) 在乎的是 Taget (會產生畫面一直跳)<br>(2) 會冒泡 (bubble)<br>(3) addEventListener 把 useCapture 設 true 就會反向</li>
+</ol>
+<p>Target : <a href="https://developer.mozilla.org/zh-TW/docs/Web/API/Event/target" target="_blank" rel="noopener">https://developer.mozilla.org/zh-TW/docs/Web/API/Event/target</a></p>
+<p>2.mouseenter/mouseleave =&gt;<br>(1) 在乎的是 currentTarget (綁定事件的東西)<br>(2) 不會冒泡 (bubble)</p>
+<p>***根據需要針對對象選擇</p>
+<p>字串運算 =&gt; 先挖洞在左右補+</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// querySelectorAll 迴圈處理</span></span><br><span class="line"><span class="built_in">document</span>.querySelectorAll(<span class="string">"img"</span>).forEach(<span class="function"><span class="params">img</span> =&gt;</span> &#123;</span><br><span class="line">  img.addEventListener(<span class="string">"mouseover"</span>, inHandler);</span><br><span class="line">  img.addEventListener(<span class="string">"mouseout"</span>, outHandler);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// getElementsByTagName 迴圈處理</span></span><br><span class="line"><span class="keyword">let</span> imgs = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"img"</span>);</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; imgs.length; i++) &#123;</span><br><span class="line">  imgs[<span class="number">0</span>].addEventListener(<span class="string">"mouseover"</span>, inHandler);</span><br><span class="line">  imgs[<span class="number">0</span>].addEventListener(<span class="string">"mouseout"</span>, outHandler);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="this"><a href="#this" class="headerlink" title="this"></a>this</h3><ol>
+<li>事件偵聽的 this<br>who =&gt; when =&gt;what<br>呼叫事件的人(currentTarget)</li>
+</ol>
+<p><img src="https://i.imgur.com/DSIyJy0.gif" alt><br>圖片的範例<br>this =&gt; bronze currentTarget<br>(e.currentTarget =&gt; 事件綁定的對象)</p>
+<ol start="2">
+<li><p>箭頭函式沒有 this</p>
+</li>
+<li><p>this =&gt; js 對象</p>
+</li>
+<li>\$(this) =&gt; jq 對象</li>
+</ol>
+<h3 id="三元運算"><a href="#三元運算" class="headerlink" title="三元運算"></a>三元運算</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">check ? a : b;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (check) &#123;</span><br><span class="line">  <span class="keyword">return</span> a;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> b;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>current 綁定事件那一個<br>target 最深那一層的 DOM<br><img src="https://i.imgur.com/3Sjp1Dp.gif" alt></p>
+<p>mouseenter 不會有 bubble(不會有冒泡)<br><img src="https://i.imgur.com/GSAc1ac.gif" alt></p>
+<p><a href="https://codepen.io/achen224/pen/jgPZrw" target="_blank" rel="noopener">alex example</a><br>***使用 div.id.length 做判斷<br>=&gt; 思考兩組需要綁定的差異，設定 id 長度不同，所以用這個來做區分</p>
+<h3 id="範例-6"><a href="#範例-6" class="headerlink" title="範例 6"></a>範例 6</h3><ol>
+<li>要畫有幫助思考的流程圖(不同事件差異要出來</li>
+<li>迴圈中寫 function 會產生多組重複 function</li>
+<li>substr : 切西瓜 (第一刀位置,切多少字)</li>
+<li>NodList 沒有 indexOf 要用 […NodeList] 轉成 List</li>
+<li>轉數字 : *1 -0 /1 parseInt()</li>
+</ol>
+<p><img src="https://i.imgur.com/IBigYax.gif" alt><br>藍色是正確方式<br>按(找人) =&gt; 換號(依照不同人用不同方式) =&gt; 換圖</p>
+<p>substr(重哪裡切,切多寬)</p>
+<p>當數字超過(過大或過小時)有兩種選擇:下面寫法為第一種選擇<br>(1) 過大回到 0，過小回到最後 (一種迴圈)<br>(2) 過大停在最後，過小停在 0 (前後不動)</p>
+<p>1.改在 changeView() (改變選圖時)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> imgLength = imges.length;</span><br><span class="line"><span class="comment">// 判斷如果imgNumber超過圖片數量就歸0</span></span><br><span class="line"><span class="comment">// 如果沒有再判斷是否有 &lt; 0 則改成圖片長度-1</span></span><br><span class="line"><span class="comment">// 其他就維持不變</span></span><br><span class="line">imgNumber =</span><br><span class="line">  imgNumber &gt;= imgLength ? <span class="number">0</span> : imgNumber &lt; <span class="number">0</span> ? imgLength - <span class="number">1</span> : imgNumber;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (imgNumber &gt;= imgLength) &#123;</span><br><span class="line">  imgNumber = <span class="number">0</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> <span class="keyword">if</span> (imgNumber &lt; <span class="number">0</span>) &#123;</span><br><span class="line">  imgNumber = imgLength - <span class="number">1</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  imgNumber = imgNumber;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>2.改在產生 imgNumber 時(改計算時)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// imges.length = 5</span></span><br><span class="line"><span class="comment">// prev</span></span><br><span class="line"><span class="comment">// 4 =&gt; 3 =&gt; 2 =&gt; 1 =&gt; 0 =&gt; -1(x)</span></span><br><span class="line"><span class="comment">// // 當過少時有兩種選擇</span></span><br><span class="line"><span class="comment">// (1) 回到最後 (4 = imges.length-1)</span></span><br><span class="line"><span class="comment">// (2) 回到開頭 (0)</span></span><br><span class="line">imgNumber = imgNumber - <span class="number">1</span>;</span><br><span class="line"><span class="keyword">if</span> (imgNumber &lt; <span class="number">0</span>) &#123;</span><br><span class="line">  imgNumber = imges.length - <span class="number">1</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// next</span></span><br><span class="line"><span class="comment">// 0 =&gt; 1 =&gt; 2 =&gt; 3 =&gt; 4 =&gt; 5(x)</span></span><br><span class="line"><span class="comment">// 當過多時有兩種選擇</span></span><br><span class="line"><span class="comment">// (1) 回到開頭 (0)</span></span><br><span class="line"><span class="comment">// (2) 回到最後 (4 = imges.length-1)</span></span><br><span class="line">imgNumber = imgNumber + <span class="number">1</span>;</span><br><span class="line"><span class="keyword">if</span> (imgNumber &gt;= imges.length) &#123;</span><br><span class="line">  imgNumber = <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 改成取餘數，餘數可以產生數量範圍內的編號</span></span><br><span class="line"><span class="comment">// Ex: 所有數字 / 3 會產生的餘數 = 0,1,2</span></span><br><span class="line"><span class="comment">// Ex: 所有數字 / 5 會產生的餘數 = 0,1,2,3,4</span></span><br><span class="line"><span class="comment">// prev</span></span><br><span class="line">imgNumber = (imgNumber - <span class="number">1</span> + imges.length) % imges.length;</span><br><span class="line"><span class="comment">// (0 - 1 + 5) % 5 = 4</span></span><br><span class="line"><span class="comment">// (1 - 1 + 5) % 5 = 0</span></span><br><span class="line"><span class="comment">// (2 - 1 + 5) % 5 = 1</span></span><br><span class="line"><span class="comment">// (3 - 1 + 5) % 5 = 2</span></span><br><span class="line"><span class="comment">// (4 - 1 + 5) % 5 = 3</span></span><br><span class="line"><span class="comment">// next</span></span><br><span class="line">imgNumber = (imgNumber + <span class="number">1</span> + imges.length) % imges.length;</span><br><span class="line"><span class="comment">// (0 + 1 + 5) % 5 = 1</span></span><br><span class="line"><span class="comment">// (1 + 1 + 5) % 5 = 2</span></span><br><span class="line"><span class="comment">// (2 + 1 + 5) % 5 = 3</span></span><br><span class="line"><span class="comment">// (3 + 1 + 5) % 5 = 4</span></span><br><span class="line"><span class="comment">// (4 + 1 + 5) % 5 = 0</span></span><br></pre></td></tr></table></figure>
+<p>// 結合 prev 跟 next</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> <span class="string">"prev"</span>:</span><br><span class="line"><span class="keyword">case</span> <span class="string">"next"</span>:</span><br><span class="line">	imgNumber = ( imgNumber + (<span class="keyword">this</span>.id === <span class="string">"prev"</span> ? <span class="number">-1</span> : <span class="number">1</span>) + imges.length ) % imges.length ;</span><br><span class="line">	<span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> map = &#123;</span><br><span class="line">  prev: <span class="number">-1</span>,</span><br><span class="line">  next: <span class="number">1</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">switch</span> (<span class="keyword">this</span>.id) &#123;</span><br><span class="line">  <span class="keyword">case</span> <span class="string">"prev"</span>:</span><br><span class="line">  <span class="keyword">case</span> <span class="string">"next"</span>:</span><br><span class="line">    imgNumber = (imgNumber + map[<span class="keyword">this</span>.id] + images.length) % images.length;</span><br><span class="line">    <span class="keyword">break</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="與"><a href="#與" class="headerlink" title="== 與 ==="></a>== 與 ===</h3><p>== : 等於<br>=== : 完全等於</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> b = <span class="keyword">new</span> <span class="built_in">Number</span>(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">a == b; <span class="comment">// true</span></span><br><span class="line">a === b; <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">typeof</span> a; <span class="comment">// number</span></span><br><span class="line"><span class="keyword">typeof</span> b; <span class="comment">// object</span></span><br></pre></td></tr></table></figure>
+<h3 id="箭頭函式"><a href="#箭頭函式" class="headerlink" title="箭頭函式"></a>箭頭函式</h3><p>() =&gt; {} // 一行時{}可以省略</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="params">msg</span> =&gt;</span> <span class="built_in">console</span>.log(msg))(<span class="number">123</span>);</span><br><span class="line"><span class="comment">//((msg) =&gt; &#123;console.log(msg);&#125;)(123);</span></span><br><span class="line"><span class="comment">// 相當於下面寫法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params">msg</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(msg);</span><br><span class="line">&#125;</span><br><span class="line">print(<span class="number">123</span>);</span><br></pre></td></tr></table></figure>
+<h2 id="這包東西不簡單-陣列與物件的管理應用"><a href="#這包東西不簡單-陣列與物件的管理應用" class="headerlink" title="這包東西不簡單 - 陣列與物件的管理應用"></a>這包東西不簡單 - 陣列與物件的管理應用</h2><h2 id="一坨與一串東西的特性"><a href="#一坨與一串東西的特性" class="headerlink" title="一坨與一串東西的特性"></a>一坨與一串東西的特性</h2><h3 id="資料紀錄"><a href="#資料紀錄" class="headerlink" title="資料紀錄"></a>資料紀錄</h3><p>通常無法確認多語系要用哪個語言顯示，盡量使用中性資料 EX:數字</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 物件 管理一個對象 (可以指向特定Key Key Value)</span></span><br><span class="line"><span class="keyword">let</span> alex = &#123;</span><br><span class="line">  name: <span class="string">"alex"</span>,</span><br><span class="line">  age: <span class="number">36</span>,</span><br><span class="line">  merry: <span class="literal">true</span>,</span><br><span class="line">  sex: <span class="number">1</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> sara = &#123;</span><br><span class="line">  name: <span class="string">"sara"</span>,</span><br><span class="line">  age: <span class="number">18</span>,</span><br><span class="line">  merry: <span class="literal">true</span>,</span><br><span class="line">  sex: <span class="number">0</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 陣列 管理一串資料 (只能知道先後順序 Index Value)</span></span><br><span class="line"><span class="keyword">let</span> family = [alex, sara][</span><br><span class="line">  <span class="comment">//             0    1</span></span><br><span class="line"></span><br><span class="line">  (alex, sara)</span><br><span class="line">].forEach(<span class="function">(<span class="params">people, index</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(people, index);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="範例-7"><a href="#範例-7" class="headerlink" title="範例 7"></a>範例 7</h3><ol>
+<li>CSR(Client Side Rendom) VS SSR(Server Side Rendom)<br>SSR:網頁檢視原始碼看到的(程式產資料)<br>CSR:網頁檢視原始碼不一定看得到(資料產程式)</li>
+<li>物件(一根香蕉) VS 陣列(一串香蕉)</li>
+<li>陣列操作</li>
+<li>計時器 setTimeout(做一次) / setInterval(一直做)</li>
+</ol>
+<p>資料塞入 DOM =&gt; 初始化畫面</p>
+<p>麥當勞點餐<br>現在:點完去旁邊點餐 (非同步<br>以前：點完好了再下一位（同步</p>
+<p>遞迴 =&gt; 自己呼叫自己</p>
+<h3 id="範例-9"><a href="#範例-9" class="headerlink" title="範例 9"></a>範例 9</h3><ol>
+<li>輸入 =&gt; 送出(button) =&gt; 抽籤</li>
+<li>click(要自己檢查資料) / submit(form 送出)</li>
+<li>slice 切出新的陣列 / splice 切原始陣列 (處理陣列)<br><strong>slice 不改變原本陣列</strong><br><strong>splice 會改變</strong>12</li>
+<li>split 針對 string 處理切割</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"><span class="built_in">console</span>.log(a.slice(<span class="number">1</span>, <span class="number">2</span>), a); <span class="comment">// [2],[1,2,3,4,5]</span></span><br><span class="line"><span class="comment">// slice 回傳陣列</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 刪除index=1 刪除1個 再index=1插入alex</span></span><br><span class="line"><span class="comment">// (刪除或插入位置,刪除個數,插入資料)</span></span><br><span class="line">a.splice(<span class="number">1</span>, <span class="number">1</span>, <span class="string">"alex"</span>); <span class="comment">// [1,'alex',3,4,5]</span></span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line"></span><br><span class="line"><span class="comment">//split 針對字串</span></span><br><span class="line"><span class="keyword">let</span> b = <span class="string">"1,2,3,4,5"</span>;</span><br><span class="line"><span class="keyword">let</span> ary = b.split(<span class="string">","</span>);</span><br><span class="line"><span class="built_in">console</span>.log(ary); <span class="comment">// ['1','2','3','4','5']</span></span><br><span class="line"><span class="keyword">let</span> ary2 = b.split(<span class="string">"3"</span>);</span><br><span class="line"><span class="built_in">console</span>.log(ary2); <span class="comment">// ["'1,2,'","',4,5'"]</span></span><br></pre></td></tr></table></figure>
+<h2 id="你怎麼說我怎麼做-條件判斷與流程控制"><a href="#你怎麼說我怎麼做-條件判斷與流程控制" class="headerlink" title="你怎麼說我怎麼做 - 條件判斷與流程控制"></a>你怎麼說我怎麼做 - 條件判斷與流程控制</h2><h3 id="for-迴圈-vs-while-迴圈"><a href="#for-迴圈-vs-while-迴圈" class="headerlink" title="for 迴圈 vs while 迴圈"></a>for 迴圈 vs while 迴圈</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> ary = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">// For迴圈</span></span><br><span class="line"><span class="keyword">let</span> forCount = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; ary.length; i++) &#123;</span><br><span class="line">  forCount = forCount + ary[i];</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(forCount);</span><br><span class="line"></span><br><span class="line"><span class="comment">// While迴圈</span></span><br><span class="line"><span class="keyword">let</span> whileCount = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">let</span> temp = [...ary];</span><br><span class="line"><span class="keyword">while</span> (temp.length) &#123;</span><br><span class="line">  whileCount += temp.shift();</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(whileCount);</span><br><span class="line"></span><br><span class="line"><span class="comment">// ForEach</span></span><br><span class="line"><span class="keyword">let</span> foreachCount = <span class="number">0</span>;</span><br><span class="line">ary.forEach(<span class="function"><span class="params">num</span> =&gt;</span> &#123;</span><br><span class="line">  foreachCount += num;</span><br><span class="line">&#125;);</span><br><span class="line"><span class="built_in">console</span>.log(foreachCount);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 上面都需要宣告一個值才能開始</span></span><br><span class="line"><span class="comment">// Reduce preVal:上次值 ,currentVal:這次值 ,逗號後面是預設值(0)</span></span><br><span class="line"><span class="keyword">let</span> reduceCount = ary.reduce(<span class="function">(<span class="params">preVal, currentVal</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(preVal, currentVal);</span><br><span class="line">  <span class="keyword">return</span> preVal + currentVal;</span><br><span class="line">&#125;, <span class="number">0</span>); <span class="comment">// 這個0就是初始值</span></span><br><span class="line"><span class="built_in">console</span>.log(reduceCount);</span><br></pre></td></tr></table></figure>
+<h3 id="遞迴"><a href="#遞迴" class="headerlink" title="遞迴"></a>遞迴</h3><p>1.往前走(呼叫自己) 2.有 return 條件 3.邊界條件</p>
+<h3 id="範例-10"><a href="#範例-10" class="headerlink" title="範例 10"></a>範例 10</h3><ol>
+<li>階乘 輸入 5 拿到(5!) 5 _ 4 _ 3 _ 2 _ 1</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// for</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">example1</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> n = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = num; i &gt; <span class="number">1</span>; i--) &#123;</span><br><span class="line">    <span class="comment">// 5 5 &gt; 1 5--</span></span><br><span class="line">    <span class="comment">// 4 4 &gt; 1 4--</span></span><br><span class="line">    <span class="comment">// 3 3 &gt; 1 3--</span></span><br><span class="line">    n *= i;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> n;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(example1(<span class="number">5</span>));</span><br><span class="line"></span><br><span class="line"><span class="comment">// recursion</span></span><br><span class="line"><span class="comment">// 遞迴不會有for複雜的邏輯，取而代之是更複雜的邏輯</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 1.往前走(呼叫自己) : example1_re(num - 1)</span></span><br><span class="line"><span class="comment">// 2.有return條件</span></span><br><span class="line"><span class="comment">// 3.邊界條件 :  num &lt;= 1</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">example1_re</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (num &lt;= <span class="number">1</span>) <span class="keyword">return</span> <span class="number">1</span>; <span class="comment">// 邊界條件</span></span><br><span class="line">  <span class="keyword">return</span> num * example1_re(num - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(example1_re(<span class="number">5</span>));</span><br><span class="line"><span class="comment">// 5 * example1_re(4)</span></span><br><span class="line"><span class="comment">// 5 * 4 * example1_re(3)</span></span><br><span class="line"><span class="comment">// 5 * 4 * 3 * example1_re(2)</span></span><br><span class="line"><span class="comment">// 5 * 4 * 3 * 2 * example1_re(1)</span></span><br><span class="line"><span class="comment">// 5 * 4 * 3 * 2 * 1</span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>fibonacci : 前兩個是 1，第三個開始為前兩個和</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 使用while迴圈取出fibonacci</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fibonacci</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 前兩位是1</span></span><br><span class="line">  <span class="keyword">if</span> (num &lt;= <span class="number">2</span>) <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">let</span> n1 = <span class="number">1</span>; <span class="comment">// 第一位</span></span><br><span class="line">  <span class="keyword">let</span> n2 = <span class="number">1</span>; <span class="comment">// 第二位</span></span><br><span class="line">  <span class="keyword">let</span> temp = n1 + n2; <span class="comment">// 第三位</span></span><br><span class="line">  <span class="comment">// 因為有三位所以只要算到n-2位</span></span><br><span class="line">  <span class="comment">// 1-&gt;n-2,2-&gt;n-1,3-&gt;n</span></span><br><span class="line">  <span class="comment">// 為了要算到第n-2位，一直--到剩下2</span></span><br><span class="line">  <span class="keyword">while</span> (num &gt; <span class="number">2</span>) &#123;</span><br><span class="line">    temp = n1 + n2; <span class="comment">// 算出下一位(前兩位和)</span></span><br><span class="line">    n1 = n2; <span class="comment">// 將第二位當成第一位</span></span><br><span class="line">    n2 = temp; <span class="comment">// 將第三位當成第二位</span></span><br><span class="line">    <span class="comment">// 一直往後平移</span></span><br><span class="line">    num--;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">return</span> temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//EX: fibonacci(5)</span></span><br><span class="line"><span class="comment">//fibonacci(5) =&gt; 1   1   2   3   [5]</span></span><br><span class="line"><span class="comment">//               n1  n2  temp          (迴圈第一次)</span></span><br><span class="line"><span class="comment">//                   n1  n2   temp     (迴圈第二次)</span></span><br><span class="line"><span class="comment">//                       n1  n2   temp (迴圈第三次)</span></span><br><span class="line"><span class="comment">// 第一段判斷</span></span><br><span class="line"><span class="keyword">if</span> (<span class="number">5</span> &lt;= <span class="number">2</span>) <span class="keyword">return</span> <span class="number">1</span>; <span class="comment">// 5不小於等於2繼續往下</span></span><br><span class="line"><span class="comment">// 初始化資料</span></span><br><span class="line"><span class="keyword">let</span> n1 = <span class="number">1</span>; <span class="comment">// 第一位</span></span><br><span class="line"><span class="keyword">let</span> n2 = <span class="number">1</span>; <span class="comment">// 第二位</span></span><br><span class="line"><span class="keyword">let</span> temp = n1 + n2; <span class="comment">// 第三位</span></span><br><span class="line"><span class="comment">//進入迴圈時</span></span><br><span class="line"><span class="comment">//第一次</span></span><br><span class="line"><span class="keyword">while</span> (<span class="number">5</span> &gt; <span class="number">2</span>) &#123;</span><br><span class="line">  temp = n1 + n2; <span class="comment">// (1+1 = 2)</span></span><br><span class="line">  n1 = n2; <span class="comment">//(1)</span></span><br><span class="line">  n2 = temp; <span class="comment">// (2)</span></span><br><span class="line">  num--; <span class="comment">// num = 5-1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//第二次</span></span><br><span class="line"><span class="keyword">while</span> (<span class="number">4</span> &gt; <span class="number">2</span>) &#123;</span><br><span class="line">  temp = temp + n1; <span class="comment">// (1+2=3)</span></span><br><span class="line">  n1 = n2; <span class="comment">//(2)</span></span><br><span class="line">  n2 = temp; <span class="comment">// (3)</span></span><br><span class="line">  num--; <span class="comment">// num = 4-1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//第三次</span></span><br><span class="line"><span class="keyword">while</span> (<span class="number">3</span> &gt; <span class="number">2</span>) &#123;</span><br><span class="line">  temp = temp + n1; <span class="comment">// (2+3=5)</span></span><br><span class="line">  n1 = n2; <span class="comment">//(3)</span></span><br><span class="line">  n2 = temp; <span class="comment">// (5)</span></span><br><span class="line">  num--; <span class="comment">// num = 3-1</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//第四次</span></span><br><span class="line"><span class="keyword">while</span> (<span class="number">2</span> &gt; <span class="number">2</span>) &#123;</span><br><span class="line">  <span class="comment">// 條件不成立跳出迴圈</span></span><br><span class="line">  temp = temp + n1;</span><br><span class="line">  n1 = n2;</span><br><span class="line">  n2 = temp;</span><br><span class="line">  num--;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> temp; <span class="comment">// 5</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JS/" rel="tag"># JS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/05/09/JS30-07-Array Cardio Day 2/" rel="next" title="JS30-07-Array Cardio Day 2">
+                <i class="fa fa-chevron-left"></i> JS30-07-Array Cardio Day 2
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/07/21/JS-Starting from scratch D2/" rel="prev" title="Javascript - 從零開始 Day2">
+                Javascript - 從零開始 Day2 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Bryan Hsiao</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第一天"><span class="nav-number">1.</span> <span class="nav-text">第一天</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#你不可不知的那些小事情-生態現況與基本常識"><span class="nav-number">2.</span> <span class="nav-text">你不可不知的那些小事情 - 生態現況與基本常識</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#敘事與程式的關係"><span class="nav-number">3.</span> <span class="nav-text">敘事與程式的關係</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ECMAScript-vs-JavaScript"><span class="nav-number">4.</span> <span class="nav-text">ECMAScript vs JavaScript</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#網頁三腳督"><span class="nav-number">5.</span> <span class="nav-text">網頁三腳督</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BOM-vs-DOM"><span class="nav-number">6.</span> <span class="nav-text">BOM vs DOM</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#範例-1"><span class="nav-number">6.1.</span> <span class="nav-text">範例 1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#範例-2"><span class="nav-number">6.2.</span> <span class="nav-text">範例 2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作用域使用"><span class="nav-number">6.3.</span> <span class="nav-text">作用域使用</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#function-函式"><span class="nav-number">7.</span> <span class="nav-text">function 函式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#宣告方式"><span class="nav-number">7.1.</span> <span class="nav-text">宣告方式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1"><span class="nav-number">7.1.1.</span> <span class="nav-text">1.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2"><span class="nav-number">7.1.2.</span> <span class="nav-text">2.</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chrome-amp-Vscode-Tips"><span class="nav-number">8.</span> <span class="nav-text">Chrome &amp; Vscode Tips</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Chrome-下斷點"><span class="nav-number">8.1.</span> <span class="nav-text">Chrome 下斷點</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode-快捷鍵"><span class="nav-number">8.2.</span> <span class="nav-text">vscode 快捷鍵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vscode-顯示設定-專案"><span class="nav-number">8.3.</span> <span class="nav-text">vscode 顯示設定 (專案)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reference"><span class="nav-number">8.4.</span> <span class="nav-text">Reference</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#那些該死的運算與轉換-資料類型與操作"><span class="nav-number">9.</span> <span class="nav-text">那些該死的運算與轉換 - 資料類型與操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#數學運算與回傳"><span class="nav-number">9.1.</span> <span class="nav-text">數學運算與回傳</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#轉換表"><span class="nav-number">9.1.1.</span> <span class="nav-text">轉換表</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#if-條件判斷式"><span class="nav-number">9.2.</span> <span class="nav-text">if 條件判斷式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完整-Code-Alex-版"><span class="nav-number">9.3.</span> <span class="nav-text">完整 Code (Alex 版)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#switch-條件判斷式（進入點）"><span class="nav-number">9.4.</span> <span class="nav-text">switch 條件判斷式（進入點）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#補充-二進位-與-Bitwise"><span class="nav-number">10.</span> <span class="nav-text">補充 (二進位 與 Bitwise)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#寫程式建議步驟"><span class="nav-number">10.1.</span> <span class="nav-text">寫程式建議步驟</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#範例-3-window"><span class="nav-number">10.2.</span> <span class="nav-text">範例 3 window</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#來人阿-開工吧-DOM-與事件操作"><span class="nav-number">11.</span> <span class="nav-text">來人阿!開工吧 - DOM 與事件操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#三劍客"><span class="nav-number">11.1.</span> <span class="nav-text">三劍客</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#認識-function-做點事"><span class="nav-number">11.2.</span> <span class="nav-text">認識 function 做點事</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#getElement-與-query"><span class="nav-number">11.3.</span> <span class="nav-text">getElement 與 query</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#事件"><span class="nav-number">11.4.</span> <span class="nav-text">事件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#範例-4"><span class="nav-number">11.5.</span> <span class="nav-text">範例 4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#amp-amp"><span class="nav-number">11.6.</span> <span class="nav-text">&amp;&amp; / ||</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#範例-5"><span class="nav-number">11.7.</span> <span class="nav-text">範例 5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#this"><span class="nav-number">11.8.</span> <span class="nav-text">this</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三元運算"><span class="nav-number">11.9.</span> <span class="nav-text">三元運算</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#範例-6"><span class="nav-number">11.10.</span> <span class="nav-text">範例 6</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#與"><span class="nav-number">11.11.</span> <span class="nav-text">== 與 ===</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#箭頭函式"><span class="nav-number">11.12.</span> <span class="nav-text">箭頭函式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#這包東西不簡單-陣列與物件的管理應用"><span class="nav-number">12.</span> <span class="nav-text">這包東西不簡單 - 陣列與物件的管理應用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一坨與一串東西的特性"><span class="nav-number">13.</span> <span class="nav-text">一坨與一串東西的特性</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#資料紀錄"><span class="nav-number">13.1.</span> <span class="nav-text">資料紀錄</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#範例-7"><span class="nav-number">13.2.</span> <span class="nav-text">範例 7</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#範例-9"><span class="nav-number">13.3.</span> <span class="nav-text">範例 9</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#你怎麼說我怎麼做-條件判斷與流程控制"><span class="nav-number">14.</span> <span class="nav-text">你怎麼說我怎麼做 - 條件判斷與流程控制</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#for-迴圈-vs-while-迴圈"><span class="nav-number">14.1.</span> <span class="nav-text">for 迴圈 vs while 迴圈</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#遞迴"><span class="nav-number">14.2.</span> <span class="nav-text">遞迴</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#範例-10"><span class="nav-number">14.3.</span> <span class="nav-text">範例 10</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bryan Hsiao</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+  <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+</body>
+</html>

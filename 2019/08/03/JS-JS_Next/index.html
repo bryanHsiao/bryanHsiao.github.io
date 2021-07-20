@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-tw">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="JS,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Bryan's Notes" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="Pmroise , async_await …">
+<meta name="keywords" content="JS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Javascript - 更進一步">
+<meta property="og:url" content="http://yoursite.com/2019/08/03/JS-JS_Next/index.html">
+<meta property="og:site_name" content="Bryan&#39;s Notes">
+<meta property="og:description" content="Pmroise , async_await …">
+<meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://i.imgur.com/z6iY4FS.png">
+<meta property="og:updated_time" content="2021-07-17T18:23:56.070Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Javascript - 更進一步">
+<meta name="twitter:description" content="Pmroise , async_await …">
+<meta name="twitter:image" content="https://i.imgur.com/z6iY4FS.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/08/03/JS-JS_Next/">
+
+
+
+
+
+  <title>Javascript - 更進一步 | Bryan's Notes</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-tw">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Bryan's Notes</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">學習筆記</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首頁
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            歸檔
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            檢索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/03/JS-JS_Next/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bryan Hsiao">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bryan's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Javascript - 更進一步</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-08-03T10:00:00+08:00">
+                2019-08-03
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JS/" itemprop="url" rel="index">
+                    <span itemprop="name">JS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Pmroise-async-await-…"><a href="#Pmroise-async-await-…" class="headerlink" title="Pmroise , async_await …"></a>Pmroise , async_await …</h2><a id="more"></a>
+<ol>
+<li>call back<br>補充:<a href="https://cythilya.github.io/2018/10/30/callback/" target="_blank" rel="noopener">https://cythilya.github.io/2018/10/30/callback/</a></li>
+<li>Synchronous vs Asynchronous<br>顧客：阻塞(憨厚) vs 非阻塞(變通) polling<br>老闆：同步(臭跩) vs 非同步(親切)<br>ex:公司報到+銀行開戶<br><strong><em>避免過度阻塞</em></strong></li>
+</ol>
+<p>polling<br>longpolling<br>streaming (websocket)<br>補充：<br><a href="https://blog.niclin.tw/2017/10/28/%E7%8D%B2%E5%BE%97%E5%AF%A6%E6%99%82%E6%9B%B4%E6%96%B0%E7%9A%84%E6%96%B9%E6%B3%95polling-comet-long-polling-websocket/" target="_blank" rel="noopener">https://blog.niclin.tw/2017/10/28/%E7%8D%B2%E5%BE%97%E5%AF%A6%E6%99%82%E6%9B%B4%E6%96%B0%E7%9A%84%E6%96%B9%E6%B3%95polling-comet-long-polling-websocket/</a></p>
+<p><a href="https://blog.gtwang.org/web-development/websocket-protocol/" target="_blank" rel="noopener">https://blog.gtwang.org/web-development/websocket-protocol/</a></p>
+<p>補充：<br><a href="https://johlmike.wordpress.com/2016/07/08/%E5%90%8C%E6%AD%A5synchronous%E3%80%81%E7%95%B0%E6%AD%A5asynchronous%E3%80%81%E9%98%BB%E5%A1%9Eblock%E3%80%81%E9%9D%9E%E9%98%BB%E5%A1%9Enon-block/" target="_blank" rel="noopener">https://johlmike.wordpress.com/2016/07/08/%E5%90%8C%E6%AD%A5synchronous%E3%80%81%E7%95%B0%E6%AD%A5asynchronous%E3%80%81%E9%98%BB%E5%A1%9Eblock%E3%80%81%E9%9D%9E%E9%98%BB%E5%A1%9Enon-block/</a><br>阻塞與非阻塞主要是描述請求在等待結果時的狀態<br>同步與異步主要是描述回傳的聯絡方式</p>
+<p>非同步有<br>1.setInterval setTimeout 2.一般的 eventhandler<br>3.server 的呼叫</p>
+<ol start="3">
+<li>佇列、堆疊、事件循環<br>佇列(Queue)：先進先出 ex：排隊、jQuery 動畫<br>堆疊(Stack)：後進先出 ex：河內塔<br>事件循環(Event Loop):從佇列提取到堆疊執行<br>補充:<br><a href="https://pjchender.blogspot.com/2017/08/javascript-learn-event-loop-stack-queue.html" target="_blank" rel="noopener">https://pjchender.blogspot.com/2017/08/javascript-learn-event-loop-stack-queue.html</a></li>
+</ol>
+<p>非同步處理:主流程處理完後處理<br>Stack 不清空，Queue 是無法往下做的<br>補充：<br><a href="https://ithelp.ithome.com.tw/articles/10200054?sc=iThelpR" target="_blank" rel="noopener">https://ithelp.ithome.com.tw/articles/10200054?sc=iThelpR</a><br>loupe：<br><a href="http://latentflip.com/loupe/" target="_blank" rel="noopener">http://latentflip.com/loupe/</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'A'</span>)</span><br><span class="line">    &#125;, <span class="number">1000</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">B</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(B<span class="string">')</span></span><br><span class="line"><span class="string">    &#125;, 500)</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">function C()&#123;</span></span><br><span class="line"><span class="string">    setTimeout(() =&gt; &#123;</span></span><br><span class="line"><span class="string">        console.log('</span>C<span class="string">')</span></span><br><span class="line"><span class="string">    &#125;, 2000)</span></span><br><span class="line"><span class="string">&#125;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// B A C</span></span><br><span class="line"><span class="string">A()</span></span><br><span class="line"><span class="string">B()</span></span><br><span class="line"><span class="string">C()</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">// 不好的寫法</span></span><br><span class="line"><span class="string">A()</span></span><br><span class="line"><span class="string">setTimeout(B,1000)</span></span><br><span class="line"><span class="string">setTimeout(C,1500)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">log(<span class="string">'=====start====='</span>)</span><br><span class="line">log(<span class="string">'a'</span>);</span><br><span class="line">log(<span class="string">'b'</span>);</span><br><span class="line"><span class="keyword">while</span> (pass() &lt; <span class="number">5000</span>) &#123;&#125;</span><br><span class="line">log(<span class="string">'c'</span>);</span><br><span class="line"><span class="string">``</span>log(<span class="string">'====`=end====='</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> timerHandler = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  pass() &lt; <span class="number">5000</span> ? setTimeout(timerHandler, <span class="number">0</span>) : log(<span class="string">'timer ok'</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">log(<span class="string">'=====start====='</span>)</span><br><span class="line">log(<span class="string">'a'</span>);</span><br><span class="line">log(<span class="string">'b'</span>);</span><br><span class="line"><span class="keyword">while</span> (pass() &lt; <span class="number">5000</span>) &#123;&#125;</span><br><span class="line">setTimeout(timerHandler, <span class="number">0</span>);</span><br><span class="line">log(<span class="string">'c'</span>);</span><br><span class="line">log(<span class="string">'=====end====='</span>)</span><br></pre></td></tr></table></figure>
+<p><code>+new Date()</code> 等同於 <code>new Date().getTime()</code><br><strong><em>不要用 Timer 控流程，時間不準</em></strong></p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">"MY_ROOM": &#123;</span><br><span class="line">    "prefix": "room",</span><br><span class="line">    "body": [</span><br><span class="line">      "const time = +new Date();",</span><br><span class="line">      "const pass = () =&gt; +new Date() - time;",</span><br><span class="line">      "const log = msg =&gt; &#123;",</span><br><span class="line">      "console.log(msg, `$&#123;pass()&#125;ms`);",</span><br><span class="line">      "&#125;;",</span><br><span class="line">      "",</span><br><span class="line">      "log('===== Start =====');",</span><br><span class="line">      "$1",</span><br><span class="line">      <span class="string">"log('===== End =====');"</span></span><br><span class="line">    ],</span><br><span class="line">    "description": "MY_ROOM"</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>Promise<br>(1) 可以做同步組合<br>(2) Queue 在不同瀏覽器可能會有不同表現</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> promise = <span class="function">(<span class="params">time, msg</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    log(<span class="string">`Promise Create: <span class="subst">$&#123;msg&#125;</span>`</span>);</span><br><span class="line">    <span class="keyword">if</span> (time &lt;= <span class="number">0</span>) &#123;</span><br><span class="line">      resolve(<span class="string">`Promise OK: <span class="subst">$&#123;msg&#125;</span>`</span>);</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        resolve(<span class="string">`Promise OK: <span class="subst">$&#123;msg&#125;</span>`</span>);</span><br><span class="line">      &#125;, time);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 觀戰重點1： Promise: 同步 then:非同步</span></span><br><span class="line">log(<span class="string">"==== A ===="</span>);</span><br><span class="line">promise(<span class="number">0</span>, <span class="string">"A"</span>).then(<span class="function"><span class="params">result</span> =&gt;</span> log(result));</span><br><span class="line">log(<span class="string">"==== B ===="</span>);</span><br><span class="line">promise(<span class="number">1000</span>, <span class="string">"B"</span>).then(<span class="function"><span class="params">result</span> =&gt;</span> log(result));</span><br><span class="line">log(<span class="string">"==== B ===="</span>);</span><br><span class="line">promise(<span class="number">500</span>, <span class="string">"C"</span>).then(<span class="function"><span class="params">result</span> =&gt;</span> log(result));</span><br><span class="line"><span class="comment">// 觀戰重點2: stack 阻塞</span></span><br><span class="line"><span class="keyword">while</span> (pass() &lt; <span class="number">2000</span>) &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 觀戰重點3: timeout人權議題</span></span><br><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  log(<span class="string">"timer"</span>);</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line">log(<span class="string">"==== A ===="</span>);</span><br><span class="line">promise(<span class="number">0</span>, <span class="string">"A"</span>).then(<span class="function"><span class="params">result</span> =&gt;</span> log(result));</span><br></pre></td></tr></table></figure>
+<p>promise：等到允許授權才能往下走<br>then 須等到 resolve</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 觀戰重點4: 執行順序，將同步非同步變成依序執行</span></span><br><span class="line"><span class="comment">// 如果再then裡catch會往下走，如果沒有就不會再往下走</span></span><br><span class="line">promise(<span class="number">0</span>, <span class="string">"A"</span>)</span><br><span class="line">  .then(</span><br><span class="line">    result =&gt; log(result),</span><br><span class="line">    error =&gt; log(<span class="string">`error:<span class="subst">$&#123;error&#125;</span>`</span>)</span><br><span class="line">  )</span><br><span class="line">  .then(<span class="function"><span class="params">result</span> =&gt;</span> promise(<span class="number">3000</span>, <span class="string">"B"</span>))</span><br><span class="line">  .then(<span class="function"><span class="params">result</span> =&gt;</span> log(result))</span><br><span class="line">  .then(<span class="function"><span class="params">result</span> =&gt;</span> promise(<span class="number">0</span>, <span class="string">"C"</span>))</span><br><span class="line">  .then(<span class="function"><span class="params">result</span> =&gt;</span> log(result))</span><br><span class="line">  .then(<span class="function"><span class="params">result</span> =&gt;</span> promise(<span class="number">2000</span>, <span class="string">"D"</span>))</span><br><span class="line">  .then(<span class="function"><span class="params">result</span> =&gt;</span> log(result))</span><br><span class="line">  .catch(<span class="function"><span class="params">error</span> =&gt;</span> log(<span class="string">`error:<span class="subst">$&#123;error&#125;</span>`</span>));</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">log(<span class="string">"===== Start ====="</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// if timer ?</span></span><br><span class="line"></span><br><span class="line">promise(<span class="number">0</span>, <span class="string">"A"</span>)</span><br><span class="line">  .then(</span><br><span class="line">    result =&gt; log(result),</span><br><span class="line">    error =&gt; log(<span class="string">`error:<span class="subst">$&#123;error&#125;</span>`</span>)</span><br><span class="line">  )</span><br><span class="line">  <span class="comment">// .catch(error =&gt; log(`error:$&#123;error&#125;`))</span></span><br><span class="line">  .then(<span class="function"><span class="params">result</span> =&gt;</span> promise(<span class="number">3000</span>, <span class="string">"B"</span>))</span><br><span class="line">  .then(<span class="function"><span class="params">result</span> =&gt;</span> log(result))</span><br><span class="line">  .then(<span class="function"><span class="params">result</span> =&gt;</span> promise(<span class="number">0</span>, <span class="string">"C"</span>))</span><br><span class="line">  .then(<span class="function"><span class="params">result</span> =&gt;</span> log(result))</span><br><span class="line">  .then(<span class="function"><span class="params">result</span> =&gt;</span> promise(<span class="number">2000</span>, <span class="string">"D"</span>))</span><br><span class="line">  .then(<span class="function"><span class="params">result</span> =&gt;</span> log(result))</span><br><span class="line">  .catch(<span class="function"><span class="params">error</span> =&gt;</span> log(<span class="string">`error:<span class="subst">$&#123;error&#125;</span>`</span>))</span><br><span class="line">  .then(<span class="function"><span class="params">result</span> =&gt;</span> log(result)); <span class="comment">// final</span></span><br><span class="line"></span><br><span class="line">log(<span class="string">"===== End ====="</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// if blocking ?</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// example 讀取API資料</span></span><br><span class="line"><span class="comment">// 1.使用者觸發 -&gt; 2.loading(true) -&gt; 3.發出請求 -&gt; 4.結果回應 -&gt; 5.loading(false)</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  log(<span class="string">"timer"</span>);</span><br><span class="line">&#125;, <span class="number">0</span>);</span><br><span class="line">log(<span class="string">"==== A ===="</span>);</span><br><span class="line">promise(<span class="number">0</span>, <span class="string">"A"</span>).then(<span class="function"><span class="params">result</span> =&gt;</span> log(result));</span><br><span class="line"><span class="comment">// log("==== B ====");</span></span><br><span class="line"><span class="comment">// promise(1000, "B").then(result =&gt; log(result));</span></span><br><span class="line"><span class="comment">// log("==== C ====");</span></span><br><span class="line"><span class="comment">// promise(500, "C").then(result =&gt; log(result));</span></span><br><span class="line"><span class="comment">// while (pass() &lt; 2000) &#123;&#125;</span></span><br></pre></td></tr></table></figure>
+<p>finally<br><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Guide/Control_flow_and_error_handling" target="_blank" rel="noopener">https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Guide/Control_flow_and_error_handling</a><br><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Promise/finally" target="_blank" rel="noopener">https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Promise/finally</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">try</span> &#123;</span><br><span class="line">    log(<span class="number">1</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">  &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">    log(<span class="number">2</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">2</span>;</span><br><span class="line">  &#125; <span class="keyword">finally</span> &#123;</span><br><span class="line">    log(<span class="number">3</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">3</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  log(<span class="number">4</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">4</span>;</span><br><span class="line">&#125;</span><br><span class="line">f();</span><br></pre></td></tr></table></figure>
+<p>後進先出範例</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">後進先出;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"A"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">B</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  A();</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"B"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">C</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  B();</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"C"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">C();</span><br></pre></td></tr></table></figure>
+<ol start="5">
+<li>Pmroise.all vs Promise.race<br>all：全部一起做，時間最長的<br>race:只取最快回來的資料</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Promise</span>.all([</span><br><span class="line">  promise(<span class="number">0</span>, <span class="string">"A"</span>)</span><br><span class="line">    .then(<span class="function"><span class="params">result</span> =&gt;</span> result)</span><br><span class="line">    .catch(<span class="function"><span class="params">result</span> =&gt;</span> result),</span><br><span class="line">  promise(<span class="number">3000</span>, <span class="string">"B"</span>)</span><br><span class="line">    .then(<span class="function"><span class="params">result</span> =&gt;</span> result)</span><br><span class="line">    .catch(<span class="function"><span class="params">result</span> =&gt;</span> result),</span><br><span class="line">  promise(<span class="number">2000</span>, <span class="string">"C"</span>)</span><br><span class="line">    .then(<span class="function"><span class="params">result</span> =&gt;</span> result)</span><br><span class="line">    .catch(<span class="function"><span class="params">result</span> =&gt;</span> result)</span><br><span class="line">]).then(<span class="function"><span class="params">result</span> =&gt;</span> log(<span class="string">`all <span class="subst">$&#123;result&#125;</span>`</span>));</span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>Generator<br>function*()<br>會自動產生 return<br>建議為每個 function 做適當的 return 值</li>
+</ol>
+<p>Generaor+Promise 的範例(async await 的前身)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> gen = genFn();</span><br><span class="line">gen</span><br><span class="line">  .next()</span><br><span class="line">  .value.then(<span class="function"><span class="params">result</span> =&gt;</span> gen.next(result))</span><br><span class="line">  .then(<span class="function"><span class="params">result</span> =&gt;</span> result.value)</span><br><span class="line">  .then(<span class="function"><span class="params">result</span> =&gt;</span> gen.next(result))</span><br><span class="line">  .then(<span class="function"><span class="params">result</span> =&gt;</span> result.value)</span><br><span class="line">  .then(<span class="function"><span class="params">result</span> =&gt;</span> gen.next(result))</span><br><span class="line">  .then(<span class="function"><span class="params">result</span> =&gt;</span> log(result));</span><br><span class="line"></span><br><span class="line"><span class="comment">//每個next都是做一個 create promise</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//1~2  &#123;value:Promise A, done:false&#125;</span></span><br><span class="line"><span class="comment">//4    &#123;value:Promise B, done:false&#125;</span></span><br><span class="line"><span class="comment">//6    &#123;value:Promise C, done:false&#125;</span></span><br><span class="line"><span class="comment">//8    &#123;value:&#123;&#125;, done:true&#125;</span></span><br></pre></td></tr></table></figure>
+<p>補充:所有 function 都應該有 return，沒有 return 他就是 undefined<br>如果是事件觸發，那 return 值就會沒人會使用到</p>
+<ol start="7">
+<li>async_await<br>async =&gt; 非同步 , await =&gt; 等<br>async await =&gt; 等非同步</li>
+</ol>
+<p>補充:<br>7.1 await 只能存在 async function 裡面<br>7.2 await 必須等非同步(必須等非同步(promise))</p>
+<p>重要:先讓 promise 做完(同步)，再一起 await，不要一邊 promise，一邊 await，因為會讓同步的 promise 的同步做成非同步的</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">async</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> result = &#123;&#125;;</span><br><span class="line">  resule[<span class="string">"A"</span>] = <span class="keyword">await</span> promise(<span class="number">0</span>, <span class="string">"A"</span>);</span><br><span class="line">  resule[<span class="string">"B"</span>] = <span class="keyword">await</span> promise(<span class="number">3000</span>, <span class="string">"B"</span>);</span><br><span class="line">  resule[<span class="string">"C"</span>] = <span class="keyword">await</span> promise(<span class="number">2000</span>, <span class="string">"C"</span>);</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(result);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">async</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> A = promise(<span class="number">0</span>, <span class="string">"A"</span>); <span class="comment">//promise</span></span><br><span class="line">  <span class="keyword">let</span> B = promise(<span class="number">3000</span>, <span class="string">"B"</span>);</span><br><span class="line">  <span class="keyword">let</span> C = promise(<span class="number">2000</span>, <span class="string">"C"</span>);</span><br><span class="line"></span><br><span class="line">  <span class="comment">//1.</span></span><br><span class="line">  <span class="keyword">await</span> A;</span><br><span class="line">  <span class="keyword">await</span> B;</span><br><span class="line">  <span class="keyword">await</span> C;</span><br><span class="line">  <span class="keyword">let</span> result = &#123; A, B, C &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//or</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">//2.</span></span><br><span class="line">  <span class="keyword">let</span> result = &#123;</span><br><span class="line">    A: <span class="keyword">await</span> A, <span class="comment">//result</span></span><br><span class="line">    B: <span class="keyword">await</span> B,</span><br><span class="line">    C: <span class="keyword">await</span> C</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  log(result);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>async function 裡面有 await</p>
+<p>await 等 async function<br>await 等 promise</p>
+<ol start="8">
+<li>async_array<br>同一個作用域裡，await 才會互等</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">(<span class="keyword">async</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">Array</span>.prototype.asyncEach() = anync <span class="function"><span class="keyword">function</span>(<span class="params">handler</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.length; i++) &#123;</span><br><span class="line">            <span class="keyword">await</span> handler(<span class="keyword">this</span>[i], i, <span class="keyword">this</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    data.asyncEach(<span class="keyword">async</span> item =&gt; &#123;</span><br><span class="line">        log(<span class="keyword">await</span> promise(<span class="built_in">Math</span>.random() * <span class="number">10</span>, item));</span><br><span class="line">        <span class="comment">//同步指令只有第一次，之後都是一個一個等(非同步)</span></span><br><span class="line">    &#125;);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>補充:<br>大部分有用的 this 時候都會用 function，大部分第二層就會用箭頭函式，setTimeout，就會往外找，找到上一層的對象(document)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.addEventListener(<span class="string">"xxx"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  setTimeout(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span>;</span><br><span class="line">  &#125;, <span class="number">0</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<ol start="9">
+<li>API<br>(1) 販賣機<br>NG-1 吃錢<br>NG-2 給錯東西<br>=&gt; 給正確的東西</li>
+</ol>
+<p>(2) 拉麵販賣機<br>打對的網址(按對的按鈕)<br>給正確的查詢<br>回正確的資料(固定有規範的輸入與輸出)</p>
+<ol start="10">
+<li>JSON<br>JavaScript Object Notation<br>最上層建議:物件</li>
+</ol>
+<p>Restful API : Representational State Transfer</p>
+<p>Read：GET 讀取紀錄<br>Create：POST 新增紀錄<br>Update：PUT/PATCH 修改紀錄<br>Delete：DELETE 刪除紀錄</p>
+<h3 id="Http-Status-Code："><a href="#Http-Status-Code：" class="headerlink" title="Http Status Code："></a>Http Status Code：</h3><p>//ok =&gt; then<br>2xx：這是您要的東西<br>3xx：請稍後為您轉接<br>//error =&gt; catch<br>4xx：請查明後再撥<br>5xx：嘟~嘟~嘟~</p>
+<h3 id="TCP-三次握手與四次揮手"><a href="#TCP-三次握手與四次揮手" class="headerlink" title="TCP 三次握手與四次揮手"></a>TCP 三次握手與四次揮手</h3><p>C:Client S:Server<br>傳輸前:<br>三次握手(確認雙方都在)<br>1 C:安安,你好!住哪?給虧嗎? =&gt; 尋找目標 Server<br>2 S:台北,28 =&gt; Server 回應<br>3 C:好巧喔!我也住台北 =&gt; Client 也回應</p>
+<p>雙方連上線開始傳輸</p>
+<p>離開前:<br>四次揮手<br>1 C：我要去洗澡了 =&gt; 我要結束了(C)<br>2 S：等一下 =&gt; 確認是否還有未傳完(S)<br>3 S：我去洗澡 (雙重攻擊) =&gt; 傳完我要結束了(S)<br>4 C：你就去吧 =&gt; 你可以結束了(C)</p>
+<p>此時 Server 斷線，等待兩秒確定斷線，Client 也斷線</p>
+<p>DoS 攻擊:大量請求，使 Server 被打到癱瘓，無法正常服務</p>
+<h3 id="SQL-VS-NOSQL"><a href="#SQL-VS-NOSQL" class="headerlink" title="SQL VS NOSQL"></a>SQL VS NOSQL</h3><p>SQL:關聯，查詢資料需要透過多個資料表查詢，較費時<br>資料分散，資料較小 ( 時間換空間 )<br>NOSQL:需要資料直接拿整包，不需要組合，較快<br>資料較多份，資料較大 ( 空間換時間 )<br>( Not Only SQL )</p>
+<h3 id="cookie-vs-session"><a href="#cookie-vs-session" class="headerlink" title="cookie vs session"></a>cookie vs session</h3><p>Token：令牌/通行證<br>Storage：都存在本機<br>Local Storage：沒有時效性，連線不會傳，不刪他不會被刪除 (長時間暫存)<br>Session Storage：跟著 Tag(分頁)，關閉就刪除(session 連線結束 會被清掉)，存在 SERVER 端會占用 SERVER 端的資源，單次連線的暫存 儲存在 server 端(暫存檔)</p>
+<p>cookie：存在本機，使用者可以刪除，有期限的(可設計過期時間)，SERVER 在每次連線的時候會自動綁定和傳輸(目的:隨使想取用都可以做檢查)，不適手動自己加的東西 儲存在 user 端 (短期)，不建議前端操作 cookie<br>補充:TOKEN 都會放在 cookie 為主<br>Http Only：程式不能刪<br>session：連線階段的操作，存在 server 端，使用者不能刪除</p>
+<h3 id="PUT-vs-PATCH"><a href="#PUT-vs-PATCH" class="headerlink" title="PUT vs PATCH"></a>PUT vs PATCH</h3><p>PUT：傳整包，實務上後端某些欄位會鎖住(例如：ID)，相信你傳<br>PATCH：傳部分修改資料<br><strong><em>理論上如此，但實作還是要看後端作法</em></strong></p>
+<h3 id="範例-9"><a href="#範例-9" class="headerlink" title="範例 9"></a>範例 9</h3><ol>
+<li>讀取資料 (讀取 api 是非同步，所以呼叫時，必須加 await，因為必須等非同步完成才 render，不然 render 時回沒有資料 render，ex:await xxx())，await 是一種等的概念，render(同步)必須等 await loadData()的概念</li>
+<li>渲染畫面</li>
+<li>使用者功能<br>reduce：組合技</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> input = $(<span class="keyword">this</span>)</span><br><span class="line">  .serializeArray()</span><br><span class="line">  .reduce(<span class="function">(<span class="params">prev, now</span>) =&gt;</span> &#123;</span><br><span class="line">    prev[now.name] = now.value;</span><br><span class="line">    <span class="comment">//prev[userId]="1";</span></span><br><span class="line">    <span class="comment">//prev[body] = "aa";</span></span><br><span class="line">    <span class="keyword">return</span> prev;</span><br><span class="line">  &#125;, &#123;&#125;);</span><br><span class="line"><span class="comment">// 1=&gt; prev = &#123;&#125;,now = &#123;name: "userId", value: "1"&#125;</span></span><br><span class="line"><span class="comment">// 2=&gt; prev = &#123;userId:"1"&#125;, now = &#123;name: "body, value: "aa"&#125;</span></span><br><span class="line">input.userId *= <span class="number">1</span>;</span><br><span class="line"><span class="built_in">console</span>.log(input);</span><br></pre></td></tr></table></figure>
+<p>location.reload()：刷新畫面</p>
+<p>讀取資料 =&gt; 渲染畫面 =&gt; 使用者功能<br>可以考慮重構成下面：<br>讀取表單資料(users) =&gt; 渲染表單 =&gt; 表單功能<br>讀取列表資料(posts) =&gt; 渲染列表 =&gt; 列表功能</p>
+<p>補充:<br>form 的好工具</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> input = $(<span class="keyword">this</span>).serializeArray();</span><br></pre></td></tr></table></figure>
+<h3 id="JSONP"><a href="#JSONP" class="headerlink" title="JSONP"></a>JSONP</h3><p>JSON with Padding<br>解決跨域問題</p>
+<h3 id="物件導向"><a href="#物件導向" class="headerlink" title="物件導向"></a>物件導向</h3><p>封裝:分類，然後包起來(資料 attribute+功能 Methods)<br>繼承:爸爸有房子,我就有房子</p>
+<h3 id="SOLLID"><a href="#SOLLID" class="headerlink" title="SOLLID"></a>SOLLID</h3><p>S:做好分類 (單一職責(Single Responsibility Principle<br>O:開放擴充 封閉修改 (開放封閉(Open-Closed Principle<br>L:小孩可以代替爸爸 爸爸不能代替小孩 (里氏替換(Liskov Substitution Principle<br>L:只給部分功能 (最小知識(Least Knowledge Principle<br>I:不受其他介面影響 (介面隔離(Interface Segregation Principle<br>D:避免小孩影響到爸爸 (依賴反轉(Dependency Inversion Principle</p>
+<h3 id="物件建議"><a href="#物件建議" class="headerlink" title="物件建議"></a>物件建議</h3><ol>
+<li>判斷 this 再使用(有 new 就是你創物件本身，不然就是指向 window(全域))</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Creature = <span class="function"><span class="keyword">function</span>(<span class="params">name, sex</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">this</span> <span class="keyword">instanceof</span> Creature)&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name ||  <span class="string">"NoName"</span>;</span><br><span class="line">        <span class="keyword">this</span>.sex= sex || <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">this</span>.life = <span class="number">100</span>;</span><br><span class="line">        <span class="comment">// this.intro = function()&#123;</span></span><br><span class="line">        <span class="comment">//     console.log(</span></span><br><span class="line">        <span class="comment">//     `My name is $&#123;this. name&#125;, I'am a $&#123;this.sex ? "man" : "woman"`</span></span><br><span class="line">        <span class="comment">//     );</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="keyword">new</span> Creature(name, sex);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">Creature.prototype.intro = <span class="function"><span class="keyword">function</span></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">let</span> <span class="title">C1</span> = <span class="title">new</span> <span class="title">Creature</span>(<span class="params"><span class="string">"Alex"</span>, <span class="number">1</span></span>);</span></span><br><span class="line"><span class="function"><span class="title">let</span> <span class="title">C2</span> = <span class="title">Creature</span>(<span class="params"><span class="string">"Sara"</span>, <span class="number">0</span></span>);</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">console</span>.<span class="title">log</span>(<span class="params">C1</span>);</span></span><br><span class="line"><span class="function"><span class="title">console</span>.<span class="title">log</span>(<span class="params">C2</span>);</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function">//執行結果: <span class="title">Creature</span> </span>&#123;name: <span class="string">"Alex"</span>, <span class="attr">sex</span>: <span class="number">1</span>, <span class="attr">life</span>: <span class="number">100</span>&#125;</span><br><span class="line"><span class="comment">//自製的Creature物件</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(C1.intro === C2.into);</span><br><span class="line"><span class="comment">//執行結果:false</span></span><br><span class="line">每產生一個Creature就會多產生一個<span class="function"><span class="keyword">function</span>，所以用<span class="title">Creature</span>的<span class="title">prototype</span>，已讓產生的<span class="title">Creatue</span>物件能共用</span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"></span></span><br><span class="line"><span class="function"><span class="title">console</span>.<span class="title">log</span>(<span class="params">C1, C1._proto_,C1._proto_._proto_</span>);</span></span><br><span class="line"><span class="function">//</span>&#123;name: <span class="string">"Alex"</span>m sex:<span class="number">1</span>, <span class="attr">life</span>: <span class="number">200</span>&#125;  Creatur&#123;<span class="attr">intro</span>:[<span class="built_in">Function</span>]&#125;   &#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//原型練的定義:假設這層沒有，就會找尋上一層，直到找到盡頭找不到，就會回undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//原型鍊的每一層皆是object</span></span><br></pre></td></tr></table></figure>
+<p><img src="https://i.imgur.com/z6iY4FS.png" alt></p>
+<ol start="2">
+<li>function 如果是做一樣事情，建議拉到 proto 做，不然在 new 的時候會多產生</li>
+<li>公有與私有</li>
+</ol>
+<p>4.defineProperty 非常重要!! 與陣列 reduce 一樣重要<br>defineProperty 的功能是把一個屬性轉變成 function(並分別有讀和取的功能)<br>改成 function 的好處，他可以回傳 callback，ex: 假設有人改你的資料，就會回傳，但變數卻無法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> _age = <span class="number">30</span>;</span><br><span class="line"><span class="keyword">let</span> a = &#123;</span><br><span class="line">    name: <span class="string">"alex"</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.defineProperty(a, <span class="string">"age"</span>, &#123;</span><br><span class="line">    <span class="keyword">get</span>()&#123;</span><br><span class="line">    <span class="keyword">return</span> _age;</span><br><span class="line">&#125;);</span><br><span class="line">a.age++</span><br><span class="line"><span class="built_in">console</span>.log(a.age);</span><br><span class="line"><span class="comment">//還是是30，因為他只開get，所以不能寫入</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//defineProperties的寫法</span></span><br><span class="line"><span class="built_in">Object</span>.defineProperties(<span class="keyword">this</span>, &#123;</span><br><span class="line">  name: &#123;</span><br><span class="line">    <span class="keyword">get</span>() &#123;</span><br><span class="line">      <span class="keyword">return</span> _name;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  sex: &#123;</span><br><span class="line">    <span class="keyword">get</span>() &#123;</span><br><span class="line">      <span class="keyword">return</span> _sex;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>prototype 與<strong>proto</strong>的分別<br>就是物件生成前後(ex: new Creature)，之前<br>Creature.prototype.intro = function(){</p>
+<p>}<br>new 出來之後只能讀到<strong>proto</strong>，讀 prototype 會有一些問題</p>
+<p>X 全域變數<br>X 浮點數計算<br>X with 與 eval<br>X 強制轉型的雙等號<br>X 無所不在的宣告<br>X 無區塊的敘述式<br>X 函式敘述與運算<br>X 類型的包裝與 New<br>X 隨意換行與分號<br>X 加號運算子<br>X continue<br>X switch 穿越<br>X 分散的回傳值<br>X 太早做過度縮寫</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="string">"A"</span>;</span><br><span class="line"><span class="keyword">let</span> b = <span class="string">"B"</span>;</span><br><span class="line"><span class="keyword">let</span> c = <span class="string">"C"</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> obj = &#123;</span><br><span class="line">  a: <span class="number">1</span>,</span><br><span class="line">  b: <span class="number">2</span></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> (obj) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(a); <span class="comment">// 1</span></span><br><span class="line">  <span class="built_in">console</span>.log(b); <span class="comment">// 2</span></span><br><span class="line">  <span class="built_in">console</span>.log(c); <span class="comment">// C (obj.c =&gt; C =&gt; not defiend</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> script = <span class="string">"console.log(123)"</span>;</span><br><span class="line"><span class="built_in">eval</span>(script);</span><br></pre></td></tr></table></figure>
+<h3 id="閉包"><a href="#閉包" class="headerlink" title="閉包"></a>閉包</h3><h3 id="咖哩化"><a href="#咖哩化" class="headerlink" title="咖哩化"></a>咖哩化</h3><h2 id="模式"><a href="#模式" class="headerlink" title="模式"></a>模式</h2><h3 id="工廠模式-Factory"><a href="#工廠模式-Factory" class="headerlink" title="工廠模式 (Factory)"></a>工廠模式 (Factory)</h3><p>主力:產東西<br>EX: Object</p>
+<h3 id="策略模式-Strategy"><a href="#策略模式-Strategy" class="headerlink" title="策略模式 (Strategy)"></a>策略模式 (Strategy)</h3><p>主力:對應東西<br>策略表(Map 表)</p>
+<h3 id="外觀模式-Facade"><a href="#外觀模式-Facade" class="headerlink" title="外觀模式 (Facade)"></a>外觀模式 (Facade)</h3><p>一個 function 包很多功能<br>EX:點青椒炒牛肉 =&gt; 處理青椒/處理牛肉/炒都交給廚師處理<br>點餐的人不需要知道這些</p>
+<h3 id="觀察者模式"><a href="#觀察者模式" class="headerlink" title="觀察者模式"></a>觀察者模式</h3><p>觀察者模式 : 透過第三者溝通 EX:事件</p>
+<h3 id="MV"><a href="#MV" class="headerlink" title="MV*"></a>MV*</h3><p>Model 資料邏輯<br>View 畫面層</p>
+<p>C:畫面對 Model 監聽<br>P:畫面透過 Present 偵聽?</p>
+<h2 id="第三天"><a href="#第三天" class="headerlink" title="第三天"></a>第三天</h2><h3 id="prototype"><a href="#prototype" class="headerlink" title="prototype"></a>prototype</h3><ol>
+<li>People.prototype = Creature.prototype<br>直接賦值 prototype<br>問題: 原本方法被取代</li>
+<li>People.prototype = new Creature()<br>問題: 有自己及父親的屬性，本身屬性移除就變成父親的屬性<br>方法也會不見(多額外屬性)</li>
+<li>繼承方法</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.extend = <span class="function"><span class="keyword">function</span>(<span class="params">parent</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.prototype.__proto__ = parent.prototype;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p><strong>protp</strong> : 實體化使用<br>prototype : 未實體化</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Alex = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line">Alex.prototype.eat = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> eatShit = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> a1 = <span class="keyword">new</span> Alex();</span><br><span class="line"><span class="comment">// a1.__proto__ = Object.assign(&#123;&#125;,a1.__proto__, &#123;eat:eatShit&#125;)</span></span><br><span class="line">a1.__proto__ = &#123; <span class="attr">eat</span>: eatShit &#125;;</span><br><span class="line"><span class="keyword">let</span> a2 = <span class="keyword">new</span> Alex();</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a1.eat === a2.eat); <span class="comment">// true</span></span><br><span class="line"><span class="built_in">console</span>.log(a1.eat === eatShit); <span class="comment">// false =&gt; true</span></span><br><span class="line"><span class="built_in">console</span>.log(a2.eat === eatShit); <span class="comment">// false</span></span><br></pre></td></tr></table></figure>
+<h3 id="作業-alex-lvUp-‘People’"><a href="#作業-alex-lvUp-‘People’" class="headerlink" title="作業 : alex.lvUp(‘People’)"></a>作業 : alex.lvUp(‘People’)</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> People = <span class="function"><span class="keyword">function</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// Creature.apply(this, arguments)</span></span><br><span class="line">  People.prototype.__proto__.constructor.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">People.extend(Creature);</span><br></pre></td></tr></table></figure>
+<p>與下面差異相同</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">A</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"HI"</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> msg = <span class="string">"HI"</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">B</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(msg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="class"><a href="#class" class="headerlink" title="class"></a>class</h3><ol>
+<li>class 關鍵字</li>
+<li>construtor 初始化</li>
+<li>static function</li>
+</ol>
+<p>//TODO 待補</p>
+<h3 id="複製-obj"><a href="#複製-obj" class="headerlink" title="複製 obj"></a>複製 obj</h3><ol>
+<li>obj1 = {…obj}</li>
+<li>obj2 = Object.assign({},obj)</li>
+<li>obj3 = JSON.parse(JSON.stringigy(obj))</li>
+<li>obj4 = {}</li>
+<li>Object.create()</li>
+</ol>
+<h3 id="複製-function"><a href="#複製-function" class="headerlink" title="複製 function"></a>複製 function</h3><p>閉包</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">copyFunction</span>(<span class="params">fun</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    fun();</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="MVC-VS-MVP"><a href="#MVC-VS-MVP" class="headerlink" title="MVC VS MVP"></a>MVC VS MVP</h3><ol>
+<li>MVC<br>V -event-&gt; C -&gt; M -&gt; V</li>
+<li>MVP<br>V <-> P <-> M</-></-></li>
+<li>MVVM<br>V <-> VM <-> M</-></-></li>
+</ol>
+<h3 id="MVC"><a href="#MVC" class="headerlink" title="MVC"></a>MVC</h3><ol>
+<li>主程式(拉近三個架構 App</li>
+<li>另外三隻檔案( View/Mode/Controller</li>
+<li>Observer</li>
+</ol>
+<p>Alex 開發順序(參考)</p>
+<ol>
+<li>先做基礎架構(App 主程式)<br>1-1 import MVC<br>1-2 開三支檔案<br>1-3 做關係(new 出來</li>
+</ol>
+<p><strong><em>View 需要認識 Model</em></strong><br><strong><em>Controller 要認識 Model 跟 View</em></strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> M = <span class="keyword">new</span> Model();</span><br><span class="line"><span class="keyword">const</span> V = <span class="keyword">new</span> View(M);</span><br><span class="line"><span class="keyword">const</span> C = <span class="keyword">new</span> Controller(M, V);</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><p>Model (資料邏輯)<br>增加/讀取/選擇/刪除(事件)<br>做完後打事件出去<br><strong><em>盡量不要動畫面</em></strong></p>
+</li>
+<li><p>View (畫面邏輯:畫面偵聽/資料變動)<br>3-1 記資料<br>3-2 匯入 jQuery (import \$ from ‘jquery’</p>
+</li>
+</ol>
+<p><strong><em>盡量不要動資料</em></strong></p>
+<p><strong><em>補充 call/apply/bind</em></strong><br>與 function 的 this 操作有關</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> A = &#123;</span><br><span class="line">    name: <span class="string">'A'</span></span><br><span class="line">    fun: <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="keyword">this</span>.name,a,b)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> B = &#123;</span><br><span class="line">    name: <span class="string">'B'</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">A.fun(<span class="number">1</span>,<span class="number">2</span>) <span class="comment">// A,1,2</span></span><br><span class="line"><span class="comment">// B.fun(3,4) // B.fun is not a function</span></span><br><span class="line"><span class="comment">// B.fun(x,y) // x is not defined</span></span><br><span class="line"></span><br><span class="line">A.fun.call(B,<span class="number">3</span>,<span class="number">4</span>) <span class="comment">// B,3,4</span></span><br><span class="line">A.fun.apply(B,[<span class="number">3</span>,<span class="number">4</span>]) <span class="comment">// B,3,4</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// bind會產生新function</span></span><br><span class="line"><span class="keyword">let</span> fun = A.fun.bind(B,<span class="number">3</span>)</span><br><span class="line"><span class="comment">// 類似咖哩化 (傳滿就比較沒有意義)</span></span><br><span class="line">fun(<span class="number">5</span>) <span class="comment">// B,3,5</span></span><br><span class="line">fun(<span class="number">6</span>) <span class="comment">// B,3,6</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// [].map.call</span></span><br><span class="line"><span class="comment">// Math.xxx.call</span></span><br></pre></td></tr></table></figure>
+<p><strong><em>show 改變畫面</em></strong><br><strong><em>MVC 架構中，View 不能自己改畫面，要通知讓後面去改</em></strong><br><strong><em>這邊採用畫面全部重劃較耗效能，可以嘗試修改不要整個畫面重畫</em></strong></p>
+<ol start="4">
+<li>Controller (牽手=&gt;控制 Model)</li>
+</ol>
+<p>TODO:可以練習 switchHandler</p>
+<h2 id="Singleton"><a href="#Singleton" class="headerlink" title="Singleton"></a>Singleton</h2><p>單例模式 : 閉包<br>判斷如果產生過，就用之前產生的，沒產生過再產生新的<br>概念類似</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = &#123; <span class="attr">count</span>: <span class="number">0</span> &#125;;</span><br><span class="line"><span class="keyword">let</span> b = a;</span><br><span class="line"><span class="keyword">let</span> c = a;</span><br></pre></td></tr></table></figure>
+<p>練習:</p>
+<ol>
+<li>繼承練習</li>
+<li>MVC 架構修正 View 的 switch 事件</li>
+</ol>
+<h2 id="第三天下午"><a href="#第三天下午" class="headerlink" title="第三天下午"></a>第三天下午</h2><p>問題討論</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> out = <span class="number">25</span>,</span><br><span class="line">  inner = &#123;</span><br><span class="line">    out: <span class="number">20</span>,</span><br><span class="line">    func: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> out = <span class="number">30</span>; <span class="comment">// 沒有用到</span></span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">this</span>.out;</span><br><span class="line">    &#125;,</span><br><span class="line">    func1: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> out = <span class="number">30</span>;</span><br><span class="line">      <span class="keyword">return</span> out;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line"><span class="built_in">console</span>.log((inner.func, inner.func1)()); <span class="comment">// 30</span></span><br><span class="line"><span class="built_in">console</span>.log(inner.func()); <span class="comment">// 20</span></span><br><span class="line"><span class="built_in">console</span>.log(inner.func()); <span class="comment">//20</span></span><br><span class="line"><span class="built_in">console</span>.log((inner.func1 = inner.func)()); <span class="comment">// undefined =&gt; 25</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = (<span class="number">1</span>, <span class="number">2</span>);</span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// 2</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> q1 = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">let</span> q2 = <span class="number">2</span>;</span><br><span class="line"><span class="keyword">let</span> b = (q1 = q2);</span><br><span class="line"><span class="built_in">console</span>.log(b); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+<p>DL DT DD<br>DL=&gt;Definition List<br>DT=&gt;Definition Term<br>DD=&gt;Definition Description</p>
+<h2 id="Observer-觀察者模式"><a href="#Observer-觀察者模式" class="headerlink" title="Observer 觀察者模式"></a>Observer 觀察者模式</h2><p>電視/收音機無時無刻都在播放，但你有沒有去看/聽 (觀察)<br>決定會部會有回應<br>結構:1 個持續播放,1 個監聽者<br>功能:解耦</p>
+<h3 id="耦合"><a href="#耦合" class="headerlink" title="耦合"></a>耦合</h3><p>我在你也在，我死你也死</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> Observer = <span class="function"><span class="keyword">function</span>(<span class="params">host</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.b1b2 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.btn1.log();</span><br><span class="line">    <span class="keyword">this</span>.btn2.log();</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> btn1 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.log = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"b1 log"</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> btn2 = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.log = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"b1 log"</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> ob = <span class="keyword">new</span> Observer(<span class="keyword">this</span>);</span><br></pre></td></tr></table></figure>
+<p>改成下面，不容易在 ob 內部發生 b1/b2 錯誤<br>//TODO 待補</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">``</span><span class="string">`</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">`</span><span class="string">``</span>javascript=</span><br><span class="line"><span class="keyword">let</span> timestamp = <span class="function"><span class="keyword">function</span>(<span class="params">&#123; year, month, date, hour, min, sec &#125;</span>) </span>&#123;</span><br><span class="line">  year = addZero(year, <span class="number">4</span>);</span><br><span class="line">  month = addZero(month, <span class="number">2</span>);</span><br><span class="line">  day = addZero(date, <span class="number">2</span>);</span><br><span class="line">  hour = addZero(hour, <span class="number">2</span>);</span><br><span class="line">  min = addZero(min, <span class="number">2</span>);</span><br><span class="line">  sec = addZero(sec, <span class="number">2</span>);</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;year&#125;</span>-<span class="subst">$&#123;month&#125;</span>-<span class="subst">$&#123;day&#125;</span> <span class="subst">$&#123;hour&#125;</span>:<span class="subst">$&#123;min&#125;</span>:<span class="subst">$&#123;sec&#125;</span>`</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">loading = <span class="literal">true</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">this</span>.XXX = XXX();</span><br><span class="line"><span class="keyword">this</span>.ooo = OOO();</span><br><span class="line"><span class="keyword">await</span> <span class="keyword">this</span>.XXX;</span><br><span class="line"><span class="keyword">await</span> <span class="keyword">this</span>.ooo;</span><br><span class="line"></span><br><span class="line">loding = <span class="literal">false</span>;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JS/" rel="tag"># JS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/07/21/JS-Starting from scratch D2/" rel="next" title="Javascript - 從零開始 Day2">
+                <i class="fa fa-chevron-left"></i> Javascript - 從零開始 Day2
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/07/20/Vue3-01/" rel="prev" title="掌握Vue.js必要觀念-Vue3起步走">
+                掌握Vue.js必要觀念-Vue3起步走 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Bryan Hsiao</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-name">文章</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-name">分類</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">標籤</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Pmroise-async-await-…"><span class="nav-number">1.</span> <span class="nav-text">Pmroise , async_await …</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Http-Status-Code："><span class="nav-number">1.1.</span> <span class="nav-text">Http Status Code：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP-三次握手與四次揮手"><span class="nav-number">1.2.</span> <span class="nav-text">TCP 三次握手與四次揮手</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL-VS-NOSQL"><span class="nav-number">1.3.</span> <span class="nav-text">SQL VS NOSQL</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#cookie-vs-session"><span class="nav-number">1.4.</span> <span class="nav-text">cookie vs session</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PUT-vs-PATCH"><span class="nav-number">1.5.</span> <span class="nav-text">PUT vs PATCH</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#範例-9"><span class="nav-number">1.6.</span> <span class="nav-text">範例 9</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JSONP"><span class="nav-number">1.7.</span> <span class="nav-text">JSONP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#物件導向"><span class="nav-number">1.8.</span> <span class="nav-text">物件導向</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SOLLID"><span class="nav-number">1.9.</span> <span class="nav-text">SOLLID</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#物件建議"><span class="nav-number">1.10.</span> <span class="nav-text">物件建議</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#閉包"><span class="nav-number">1.11.</span> <span class="nav-text">閉包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#咖哩化"><span class="nav-number">1.12.</span> <span class="nav-text">咖哩化</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模式"><span class="nav-number">2.</span> <span class="nav-text">模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#工廠模式-Factory"><span class="nav-number">2.1.</span> <span class="nav-text">工廠模式 (Factory)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#策略模式-Strategy"><span class="nav-number">2.2.</span> <span class="nav-text">策略模式 (Strategy)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#外觀模式-Facade"><span class="nav-number">2.3.</span> <span class="nav-text">外觀模式 (Facade)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#觀察者模式"><span class="nav-number">2.4.</span> <span class="nav-text">觀察者模式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MV"><span class="nav-number">2.5.</span> <span class="nav-text">MV*</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三天"><span class="nav-number">3.</span> <span class="nav-text">第三天</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#prototype"><span class="nav-number">3.1.</span> <span class="nav-text">prototype</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#作業-alex-lvUp-‘People’"><span class="nav-number">3.2.</span> <span class="nav-text">作業 : alex.lvUp(‘People’)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#class"><span class="nav-number">3.3.</span> <span class="nav-text">class</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#複製-obj"><span class="nav-number">3.4.</span> <span class="nav-text">複製 obj</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#複製-function"><span class="nav-number">3.5.</span> <span class="nav-text">複製 function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MVC-VS-MVP"><span class="nav-number">3.6.</span> <span class="nav-text">MVC VS MVP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#MVC"><span class="nav-number">3.7.</span> <span class="nav-text">MVC</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Singleton"><span class="nav-number">4.</span> <span class="nav-text">Singleton</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三天下午"><span class="nav-number">5.</span> <span class="nav-text">第三天下午</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Observer-觀察者模式"><span class="nav-number">6.</span> <span class="nav-text">Observer 觀察者模式</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#耦合"><span class="nav-number">6.1.</span> <span class="nav-text">耦合</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Bryan Hsiao</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 強力驅動</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主題 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+  <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+</body>
+</html>

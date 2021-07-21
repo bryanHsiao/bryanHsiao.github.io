@@ -3,7 +3,7 @@
   <entry>
     <title><![CDATA[github SSH keys 建立步驟記錄]]></title>
     <url>%2F2021%2F07%2F22%2FsshKey-Create%2F</url>
-    <content type="text"><![CDATA[前言移植Ｈ exo 環境時遇到部署失敗，谷歌了一下也有人遇到太久沒部署出錯，可嘗試設置 SSH Key 做部署，怕以後還會遇到，故將過程記錄下來。參考連結 新建立 SSH key1$ ssh-keygen -t rsa -C "github帳號" 輸入密碼後便會自動產生，應該會看到類似畫面： 在 github 上設定 SSH key使用以下指令可看到 SSH key 內容，複製下來做設定 1$ cat ~/.ssh/id_rsa.pub 測試設定是否成功1$ ssh -T git@github.com 若看到以下訊息代表成功！！ 設定使用者資訊12$ git config --global user.name "輸入使用者名稱"$ git config --global user.email "輸入email" 部署至 github1$ hexo d -g]]></content>
+    <content type="text"><![CDATA[前言移植Ｈ exo 環境時遇到部署失敗，谷歌了一下也有人遇到太久沒部署出錯，可嘗試設置 SSH Key 做部署，怕以後還會遇到，故將過程記錄下來。參考連結 新建立 SSH key1$ ssh-keygen -t rsa -C "github帳號" 輸入密碼後便會自動產生，應該會看到類似畫面： 在 github 上設定 SSH key使用以下指令可看到 SSH key 內容，複製下來做設定 1$ cat ~/.ssh/id_rsa.pub 測試設定是否成功1$ ssh -T git@github.com 若看到以下訊息代表成功！！ 設定使用者資訊12$ git config --global user.name "輸入使用者名稱"$ git config --global user.email "輸入email" 部署至 github1$ hexo d -g 部署成功！！]]></content>
       <categories>
         <category>Hexo</category>
       </categories>

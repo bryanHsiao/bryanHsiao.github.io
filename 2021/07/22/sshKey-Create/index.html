@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="Hexo,">
 
 
 
@@ -81,13 +81,23 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Bryan&#39;s Notes">
-<meta property="og:url" content="http://yoursite.com/tags/JS/index.html">
+<meta name="keywords" content="Hexo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="github SSH keys 建立步驟記錄">
+<meta property="og:url" content="http://yoursite.com/2021/07/22/sshKey-Create/index.html">
 <meta property="og:site_name" content="Bryan&#39;s Notes">
 <meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="http://yoursite.com/2021/07/22/sshKey-Create/sshkeys.jpeg">
+<meta property="og:image" content="http://yoursite.com/2021/07/22/sshKey-Create/Snipaste_2021-07-22_01-37-15.png">
+<meta property="og:image" content="http://yoursite.com/2021/07/22/sshKey-Create/GitHub.png">
+<meta property="og:image" content="http://yoursite.com/2021/07/22/sshKey-Create/Your_Profile.png">
+<meta property="og:image" content="http://yoursite.com/2021/07/22/sshKey-Create/SSH_and_GPG_keys.png">
+<meta property="og:image" content="http://yoursite.com/2021/07/22/sshKey-Create/Add_new_SSH_keys.png">
+<meta property="og:image" content="http://yoursite.com/2021/07/22/sshKey-Create/bryanhsiao_BryanHsiao-mac13____bryanhsiao_和_index_html_—_Vue3.png">
+<meta property="og:updated_time" content="2021-07-21T18:41:43.821Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bryan&#39;s Notes">
+<meta name="twitter:title" content="github SSH keys 建立步驟記錄">
+<meta name="twitter:image" content="http://yoursite.com/2021/07/22/sshKey-Create/sshkeys.jpeg">
 
 
 
@@ -117,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/JS/">
+  <link rel="canonical" href="http://yoursite.com/2021/07/22/sshKey-Create/">
 
 
 
 
 
-  <title>標籤: JS | Bryan's Notes</title>
+  <title>github SSH keys 建立步驟記錄 | Bryan's Notes</title>
   
 
 
@@ -142,7 +152,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -248,208 +258,184 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block tag">
-
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>JS<small>標籤</small>
-        </h1>
-      </div>
-
-      
-        
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/07/22/sshKey-Create/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bryan Hsiao">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bryan's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2019/08/03/JS-JS_Next/" itemprop="url">
-              
-                <span itemprop="name">Javascript - 更進一步</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">github SSH keys 建立步驟記錄</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-08-03T10:00:00+08:00" content="2019-08-03">
-          08-03
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2021-07-22T01:05:14+08:00">
+                2021-07-22
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Hexo/" itemprop="url" rel="index">
+                    <span itemprop="name">Hexo</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/07/21/JS-Starting from scratch D2/" itemprop="url">
-              
-                <span itemprop="name">Javascript - 從零開始 Day2</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-21T10:00:00+08:00" content="2019-07-21">
-          07-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/07/20/JS-Starting from scratch D1/" itemprop="url">
-              
-                <span itemprop="name">Javascript - 從零開始 Day1</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-07-20T10:00:00+08:00" content="2019-07-20">
-          07-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/05/09/JS30-07-Array Cardio Day 2/" itemprop="url">
-              
-                <span itemprop="name">JS30-07-Array Cardio Day 2</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-05-09T10:00:00+08:00" content="2019-05-09">
-          05-09
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/30/JS30-05-Flex-Panel-Gallery/" itemprop="url">
-              
-                <span itemprop="name">JS30-05-Flex Panel Gallery</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-30T03:08:36+08:00" content="2019-04-30">
-          04-30
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/29/JS30-04-Array-Cardio-Day-1/" itemprop="url">
-              
-                <span itemprop="name">JS30-04-Array Cardio Day 1</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-29T20:33:50+08:00" content="2019-04-29">
-          04-29
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2019/04/25/JS30-01-JavaScript-Drum-Kit/" itemprop="url">
-              
-                <span itemprop="name">JS30-01-JavaScript-Drum-Kit</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2019-04-25T21:33:55+08:00" content="2019-04-25">
-          04-25
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <blockquote class="blockquote-center"><p><img src="/2021/07/22/sshKey-Create/sshkeys.jpeg"></p>
+<font style="font-size:20px;"></font></blockquote>
+<a id="more"></a>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>移植Ｈ exo 環境時遇到部署失敗，谷歌了一下也有人遇到太久沒部署出錯，可嘗試設置 SSH Key 做部署，<br>怕以後還會遇到，故將過程記錄下來。<br><a href="https://www.cnblogs.com/xsilence/%5B/6001938.html/" target="_blank" rel="noopener">參考連結</a></p>
+<h2 id="新建立-SSH-key"><a href="#新建立-SSH-key" class="headerlink" title="新建立 SSH key"></a>新建立 SSH key</h2><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"github帳號"</span></span><br></pre></td></tr></table></figure>
+<p>輸入密碼後便會自動產生，應該會看到類似畫面：<br><img src="/2021/07/22/sshKey-Create/Snipaste_2021-07-22_01-37-15.png"></p>
+<h2 id="在-github-上設定-SSH-key"><a href="#在-github-上設定-SSH-key" class="headerlink" title="在 github 上設定 SSH key"></a>在 github 上設定 SSH key</h2><p>使用以下指令可看到 SSH key 內容，複製下來做設定</p>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+<img src="/2021/07/22/sshKey-Create/GitHub.png">
+<img src="/2021/07/22/sshKey-Create/Your_Profile.png">
+<img src="/2021/07/22/sshKey-Create/SSH_and_GPG_keys.png">
+<img src="/2021/07/22/sshKey-Create/Add_new_SSH_keys.png">
+<h2 id="測試設定是否成功"><a href="#測試設定是否成功" class="headerlink" title="測試設定是否成功"></a>測試設定是否成功</h2><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>若看到以下訊息代表成功！！<br><img src="/2021/07/22/sshKey-Create/bryanhsiao_BryanHsiao-mac13____bryanhsiao_和_index_html_—_Vue3.png"></p>
+<h2 id="設定使用者資訊"><a href="#設定使用者資訊" class="headerlink" title="設定使用者資訊"></a>設定使用者資訊</h2><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"輸入使用者名稱"</span></span><br><span class="line">$ git config --global user.email <span class="string">"輸入email"</span></span><br></pre></td></tr></table></figure>
+<h2 id="部署至-github"><a href="#部署至-github" class="headerlink" title="部署至 github"></a>部署至 github</h2><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d -g</span><br></pre></td></tr></table></figure>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/07/21/HexoBackupSolution/" rel="next" title="Hexo-移植步驟紀錄 及 部署指令">
+                <i class="fa fa-chevron-left"></i> Hexo-移植步驟紀錄 及 部署指令
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -457,6 +443,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -477,8 +467,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -545,6 +544,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#新建立-SSH-key"><span class="nav-number">1.1.</span> <span class="nav-text">新建立 SSH key</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在-github-上設定-SSH-key"><span class="nav-number">1.2.</span> <span class="nav-text">在 github 上設定 SSH key</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#測試設定是否成功"><span class="nav-number">1.3.</span> <span class="nav-text">測試設定是否成功</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#設定使用者資訊"><span class="nav-number">1.4.</span> <span class="nav-text">設定使用者資訊</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署至-github"><span class="nav-number">1.5.</span> <span class="nav-text">部署至 github</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -678,6 +693,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

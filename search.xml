@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title><![CDATA[Hexo-移植步驟紀錄 及 環境部署]]></title>
+    <title><![CDATA[Hexo-移植步驟紀錄 及 部署指令]]></title>
     <url>%2F2021%2F07%2F21%2FHexoBackupSolution%2F</url>
-    <content type="text"><![CDATA[換電腦必備 環境檢查 是否有安裝 git 1$ git --version 是否有安裝 node.js 1$ node -v 是否有安裝 hexo 1$ hexo -v 在新環境初始化 hexo12$ hexo init 資料夾名稱 ＃建立一個資料夾（最好跟你原本hexo的資料夾同名）$ cd 資料夾名稱 ＃進入該資料夾下 將備份檔案複製到新環境除了 node_mudules 外，其他檔案都複製過去因為 node_mudules 是存放 library，在執行 npm init 時會裝回來； 複製完畢後，執行以下指令 1234$ npm init$ npm install hexo-deploy-git --save$ npm install hexo-generator-feed --save$ npm install hexo-generator-sitemap --save 本地端運行1$ hexo s --debug #應可透過本機 http://localhost:4001 看到你的hexo環境 編譯出靜態網頁1$ hexo g 部署到 github1$ hexo d #注意有時須等待github完成部署，可能須等待1~5分鐘不等 指令集整理1234567$ hexo new "postName" #新建文章$ hexo clean #清除快取$ hexo generate #生成靜態頁面至public目錄$ hexo server #開啟預覽訪問端口（默認端口4000，'ctrl + c'關閉server）$ hexo deploy #將.deploy目錄部署到GitHub$ hexo help #查看幫助$ hexo version #查看Hexo的版本 指令簡寫 1234hexo n == hexo newhexo g == hexo generatehexo s == hexo serverhexo d == hexo deploy]]></content>
+    <content type="text"><![CDATA[換電腦必備 環境檢查 是否有安裝 git 1$ git --version 是否有安裝 node.js 1$ node -v 是否有安裝 hexo 1$ hexo -v 在新環境初始化 hexo12$ hexo init 資料夾名稱 ＃建立一個資料夾（最好跟你原本hexo的資料夾同名）$ cd 資料夾名稱 ＃進入該資料夾下 將備份檔案複製到新環境除了 node_mudules 外，其他檔案都複製過去因為 node_mudules 是存放 library，在執行 npm init 時會裝回來； 複製完畢後，執行以下指令 1234$ npm init$ npm install hexo-deploy-git --save$ npm install hexo-generator-feed --save$ npm install hexo-generator-sitemap --save 本地端運行1$ hexo s --debug #應可透過本機 http://localhost:4001 看到你的hexo環境 編譯出靜態網頁1$ hexo g 部署到 github1$ hexo d #注意有時須等待github完成部署，可能須等待1~5分鐘不等 若部署遇到問題 升級 git 版本 1$ brew upgrade git #可能會遇到問題，看Ｔerminal訊息排除 改用 ssh key 部署參考此網頁資訊建立 ssh key =&gt; 建立步驟 指令集整理1234567$ hexo new "postName" #新建文章$ hexo clean #清除快取$ hexo generate #生成靜態頁面至public目錄$ hexo server #開啟預覽訪問端口（默認端口4000，'ctrl + c'關閉server）$ hexo deploy #將.deploy目錄部署到GitHub$ hexo help #查看幫助$ hexo version #查看Hexo的版本 指令簡寫 1234hexo n == hexo newhexo g == hexo generatehexo s == hexo serverhexo d == hexo deploy]]></content>
       <categories>
         <category>Hexo</category>
       </categories>

@@ -84,15 +84,15 @@
 <meta name="description" content="換電腦必備">
 <meta name="keywords" content="Hexo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo-移植步驟紀錄 及 環境部署">
+<meta property="og:title" content="Hexo-移植步驟紀錄 及 部署指令">
 <meta property="og:url" content="http://yoursite.com/2021/07/21/HexoBackupSolution/index.html">
 <meta property="og:site_name" content="Bryan&#39;s Notes">
 <meta property="og:description" content="換電腦必備">
 <meta property="og:locale" content="zh-tw">
 <meta property="og:image" content="http://yoursite.com/2021/07/21/HexoBackupSolution/hexo-cover.png">
-<meta property="og:updated_time" content="2021-07-21T07:48:45.980Z">
+<meta property="og:updated_time" content="2021-07-21T08:07:35.145Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo-移植步驟紀錄 及 環境部署">
+<meta name="twitter:title" content="Hexo-移植步驟紀錄 及 部署指令">
 <meta name="twitter:description" content="換電腦必備">
 <meta name="twitter:image" content="http://yoursite.com/2021/07/21/HexoBackupSolution/hexo-cover.png">
 
@@ -130,7 +130,7 @@
 
 
 
-  <title>Hexo-移植步驟紀錄 及 環境部署 | Bryan's Notes</title>
+  <title>Hexo-移植步驟紀錄 及 部署指令 | Bryan's Notes</title>
   
 
 
@@ -286,7 +286,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Hexo-移植步驟紀錄 及 環境部署</h1>
+          <h1 class="post-title" itemprop="name headline">Hexo-移植步驟紀錄 及 部署指令</h1>
         
 
         <div class="post-meta">
@@ -380,7 +380,13 @@
 <h2 id="本地端運行"><a href="#本地端運行" class="headerlink" title="本地端運行"></a>本地端運行</h2><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s --debug <span class="comment">#應可透過本機 http://localhost:4001 看到你的hexo環境</span></span><br></pre></td></tr></table></figure>
 <h2 id="編譯出靜態網頁"><a href="#編譯出靜態網頁" class="headerlink" title="編譯出靜態網頁"></a>編譯出靜態網頁</h2><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
 <h2 id="部署到-github"><a href="#部署到-github" class="headerlink" title="部署到 github"></a>部署到 github</h2><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d <span class="comment">#注意有時須等待github完成部署，可能須等待1~5分鐘不等</span></span><br></pre></td></tr></table></figure>
-<hr>
+<h2 id="若部署遇到問題"><a href="#若部署遇到問題" class="headerlink" title="若部署遇到問題"></a>若部署遇到問題</h2><ul>
+<li>升級 git 版本</li>
+</ul>
+<figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ brew upgrade git <span class="comment">#可能會遇到問題，看Ｔerminal訊息排除</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>改用 ssh key 部署<br>參考此網頁資訊建立 ssh key =&gt; <a href="https://www.cnblogs.com/xsilence/%5B/6001938.html" target="_blank" rel="noopener">建立步驟</a></li>
+</ul>
 <h3 id="指令集整理"><a href="#指令集整理" class="headerlink" title="指令集整理"></a>指令集整理</h3><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"postName"</span>  <span class="comment">#新建文章</span></span><br><span class="line">$ hexo clean <span class="comment">#清除快取</span></span><br><span class="line">$ hexo generate <span class="comment">#生成靜態頁面至public目錄</span></span><br><span class="line">$ hexo server <span class="comment">#開啟預覽訪問端口（默認端口4000，'ctrl + c'關閉server）</span></span><br><span class="line">$ hexo deploy  <span class="comment">#將.deploy目錄部署到GitHub</span></span><br><span class="line">$ hexo <span class="built_in">help</span>   <span class="comment">#查看幫助</span></span><br><span class="line">$ hexo version   <span class="comment">#查看Hexo的版本</span></span><br></pre></td></tr></table></figure>
 <p>指令簡寫</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo n == hexo new</span><br><span class="line">hexo g == hexo generate</span><br><span class="line">hexo s == hexo server</span><br><span class="line">hexo d == hexo deploy</span><br></pre></td></tr></table></figure>
@@ -561,7 +567,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#環境檢查"><span class="nav-number">1.</span> <span class="nav-text">環境檢查</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在新環境初始化-hexo"><span class="nav-number">2.</span> <span class="nav-text">在新環境初始化 hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#將備份檔案複製到新環境"><span class="nav-number">3.</span> <span class="nav-text">將備份檔案複製到新環境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地端運行"><span class="nav-number">4.</span> <span class="nav-text">本地端運行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#編譯出靜態網頁"><span class="nav-number">5.</span> <span class="nav-text">編譯出靜態網頁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署到-github"><span class="nav-number">6.</span> <span class="nav-text">部署到 github</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#指令集整理"><span class="nav-number">6.1.</span> <span class="nav-text">指令集整理</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#環境檢查"><span class="nav-number">1.</span> <span class="nav-text">環境檢查</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在新環境初始化-hexo"><span class="nav-number">2.</span> <span class="nav-text">在新環境初始化 hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#將備份檔案複製到新環境"><span class="nav-number">3.</span> <span class="nav-text">將備份檔案複製到新環境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#本地端運行"><span class="nav-number">4.</span> <span class="nav-text">本地端運行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#編譯出靜態網頁"><span class="nav-number">5.</span> <span class="nav-text">編譯出靜態網頁</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部署到-github"><span class="nav-number">6.</span> <span class="nav-text">部署到 github</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#若部署遇到問題"><span class="nav-number">7.</span> <span class="nav-text">若部署遇到問題</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#指令集整理"><span class="nav-number">7.1.</span> <span class="nav-text">指令集整理</span></a></li></ol></li></ol></div>
             
 
           </div>

@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-07-20T05:29:12.452Z</updated>
+  <updated>2021-07-21T07:48:45.980Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hexo-移植步驟紀錄 及 環境部署</title>
+    <link href="http://yoursite.com/2021/07/21/HexoBackupSolution/"/>
+    <id>http://yoursite.com/2021/07/21/HexoBackupSolution/</id>
+    <published>2021-07-20T18:07:55.000Z</published>
+    <updated>2021-07-21T07:48:45.980Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/07/21/HexoBackupSolution/hexo-cover.png"></p><font style="font-size:20px;">換電腦必備</font></blockquote><a id="more"></a><h2 id="環境檢查"><a href="#環境檢查" class="headerlink" title="環境檢查"></a>環境檢查</h2><blockquote><p>是否有安裝 git</p></blockquote><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ git --version</span><br></pre></td></tr></table></figure><blockquote><p>是否有安裝 node.js</p></blockquote><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ node -v</span><br></pre></td></tr></table></figure><blockquote><p>是否有安裝 hexo</p></blockquote><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo -v</span><br></pre></td></tr></table></figure><h2 id="在新環境初始化-hexo"><a href="#在新環境初始化-hexo" class="headerlink" title="在新環境初始化 hexo"></a>在新環境初始化 hexo</h2><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init 資料夾名稱  ＃建立一個資料夾（最好跟你原本hexo的資料夾同名）</span><br><span class="line">$ <span class="built_in">cd</span> 資料夾名稱 ＃進入該資料夾下</span><br></pre></td></tr></table></figure><h2 id="將備份檔案複製到新環境"><a href="#將備份檔案複製到新環境" class="headerlink" title="將備份檔案複製到新環境"></a>將備份檔案複製到新環境</h2><p>除了 node_mudules 外，其他檔案都複製過去<br>因為 node_mudules 是存放 library，在執行 npm init 時會裝回來；</p><p>複製完畢後，執行以下指令</p><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ npm init</span><br><span class="line">$ npm install hexo-deploy-git --save</span><br><span class="line">$ npm install hexo-generator-feed --save</span><br><span class="line">$ npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure><h2 id="本地端運行"><a href="#本地端運行" class="headerlink" title="本地端運行"></a>本地端運行</h2><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s --debug <span class="comment">#應可透過本機 http://localhost:4001 看到你的hexo環境</span></span><br></pre></td></tr></table></figure><h2 id="編譯出靜態網頁"><a href="#編譯出靜態網頁" class="headerlink" title="編譯出靜態網頁"></a>編譯出靜態網頁</h2><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure><h2 id="部署到-github"><a href="#部署到-github" class="headerlink" title="部署到 github"></a>部署到 github</h2><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d <span class="comment">#注意有時須等待github完成部署，可能須等待1~5分鐘不等</span></span><br></pre></td></tr></table></figure><hr><h3 id="指令集整理"><a href="#指令集整理" class="headerlink" title="指令集整理"></a>指令集整理</h3><figure class="highlight zsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"postName"</span>  <span class="comment">#新建文章</span></span><br><span class="line">$ hexo clean <span class="comment">#清除快取</span></span><br><span class="line">$ hexo generate <span class="comment">#生成靜態頁面至public目錄</span></span><br><span class="line">$ hexo server <span class="comment">#開啟預覽訪問端口（默認端口4000，'ctrl + c'關閉server）</span></span><br><span class="line">$ hexo deploy  <span class="comment">#將.deploy目錄部署到GitHub</span></span><br><span class="line">$ hexo <span class="built_in">help</span>   <span class="comment">#查看幫助</span></span><br><span class="line">$ hexo version   <span class="comment">#查看Hexo的版本</span></span><br></pre></td></tr></table></figure><p>指令簡寫</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo n == hexo new</span><br><span class="line">hexo g == hexo generate</span><br><span class="line">hexo s == hexo server</span><br><span class="line">hexo d == hexo deploy</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+    <summary type="html">&lt;blockquote class=&quot;blockquote-center&quot;&gt;&lt;p&gt;&lt;img src=&quot;/2021/07/21/HexoBackupSolution/hexo-cover.png&quot;&gt;&lt;/p&gt;
+&lt;font style=&quot;font-size:20px;&quot;&gt;換電腦必備&lt;/font&gt;&lt;/blockquote&gt;</summary>
+    
+    
+    
+    <category term="Hexo" scheme="http://yoursite.com/categories/Hexo/"/>
+    
+    
+    <category term="Hexo" scheme="http://yoursite.com/tags/Hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>MarkDown常用寫法(置頂)</title>

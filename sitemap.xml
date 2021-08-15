@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2021/08/15/VueJS/</loc>
+    
+    <lastmod>2021-08-15</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2021/07/20/MarkDownWrite/</loc>
+    
+    <lastmod>2021-08-15</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2021/08/10/vue3-04/</loc>
     
     <lastmod>2021-08-11</lastmod>
@@ -40,13 +54,6 @@
     <loc>http://yoursite.com/2021/07/21/HexoBackupSolution/</loc>
     
     <lastmod>2021-07-21</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2021/07/20/MarkDownWrite/</loc>
-    
-    <lastmod>2021-07-20</lastmod>
     
   </url>
   
@@ -100,14 +107,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/index.html</loc>
+    <loc>http://yoursite.com/tags/index.html</loc>
     
     <lastmod>2018-11-15</lastmod>
     
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/index.html</loc>
+    <loc>http://yoursite.com/categories/index.html</loc>
     
     <lastmod>2018-11-15</lastmod>
     
@@ -116,7 +123,7 @@
 
   <url>
     <loc>http://yoursite.com/</loc>
-    <lastmod>2021-08-11</lastmod>
+    <lastmod>2021-08-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -124,42 +131,49 @@
   
   <url>
     <loc>http://yoursite.com/tags/JS/</loc>
-    <lastmod>2021-08-11</lastmod>
+    <lastmod>2021-08-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/JS30/</loc>
-    <lastmod>2021-08-11</lastmod>
+    <lastmod>2021-08-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/Hexo/</loc>
-    <lastmod>2021-08-11</lastmod>
+    <lastmod>2021-08-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/MarkDown/</loc>
-    <lastmod>2021-08-11</lastmod>
+    <lastmod>2021-08-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/Vue/</loc>
-    <lastmod>2021-08-11</lastmod>
+    <lastmod>2021-08-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/Vue3/</loc>
-    <lastmod>2021-08-11</lastmod>
+    <lastmod>2021-08-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/VueJS/</loc>
+    <lastmod>2021-08-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -168,35 +182,42 @@
   
   <url>
     <loc>http://yoursite.com/categories/JS/</loc>
-    <lastmod>2021-08-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/categories/JS/JS30/</loc>
-    <lastmod>2021-08-11</lastmod>
+    <lastmod>2021-08-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/categories/Hexo/</loc>
-    <lastmod>2021-08-11</lastmod>
+    <lastmod>2021-08-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/JS/JS30/</loc>
+    <lastmod>2021-08-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/categories/Vue/</loc>
-    <lastmod>2021-08-11</lastmod>
+    <lastmod>2021-08-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/categories/Vue/Vue3/</loc>
-    <lastmod>2021-08-11</lastmod>
+    <lastmod>2021-08-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/VueJS/</loc>
+    <lastmod>2021-08-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

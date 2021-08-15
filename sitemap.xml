@@ -2,7 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/tags/index.html</loc>
+    
+    <lastmod>2021-08-15</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2021/07/20/Vue3-01/</loc>
+    
+    <lastmod>2021-08-15</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2021/07/23/vue3-02/</loc>
+    
+    <lastmod>2021-08-15</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2021/08/06/vue3-03/</loc>
+    
+    <lastmod>2021-08-15</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2021/08/15/VueJS/</loc>
+    
+    <lastmod>2021-08-15</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2021/08/10/vue3-04/</loc>
     
     <lastmod>2021-08-15</lastmod>
     
@@ -12,34 +47,6 @@
     <loc>http://yoursite.com/2021/07/20/MarkDownWrite/</loc>
     
     <lastmod>2021-08-15</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2021/08/10/vue3-04/</loc>
-    
-    <lastmod>2021-08-11</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2021/07/23/vue3-02/</loc>
-    
-    <lastmod>2021-08-09</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2021/07/20/Vue3-01/</loc>
-    
-    <lastmod>2021-08-09</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2021/08/06/vue3-03/</loc>
-    
-    <lastmod>2021-08-09</lastmod>
     
   </url>
   
@@ -107,13 +114,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/index.html</loc>
-    
-    <lastmod>2018-11-15</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/categories/index.html</loc>
     
     <lastmod>2018-11-15</lastmod>
@@ -158,7 +158,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/Vue/</loc>
+    <loc>http://yoursite.com/tags/VueJS/</loc>
     <lastmod>2021-08-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -166,13 +166,6 @@
   
   <url>
     <loc>http://yoursite.com/tags/Vue3/</loc>
-    <lastmod>2021-08-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/VueJS/</loc>
     <lastmod>2021-08-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -188,13 +181,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/Hexo/</loc>
-    <lastmod>2021-08-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/categories/JS/JS30/</loc>
     <lastmod>2021-08-15</lastmod>
     <changefreq>daily</changefreq>
@@ -202,14 +188,7 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/Vue/</loc>
-    <lastmod>2021-08-15</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/categories/Vue/Vue3/</loc>
+    <loc>http://yoursite.com/categories/Hexo/</loc>
     <lastmod>2021-08-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -217,6 +196,13 @@
   
   <url>
     <loc>http://yoursite.com/categories/VueJS/</loc>
+    <lastmod>2021-08-15</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/categories/VueJS/Vue3/</loc>
     <lastmod>2021-08-15</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

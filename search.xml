@@ -526,7 +526,7 @@
       </tags>
   </entry>
   <entry>
-    <title>ES6-Arrowfunctions</title>
+    <title>ES6-箭頭函式 (Arrow functions)</title>
     <url>/2021/08/18/ES6-Arrowfunctions/</url>
     <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/08/18/ES6-Arrowfunctions/ES6.jpg"></p>
 <font style="font-size:20px;">箭頭函式 () =&gt; {} </font>

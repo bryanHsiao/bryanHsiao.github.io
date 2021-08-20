@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-08-20T14:47:10.041Z</updated>
+  <updated>2021-08-20T15:05:45.374Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>CSS - Flex</title>
+    <link href="http://yoursite.com/2021/08/20/CSS-Flex/"/>
+    <id>http://yoursite.com/2021/08/20/CSS-Flex/</id>
+    <published>2021-08-20T14:57:39.000Z</published>
+    <updated>2021-08-20T15:05:45.374Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="常用屬性"><a href="#常用屬性" class="headerlink" title="常用屬性"></a>常用屬性</h2><img src="/2021/08/20/CSS-Flex/flex-property.png"><a id="more"></a><h2 id="概念圖"><a href="#概念圖" class="headerlink" title="概念圖"></a>概念圖</h2><img src="/2021/08/20/CSS-Flex/flex-direction.png"><img src="/2021/08/20/CSS-Flex/flex-direction2.png"><h2 id="Flex-外容器屬性："><a href="#Flex-外容器屬性：" class="headerlink" title="Flex 外容器屬性："></a>Flex 外容器屬性：</h2><h3 id="flex-direction：決定-flex-主軸線-方向"><a href="#flex-direction：決定-flex-主軸線-方向" class="headerlink" title="flex-direction：決定 flex 主軸線 方向"></a>flex-direction：決定 flex 主軸線 方向</h3><p>[ row | row-reverse | column | column-reverse ]</p><h3 id="justify-content：主要軸線-左右-的對齊"><a href="#justify-content：主要軸線-左右-的對齊" class="headerlink" title="justify-content：主要軸線(左右)的對齊"></a>justify-content：主要軸線(左右)的對齊</h3><p>[ flex-start | flex-end | center | space-between | space-around ]</p><img src="/2021/08/20/CSS-Flex/justify-content.png"><h3 id="align-items：交錯軸線-上下-的對齊"><a href="#align-items：交錯軸線-上下-的對齊" class="headerlink" title="align-items：交錯軸線(上下)的對齊"></a>align-items：交錯軸線(上下)的對齊</h3><p>[ flex-start | flex-end | center | baseline | stretch ]</p><img src="/2021/08/20/CSS-Flex/align-items.png"><h2 id="Flex-內元件屬性："><a href="#Flex-內元件屬性：" class="headerlink" title="Flex 內元件屬性："></a>Flex 內元件屬性：</h2><h3 id="align-self：單一個物件的交錯軸對齊"><a href="#align-self：單一個物件的交錯軸對齊" class="headerlink" title="align-self：單一個物件的交錯軸對齊"></a>align-self：單一個物件的交錯軸對齊</h3><p>[ auto | flex-start | flex-end | center | baseline | stretch ]</p><img src="/2021/08/20/CSS-Flex/align-self.png"><hr><h2 id="參考網站"><a href="#參考網站" class="headerlink" title="參考網站"></a>參考網站</h2><p><a href="https://wcc723.github.io/css/2017/07/21/css-flex/" target="_blank" rel="noopener">圖解：CSS Flex 屬性一點也不難</a></p><p><a href="http://sweeteason.pixnet.net/blog/post/42781628-css-flexbox-layout-%E5%AD%B8%E7%BF%92%E5%BF%83%E5%BE%97" target="_blank" rel="noopener">CSS Flexbox Layout 學習心得筆記</a></p>]]></content>
+    
+    
+    <summary type="html">&lt;h2 id=&quot;常用屬性&quot;&gt;&lt;a href=&quot;#常用屬性&quot; class=&quot;headerlink&quot; title=&quot;常用屬性&quot;&gt;&lt;/a&gt;常用屬性&lt;/h2&gt;&lt;img src=&quot;/2021/08/20/CSS-Flex/flex-property.png&quot;&gt;</summary>
+    
+    
+    
+    <category term="CSS" scheme="http://yoursite.com/categories/CSS/"/>
+    
+    
+    <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
+    
+    <category term="Flex" scheme="http://yoursite.com/tags/Flex/"/>
+    
+    <category term="排版" scheme="http://yoursite.com/tags/排版/"/>
+    
+  </entry>
   
   <entry>
     <title>CSS - float排版問題</title>
@@ -35,9 +60,9 @@
     
     <category term="CSS" scheme="http://yoursite.com/tags/CSS/"/>
     
-    <category term="float" scheme="http://yoursite.com/tags/float/"/>
-    
     <category term="排版" scheme="http://yoursite.com/tags/排版/"/>
+    
+    <category term="float" scheme="http://yoursite.com/tags/float/"/>
     
   </entry>
   

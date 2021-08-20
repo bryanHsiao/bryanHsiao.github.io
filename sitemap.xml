@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>hhttps://bryanhsiao.github.io/2021/08/20/CSS-float/</loc>
+    
+    <lastmod>2021-08-20</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>hhttps://bryanhsiao.github.io/tags/index.html</loc>
     
     <lastmod>2021-08-20</lastmod>
@@ -10,13 +17,6 @@
   
   <url>
     <loc>hhttps://bryanhsiao.github.io/2021/08/20/CSS-Flex/</loc>
-    
-    <lastmod>2021-08-20</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>hhttps://bryanhsiao.github.io/2021/08/20/CSS-float/</loc>
     
     <lastmod>2021-08-20</lastmod>
     

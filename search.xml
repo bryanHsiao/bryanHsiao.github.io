@@ -598,9 +598,9 @@
       </tags>
   </entry>
   <entry>
-    <title>CSS - float排版問題</title>
+    <title>CSS - Float排版問題</title>
     <url>/2021/08/20/CSS-float/</url>
-    <content><![CDATA[<p>紀錄一下 float 排版問題</p>
+    <content><![CDATA[<p>紀錄一下 Float 排版問題</p>
 <a id="more"></a>
 <h2 id="問題："><a href="#問題：" class="headerlink" title="問題："></a>問題：</h2><p>在練習 Bootstrap3 將表單驗證功能加進去，卻遇到畫面「跑版」的問題，<br>目前是查到 「名稱」底下的<br><code>&lt;div class=&quot;help-block with-errors&quot;&gt;&lt;/div&gt;</code><br>所導致。</p>
 <p>可能原因為 float？ margin？</p>

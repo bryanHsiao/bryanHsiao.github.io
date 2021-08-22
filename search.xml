@@ -526,6 +526,55 @@
       </tags>
   </entry>
   <entry>
+    <title>CSS - Flex</title>
+    <url>/2021/08/20/CSS-Flex/</url>
+    <content><![CDATA[<h2 id="常用屬性"><a href="#常用屬性" class="headerlink" title="常用屬性"></a>常用屬性</h2><img src="/2021/08/20/CSS-Flex/flex-property.png">
+<a id="more"></a>
+<h2 id="概念圖"><a href="#概念圖" class="headerlink" title="概念圖"></a>概念圖</h2><img src="/2021/08/20/CSS-Flex/flex-direction.png">
+<img src="/2021/08/20/CSS-Flex/flex-direction2.png">
+<h2 id="Flex-外容器屬性："><a href="#Flex-外容器屬性：" class="headerlink" title="Flex 外容器屬性："></a>Flex 外容器屬性：</h2><h3 id="flex-direction：決定-flex-主軸線-方向"><a href="#flex-direction：決定-flex-主軸線-方向" class="headerlink" title="flex-direction：決定 flex 主軸線 方向"></a>flex-direction：決定 flex 主軸線 方向</h3><p>[ row | row-reverse | column | column-reverse ]</p>
+<h3 id="justify-content：主要軸線-左右-的對齊"><a href="#justify-content：主要軸線-左右-的對齊" class="headerlink" title="justify-content：主要軸線(左右)的對齊"></a>justify-content：主要軸線(左右)的對齊</h3><p>[ flex-start | flex-end | center | space-between | space-around ]</p>
+<img src="/2021/08/20/CSS-Flex/justify-content.png">
+<h3 id="align-items：交錯軸線-上下-的對齊"><a href="#align-items：交錯軸線-上下-的對齊" class="headerlink" title="align-items：交錯軸線(上下)的對齊"></a>align-items：交錯軸線(上下)的對齊</h3><p>[ flex-start | flex-end | center | baseline | stretch ]</p>
+<img src="/2021/08/20/CSS-Flex/align-items.png">
+<h2 id="Flex-內元件屬性："><a href="#Flex-內元件屬性：" class="headerlink" title="Flex 內元件屬性："></a>Flex 內元件屬性：</h2><h3 id="align-self：單一個物件的交錯軸對齊"><a href="#align-self：單一個物件的交錯軸對齊" class="headerlink" title="align-self：單一個物件的交錯軸對齊"></a>align-self：單一個物件的交錯軸對齊</h3><p>[ auto | flex-start | flex-end | center | baseline | stretch ]</p>
+<img src="/2021/08/20/CSS-Flex/align-self.png">
+<hr>
+<h2 id="參考網站"><a href="#參考網站" class="headerlink" title="參考網站"></a>參考網站</h2><p><a href="https://wcc723.github.io/css/2017/07/21/css-flex/" target="_blank" rel="noopener">圖解：CSS Flex 屬性一點也不難</a></p>
+<p><a href="http://sweeteason.pixnet.net/blog/post/42781628-css-flexbox-layout-%E5%AD%B8%E7%BF%92%E5%BF%83%E5%BE%97" target="_blank" rel="noopener">CSS Flexbox Layout 學習心得筆記</a></p>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>Flex</tag>
+        <tag>排版</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS - Float排版問題</title>
+    <url>/2021/08/20/CSS-float/</url>
+    <content><![CDATA[<p>紀錄一下 Float 排版問題</p>
+<a id="more"></a>
+<h2 id="問題："><a href="#問題：" class="headerlink" title="問題："></a>問題：</h2><p>在練習 Bootstrap3 將表單驗證功能加進去，卻遇到畫面「跑版」的問題，<br>目前是查到 「名稱」底下的<br><code>&lt;div class=&quot;help-block with-errors&quot;&gt;&lt;/div&gt;</code><br>所導致。</p>
+<p>可能原因為 float？ margin？</p>
+<p>問題點： 1.單點 「名稱」欄位，就會造成下方欄位跑版。<br><img src="/2021/08/20/CSS-float/Q1.jpg"> 2.若同時有驗證 左右二邊，欄位又有對齊了。<br><img src="/2021/08/20/CSS-float/Q2.jpg"></p>
+<h3 id="codepen：排版偏移程式碼"><a href="#codepen：排版偏移程式碼" class="headerlink" title="codepen：排版偏移程式碼"></a>codepen：<a href="https://codepen.io/bryan-hsaio/pen/NWjQeNy?editors=1000" target="_blank" rel="noopener">排版偏移程式碼</a></h3><h2 id="解決："><a href="#解決：" class="headerlink" title="解決："></a>解決：</h2><img src="/2021/08/20/CSS-float/A1.jpg">
+<p><br><br>如上圖所述，第一個「名稱」腳變長，造成第三個「Email」排不進去被往後推，<br>導致第四個「聯絡電話」也被往後推擠，造成排版歪掉。</p>
+<img src="/2021/08/20/CSS-float/A2.jpg">
+<p><br><br>解法為 外層用 row 包起來，<strong>清除 float 的浮動(clearfix)</strong>。</p>
+<h3 id="codepen：修正後程式碼"><a href="#codepen：修正後程式碼" class="headerlink" title="codepen：修正後程式碼"></a>codepen：<a href="https://codepen.io/bryan-hsaio/pen/Vwboqja" target="_blank" rel="noopener">修正後程式碼</a></h3>]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>排版</tag>
+        <tag>float</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ES6-箭頭函式 (Arrow functions)</title>
     <url>/2021/08/18/ES6-Arrowfunctions/</url>
     <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/08/18/ES6-Arrowfunctions/ES6.jpg"></p>
@@ -568,55 +617,6 @@
         <tag>ES6</tag>
         <tag>箭頭函式</tag>
         <tag>Arrow functions</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSS - Float排版問題</title>
-    <url>/2021/08/20/CSS-float/</url>
-    <content><![CDATA[<p>紀錄一下 Float 排版問題</p>
-<a id="more"></a>
-<h2 id="問題："><a href="#問題：" class="headerlink" title="問題："></a>問題：</h2><p>在練習 Bootstrap3 將表單驗證功能加進去，卻遇到畫面「跑版」的問題，<br>目前是查到 「名稱」底下的<br><code>&lt;div class=&quot;help-block with-errors&quot;&gt;&lt;/div&gt;</code><br>所導致。</p>
-<p>可能原因為 float？ margin？</p>
-<p>問題點： 1.單點 「名稱」欄位，就會造成下方欄位跑版。<br><img src="/2021/08/20/CSS-float/Q1.jpg"> 2.若同時有驗證 左右二邊，欄位又有對齊了。<br><img src="/2021/08/20/CSS-float/Q2.jpg"></p>
-<h3 id="codepen：排版偏移程式碼"><a href="#codepen：排版偏移程式碼" class="headerlink" title="codepen：排版偏移程式碼"></a>codepen：<a href="https://codepen.io/bryan-hsaio/pen/NWjQeNy?editors=1000" target="_blank" rel="noopener">排版偏移程式碼</a></h3><h2 id="解決："><a href="#解決：" class="headerlink" title="解決："></a>解決：</h2><img src="/2021/08/20/CSS-float/A1.jpg">
-<p><br><br>如上圖所述，第一個「名稱」腳變長，造成第三個「Email」排不進去被往後推，<br>導致第四個「聯絡電話」也被往後推擠，造成排版歪掉。</p>
-<img src="/2021/08/20/CSS-float/A2.jpg">
-<p><br><br>解法為 外層用 row 包起來，<strong>清除 float 的浮動(clearfix)</strong>。</p>
-<h3 id="codepen：修正後程式碼"><a href="#codepen：修正後程式碼" class="headerlink" title="codepen：修正後程式碼"></a>codepen：<a href="https://codepen.io/bryan-hsaio/pen/Vwboqja" target="_blank" rel="noopener">修正後程式碼</a></h3>]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
-        <tag>float</tag>
-        <tag>排版</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSS - Flex</title>
-    <url>/2021/08/20/CSS-Flex/</url>
-    <content><![CDATA[<h2 id="常用屬性"><a href="#常用屬性" class="headerlink" title="常用屬性"></a>常用屬性</h2><img src="/2021/08/20/CSS-Flex/flex-property.png">
-<a id="more"></a>
-<h2 id="概念圖"><a href="#概念圖" class="headerlink" title="概念圖"></a>概念圖</h2><img src="/2021/08/20/CSS-Flex/flex-direction.png">
-<img src="/2021/08/20/CSS-Flex/flex-direction2.png">
-<h2 id="Flex-外容器屬性："><a href="#Flex-外容器屬性：" class="headerlink" title="Flex 外容器屬性："></a>Flex 外容器屬性：</h2><h3 id="flex-direction：決定-flex-主軸線-方向"><a href="#flex-direction：決定-flex-主軸線-方向" class="headerlink" title="flex-direction：決定 flex 主軸線 方向"></a>flex-direction：決定 flex 主軸線 方向</h3><p>[ row | row-reverse | column | column-reverse ]</p>
-<h3 id="justify-content：主要軸線-左右-的對齊"><a href="#justify-content：主要軸線-左右-的對齊" class="headerlink" title="justify-content：主要軸線(左右)的對齊"></a>justify-content：主要軸線(左右)的對齊</h3><p>[ flex-start | flex-end | center | space-between | space-around ]</p>
-<img src="/2021/08/20/CSS-Flex/justify-content.png">
-<h3 id="align-items：交錯軸線-上下-的對齊"><a href="#align-items：交錯軸線-上下-的對齊" class="headerlink" title="align-items：交錯軸線(上下)的對齊"></a>align-items：交錯軸線(上下)的對齊</h3><p>[ flex-start | flex-end | center | baseline | stretch ]</p>
-<img src="/2021/08/20/CSS-Flex/align-items.png">
-<h2 id="Flex-內元件屬性："><a href="#Flex-內元件屬性：" class="headerlink" title="Flex 內元件屬性："></a>Flex 內元件屬性：</h2><h3 id="align-self：單一個物件的交錯軸對齊"><a href="#align-self：單一個物件的交錯軸對齊" class="headerlink" title="align-self：單一個物件的交錯軸對齊"></a>align-self：單一個物件的交錯軸對齊</h3><p>[ auto | flex-start | flex-end | center | baseline | stretch ]</p>
-<img src="/2021/08/20/CSS-Flex/align-self.png">
-<hr>
-<h2 id="參考網站"><a href="#參考網站" class="headerlink" title="參考網站"></a>參考網站</h2><p><a href="https://wcc723.github.io/css/2017/07/21/css-flex/" target="_blank" rel="noopener">圖解：CSS Flex 屬性一點也不難</a></p>
-<p><a href="http://sweeteason.pixnet.net/blog/post/42781628-css-flexbox-layout-%E5%AD%B8%E7%BF%92%E5%BF%83%E5%BE%97" target="_blank" rel="noopener">CSS Flexbox Layout 學習心得筆記</a></p>
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
-        <tag>排版</tag>
-        <tag>Flex</tag>
       </tags>
   </entry>
   <entry>
@@ -666,6 +666,42 @@
       <tags>
         <tag>CSS</tag>
         <tag>筆記</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTML5 - 語義元素</title>
+    <url>/2021/08/22/HTML5-Semantics/</url>
+    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/08/22/HTML5-Semantics/HTML5_01.jpg"><br>重新認識 HTML5 的語義元素</p>
+</blockquote>
+<a id="more"></a>
+<hr>
+<h2 id="常用元素"><a href="#常用元素" class="headerlink" title="常用元素"></a>常用元素</h2><h3 id="lt-header-gt"><a href="#lt-header-gt" class="headerlink" title="&lt;header&gt;"></a><code>&lt;header&gt;</code></h3><p>區塊標題，不要把它只用來取代 <code>&lt;div class=”header”&gt;</code><br>它也可以是文章的標題，一頁可以有好多個 <code>&lt;header&gt;</code>，<code>&lt;header&gt;</code> 裡面至少要有一個 h1~h6。</p>
+<h3 id="lt-nav-gt"><a href="#lt-nav-gt" class="headerlink" title="&lt;nav&gt;"></a><code>&lt;nav&gt;</code></h3><p>導覽列。裡面裝的東西應該只有 <strong>_主要_</strong> 的 navigation links，不要把各種 link 都丟到<code>&lt;nav&gt;</code>裡面。<br>舉例來說，footer 裡面常常會有一排 link，那個就不需要包進<code>&lt;nav&gt;</code>。</p>
+<h3 id="lt-main-gt"><a href="#lt-main-gt" class="headerlink" title="&lt;main&gt;"></a><code>&lt;main&gt;</code></h3><p>一個頁面只有一個! 任何 global 都不能放在 main 裡面( e.g. <code>&lt;header&gt;</code> <code>&lt;footer&gt;</code> logo)</p>
+<h3 id="lt-section-gt"><a href="#lt-section-gt" class="headerlink" title="&lt;section&gt;"></a><code>&lt;section&gt;</code></h3><p>通常用來把一些<strong><em>相關的元素組合在一起</em></strong>，一般來說，裡面都會包含 heading。<br>如果這個區塊的內容可以分成幾個部分的話，那應該使用 article。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>Section title<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra nec</span><br><span class="line">    nulla vitae mollis.</span><br><span class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="lt-article-gt"><a href="#lt-article-gt" class="headerlink" title="&lt;article&gt;"></a><code>&lt;article&gt;</code></h3><p>文章中可以脫離其他部分，獨立出來而又完整，甚至可以復用的一部分，通常有自己的標題，當 article 內嵌 article 時，裡外層的內容應該是相關的，比如一篇文章和它的留言，<br>而 section 雖然也具有獨立表達內容的能力，但是對外層有一定的相依性，例如這篇文章中的一個章節。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">article</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">header</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/my-blog-post"</span>&gt;</span>My blog post<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra nec</span><br><span class="line">      nulla vitae mollis.</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">footer</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">small</span>&gt;</span></span><br><span class="line">      Posted on <span class="tag">&lt;<span class="name">time</span> <span class="attr">datetime</span>=<span class="string">"2017-04-29T19:00"</span>&gt;</span>Apr 29<span class="tag">&lt;/<span class="name">time</span>&gt;</span> in</span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/category/code"</span>&gt;</span>Code<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">small</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="lt-aside-gt"><a href="#lt-aside-gt" class="headerlink" title="&lt;aside&gt;"></a><code>&lt;aside&gt;</code></h3><p>通常用來包含一些和當前頁面內容有關的額外信息，比如廣告、個人資料信息或相關連結。</p>
+<h3 id="lt-footer-gt"><a href="#lt-footer-gt" class="headerlink" title="&lt;footer&gt;"></a><code>&lt;footer&gt;</code></h3><p>通常包含作者、版權信息或者相關鏈接等。</p>
+<h2 id="簡易分辦-lt-section-gt-lt-article-gt"><a href="#簡易分辦-lt-section-gt-lt-article-gt" class="headerlink" title="簡易分辦 &lt;section&gt;&lt;article&gt;"></a>簡易分辦 <code>&lt;section&gt;&lt;article&gt;</code></h2><p><code>&lt;article&gt;</code>: 就算脫離了整體也是一個可以獨立存在、具有完整內容的區塊，例如這篇文章。<br><code>&lt;section&gt;</code>: 具有獨立表達內容的能力，但是對外層有一定的相依性，例如這篇文章中的一個章節。</p>
+<p>下面是簡單的問題，讓我們決定要用 <code>&lt;section&gt; / &lt;article&gt; / &lt;div&gt;</code></p>
+<ul>
+<li>具有完整內容的區塊，而且可以出現在你的<strong>閱讀器</strong>內嗎? 是的話就是 <code>&lt;article&gt;</code></li>
+<li>跟主要內容是有相關並且列入 outline 裡不會奇怪的? 是的話就是 <code>&lt;section&gt;</code></li>
+<li>跟內容無關或只用來 styling 的? 是的話就是 <code>&lt;div&gt;</code></li>
+</ul>
+<h2 id="建議的架構範例"><a href="#建議的架構範例" class="headerlink" title="建議的架構範例"></a>建議的架構範例</h2><img src="/2021/08/22/HTML5-Semantics/HTML5_02.jpg">
+<img src="/2021/08/22/HTML5-Semantics/HTML5_03.png">
+<hr>
+<h2 id="參考文章"><a href="#參考文章" class="headerlink" title="參考文章"></a>參考文章</h2><div class="note info"><a href="http://techbrood.com/h5b2a?p=html-structure" target="_blank" rel="noopener">结构性元素</a><br><a href="http://apolkingg8.logdown.com/posts/2014/02/04/note-of-semantic-html" target="_blank" rel="noopener">HTML5 Semantic Elements</a><br><a href="http://www.hannahpun.me/performance-optimize2/" target="_blank" rel="noopener">HTML5 Semantics</a><br><a href="http://htmlreference.io/semantic/" target="_blank" rel="noopener">Semantic in HTML5</a><br></div>
+]]></content>
+      <categories>
+        <category>HTML5</category>
+      </categories>
+      <tags>
+        <tag>HTML5</tag>
+        <tag>語義架構</tag>
       </tags>
   </entry>
   <entry>

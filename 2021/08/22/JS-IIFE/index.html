@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="JS,重新認識 JavaScript,IIFE,">
 
 
 
@@ -81,13 +81,20 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="Bryan&#39;s Notes">
-<meta property="og:url" content="hhttps://bryanhsiao.github.io/archives/2021/index.html">
+<meta name="description" content="立即被呼叫的函式 (Immediately Invoked Function Expression, IIFE)">
+<meta name="keywords" content="JS,重新認識 JavaScript,IIFE">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS-立即被呼叫的函式 (IIFE)">
+<meta property="og:url" content="hhttps://bryanhsiao.github.io/2021/08/22/JS-IIFE/index.html">
 <meta property="og:site_name" content="Bryan&#39;s Notes">
+<meta property="og:description" content="立即被呼叫的函式 (Immediately Invoked Function Expression, IIFE)">
 <meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="hhttps:///2021/08/22/JS-IIFE/js_01.png">
+<meta property="og:updated_time" content="2021-08-22T15:40:24.969Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bryan&#39;s Notes">
+<meta name="twitter:title" content="JS-立即被呼叫的函式 (IIFE)">
+<meta name="twitter:description" content="立即被呼叫的函式 (Immediately Invoked Function Expression, IIFE)">
+<meta name="twitter:image" content="hhttps:///2021/08/22/JS-IIFE/js_01.png">
 
 
 
@@ -117,13 +124,13 @@
 
 
 
-  <link rel="canonical" href="hhttps://bryanhsiao.github.io/archives/2021/">
+  <link rel="canonical" href="hhttps://bryanhsiao.github.io/2021/08/22/JS-IIFE/">
 
 
 
 
 
-  <title>歸檔 | Bryan's Notes</title>
+  <title>JS-立即被呼叫的函式 (IIFE) | Bryan's Notes</title>
   
 
 
@@ -142,7 +149,7 @@
     
   
 
-  <div class="container sidebar-position-left page-archive">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -248,391 +255,211 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block archive">
-    <div id="posts" class="posts-collapse">
-      <span class="archive-move-on"></span>
+  <div id="posts" class="posts-expand">
+    
 
-      <span class="archive-page-counter">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="hhttps://bryanhsiao.github.io/2021/08/22/JS-IIFE/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Bryan Hsiao">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Bryan's Notes">
+    </span>
+
+    
+      <header class="post-header">
+
         
         
+          <h1 class="post-title" itemprop="name headline">JS-立即被呼叫的函式 (IIFE)</h1>
         
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2021-08-22T23:39:20+08:00">
+                2021-08-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-        
-        嗯..! 目前共計 22 篇文章。 繼續努力。
-      </span>
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JS/" itemprop="url" rel="index">
+                    <span itemprop="name">JS</span>
+                  </a>
+                </span>
 
-      
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JS/重新認識-JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">重新認識 JavaScript</span>
+                  </a>
+                </span>
 
-        
-        
-        
-
-        
+                
+                
+              
+            </span>
           
-          <div class="collection-title">
-            <h1 class="archive-year" id="archive-year-2021">2021</h1>
-          </div>
-        
-        
 
-        
+          
+            
+          
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+          
+          
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2021/08/22/JS-IIFE/" itemprop="url">
-              
-                <span itemprop="name">JS-立即被呼叫的函式 (IIFE)</span>
-              
-            </a>
-        
-      </h2>
+          
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2021-08-22T23:39:20+08:00" content="2021-08-22">
-          08-22
-        </time>
-      </div>
+          
 
-    </header>
-  </article>
+          
 
+        </div>
+      </header>
+    
 
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2021/08/22/HTML5-Semantics/" itemprop="url">
-              
-                <span itemprop="name">HTML5 - 語義元素</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2021-08-22T23:19:37+08:00" content="2021-08-22">
-          08-22
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
       
 
-        
-        
-        
+      
+        <blockquote class="blockquote-center"><p><img src="/2021/08/22/JS-IIFE/js_01.png"></p>
+<font style="font-size:20px;">立即被呼叫的函式 (Immediately Invoked Function Expression, IIFE)</font>
+</blockquote>
+<a id="more"></a>
+<hr>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 2018 iT 邦幫忙鐵人賽，看到 Kuro 大的重新認識 JavaScript 系列文，仔細的閱讀後，紀錄自己觀念不足的部份，也非常推薦給大家觀看此系列文。</p>
+<div class="note info"><a href="https://ithelp.ithome.com.tw/users/20065504/ironman/1259?page=1" target="_blank" rel="noopener">Kuro-重新認識 JavaScript 系列</a></div>
 
-        
-        
+<hr>
+<h2 id="立即被呼叫的函式-IIFE"><a href="#立即被呼叫的函式-IIFE" class="headerlink" title="立即被呼叫的函式 (IIFE)"></a>立即被呼叫的函式 (IIFE)</h2><p>IIFE 的好處，就是可以<strong>減少「全域變數」的產生，同時也避免了變數名稱衝突的機會</strong>。</p>
+<p>如果你有去看過 jQuery 的原始碼，就會發現 jQuery 也用了相同的手法將 window 與 undefined 保留起來：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">window, undefined</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 略...</span></span><br><span class="line">&#125;)(<span class="built_in">window</span>);</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="當迴圈遇到-function"><a href="#當迴圈遇到-function" class="headerlink" title="當迴圈遇到 function"></a>當迴圈遇到 function</h2><p>題目：<br>假設想透過迴圈 + setTimeout 來做到，在五秒之內，每秒鐘依序透過<font color="red">console.log</font>印出：<font color="red">0 1 2 3 4</font></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 假設想透過迴圈 + setTimeout 來做到</span></span><br><span class="line"><span class="comment">// 每秒鐘將 i 的值 console 出來</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>真的是這樣嗎？ 我們來看看執行的結果。</p>
+<p>執行的結果是， <font color="red">console.log()</font> 會在「一秒鐘之後」同時印出「五次 <font color="red">5</font>」。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">5</span>;</span><br><span class="line"><span class="number">5</span>;</span><br><span class="line"><span class="number">5</span>;</span><br><span class="line"><span class="number">5</span>;</span><br><span class="line"><span class="number">5</span>;</span><br></pre></td></tr></table></figure>
+<font color="red">「切分變數有效範圍的最小單位是 “function” 」</font><br><font color="red">「切分變數有效範圍的最小單位是 “function” 」</font><br><font color="red">「切分變數有效範圍的最小單位是 “function” 」</font>
 
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2021/08/21/CSS-ForgetfulNotes/" itemprop="url">
-              
-                <span itemprop="name">CSS - 常用筆記</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2021-08-21T22:57:52+08:00" content="2021-08-21">
-          08-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
+<p>很重要，所以要再講三次。</p>
+<p>所以我們利用 <font color="red">IIFE</font> 稍微修改一下：</p>
+<figure class="highlight js"><figcaption><span>IIFE</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 將原本的 1000 改成 1000 * x</span></span><br><span class="line">    <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(x);</span><br><span class="line">    &#125;, <span class="number">1000</span> * x);</span><br><span class="line">  &#125;)(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>像這樣，就可以依序印出我們要的結果囉！</p>
+<hr>
+<h2 id="ES6-let、const"><a href="#ES6-let、const" class="headerlink" title="ES6-let、const"></a>ES6-let、const</h2><p><font color="red">ES6</font> 以後新增了 <font color="red">let</font> 與 <font color="red">const</font>，且改以 <font color="red">{ }</font> 作為它的 Scope。</p>
+<p>換句話說，將範例中的 for 改為 let 就可以做到保留 i 在執行迴圈當下的「值」的效果：</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2021/08/20/CSS-Flex/" itemprop="url">
-              
-                <span itemprop="name">CSS - Flex</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2021-08-20T22:57:39+08:00" content="2021-08-20">
-          08-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2021/08/20/CSS-float/" itemprop="url">
-              
-                <span itemprop="name">CSS - Float排版問題</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2021-08-20T22:25:08+08:00" content="2021-08-20">
-          08-20
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2021/08/18/ES6-Arrowfunctions/" itemprop="url">
-              
-                <span itemprop="name">ES6-箭頭函式 (Arrow functions)</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2021-08-18T23:58:45+08:00" content="2021-08-18">
-          08-18
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2021/08/17/ES6-Promise-asnyc-await/" itemprop="url">
-              
-                <span itemprop="name">ES6-Promise-asnyc-await</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2021-08-17T23:34:23+08:00" content="2021-08-17">
-          08-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2021/08/15/VueJS/" itemprop="url">
-              
-                <span itemprop="name">VueJS</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2021-08-15T12:21:57+08:00" content="2021-08-15">
-          08-15
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2021/08/10/vue3-04/" itemprop="url">
-              
-                <span itemprop="name">Composition API</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2021-08-10T00:13:00+08:00" content="2021-08-10">
-          08-10
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
-        
-        
-        
-
-        
-        
-
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2021/08/06/vue3-03/" itemprop="url">
-              
-                <span itemprop="name">Options API</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2021-08-06T23:59:14+08:00" content="2021-08-06">
-          08-06
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-
-      
-
     </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JS/" rel="tag"># JS</a>
+          
+            <a href="/tags/重新認識-JavaScript/" rel="tag"># 重新認識 JavaScript</a>
+          
+            <a href="/tags/IIFE/" rel="tag"># IIFE</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2021/08/22/HTML5-Semantics/" rel="next" title="HTML5 - 語義元素">
+                <i class="fa fa-chevron-left"></i> HTML5 - 語義元素
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/2021/page/2/">2</a><a class="extend next" rel="next" href="/archives/2021/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
+  </article>
 
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -640,6 +467,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -660,8 +491,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -728,6 +568,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#立即被呼叫的函式-IIFE"><span class="nav-number">2.</span> <span class="nav-text">立即被呼叫的函式 (IIFE)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#當迴圈遇到-function"><span class="nav-number">3.</span> <span class="nav-text">當迴圈遇到 function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ES6-let、const"><span class="nav-number">4.</span> <span class="nav-text">ES6-let、const</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -861,6 +717,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

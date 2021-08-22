@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>hhttps://bryanhsiao.github.io/2021/08/22/JS-IIFE/</loc>
+    
+    <lastmod>2021-08-22</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>hhttps://bryanhsiao.github.io/2021/08/22/HTML5-Semantics/</loc>
     
     <lastmod>2021-08-22</lastmod>
@@ -214,6 +221,27 @@
   </url>
   
   <url>
+    <loc>hhttps://bryanhsiao.github.io/tags/ES6/</loc>
+    <lastmod>2021-08-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>hhttps://bryanhsiao.github.io/tags/箭頭函式/</loc>
+    <lastmod>2021-08-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>hhttps://bryanhsiao.github.io/tags/Arrow-functions/</loc>
+    <lastmod>2021-08-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>hhttps://bryanhsiao.github.io/tags/CSS/</loc>
     <lastmod>2021-08-22</lastmod>
     <changefreq>daily</changefreq>
@@ -242,27 +270,6 @@
   </url>
   
   <url>
-    <loc>hhttps://bryanhsiao.github.io/tags/ES6/</loc>
-    <lastmod>2021-08-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>hhttps://bryanhsiao.github.io/tags/箭頭函式/</loc>
-    <lastmod>2021-08-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>hhttps://bryanhsiao.github.io/tags/Arrow-functions/</loc>
-    <lastmod>2021-08-22</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>hhttps://bryanhsiao.github.io/tags/筆記/</loc>
     <lastmod>2021-08-22</lastmod>
     <changefreq>daily</changefreq>
@@ -278,6 +285,20 @@
   
   <url>
     <loc>hhttps://bryanhsiao.github.io/tags/語義架構/</loc>
+    <lastmod>2021-08-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>hhttps://bryanhsiao.github.io/tags/重新認識-JavaScript/</loc>
+    <lastmod>2021-08-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>hhttps://bryanhsiao.github.io/tags/IIFE/</loc>
     <lastmod>2021-08-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -328,14 +349,14 @@
   </url>
   
   <url>
-    <loc>hhttps://bryanhsiao.github.io/categories/CSS/</loc>
+    <loc>hhttps://bryanhsiao.github.io/categories/JS/ES6/</loc>
     <lastmod>2021-08-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>hhttps://bryanhsiao.github.io/categories/JS/ES6/</loc>
+    <loc>hhttps://bryanhsiao.github.io/categories/CSS/</loc>
     <lastmod>2021-08-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -350,6 +371,13 @@
   
   <url>
     <loc>hhttps://bryanhsiao.github.io/categories/VueJS/Vue3/</loc>
+    <lastmod>2021-08-22</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>hhttps://bryanhsiao.github.io/categories/JS/重新認識-JavaScript/</loc>
     <lastmod>2021-08-22</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

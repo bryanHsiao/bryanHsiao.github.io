@@ -1,6 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>JS30-05-Flex Panel Gallery</title>
+    <url>/2019/04/30/JS30-05-Flex-Panel-Gallery/</url>
+    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2019/04/30/JS30-05-Flex-Panel-Gallery/Gallery.png"></p>
+</blockquote>
+<a id="more"></a>
+<hr>
+]]></content>
+      <categories>
+        <category>JS</category>
+        <category>JS30</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>JS30</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JS30-01-JavaScript-Drum-Kit</title>
     <url>/2019/04/25/JS30-01-JavaScript-Drum-Kit/</url>
     <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2019/04/25/JS30-01-JavaScript-Drum-Kit/drum-kit.jpg"></p>
@@ -62,23 +79,6 @@
 <div class="note info"><a href="https://developer.mozilla.org/en-US/docs/Web/Events/transitionend" target="_blank" rel="noopener">transitionend</a><br><a href="https://developer.mozilla.org/en-US/docs/Web/Events" target="_blank" rel="noopener">MDN-Event reference</a><br></div>
 
 <div class="note primary"><a href="http://keycode.info/" target="_blank" rel="noopener">查詢鍵盤的代碼</a></div>
-]]></content>
-      <categories>
-        <category>JS</category>
-        <category>JS30</category>
-      </categories>
-      <tags>
-        <tag>JS</tag>
-        <tag>JS30</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JS30-05-Flex Panel Gallery</title>
-    <url>/2019/04/30/JS30-05-Flex-Panel-Gallery/</url>
-    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2019/04/30/JS30-05-Flex-Panel-Gallery/Gallery.png"></p>
-</blockquote>
-<a id="more"></a>
-<hr>
 ]]></content>
       <categories>
         <category>JS</category>
@@ -571,6 +571,33 @@
       </tags>
   </entry>
   <entry>
+    <title>CSS - Flex</title>
+    <url>/2021/08/20/CSS-Flex/</url>
+    <content><![CDATA[<h2 id="常用屬性"><a href="#常用屬性" class="headerlink" title="常用屬性"></a>常用屬性</h2><img src="/2021/08/20/CSS-Flex/flex-property.png">
+<a id="more"></a>
+<h2 id="概念圖"><a href="#概念圖" class="headerlink" title="概念圖"></a>概念圖</h2><img src="/2021/08/20/CSS-Flex/flex-direction.png">
+<img src="/2021/08/20/CSS-Flex/flex-direction2.png">
+<h2 id="Flex-外容器屬性："><a href="#Flex-外容器屬性：" class="headerlink" title="Flex 外容器屬性："></a>Flex 外容器屬性：</h2><h3 id="flex-direction：決定-flex-主軸線-方向"><a href="#flex-direction：決定-flex-主軸線-方向" class="headerlink" title="flex-direction：決定 flex 主軸線 方向"></a>flex-direction：決定 flex 主軸線 方向</h3><p>[ row | row-reverse | column | column-reverse ]</p>
+<h3 id="justify-content：主要軸線-左右-的對齊"><a href="#justify-content：主要軸線-左右-的對齊" class="headerlink" title="justify-content：主要軸線(左右)的對齊"></a>justify-content：主要軸線(左右)的對齊</h3><p>[ flex-start | flex-end | center | space-between | space-around ]</p>
+<img src="/2021/08/20/CSS-Flex/justify-content.png">
+<h3 id="align-items：交錯軸線-上下-的對齊"><a href="#align-items：交錯軸線-上下-的對齊" class="headerlink" title="align-items：交錯軸線(上下)的對齊"></a>align-items：交錯軸線(上下)的對齊</h3><p>[ flex-start | flex-end | center | baseline | stretch ]</p>
+<img src="/2021/08/20/CSS-Flex/align-items.png">
+<h2 id="Flex-內元件屬性："><a href="#Flex-內元件屬性：" class="headerlink" title="Flex 內元件屬性："></a>Flex 內元件屬性：</h2><h3 id="align-self：單一個物件的交錯軸對齊"><a href="#align-self：單一個物件的交錯軸對齊" class="headerlink" title="align-self：單一個物件的交錯軸對齊"></a>align-self：單一個物件的交錯軸對齊</h3><p>[ auto | flex-start | flex-end | center | baseline | stretch ]</p>
+<img src="/2021/08/20/CSS-Flex/align-self.png">
+<hr>
+<h2 id="參考網站"><a href="#參考網站" class="headerlink" title="參考網站"></a>參考網站</h2><p><a href="https://wcc723.github.io/css/2017/07/21/css-flex/" target="_blank" rel="noopener">圖解：CSS Flex 屬性一點也不難</a></p>
+<p><a href="http://sweeteason.pixnet.net/blog/post/42781628-css-flexbox-layout-%E5%AD%B8%E7%BF%92%E5%BF%83%E5%BE%97" target="_blank" rel="noopener">CSS Flexbox Layout 學習心得筆記</a></p>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>Flex</tag>
+        <tag>排版</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CSS - 常用筆記</title>
     <url>/2021/08/21/CSS-ForgetfulNotes/</url>
     <content><![CDATA[<h2 id="背景圖"><a href="#背景圖" class="headerlink" title="背景圖"></a>背景圖</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 圖片滿版 */</span></span><br><span class="line"><span class="selector-class">.img-cover</span> &#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(./bg.png);</span><br><span class="line">  <span class="attribute">background-position</span>: center;</span><br><span class="line">  <span class="attribute">background-size</span>: cover;</span><br><span class="line">  <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 圖片居中 */</span></span><br><span class="line"><span class="selector-class">.img-contain</span> &#123;</span><br><span class="line">  <span class="attribute">background-image</span>: <span class="built_in">url</span>(./bg.png);</span><br><span class="line">  <span class="attribute">background-position</span>: center;</span><br><span class="line">  <span class="attribute">background-size</span>: contain;</span><br><span class="line">  <span class="attribute">background-repeat</span>: no-repeat;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -636,72 +663,8 @@
       </categories>
       <tags>
         <tag>CSS</tag>
+        <tag>排版</tag>
         <tag>float</tag>
-        <tag>排版</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSS - Flex</title>
-    <url>/2021/08/20/CSS-Flex/</url>
-    <content><![CDATA[<h2 id="常用屬性"><a href="#常用屬性" class="headerlink" title="常用屬性"></a>常用屬性</h2><img src="/2021/08/20/CSS-Flex/flex-property.png">
-<a id="more"></a>
-<h2 id="概念圖"><a href="#概念圖" class="headerlink" title="概念圖"></a>概念圖</h2><img src="/2021/08/20/CSS-Flex/flex-direction.png">
-<img src="/2021/08/20/CSS-Flex/flex-direction2.png">
-<h2 id="Flex-外容器屬性："><a href="#Flex-外容器屬性：" class="headerlink" title="Flex 外容器屬性："></a>Flex 外容器屬性：</h2><h3 id="flex-direction：決定-flex-主軸線-方向"><a href="#flex-direction：決定-flex-主軸線-方向" class="headerlink" title="flex-direction：決定 flex 主軸線 方向"></a>flex-direction：決定 flex 主軸線 方向</h3><p>[ row | row-reverse | column | column-reverse ]</p>
-<h3 id="justify-content：主要軸線-左右-的對齊"><a href="#justify-content：主要軸線-左右-的對齊" class="headerlink" title="justify-content：主要軸線(左右)的對齊"></a>justify-content：主要軸線(左右)的對齊</h3><p>[ flex-start | flex-end | center | space-between | space-around ]</p>
-<img src="/2021/08/20/CSS-Flex/justify-content.png">
-<h3 id="align-items：交錯軸線-上下-的對齊"><a href="#align-items：交錯軸線-上下-的對齊" class="headerlink" title="align-items：交錯軸線(上下)的對齊"></a>align-items：交錯軸線(上下)的對齊</h3><p>[ flex-start | flex-end | center | baseline | stretch ]</p>
-<img src="/2021/08/20/CSS-Flex/align-items.png">
-<h2 id="Flex-內元件屬性："><a href="#Flex-內元件屬性：" class="headerlink" title="Flex 內元件屬性："></a>Flex 內元件屬性：</h2><h3 id="align-self：單一個物件的交錯軸對齊"><a href="#align-self：單一個物件的交錯軸對齊" class="headerlink" title="align-self：單一個物件的交錯軸對齊"></a>align-self：單一個物件的交錯軸對齊</h3><p>[ auto | flex-start | flex-end | center | baseline | stretch ]</p>
-<img src="/2021/08/20/CSS-Flex/align-self.png">
-<hr>
-<h2 id="參考網站"><a href="#參考網站" class="headerlink" title="參考網站"></a>參考網站</h2><p><a href="https://wcc723.github.io/css/2017/07/21/css-flex/" target="_blank" rel="noopener">圖解：CSS Flex 屬性一點也不難</a></p>
-<p><a href="http://sweeteason.pixnet.net/blog/post/42781628-css-flexbox-layout-%E5%AD%B8%E7%BF%92%E5%BF%83%E5%BE%97" target="_blank" rel="noopener">CSS Flexbox Layout 學習心得筆記</a></p>
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
-        <tag>排版</tag>
-        <tag>Flex</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ES6-樣板字串 (Template String)</title>
-    <url>/2021/08/24/ES6-TemplateString/</url>
-    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/08/24/ES6-TemplateString/ES6.jpg"></p>
-<font style="font-size:20px;">Template String 樣板字串</font>
-</blockquote>
-<a id="more"></a>
-<hr>
-<h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><figure class="highlight js"><figcaption><span>新舊寫法比較</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> people = [<span class="string">"老大"</span>, <span class="string">"老二"</span>, <span class="string">"老么"</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//======================過去寫法======================</span></span><br><span class="line"><span class="keyword">let</span> oldUl =</span><br><span class="line">  <span class="string">"&lt;ul&gt;"</span> +</span><br><span class="line">  <span class="string">"&lt;li&gt;我叫做 "</span> +</span><br><span class="line">  people[<span class="number">0</span>] +</span><br><span class="line">  <span class="string">"&lt;/li&gt;"</span> +</span><br><span class="line">  <span class="string">"&lt;li&gt;我叫做 "</span> +</span><br><span class="line">  people[<span class="number">1</span>] +</span><br><span class="line">  <span class="string">"&lt;/li&gt;"</span> +</span><br><span class="line">  <span class="string">"&lt;li&gt;我叫做 "</span> +</span><br><span class="line">  people[<span class="number">2</span>] +</span><br><span class="line">  <span class="string">"&lt;/li&gt;"</span> +</span><br><span class="line">  <span class="string">"&lt;/ul&gt;"</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(oldUl);</span><br><span class="line"><span class="comment">//"&lt;ul&gt;&lt;li&gt;我叫做 老大&lt;/li&gt;&lt;li&gt;我叫做 老二&lt;/li&gt;&lt;li&gt;我叫做 老么&lt;/li&gt;&lt;/ul&gt;"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//======================新的寫法======================</span></span><br><span class="line"><span class="keyword">let</span> newUl = <span class="string">`</span></span><br><span class="line"><span class="string">  &lt;ul&gt;</span></span><br><span class="line"><span class="string">    &lt;li&gt;我叫做 <span class="subst">$&#123;people[<span class="number">0</span>]&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">    &lt;li&gt;我叫做 <span class="subst">$&#123;people[<span class="number">1</span>]&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">    &lt;li&gt;我叫做 <span class="subst">$&#123;people[<span class="number">2</span>]&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">  &lt;/ul&gt;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"><span class="built_in">console</span>.log(newUl);</span><br><span class="line"><span class="comment">//  &lt;ul&gt;</span></span><br><span class="line"><span class="comment">//    &lt;li&gt;我叫做 老大&lt;/li&gt;</span></span><br><span class="line"><span class="comment">//    &lt;li&gt;我叫做 老二&lt;/li&gt;</span></span><br><span class="line"><span class="comment">//    &lt;li&gt;我叫做 老么&lt;/li&gt;</span></span><br><span class="line"><span class="comment">//  &lt;/ul&gt;</span></span><br></pre></td></tr></table></figure>
-<p>甚至可以在 <font color="red">${}</font> 內使用<font color="red">函式</font> (${}裡再包\${})。</p>
-<figure class="highlight js"><figcaption><span>使用.map組字串(結果與上例一樣)</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> newUl = <span class="string">`</span></span><br><span class="line"><span class="string">  &lt;ul&gt;</span></span><br><span class="line"><span class="string">    <span class="subst">$&#123;people.map(person =&gt; <span class="string">`&lt;li&gt;我叫做 <span class="subst">$&#123;person&#125;</span>&lt;/li&gt;`</span>).join(<span class="string">""</span>)&#125;</span></span></span><br><span class="line"><span class="string">  &lt;/ul&gt;</span></span><br><span class="line"><span class="string">`</span>;</span><br></pre></td></tr></table></figure>
-<p>也可以在函式內增添<font color="red">更多的判斷式</font>。</p>
-<figure class="highlight js"><figcaption><span>新增if判斷式</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> people = [</span><br><span class="line">  &#123;</span><br><span class="line">    name: <span class="string">"老大"</span>,</span><br><span class="line">    friends: <span class="number">2</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    name: <span class="string">"老二"</span>,</span><br><span class="line">    friends: <span class="number">16</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    name: <span class="string">"老么"</span>,</span><br><span class="line">    friends: <span class="number">0</span></span><br><span class="line">  &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> newUl = <span class="string">`</span></span><br><span class="line"><span class="string">  &lt;ul&gt;</span></span><br><span class="line"><span class="string">    <span class="subst">$&#123;people</span></span></span><br><span class="line"><span class="string"><span class="subst">      .map(person =&gt; &#123;</span></span></span><br><span class="line"><span class="string"><span class="subst">        <span class="keyword">if</span> (person.friends) &#123;</span></span></span><br><span class="line"><span class="string"><span class="subst">          <span class="keyword">return</span> <span class="string">`&lt;li&gt;<span class="subst">$&#123;person.name&#125;</span> 有 <span class="subst">$&#123;person.friends&#125;</span> 朋友&lt;/li&gt;`</span>;</span></span></span><br><span class="line"><span class="string"><span class="subst">        &#125;</span> else &#123;</span></span><br><span class="line"><span class="string">          return `</span>&lt;li&gt;$&#123;person.name&#125; 沒朋友&lt;<span class="regexp">/li&gt;`;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">      &#125;)</span></span><br><span class="line"><span class="regexp">      .join("")&#125;</span></span><br><span class="line"><span class="regexp">  &lt;/u</span>l&gt;</span><br><span class="line"><span class="string">`;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">console.log(newUl);</span></span><br><span class="line"><span class="string">//  &lt;ul&gt;</span></span><br><span class="line"><span class="string">//    &lt;li&gt;老大 有 2 朋友&lt;/li&gt;&lt;li&gt;老二 有 999 朋友&lt;/li&gt;&lt;li&gt;老么 邊緣人&lt;/li&gt;</span></span><br><span class="line"><span class="string">//  &lt;/ul&gt;</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="巢狀-String-Template"><a href="#巢狀-String-Template" class="headerlink" title="巢狀 String Template"></a>巢狀 String Template</h2><p>如同上述的方法 <font color="red">${}</font> 內可以加入<font color="red">函式</font>及其更內層的 Template String，<br>所以也可以在 <font color="red">${}</font> 插入<font color="red">另一組的函式</font>的 Template String。</p>
-<figure class="highlight js"><figcaption><span>在$&#123;&#125;裡呼叫function</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> travelers = &#123;</span><br><span class="line">  leader: <span class="string">"爸爸"</span>,</span><br><span class="line">  partner: [</span><br><span class="line">    &#123;</span><br><span class="line">      name: <span class="string">"老大"</span>,</span><br><span class="line">      friends: <span class="number">2</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      name: <span class="string">"老二"</span>,</span><br><span class="line">      friends: <span class="number">16</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      name: <span class="string">"老么"</span>,</span><br><span class="line">      friends: <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">renderList</span>(<span class="params">people</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`</span></span><br><span class="line"><span class="string">    &lt;div&gt;上車名單&lt;/div&gt;</span></span><br><span class="line"><span class="string">    &lt;ul&gt;</span></span><br><span class="line"><span class="string">      <span class="subst">$&#123;people.map(person =&gt; <span class="string">`&lt;li&gt;<span class="subst">$&#123;person.name&#125;</span>&lt;/li&gt;`</span>).join(<span class="string">""</span>)&#125;</span></span></span><br><span class="line"><span class="string">    &lt;/ul&gt;</span></span><br><span class="line"><span class="string">  `</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> template = <span class="string">`</span></span><br><span class="line"><span class="string">  &lt;div class="template"&gt;</span></span><br><span class="line"><span class="string">  &lt;h2&gt;開車：<span class="subst">$&#123;travelers.leader&#125;</span>&lt;/h2&gt;</span></span><br><span class="line"><span class="string">  <span class="subst">$&#123;renderList(travelers.partner)&#125;</span></span></span><br><span class="line"><span class="string">  &lt;/div&gt;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(template);</span><br><span class="line"><span class="comment">// &lt;div class=\"template\"&gt;</span></span><br><span class="line"><span class="comment">// &lt;h2&gt;開車：爸爸&lt;/h2&gt;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//   &lt;div&gt;上車名單&lt;/div&gt;</span></span><br><span class="line"><span class="comment">//   &lt;ul&gt;</span></span><br><span class="line"><span class="comment">//     &lt;li&gt;老大&lt;/li&gt;&lt;li&gt;老二&lt;/li&gt;&lt;li&gt;老么&lt;/li&gt;</span></span><br><span class="line"><span class="comment">//   &lt;/ul&gt;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// &lt;/div&gt;</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="跳脫字元"><a href="#跳脫字元" class="headerlink" title="跳脫字元"></a>跳脫字元</h2><p>如果有需要插入<font color="red">特殊字元</font>，一樣可以使用 <font color="red">\</font> 反斜線來插入：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">`\\`</span>); <span class="comment">// "\"</span></span><br></pre></td></tr></table></figure>
-<p>如果要計算字元數，或是需要將字串做額外處理，<font color="red">跳脫字元是不佔字符數</font>的：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">`\\`</span>.length); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
-<p>要取得<font color="red">含</font>特殊字元的字串可用 String.raw()：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>.raw<span class="string">`\\`</span>.length); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="參考來源"><a href="#參考來源" class="headerlink" title="參考來源"></a>參考來源</h2><div class="note info"><a href="https://ithelp.ithome.com.tw/users/20083608/ironman/1354" target="_blank" rel="noopener">邁向 JavaScript 勇者之路</a></div>
-]]></content>
-      <categories>
-        <category>JS</category>
-        <category>ES6</category>
-      </categories>
-      <tags>
-        <tag>JS</tag>
-        <tag>ES6</tag>
-        <tag>樣板字串</tag>
-        <tag>Template String</tag>
       </tags>
   </entry>
   <entry>
@@ -849,6 +812,140 @@
       </categories>
       <tags>
         <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ES6-樣板字串 (Template String)</title>
+    <url>/2021/08/24/ES6-TemplateString/</url>
+    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/08/24/ES6-TemplateString/ES6.jpg"></p>
+<font style="font-size:20px;">Template String 樣板字串</font>
+</blockquote>
+<a id="more"></a>
+<hr>
+<h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><figure class="highlight js"><figcaption><span>新舊寫法比較</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> people = [<span class="string">"老大"</span>, <span class="string">"老二"</span>, <span class="string">"老么"</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//======================過去寫法======================</span></span><br><span class="line"><span class="keyword">let</span> oldUl =</span><br><span class="line">  <span class="string">"&lt;ul&gt;"</span> +</span><br><span class="line">  <span class="string">"&lt;li&gt;我叫做 "</span> +</span><br><span class="line">  people[<span class="number">0</span>] +</span><br><span class="line">  <span class="string">"&lt;/li&gt;"</span> +</span><br><span class="line">  <span class="string">"&lt;li&gt;我叫做 "</span> +</span><br><span class="line">  people[<span class="number">1</span>] +</span><br><span class="line">  <span class="string">"&lt;/li&gt;"</span> +</span><br><span class="line">  <span class="string">"&lt;li&gt;我叫做 "</span> +</span><br><span class="line">  people[<span class="number">2</span>] +</span><br><span class="line">  <span class="string">"&lt;/li&gt;"</span> +</span><br><span class="line">  <span class="string">"&lt;/ul&gt;"</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(oldUl);</span><br><span class="line"><span class="comment">//"&lt;ul&gt;&lt;li&gt;我叫做 老大&lt;/li&gt;&lt;li&gt;我叫做 老二&lt;/li&gt;&lt;li&gt;我叫做 老么&lt;/li&gt;&lt;/ul&gt;"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//======================新的寫法======================</span></span><br><span class="line"><span class="keyword">let</span> newUl = <span class="string">`</span></span><br><span class="line"><span class="string">  &lt;ul&gt;</span></span><br><span class="line"><span class="string">    &lt;li&gt;我叫做 <span class="subst">$&#123;people[<span class="number">0</span>]&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">    &lt;li&gt;我叫做 <span class="subst">$&#123;people[<span class="number">1</span>]&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">    &lt;li&gt;我叫做 <span class="subst">$&#123;people[<span class="number">2</span>]&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">  &lt;/ul&gt;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"><span class="built_in">console</span>.log(newUl);</span><br><span class="line"><span class="comment">//  &lt;ul&gt;</span></span><br><span class="line"><span class="comment">//    &lt;li&gt;我叫做 老大&lt;/li&gt;</span></span><br><span class="line"><span class="comment">//    &lt;li&gt;我叫做 老二&lt;/li&gt;</span></span><br><span class="line"><span class="comment">//    &lt;li&gt;我叫做 老么&lt;/li&gt;</span></span><br><span class="line"><span class="comment">//  &lt;/ul&gt;</span></span><br></pre></td></tr></table></figure>
+<p>甚至可以在 <font color="red">${}</font> 內使用<font color="red">函式</font> (${}裡再包\${})。</p>
+<figure class="highlight js"><figcaption><span>使用.map組字串(結果與上例一樣)</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> newUl = <span class="string">`</span></span><br><span class="line"><span class="string">  &lt;ul&gt;</span></span><br><span class="line"><span class="string">    <span class="subst">$&#123;people.map(person =&gt; <span class="string">`&lt;li&gt;我叫做 <span class="subst">$&#123;person&#125;</span>&lt;/li&gt;`</span>).join(<span class="string">""</span>)&#125;</span></span></span><br><span class="line"><span class="string">  &lt;/ul&gt;</span></span><br><span class="line"><span class="string">`</span>;</span><br></pre></td></tr></table></figure>
+<p>也可以在函式內增添<font color="red">更多的判斷式</font>。</p>
+<figure class="highlight js"><figcaption><span>新增if判斷式</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> people = [</span><br><span class="line">  &#123;</span><br><span class="line">    name: <span class="string">"老大"</span>,</span><br><span class="line">    friends: <span class="number">2</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    name: <span class="string">"老二"</span>,</span><br><span class="line">    friends: <span class="number">16</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    name: <span class="string">"老么"</span>,</span><br><span class="line">    friends: <span class="number">0</span></span><br><span class="line">  &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> newUl = <span class="string">`</span></span><br><span class="line"><span class="string">  &lt;ul&gt;</span></span><br><span class="line"><span class="string">    <span class="subst">$&#123;people</span></span></span><br><span class="line"><span class="string"><span class="subst">      .map(person =&gt; &#123;</span></span></span><br><span class="line"><span class="string"><span class="subst">        <span class="keyword">if</span> (person.friends) &#123;</span></span></span><br><span class="line"><span class="string"><span class="subst">          <span class="keyword">return</span> <span class="string">`&lt;li&gt;<span class="subst">$&#123;person.name&#125;</span> 有 <span class="subst">$&#123;person.friends&#125;</span> 朋友&lt;/li&gt;`</span>;</span></span></span><br><span class="line"><span class="string"><span class="subst">        &#125;</span> else &#123;</span></span><br><span class="line"><span class="string">          return `</span>&lt;li&gt;$&#123;person.name&#125; 沒朋友&lt;<span class="regexp">/li&gt;`;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">      &#125;)</span></span><br><span class="line"><span class="regexp">      .join("")&#125;</span></span><br><span class="line"><span class="regexp">  &lt;/u</span>l&gt;</span><br><span class="line"><span class="string">`;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">console.log(newUl);</span></span><br><span class="line"><span class="string">//  &lt;ul&gt;</span></span><br><span class="line"><span class="string">//    &lt;li&gt;老大 有 2 朋友&lt;/li&gt;&lt;li&gt;老二 有 999 朋友&lt;/li&gt;&lt;li&gt;老么 邊緣人&lt;/li&gt;</span></span><br><span class="line"><span class="string">//  &lt;/ul&gt;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="巢狀-String-Template"><a href="#巢狀-String-Template" class="headerlink" title="巢狀 String Template"></a>巢狀 String Template</h2><p>如同上述的方法 <font color="red">${}</font> 內可以加入<font color="red">函式</font>及其更內層的 Template String，<br>所以也可以在 <font color="red">${}</font> 插入<font color="red">另一組的函式</font>的 Template String。</p>
+<figure class="highlight js"><figcaption><span>在$&#123;&#125;裡呼叫function</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> travelers = &#123;</span><br><span class="line">  leader: <span class="string">"爸爸"</span>,</span><br><span class="line">  partner: [</span><br><span class="line">    &#123;</span><br><span class="line">      name: <span class="string">"老大"</span>,</span><br><span class="line">      friends: <span class="number">2</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      name: <span class="string">"老二"</span>,</span><br><span class="line">      friends: <span class="number">16</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      name: <span class="string">"老么"</span>,</span><br><span class="line">      friends: <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">renderList</span>(<span class="params">people</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`</span></span><br><span class="line"><span class="string">    &lt;div&gt;上車名單&lt;/div&gt;</span></span><br><span class="line"><span class="string">    &lt;ul&gt;</span></span><br><span class="line"><span class="string">      <span class="subst">$&#123;people.map(person =&gt; <span class="string">`&lt;li&gt;<span class="subst">$&#123;person.name&#125;</span>&lt;/li&gt;`</span>).join(<span class="string">""</span>)&#125;</span></span></span><br><span class="line"><span class="string">    &lt;/ul&gt;</span></span><br><span class="line"><span class="string">  `</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> template = <span class="string">`</span></span><br><span class="line"><span class="string">  &lt;div class="template"&gt;</span></span><br><span class="line"><span class="string">  &lt;h2&gt;開車：<span class="subst">$&#123;travelers.leader&#125;</span>&lt;/h2&gt;</span></span><br><span class="line"><span class="string">  <span class="subst">$&#123;renderList(travelers.partner)&#125;</span></span></span><br><span class="line"><span class="string">  &lt;/div&gt;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(template);</span><br><span class="line"><span class="comment">// &lt;div class=\"template\"&gt;</span></span><br><span class="line"><span class="comment">// &lt;h2&gt;開車：爸爸&lt;/h2&gt;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//   &lt;div&gt;上車名單&lt;/div&gt;</span></span><br><span class="line"><span class="comment">//   &lt;ul&gt;</span></span><br><span class="line"><span class="comment">//     &lt;li&gt;老大&lt;/li&gt;&lt;li&gt;老二&lt;/li&gt;&lt;li&gt;老么&lt;/li&gt;</span></span><br><span class="line"><span class="comment">//   &lt;/ul&gt;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// &lt;/div&gt;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="跳脫字元"><a href="#跳脫字元" class="headerlink" title="跳脫字元"></a>跳脫字元</h2><p>如果有需要插入<font color="red">特殊字元</font>，一樣可以使用 <font color="red">\</font> 反斜線來插入：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">`\\`</span>); <span class="comment">// "\"</span></span><br></pre></td></tr></table></figure>
+<p>如果要計算字元數，或是需要將字串做額外處理，<font color="red">跳脫字元是不佔字符數</font>的：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">`\\`</span>.length); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<p>要取得<font color="red">含</font>特殊字元的字串可用 String.raw()：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>.raw<span class="string">`\\`</span>.length); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="參考來源"><a href="#參考來源" class="headerlink" title="參考來源"></a>參考來源</h2><div class="note info"><a href="https://ithelp.ithome.com.tw/users/20083608/ironman/1354" target="_blank" rel="noopener">邁向 JavaScript 勇者之路</a></div>
+]]></content>
+      <categories>
+        <category>JS</category>
+        <category>ES6</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>ES6</tag>
+        <tag>樣板字串</tag>
+        <tag>Template String</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JS-Events</title>
+    <url>/2021/08/25/JS-Events/</url>
+    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/08/25/JS-Events/js_01.png"></p>
+<font style="font-size:20px;">那些你知道與不知道的事件們</font>
+</blockquote>
+<a id="more"></a>
+<hr>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 2018 iT 邦幫忙鐵人賽，看到 Kuro 大的重新認識 JavaScript 系列文，仔細的閱讀後，紀錄自己觀念不足的部份，也非常推薦給大家觀看此系列文。</p>
+<div class="note info"><a href="https://ithelp.ithome.com.tw/users/20065504/ironman/1259?page=1" target="_blank" rel="noopener">Kuro-重新認識 JavaScript 系列</a></div>
+
+<hr>
+<h2 id="表單相關事件"><a href="#表單相關事件" class="headerlink" title="表單相關事件"></a>表單相關事件</h2><ul>
+<li><p><font color="red">input</font> 事件： 當 input、 textarea 以及帶有 contenteditable 的元素內容被改變時，就會觸發 input 事件。</p>
+</li>
+<li><p>change 事件： 當 input、select、textarea、radio、checkbox 等表單元素被改變時觸發。 但與 input 事件不同的是，input 事件會在輸入框輸入內容的當下觸發，而 change 事件則是在目前焦點<font color="red">離開輸入框後</font>才觸發。</p>
+</li>
+<li><p>submit 事件：當表單被送出時觸發，通常表單驗證都會在這一步處理，若驗證未通過則 return false;。</p>
+</li>
+</ul>
+<hr>
+<h2 id="特殊事件"><a href="#特殊事件" class="headerlink" title="特殊事件"></a>特殊事件</h2><p>透過 Composition Events 我們可以觀察使用者在輸入框內開啟<font color="red">輸入法 (Input Method Editor, IME)</font> 時，組字或選字的狀態。</p>
+<p>這個時候就需要透過 Composition Events 來為輸入框做增強。</p>
+<ul>
+<li>compositionstart: 輸入框內開啟輸入法，且正在拼字時觸發。</li>
+<li>compositionupdate: 輸入框內開啟輸入法，且正在拼字或選字時更改了內容時觸發。</li>
+<li>compositionend: 輸入框內開啟輸入法，拼字或選字完成，正要送出至輸入框時觸發。</li>
+</ul>
+<p>可以看到，如果要確認使用者輸入完成並送出文字時，就可以透過 compositionend 來做最後確認。</p>
+<p>執行的時候像這樣：</p>
+<img src="/2021/08/25/JS-Events/js_02.png">
+<div class="note primary">開啟console，在input輸入文字：<a href="https://codepen.io/Kanboo/pen/ZvRayJ?editors=1010" target="_blank" rel="noopener">event觸發時機</a></div>
+
+<hr>
+<h2 id="鍵盤相關事件"><a href="#鍵盤相關事件" class="headerlink" title="鍵盤相關事件"></a>鍵盤相關事件</h2><p>鍵盤相關事件有下列三種，在大多數情況下會將鍵盤事件註冊在 input 的輸入框上。</p>
+<ul>
+<li><p>keydown 事件: 「壓下」鍵盤按鍵時會觸發 keydown 事件。</p>
+</li>
+<li><p>keypress 事件: 除了 Shift, Fn, CapsLock 這三種按鍵外按住時會觸發，若按著不放則會連續觸發。</p>
+</li>
+<li><p>keyup 事件: 「放開」鍵盤按鍵時觸發。</p>
+</li>
+</ul>
+<p>透過 <font color="red">e.keyCode</font> 就可以判斷使用者目前按下的是哪個按鈕</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">textBox.addEventListener(</span><br><span class="line">  <span class="string">"keydown"</span>,</span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// enter 的 keyCode 是 13</span></span><br><span class="line">    <span class="keyword">if</span> (e.keyCode === <span class="number">13</span>) &#123;</span><br><span class="line">      formSubmit();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="literal">false</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>註： keyCode 的對應表可以到這裡查看：<a href="https://gist.github.com/tylerbuchea/8011573" target="_blank" rel="noopener">https://gist.github.com/tylerbuchea/8011573</a></p>
+</blockquote>
+<hr>
+<h2 id="滑鼠相關事件"><a href="#滑鼠相關事件" class="headerlink" title="滑鼠相關事件"></a>滑鼠相關事件</h2><ul>
+<li><p>mousedown / mouseup 事件: 這兩個事件分別會在滑鼠點擊了某元素「按下」(mousedown) 按鈕，以及「放開」(mouseup) 按鈕時觸發。</p>
+</li>
+<li><p>click 事件: 當滑鼠「點擊」了某元素時觸發。</p>
+</li>
+<li><p>dblclick 事件: 當滑鼠「連點兩次」了某元素時觸發。</p>
+</li>
+<li><p>mouseenter / mousemove / mouseleave 事件：</p>
+</li>
+<li><p>這三個事件要放在一起看</p>
+<ul>
+<li><p>當滑鼠游標移入了某元素時，會先觸發 mouseenter 事件。</p>
+</li>
+<li><p>滑鼠游標在這個元素內「移動」時，會連續觸發 mousemove 事件。</p>
+</li>
+<li><p>直到滑鼠游標離開了這個元素，才觸發 mouseleave 事件。</p>
+</li>
+</ul>
+</li>
+</ul>
+<img src="/2021/08/25/JS-Events/js_03.gif">
+<p>這些滑鼠相關的事件，都可以透過 <font color="red">event.pageX</font> 與 <font color="red">event.pageY</font> 屬性去取得目前在網頁對應的座標。</p>
+<hr>
+<h2 id="介面相關事件"><a href="#介面相關事件" class="headerlink" title="介面相關事件"></a>介面相關事件</h2><ul>
+<li><p>load 事件：<br>註冊在 window 物件上，指的是網頁資源 (包括 CSS、JS、圖片等) 全數載入完畢後觸發。<br>如果是 img 元素的 load 事件，則表示是此圖片載入完畢後觸發。</p>
+</li>
+<li><p>unload 、 beforeunload 事件：<br>與 load 事件相反，unload 與 beforeunload 事件分別會在離開頁面或重新整理時觸發，而 beforeunload 會跳出對話框詢問使用者是否要離開目前頁面。</p>
+</li>
+<li><p><font color="red">resize</font> 事件：當瀏覽器 (window) 或指定元素 (element) 的「尺寸變更」時觸發。</p>
+</li>
+<li><p><font color="red">scroll</font> 事件：當瀏覽器 (window) 或指定元素 (element) 的「捲軸被拉動」時觸發。</p>
+</li>
+<li><p><font color="red">DOMContentLoaded</font> 事件：<br>類似於 load 事件，但不同的是，load 事件是在網頁「所有」資源都已經載入完成後才會觸發，而 DOMContentLoaded 事件是在 DOM 結構被完整的讀取跟解析後就會被觸發，不須等待外部資源讀取完成。</p>
+</li>
+</ul>
+<p>簡單來說， DOMContentLoaded 與 load 的時機可以用這張圖來解釋：</p>
+<img src="/2021/08/25/JS-Events/js_04.png">
+]]></content>
+      <categories>
+        <category>JS</category>
+        <category>重新認識 JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>重新認識 JavaScript</tag>
+        <tag>event</tag>
       </tags>
   </entry>
   <entry>

@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>hhttps://bryanhsiao.github.io/2021/08/25/JS-Events/</loc>
+    
+    <lastmod>2021-08-25</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>hhttps://bryanhsiao.github.io/2021/08/24/ES6-TemplateString/</loc>
     
     <lastmod>2021-08-24</lastmod>
@@ -186,7 +193,7 @@
 
   <url>
     <loc>hhttps://bryanhsiao.github.io</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -194,140 +201,154 @@
   
   <url>
     <loc>hhttps://bryanhsiao.github.io/tags/JS/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>hhttps://bryanhsiao.github.io/tags/JS30/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>hhttps://bryanhsiao.github.io/tags/Hexo/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>hhttps://bryanhsiao.github.io/tags/MarkDown/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>hhttps://bryanhsiao.github.io/tags/VueJS/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>hhttps://bryanhsiao.github.io/tags/Vue3/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>hhttps://bryanhsiao.github.io/tags/ES6/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>hhttps://bryanhsiao.github.io/tags/箭頭函式/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>hhttps://bryanhsiao.github.io/tags/Arrow-functions/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>hhttps://bryanhsiao.github.io/tags/CSS/</loc>
-    <lastmod>2021-08-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>hhttps://bryanhsiao.github.io/tags/float/</loc>
-    <lastmod>2021-08-24</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>hhttps://bryanhsiao.github.io/tags/排版/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>hhttps://bryanhsiao.github.io/tags/Flex/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>hhttps://bryanhsiao.github.io/tags/樣板字串/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <loc>hhttps://bryanhsiao.github.io/tags/排版/</loc>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>hhttps://bryanhsiao.github.io/tags/Template-String/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <loc>hhttps://bryanhsiao.github.io/tags/float/</loc>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>hhttps://bryanhsiao.github.io/tags/Array/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>hhttps://bryanhsiao.github.io/tags/HTML5/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>hhttps://bryanhsiao.github.io/tags/語義架構/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-08-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>hhttps://bryanhsiao.github.io/tags/樣板字串/</loc>
+    <lastmod>2021-08-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>hhttps://bryanhsiao.github.io/tags/Template-String/</loc>
+    <lastmod>2021-08-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>hhttps://bryanhsiao.github.io/tags/重新認識-JavaScript/</loc>
+    <lastmod>2021-08-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>hhttps://bryanhsiao.github.io/tags/event/</loc>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>hhttps://bryanhsiao.github.io/tags/Promise/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>hhttps://bryanhsiao.github.io/tags/asnyc-await/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
@@ -336,56 +357,63 @@
   
   <url>
     <loc>hhttps://bryanhsiao.github.io/categories/JS/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>hhttps://bryanhsiao.github.io/categories/JS/JS30/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>hhttps://bryanhsiao.github.io/categories/Hexo/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>hhttps://bryanhsiao.github.io/categories/VueJS/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>hhttps://bryanhsiao.github.io/categories/JS/ES6/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>hhttps://bryanhsiao.github.io/categories/CSS/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>hhttps://bryanhsiao.github.io/categories/HTML5/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>hhttps://bryanhsiao.github.io/categories/VueJS/Vue3/</loc>
-    <lastmod>2021-08-24</lastmod>
+    <lastmod>2021-08-25</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>hhttps://bryanhsiao.github.io/categories/JS/重新認識-JavaScript/</loc>
+    <lastmod>2021-08-25</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>

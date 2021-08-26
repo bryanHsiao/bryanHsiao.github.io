@@ -295,49 +295,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo-移植步驟紀錄 及 部署指令</title>
-    <url>/2021/07/21/HexoBackupSolution/</url>
-    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/07/21/HexoBackupSolution/hexo-cover.png"></p>
-<font style="font-size:20px;">換電腦必備</font></blockquote>
-<a id="more"></a>
-<h2 id="環境檢查"><a href="#環境檢查" class="headerlink" title="環境檢查"></a>環境檢查</h2><blockquote>
-<p>是否有安裝 git</p>
-</blockquote>
-<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ git --version</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>是否有安裝 node.js</p>
-</blockquote>
-<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>是否有安裝 hexo</p>
-</blockquote>
-<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo -v</span><br></pre></td></tr></table></figure>
-<h2 id="在新環境初始化-hexo"><a href="#在新環境初始化-hexo" class="headerlink" title="在新環境初始化 hexo"></a>在新環境初始化 hexo</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo init 資料夾名稱  ＃建立一個資料夾（最好跟你原本hexo的資料夾同名）</span><br><span class="line">$ <span class="built_in">cd</span> 資料夾名稱 ＃進入該資料夾下</span><br></pre></td></tr></table></figure>
-<h2 id="將備份檔案複製到新環境"><a href="#將備份檔案複製到新環境" class="headerlink" title="將備份檔案複製到新環境"></a>將備份檔案複製到新環境</h2><p>除了 node_mudules 外，其他檔案都複製過去<br>因為 node_mudules 是存放 library，在執行 npm init 時會裝回來；</p>
-<p>複製完畢後，執行以下指令</p>
-<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ npm init</span><br><span class="line">$ npm install hexo-deploy-git --save</span><br><span class="line">$ npm install hexo-generator-feed --save</span><br><span class="line">$ npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
-<h2 id="本地端運行"><a href="#本地端運行" class="headerlink" title="本地端運行"></a>本地端運行</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo s --debug <span class="comment">#應可透過本機 http://localhost:4001 看到你的hexo環境</span></span><br></pre></td></tr></table></figure>
-<h2 id="編譯出靜態網頁"><a href="#編譯出靜態網頁" class="headerlink" title="編譯出靜態網頁"></a>編譯出靜態網頁</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
-<h2 id="部署到-github"><a href="#部署到-github" class="headerlink" title="部署到 github"></a>部署到 github</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo d <span class="comment">#注意有時須等待github完成部署，可能須等待1~5分鐘不等</span></span><br></pre></td></tr></table></figure>
-<h2 id="若部署遇到問題"><a href="#若部署遇到問題" class="headerlink" title="若部署遇到問題"></a>若部署遇到問題</h2><ul>
-<li>升級 git 版本</li>
-</ul>
-<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ brew upgrade git <span class="comment">#可能會遇到問題，看Ｔerminal訊息排除</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>改用 ssh key 部署<br>參考此網頁資訊建立 ssh key =&gt; <a href="https://www.cnblogs.com/xsilence/%5B/6001938.html" target="_blank" rel="noopener">建立步驟</a></li>
-</ul>
-<h2 id="指令集整理"><a href="#指令集整理" class="headerlink" title="指令集整理"></a>指令集整理</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"postName"</span>  <span class="comment">#新建文章</span></span><br><span class="line">$ hexo clean <span class="comment">#清除快取</span></span><br><span class="line">$ hexo generate <span class="comment">#生成靜態頁面至public目錄</span></span><br><span class="line">$ hexo server <span class="comment">#開啟預覽訪問端口（默認端口4000，'ctrl + c'關閉server）</span></span><br><span class="line">$ hexo deploy  <span class="comment">#將.deploy目錄部署到GitHub</span></span><br><span class="line">$ hexo <span class="built_in">help</span>   <span class="comment">#查看幫助</span></span><br><span class="line">$ hexo version   <span class="comment">#查看Hexo的版本</span></span><br></pre></td></tr></table></figure>
-<p>指令簡寫</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo n == hexo new</span><br><span class="line">hexo g == hexo generate</span><br><span class="line">hexo s == hexo server</span><br><span class="line">hexo d == hexo deploy</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Vue3 Start</title>
     <url>/2021/07/20/Vue3-01/</url>
     <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/07/20/Vue3-01/zMu6v6x.png"></p>
@@ -398,6 +355,49 @@
 <h2 id="設定使用者資訊"><a href="#設定使用者資訊" class="headerlink" title="設定使用者資訊"></a>設定使用者資訊</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"輸入使用者名稱"</span></span><br><span class="line">$ git config --global user.email <span class="string">"輸入email"</span></span><br></pre></td></tr></table></figure>
 <h2 id="部署至-github"><a href="#部署至-github" class="headerlink" title="部署至 github"></a>部署至 github</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo d -g</span><br></pre></td></tr></table></figure>
 <p>部署成功！！<br><img src="/2021/07/22/sshKey-Create/bryanhsiao_BryanHsiao-mac13____bryanhsiao_和_2021-07-22-sshKey-Create_md_—__posts.png"></p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo-移植步驟紀錄 及 部署指令</title>
+    <url>/2021/07/21/HexoBackupSolution/</url>
+    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/07/21/HexoBackupSolution/hexo-cover.png"></p>
+<font style="font-size:20px;">換電腦必備</font></blockquote>
+<a id="more"></a>
+<h2 id="環境檢查"><a href="#環境檢查" class="headerlink" title="環境檢查"></a>環境檢查</h2><blockquote>
+<p>是否有安裝 git</p>
+</blockquote>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ git --version</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>是否有安裝 node.js</p>
+</blockquote>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>是否有安裝 hexo</p>
+</blockquote>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo -v</span><br></pre></td></tr></table></figure>
+<h2 id="在新環境初始化-hexo"><a href="#在新環境初始化-hexo" class="headerlink" title="在新環境初始化 hexo"></a>在新環境初始化 hexo</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo init 資料夾名稱  ＃建立一個資料夾（最好跟你原本hexo的資料夾同名）</span><br><span class="line">$ <span class="built_in">cd</span> 資料夾名稱 ＃進入該資料夾下</span><br></pre></td></tr></table></figure>
+<h2 id="將備份檔案複製到新環境"><a href="#將備份檔案複製到新環境" class="headerlink" title="將備份檔案複製到新環境"></a>將備份檔案複製到新環境</h2><p>除了 node_mudules 外，其他檔案都複製過去<br>因為 node_mudules 是存放 library，在執行 npm init 時會裝回來；</p>
+<p>複製完畢後，執行以下指令</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ npm init</span><br><span class="line">$ npm install hexo-deploy-git --save</span><br><span class="line">$ npm install hexo-generator-feed --save</span><br><span class="line">$ npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
+<h2 id="本地端運行"><a href="#本地端運行" class="headerlink" title="本地端運行"></a>本地端運行</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo s --debug <span class="comment">#應可透過本機 http://localhost:4001 看到你的hexo環境</span></span><br></pre></td></tr></table></figure>
+<h2 id="編譯出靜態網頁"><a href="#編譯出靜態網頁" class="headerlink" title="編譯出靜態網頁"></a>編譯出靜態網頁</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+<h2 id="部署到-github"><a href="#部署到-github" class="headerlink" title="部署到 github"></a>部署到 github</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo d <span class="comment">#注意有時須等待github完成部署，可能須等待1~5分鐘不等</span></span><br></pre></td></tr></table></figure>
+<h2 id="若部署遇到問題"><a href="#若部署遇到問題" class="headerlink" title="若部署遇到問題"></a>若部署遇到問題</h2><ul>
+<li>升級 git 版本</li>
+</ul>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ brew upgrade git <span class="comment">#可能會遇到問題，看Ｔerminal訊息排除</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>改用 ssh key 部署<br>參考此網頁資訊建立 ssh key =&gt; <a href="https://www.cnblogs.com/xsilence/%5B/6001938.html" target="_blank" rel="noopener">建立步驟</a></li>
+</ul>
+<h2 id="指令集整理"><a href="#指令集整理" class="headerlink" title="指令集整理"></a>指令集整理</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"postName"</span>  <span class="comment">#新建文章</span></span><br><span class="line">$ hexo clean <span class="comment">#清除快取</span></span><br><span class="line">$ hexo generate <span class="comment">#生成靜態頁面至public目錄</span></span><br><span class="line">$ hexo server <span class="comment">#開啟預覽訪問端口（默認端口4000，'ctrl + c'關閉server）</span></span><br><span class="line">$ hexo deploy  <span class="comment">#將.deploy目錄部署到GitHub</span></span><br><span class="line">$ hexo <span class="built_in">help</span>   <span class="comment">#查看幫助</span></span><br><span class="line">$ hexo version   <span class="comment">#查看Hexo的版本</span></span><br></pre></td></tr></table></figure>
+<p>指令簡寫</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo n == hexo new</span><br><span class="line">hexo g == hexo generate</span><br><span class="line">hexo s == hexo server</span><br><span class="line">hexo d == hexo deploy</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>Hexo</category>
@@ -668,6 +668,79 @@
       </tags>
   </entry>
   <entry>
+    <title>HTML5 - 語義元素</title>
+    <url>/2021/08/22/HTML5-Semantics/</url>
+    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/08/22/HTML5-Semantics/HTML5_01.jpg"><br>重新認識 HTML5 的語義元素</p>
+</blockquote>
+<a id="more"></a>
+<hr>
+<h2 id="常用元素"><a href="#常用元素" class="headerlink" title="常用元素"></a>常用元素</h2><h3 id="lt-header-gt"><a href="#lt-header-gt" class="headerlink" title="&lt;header&gt;"></a><code>&lt;header&gt;</code></h3><p>區塊標題，不要把它只用來取代 <code>&lt;div class=”header”&gt;</code><br>它也可以是文章的標題，一頁可以有好多個 <code>&lt;header&gt;</code>，<code>&lt;header&gt;</code> 裡面至少要有一個 h1~h6。</p>
+<h3 id="lt-nav-gt"><a href="#lt-nav-gt" class="headerlink" title="&lt;nav&gt;"></a><code>&lt;nav&gt;</code></h3><p>導覽列。裡面裝的東西應該只有 <strong>_主要_</strong> 的 navigation links，不要把各種 link 都丟到<code>&lt;nav&gt;</code>裡面。<br>舉例來說，footer 裡面常常會有一排 link，那個就不需要包進<code>&lt;nav&gt;</code>。</p>
+<h3 id="lt-main-gt"><a href="#lt-main-gt" class="headerlink" title="&lt;main&gt;"></a><code>&lt;main&gt;</code></h3><p>一個頁面只有一個! 任何 global 都不能放在 main 裡面( e.g. <code>&lt;header&gt;</code> <code>&lt;footer&gt;</code> logo)</p>
+<h3 id="lt-section-gt"><a href="#lt-section-gt" class="headerlink" title="&lt;section&gt;"></a><code>&lt;section&gt;</code></h3><p>通常用來把一些<strong><em>相關的元素組合在一起</em></strong>，一般來說，裡面都會包含 heading。<br>如果這個區塊的內容可以分成幾個部分的話，那應該使用 article。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>Section title<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra nec</span><br><span class="line">    nulla vitae mollis.</span><br><span class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="lt-article-gt"><a href="#lt-article-gt" class="headerlink" title="&lt;article&gt;"></a><code>&lt;article&gt;</code></h3><p>文章中可以脫離其他部分，獨立出來而又完整，甚至可以復用的一部分，通常有自己的標題，當 article 內嵌 article 時，裡外層的內容應該是相關的，比如一篇文章和它的留言，<br>而 section 雖然也具有獨立表達內容的能力，但是對外層有一定的相依性，例如這篇文章中的一個章節。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">article</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">header</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/my-blog-post"</span>&gt;</span>My blog post<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra nec</span><br><span class="line">      nulla vitae mollis.</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">footer</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">small</span>&gt;</span></span><br><span class="line">      Posted on <span class="tag">&lt;<span class="name">time</span> <span class="attr">datetime</span>=<span class="string">"2017-04-29T19:00"</span>&gt;</span>Apr 29<span class="tag">&lt;/<span class="name">time</span>&gt;</span> in</span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/category/code"</span>&gt;</span>Code<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">small</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="lt-aside-gt"><a href="#lt-aside-gt" class="headerlink" title="&lt;aside&gt;"></a><code>&lt;aside&gt;</code></h3><p>通常用來包含一些和當前頁面內容有關的額外信息，比如廣告、個人資料信息或相關連結。</p>
+<h3 id="lt-footer-gt"><a href="#lt-footer-gt" class="headerlink" title="&lt;footer&gt;"></a><code>&lt;footer&gt;</code></h3><p>通常包含作者、版權信息或者相關鏈接等。</p>
+<h2 id="簡易分辦-lt-section-gt-lt-article-gt"><a href="#簡易分辦-lt-section-gt-lt-article-gt" class="headerlink" title="簡易分辦 &lt;section&gt;&lt;article&gt;"></a>簡易分辦 <code>&lt;section&gt;&lt;article&gt;</code></h2><p><code>&lt;article&gt;</code>: 就算脫離了整體也是一個可以獨立存在、具有完整內容的區塊，例如這篇文章。<br><code>&lt;section&gt;</code>: 具有獨立表達內容的能力，但是對外層有一定的相依性，例如這篇文章中的一個章節。</p>
+<p>下面是簡單的問題，讓我們決定要用 <code>&lt;section&gt; / &lt;article&gt; / &lt;div&gt;</code></p>
+<ul>
+<li>具有完整內容的區塊，而且可以出現在你的<strong>閱讀器</strong>內嗎? 是的話就是 <code>&lt;article&gt;</code></li>
+<li>跟主要內容是有相關並且列入 outline 裡不會奇怪的? 是的話就是 <code>&lt;section&gt;</code></li>
+<li>跟內容無關或只用來 styling 的? 是的話就是 <code>&lt;div&gt;</code></li>
+</ul>
+<h2 id="建議的架構範例"><a href="#建議的架構範例" class="headerlink" title="建議的架構範例"></a>建議的架構範例</h2><img src="/2021/08/22/HTML5-Semantics/HTML5_02.jpg">
+<img src="/2021/08/22/HTML5-Semantics/HTML5_03.png">
+<hr>
+<h2 id="參考文章"><a href="#參考文章" class="headerlink" title="參考文章"></a>參考文章</h2><div class="note info"><a href="http://techbrood.com/h5b2a?p=html-structure" target="_blank" rel="noopener">结构性元素</a><br><a href="http://apolkingg8.logdown.com/posts/2014/02/04/note-of-semantic-html" target="_blank" rel="noopener">HTML5 Semantic Elements</a><br><a href="http://www.hannahpun.me/performance-optimize2/" target="_blank" rel="noopener">HTML5 Semantics</a><br><a href="http://htmlreference.io/semantic/" target="_blank" rel="noopener">Semantic in HTML5</a><br></div>
+]]></content>
+      <categories>
+        <category>HTML5</category>
+      </categories>
+      <tags>
+        <tag>HTML5</tag>
+        <tag>語義架構</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>ES6-樣板字串 (Template String)</title>
+    <url>/2021/08/24/ES6-TemplateString/</url>
+    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/08/24/ES6-TemplateString/ES6.jpg"></p>
+<font style="font-size:20px;">Template String 樣板字串</font>
+</blockquote>
+<a id="more"></a>
+<hr>
+<h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><figure class="highlight js"><figcaption><span>新舊寫法比較</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> people = [<span class="string">"老大"</span>, <span class="string">"老二"</span>, <span class="string">"老么"</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//======================過去寫法======================</span></span><br><span class="line"><span class="keyword">let</span> oldUl =</span><br><span class="line">  <span class="string">"&lt;ul&gt;"</span> +</span><br><span class="line">  <span class="string">"&lt;li&gt;我叫做 "</span> +</span><br><span class="line">  people[<span class="number">0</span>] +</span><br><span class="line">  <span class="string">"&lt;/li&gt;"</span> +</span><br><span class="line">  <span class="string">"&lt;li&gt;我叫做 "</span> +</span><br><span class="line">  people[<span class="number">1</span>] +</span><br><span class="line">  <span class="string">"&lt;/li&gt;"</span> +</span><br><span class="line">  <span class="string">"&lt;li&gt;我叫做 "</span> +</span><br><span class="line">  people[<span class="number">2</span>] +</span><br><span class="line">  <span class="string">"&lt;/li&gt;"</span> +</span><br><span class="line">  <span class="string">"&lt;/ul&gt;"</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(oldUl);</span><br><span class="line"><span class="comment">//"&lt;ul&gt;&lt;li&gt;我叫做 老大&lt;/li&gt;&lt;li&gt;我叫做 老二&lt;/li&gt;&lt;li&gt;我叫做 老么&lt;/li&gt;&lt;/ul&gt;"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//======================新的寫法======================</span></span><br><span class="line"><span class="keyword">let</span> newUl = <span class="string">`</span></span><br><span class="line"><span class="string">  &lt;ul&gt;</span></span><br><span class="line"><span class="string">    &lt;li&gt;我叫做 <span class="subst">$&#123;people[<span class="number">0</span>]&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">    &lt;li&gt;我叫做 <span class="subst">$&#123;people[<span class="number">1</span>]&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">    &lt;li&gt;我叫做 <span class="subst">$&#123;people[<span class="number">2</span>]&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">  &lt;/ul&gt;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"><span class="built_in">console</span>.log(newUl);</span><br><span class="line"><span class="comment">//  &lt;ul&gt;</span></span><br><span class="line"><span class="comment">//    &lt;li&gt;我叫做 老大&lt;/li&gt;</span></span><br><span class="line"><span class="comment">//    &lt;li&gt;我叫做 老二&lt;/li&gt;</span></span><br><span class="line"><span class="comment">//    &lt;li&gt;我叫做 老么&lt;/li&gt;</span></span><br><span class="line"><span class="comment">//  &lt;/ul&gt;</span></span><br></pre></td></tr></table></figure>
+<p>甚至可以在 <font color="red">${}</font> 內使用<font color="red">函式</font> (${}裡再包\${})。</p>
+<figure class="highlight js"><figcaption><span>使用.map組字串(結果與上例一樣)</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> newUl = <span class="string">`</span></span><br><span class="line"><span class="string">  &lt;ul&gt;</span></span><br><span class="line"><span class="string">    <span class="subst">$&#123;people.map(person =&gt; <span class="string">`&lt;li&gt;我叫做 <span class="subst">$&#123;person&#125;</span>&lt;/li&gt;`</span>).join(<span class="string">""</span>)&#125;</span></span></span><br><span class="line"><span class="string">  &lt;/ul&gt;</span></span><br><span class="line"><span class="string">`</span>;</span><br></pre></td></tr></table></figure>
+<p>也可以在函式內增添<font color="red">更多的判斷式</font>。</p>
+<figure class="highlight js"><figcaption><span>新增if判斷式</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> people = [</span><br><span class="line">  &#123;</span><br><span class="line">    name: <span class="string">"老大"</span>,</span><br><span class="line">    friends: <span class="number">2</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    name: <span class="string">"老二"</span>,</span><br><span class="line">    friends: <span class="number">16</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    name: <span class="string">"老么"</span>,</span><br><span class="line">    friends: <span class="number">0</span></span><br><span class="line">  &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> newUl = <span class="string">`</span></span><br><span class="line"><span class="string">  &lt;ul&gt;</span></span><br><span class="line"><span class="string">    <span class="subst">$&#123;people</span></span></span><br><span class="line"><span class="string"><span class="subst">      .map(person =&gt; &#123;</span></span></span><br><span class="line"><span class="string"><span class="subst">        <span class="keyword">if</span> (person.friends) &#123;</span></span></span><br><span class="line"><span class="string"><span class="subst">          <span class="keyword">return</span> <span class="string">`&lt;li&gt;<span class="subst">$&#123;person.name&#125;</span> 有 <span class="subst">$&#123;person.friends&#125;</span> 朋友&lt;/li&gt;`</span>;</span></span></span><br><span class="line"><span class="string"><span class="subst">        &#125;</span> else &#123;</span></span><br><span class="line"><span class="string">          return `</span>&lt;li&gt;$&#123;person.name&#125; 沒朋友&lt;<span class="regexp">/li&gt;`;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">      &#125;)</span></span><br><span class="line"><span class="regexp">      .join("")&#125;</span></span><br><span class="line"><span class="regexp">  &lt;/u</span>l&gt;</span><br><span class="line"><span class="string">`;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">console.log(newUl);</span></span><br><span class="line"><span class="string">//  &lt;ul&gt;</span></span><br><span class="line"><span class="string">//    &lt;li&gt;老大 有 2 朋友&lt;/li&gt;&lt;li&gt;老二 有 999 朋友&lt;/li&gt;&lt;li&gt;老么 邊緣人&lt;/li&gt;</span></span><br><span class="line"><span class="string">//  &lt;/ul&gt;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="巢狀-String-Template"><a href="#巢狀-String-Template" class="headerlink" title="巢狀 String Template"></a>巢狀 String Template</h2><p>如同上述的方法 <font color="red">${}</font> 內可以加入<font color="red">函式</font>及其更內層的 Template String，<br>所以也可以在 <font color="red">${}</font> 插入<font color="red">另一組的函式</font>的 Template String。</p>
+<figure class="highlight js"><figcaption><span>在$&#123;&#125;裡呼叫function</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> travelers = &#123;</span><br><span class="line">  leader: <span class="string">"爸爸"</span>,</span><br><span class="line">  partner: [</span><br><span class="line">    &#123;</span><br><span class="line">      name: <span class="string">"老大"</span>,</span><br><span class="line">      friends: <span class="number">2</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      name: <span class="string">"老二"</span>,</span><br><span class="line">      friends: <span class="number">16</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      name: <span class="string">"老么"</span>,</span><br><span class="line">      friends: <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">renderList</span>(<span class="params">people</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`</span></span><br><span class="line"><span class="string">    &lt;div&gt;上車名單&lt;/div&gt;</span></span><br><span class="line"><span class="string">    &lt;ul&gt;</span></span><br><span class="line"><span class="string">      <span class="subst">$&#123;people.map(person =&gt; <span class="string">`&lt;li&gt;<span class="subst">$&#123;person.name&#125;</span>&lt;/li&gt;`</span>).join(<span class="string">""</span>)&#125;</span></span></span><br><span class="line"><span class="string">    &lt;/ul&gt;</span></span><br><span class="line"><span class="string">  `</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> template = <span class="string">`</span></span><br><span class="line"><span class="string">  &lt;div class="template"&gt;</span></span><br><span class="line"><span class="string">  &lt;h2&gt;開車：<span class="subst">$&#123;travelers.leader&#125;</span>&lt;/h2&gt;</span></span><br><span class="line"><span class="string">  <span class="subst">$&#123;renderList(travelers.partner)&#125;</span></span></span><br><span class="line"><span class="string">  &lt;/div&gt;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(template);</span><br><span class="line"><span class="comment">// &lt;div class=\"template\"&gt;</span></span><br><span class="line"><span class="comment">// &lt;h2&gt;開車：爸爸&lt;/h2&gt;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//   &lt;div&gt;上車名單&lt;/div&gt;</span></span><br><span class="line"><span class="comment">//   &lt;ul&gt;</span></span><br><span class="line"><span class="comment">//     &lt;li&gt;老大&lt;/li&gt;&lt;li&gt;老二&lt;/li&gt;&lt;li&gt;老么&lt;/li&gt;</span></span><br><span class="line"><span class="comment">//   &lt;/ul&gt;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// &lt;/div&gt;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="跳脫字元"><a href="#跳脫字元" class="headerlink" title="跳脫字元"></a>跳脫字元</h2><p>如果有需要插入<font color="red">特殊字元</font>，一樣可以使用 <font color="red">\</font> 反斜線來插入：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">`\\`</span>); <span class="comment">// "\"</span></span><br></pre></td></tr></table></figure>
+<p>如果要計算字元數，或是需要將字串做額外處理，<font color="red">跳脫字元是不佔字符數</font>的：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">`\\`</span>.length); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
+<p>要取得<font color="red">含</font>特殊字元的字串可用 String.raw()：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>.raw<span class="string">`\\`</span>.length); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="參考來源"><a href="#參考來源" class="headerlink" title="參考來源"></a>參考來源</h2><div class="note info"><a href="https://ithelp.ithome.com.tw/users/20083608/ironman/1354" target="_blank" rel="noopener">邁向 JavaScript 勇者之路</a></div>
+]]></content>
+      <categories>
+        <category>JS</category>
+        <category>ES6</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>ES6</tag>
+        <tag>樣板字串</tag>
+        <tag>Template String</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JS-陣列(Array)</title>
     <url>/2021/08/22/JS-Array/</url>
     <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/08/22/JS-Array/js_01.png"></p>
@@ -740,115 +813,112 @@
       </tags>
   </entry>
   <entry>
-    <title>HTML5 - 語義元素</title>
-    <url>/2021/08/22/HTML5-Semantics/</url>
-    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/08/22/HTML5-Semantics/HTML5_01.jpg"><br>重新認識 HTML5 的語義元素</p>
+    <title>JS-一次搞懂 JavaScript 的 this</title>
+    <url>/2021/08/26/JS-this/</url>
+    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/08/26/JS-this/es6_js.png"></p>
+<font style="font-size:20px;"> 一次搞懂 JavaScript 的 <font color="red">this</font> </font>
 </blockquote>
 <a id="more"></a>
 <hr>
-<h2 id="常用元素"><a href="#常用元素" class="headerlink" title="常用元素"></a>常用元素</h2><h3 id="lt-header-gt"><a href="#lt-header-gt" class="headerlink" title="&lt;header&gt;"></a><code>&lt;header&gt;</code></h3><p>區塊標題，不要把它只用來取代 <code>&lt;div class=”header”&gt;</code><br>它也可以是文章的標題，一頁可以有好多個 <code>&lt;header&gt;</code>，<code>&lt;header&gt;</code> 裡面至少要有一個 h1~h6。</p>
-<h3 id="lt-nav-gt"><a href="#lt-nav-gt" class="headerlink" title="&lt;nav&gt;"></a><code>&lt;nav&gt;</code></h3><p>導覽列。裡面裝的東西應該只有 <strong>_主要_</strong> 的 navigation links，不要把各種 link 都丟到<code>&lt;nav&gt;</code>裡面。<br>舉例來說，footer 裡面常常會有一排 link，那個就不需要包進<code>&lt;nav&gt;</code>。</p>
-<h3 id="lt-main-gt"><a href="#lt-main-gt" class="headerlink" title="&lt;main&gt;"></a><code>&lt;main&gt;</code></h3><p>一個頁面只有一個! 任何 global 都不能放在 main 裡面( e.g. <code>&lt;header&gt;</code> <code>&lt;footer&gt;</code> logo)</p>
-<h3 id="lt-section-gt"><a href="#lt-section-gt" class="headerlink" title="&lt;section&gt;"></a><code>&lt;section&gt;</code></h3><p>通常用來把一些<strong><em>相關的元素組合在一起</em></strong>，一般來說，裡面都會包含 heading。<br>如果這個區塊的內容可以分成幾個部分的話，那應該使用 article。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>Section title<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra nec</span><br><span class="line">    nulla vitae mollis.</span><br><span class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="lt-article-gt"><a href="#lt-article-gt" class="headerlink" title="&lt;article&gt;"></a><code>&lt;article&gt;</code></h3><p>文章中可以脫離其他部分，獨立出來而又完整，甚至可以復用的一部分，通常有自己的標題，當 article 內嵌 article 時，裡外層的內容應該是相關的，比如一篇文章和它的留言，<br>而 section 雖然也具有獨立表達內容的能力，但是對外層有一定的相依性，例如這篇文章中的一個章節。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">article</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">header</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/my-blog-post"</span>&gt;</span>My blog post<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra nec</span><br><span class="line">      nulla vitae mollis.</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">footer</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">small</span>&gt;</span></span><br><span class="line">      Posted on <span class="tag">&lt;<span class="name">time</span> <span class="attr">datetime</span>=<span class="string">"2017-04-29T19:00"</span>&gt;</span>Apr 29<span class="tag">&lt;/<span class="name">time</span>&gt;</span> in</span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/category/code"</span>&gt;</span>Code<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">small</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="lt-aside-gt"><a href="#lt-aside-gt" class="headerlink" title="&lt;aside&gt;"></a><code>&lt;aside&gt;</code></h3><p>通常用來包含一些和當前頁面內容有關的額外信息，比如廣告、個人資料信息或相關連結。</p>
-<h3 id="lt-footer-gt"><a href="#lt-footer-gt" class="headerlink" title="&lt;footer&gt;"></a><code>&lt;footer&gt;</code></h3><p>通常包含作者、版權信息或者相關鏈接等。</p>
-<h2 id="簡易分辦-lt-section-gt-lt-article-gt"><a href="#簡易分辦-lt-section-gt-lt-article-gt" class="headerlink" title="簡易分辦 &lt;section&gt;&lt;article&gt;"></a>簡易分辦 <code>&lt;section&gt;&lt;article&gt;</code></h2><p><code>&lt;article&gt;</code>: 就算脫離了整體也是一個可以獨立存在、具有完整內容的區塊，例如這篇文章。<br><code>&lt;section&gt;</code>: 具有獨立表達內容的能力，但是對外層有一定的相依性，例如這篇文章中的一個章節。</p>
-<p>下面是簡單的問題，讓我們決定要用 <code>&lt;section&gt; / &lt;article&gt; / &lt;div&gt;</code></p>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 FB 直播看到 姚偉揚 老師再說明 javascript 各種 <font color="red">this</font> 的分辨，在此紀錄各種案例。</p>
+<div class="note info">FB影片：<a href="https://www.facebook.com/141247613278573/videos/190238981712769/" target="_blank" rel="noopener">一次搞懂 JavaScript 的 this</a><br>主講者：<a href="https://www.facebook.com/scars.yao?fref=mentions" target="_blank" rel="noopener">姚偉揚</a></div>
+
+<hr>
+<h2 id="議程重點"><a href="#議程重點" class="headerlink" title="議程重點"></a>議程重點</h2><ol>
+<li>一般函式的 this</li>
+<li>ES6 箭頭函式的 this</li>
+<li>Vue 組件的 this</li>
+<li>bind/apply/call 的 this</li>
+</ol>
+<hr>
+<h2 id="一般函式的-this"><a href="#一般函式的-this" class="headerlink" title="一般函式的 this"></a>一般函式的 this</h2><p><code>this</code> 主要是 <font color="red">看函式(function)怎麼執行</font> 的，下列為常見的分辨的方法</p>
 <ul>
-<li>具有完整內容的區塊，而且可以出現在你的<strong>閱讀器</strong>內嗎? 是的話就是 <code>&lt;article&gt;</code></li>
-<li>跟主要內容是有相關並且列入 outline 裡不會奇怪的? 是的話就是 <code>&lt;section&gt;</code></li>
-<li>跟內容無關或只用來 styling 的? 是的話就是 <code>&lt;div&gt;</code></li>
+<li>直接執行 → global</li>
+<li>作為物件的成員函式執行 → 該物件</li>
+<li>作為 DOM 事件偵聽函式 → 該 DOM</li>
+<li>作為建構函式 → 建構出來的實例</li>
 </ul>
-<h2 id="建議的架構範例"><a href="#建議的架構範例" class="headerlink" title="建議的架構範例"></a>建議的架構範例</h2><img src="/2021/08/22/HTML5-Semantics/HTML5_02.jpg">
-<img src="/2021/08/22/HTML5-Semantics/HTML5_03.png">
+<p>下列為各種 this 的判斷</p>
+<p><span id="inline-purple">範例 1</span></p>
+<figure class="highlight js"><figcaption><span>直接呼叫</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">a(); <span class="comment">//window</span></span><br></pre></td></tr></table></figure>
+<p><span id="inline-purple">範例 2</span></p>
+<figure class="highlight js"><figcaption><span>作為物件的成員函式執行</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> obj = &#123;&#125;;</span><br><span class="line">obj.a = a;</span><br><span class="line"></span><br><span class="line">obj.a(); <span class="comment">//obj</span></span><br></pre></td></tr></table></figure>
+<p><span id="inline-purple">範例 3</span></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  a() &#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">b</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    b();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.a(); <span class="comment">//window</span></span><br></pre></td></tr></table></figure>
+<p>因為 <code>b()</code> 是直接執行，並不是以 <code>obj.b()</code> 方式執行。</p>
+<p><span id="inline-purple">範例 4</span></p>
+<figure class="highlight html"><figcaption><span>DOM</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn"</span>&gt;</span>btn<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><figcaption><span>作為 DOM 事件偵聽函式</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> obj = &#123; a &#125;;</span><br><span class="line"></span><br><span class="line">btn.addEventListener(<span class="string">"click"</span>, obj.a); <span class="comment">//DOM元素：&lt;button id='btn'&gt;btn&lt;/button&gt;</span></span><br></pre></td></tr></table></figure>
+<p><span id="inline-purple">範例 5</span></p>
+<figure class="highlight html"><figcaption><span>DOM</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn"</span>&gt;</span>btn<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  b() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      a();</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">btn.addEventListener(<span class="string">"click"</span>, obj.b()); <span class="comment">//window</span></span><br></pre></td></tr></table></figure>
+<p>因為 <code>a()</code> 是直接執行。</p>
+<figure class="highlight js"><figcaption><span>承上例，執行 obj.b() 後的函式</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">btn.addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  a(); <span class="comment">//window</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><span id="inline-purple">範例 6</span></p>
+<figure class="highlight html"><figcaption><span>DOM</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn"</span>&gt;</span>btn<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  b() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">btn.addEventListener(<span class="string">"click"</span>, obj.b()); <span class="comment">//DOM元素：&lt;button id='btn'&gt;btn&lt;/button&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><figcaption><span>承上例，執行 obj.b() 後的函式</span></figcaption><table><tr><td class="code"><pre><span class="line">btn.addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><span id="inline-purple">範例 7</span></p>
+<figure class="highlight html"><figcaption><span>DOM</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn"</span>&gt;</span>btn<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  a() &#123;</span><br><span class="line">    <span class="keyword">return</span> a;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">btn.addEventListener(<span class="string">"click"</span>, obj.a()); <span class="comment">//DOM元素：&lt;button id='btn'&gt;btn&lt;/button&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><figcaption><span>承上例，執行 obj.a() 後的函式</span></figcaption><table><tr><td class="code"><pre><span class="line">btn.addEventListener(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<div class="note warning">可注意觀察 <strong>範例5~7</strong> 程式碼之間有些微的不同，所造成的this有所不一樣。</div>
+
+<p><span id="inline-green">善用的方式</span></p>
+<p>另外一種思考的方式，我們在寫<strong>物件內的函式</strong>時，為了確保 <font color="red">this</font> 能夠正確運作會先將它賦予在另一個變數上 (<font color="red">that, self, vm…</font>)。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> auntie = &#123;</span><br><span class="line">  name: <span class="string">"漂亮阿姨"</span>,</span><br><span class="line"></span><br><span class="line">  callName() &#123;</span><br><span class="line">    <span class="comment">// 先使用另一個變數指向 this，讓內層函式可以正確使用</span></span><br><span class="line">    <span class="keyword">var</span> that = <span class="keyword">this</span>;</span><br><span class="line"></span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(that); <span class="comment">// auntie 這個物件</span></span><br><span class="line">    &#125;, <span class="number">10</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">auntie.callName();</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="參考文章"><a href="#參考文章" class="headerlink" title="參考文章"></a>參考文章</h2><div class="note info"><a href="http://techbrood.com/h5b2a?p=html-structure" target="_blank" rel="noopener">结构性元素</a><br><a href="http://apolkingg8.logdown.com/posts/2014/02/04/note-of-semantic-html" target="_blank" rel="noopener">HTML5 Semantic Elements</a><br><a href="http://www.hannahpun.me/performance-optimize2/" target="_blank" rel="noopener">HTML5 Semantics</a><br><a href="http://htmlreference.io/semantic/" target="_blank" rel="noopener">Semantic in HTML5</a><br></div>
-]]></content>
-      <categories>
-        <category>HTML5</category>
-      </categories>
-      <tags>
-        <tag>HTML5</tag>
-        <tag>語義架構</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JS-立即被呼叫的函式 (IIFE)</title>
-    <url>/2021/08/22/JS-IIFE/</url>
-    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/08/22/JS-IIFE/js_01.png"></p>
-<font style="font-size:20px;">立即被呼叫的函式 (Immediately Invoked Function Expression, IIFE)</font>
-</blockquote>
-<a id="more"></a>
+<h2 id="箭頭函式的-this"><a href="#箭頭函式的-this" class="headerlink" title="箭頭函式的 this"></a>箭頭函式的 this</h2><span class="label info">口訣：</span>
+<p>箭頭函式裡面的 this 等於 外面的 this</p>
+<span class="label info">白話文：</span>
+<p>箭頭函式裡的 this 主要是依據 <font color="red">外層函式(function)裡的 this</font> 是什麼就跟著是什麼。</p>
+<p><span id="inline-yellow">規則</span></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">x</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="keyword">this</span> &lt;= 外層函式的<span class="keyword">this</span>，規則參考「一般函式的<span class="keyword">this</span>」</span><br><span class="line">  <span class="keyword">const</span> a = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">this</span> &lt;= 依據外層函式的<span class="keyword">this</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><span id="inline-purple">範例 1</span></p>
+<figure class="highlight html"><figcaption><span>DOM</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn"</span>&gt;</span>btn<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> a = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">btn.addEventListener(<span class="string">"click"</span>, a); <span class="comment">//window</span></span><br></pre></td></tr></table></figure>
+<p><span id="inline-purple">範例 2</span></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> obj = &#123;</span><br><span class="line">  a: <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">obj.a(); <span class="comment">//window</span></span><br></pre></td></tr></table></figure>
+<p><span id="inline-purple">範例 3</span></p>
+<figure class="highlight html"><figcaption><span>DOM</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn"</span>&gt;</span>btn<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> b = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">  &#125;;</span><br><span class="line">  b();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">btn.addEventListener(<span class="string">"click"</span>, a); <span class="comment">//DOM元素：&lt;button id='btn'&gt;btn&lt;/button&gt;</span></span><br></pre></td></tr></table></figure>
+<p>與 <strong>一般函式</strong>的<strong>範例 3</strong> 有點類似，雖然 <code>b()</code> 都是直接執行，<br>不過因為箭頭函式裡的 this 主要是依據 <font color="red">外層函式(function)裡的 this</font> 是什麼就跟著是什麼，<br>所以 <code>a()</code> 的 <code>this</code> 是 DOM 元素，所以這裡的 <code>b()</code> 的 <code>this</code> 也會跟著是 DOM 元素。</p>
+<p><span id="inline-purple">範例 4</span></p>
+<p><span id="inline-toc">Q：</span>包了<strong>好幾層</strong>的箭頭函數的 this 也是指向 windows 嗎?</p>
+<p><span id="inline-toc">A：</span>從 <code>c()</code> 一層撥一層 直到 function <code>a()</code>，再參照 <code>a()</code> 的 <code>this</code> 是指向誰。</p>
+<figure class="highlight js"><figcaption><span>洋蔥式一層一層拆解</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">//this &lt;= 外層函式的this，規則參考「一般函式的this」</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> b = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> c = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">//&lt;= 依據外層函式的this</span></span><br><span class="line">    &#125;;</span><br><span class="line">    c();</span><br><span class="line">  &#125;;</span><br><span class="line">  b();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <hr>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 2018 iT 邦幫忙鐵人賽，看到 Kuro 大的重新認識 JavaScript 系列文，仔細的閱讀後，紀錄自己觀念不足的部份，也非常推薦給大家觀看此系列文。</p>
-<div class="note info"><a href="https://ithelp.ithome.com.tw/users/20065504/ironman/1259?page=1" target="_blank" rel="noopener">Kuro-重新認識 JavaScript 系列</a></div>
+<h2 id="Vue-組件的-this"><a href="#Vue-組件的-this" class="headerlink" title="Vue 組件的 this"></a>Vue 組件的 this</h2><p>全部皆指向 <font style="color:red;font-size:26px;">vue 實例</font> 本身</p>
+<p><span id="inline-purple">範例 1</span></p>
+<figure class="highlight js"><figcaption><span>一般函數</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">"#app"</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: <span class="string">"Hello"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    getMessage: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">// this 指向 vm 实例</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    prompt: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">// this 指向 vm 实例</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><span id="inline-purple">範例 2</span></p>
+<figure class="highlight js"><figcaption><span>箭頭函數</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">"#app"</span>,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    test: <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="keyword">this</span>) <span class="comment">//window</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p><span id="inline-purple">範例 3</span></p>
+<p>若是 vue 的建立是包在 <code>函數</code> 裡面時，使用 <code>箭頭函數</code> ，則 this 要看外層函數的 this。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">init</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">//this  &lt;= 外層函式的this，規則參考「一般函式的this」</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">var</span> vm = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">    el: <span class="string">"#app"</span>,</span><br><span class="line">    methods: &#123;</span><br><span class="line">      test: <span class="function"><span class="params">()</span> =&gt;</span> <span class="built_in">console</span>.log(<span class="keyword">this</span>) <span class="comment">//&lt;= 依據外層函式的this</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<div class="note warning">如果在vue裡，寫箭頭函式要使用this的話，因為vue是<font color="red">物件</font>，而不是<font color="red">函式</font>，<br>此時箭頭函式裡的this會指向<strong>外層函式的this</strong>，<br>所以在vue要使用this的話，建議使用 <font color="red">一般函式</font> 寫法。</div>
 
 <hr>
-<h2 id="立即被呼叫的函式-IIFE"><a href="#立即被呼叫的函式-IIFE" class="headerlink" title="立即被呼叫的函式 (IIFE)"></a>立即被呼叫的函式 (IIFE)</h2><p>IIFE 的好處，就是可以<strong>減少「全域變數」的產生，同時也避免了變數名稱衝突的機會</strong>。</p>
-<p>如果你有去看過 jQuery 的原始碼，就會發現 jQuery 也用了相同的手法將 window 與 undefined 保留起來：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">window, undefined</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 略...</span></span><br><span class="line">&#125;)(<span class="built_in">window</span>);</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="當迴圈遇到-function"><a href="#當迴圈遇到-function" class="headerlink" title="當迴圈遇到 function"></a>當迴圈遇到 function</h2><p>題目：<br>假設想透過迴圈 + setTimeout 來做到，在五秒之內，每秒鐘依序透過<font color="red">console.log</font>印出：<font color="red">0 1 2 3 4</font></p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 假設想透過迴圈 + setTimeout 來做到</span></span><br><span class="line"><span class="comment">// 每秒鐘將 i 的值 console 出來</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>真的是這樣嗎？ 我們來看看執行的結果。</p>
-<p>執行的結果是， <font color="red">console.log()</font> 會在「一秒鐘之後」同時印出「五次 <font color="red">5</font>」。</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="number">5</span>;</span><br><span class="line"><span class="number">5</span>;</span><br><span class="line"><span class="number">5</span>;</span><br><span class="line"><span class="number">5</span>;</span><br><span class="line"><span class="number">5</span>;</span><br></pre></td></tr></table></figure>
-<font color="red">「切分變數有效範圍的最小單位是 “function” 」</font><br><font color="red">「切分變數有效範圍的最小單位是 “function” 」</font><br><font color="red">「切分變數有效範圍的最小單位是 “function” 」</font>
-
-<p>很重要，所以要再講三次。</p>
-<p>所以我們利用 <font color="red">IIFE</font> 稍微修改一下：</p>
-<figure class="highlight js"><figcaption><span>IIFE</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 將原本的 1000 改成 1000 * x</span></span><br><span class="line">    <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(x);</span><br><span class="line">    &#125;, <span class="number">1000</span> * x);</span><br><span class="line">  &#125;)(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>像這樣，就可以依序印出我們要的結果囉！</p>
-<hr>
-<h2 id="ES6-let、const"><a href="#ES6-let、const" class="headerlink" title="ES6-let、const"></a>ES6-let、const</h2><p><font color="red">ES6</font> 以後新增了 <font color="red">let</font> 與 <font color="red">const</font>，且改以 <font color="red">{ }</font> 作為它的 Scope。</p>
-<p>換句話說，將範例中的 for 改為 let 就可以做到保留 i 在執行迴圈當下的「值」的效果：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="bind-apply-call-的-this"><a href="#bind-apply-call-的-this" class="headerlink" title="bind/apply/call 的 this"></a>bind/apply/call 的 this</h2><ul>
+<li><p><strong>一般函式</strong>使用 bind/apply/call 時，<code>this</code> 就是所傳入的<font color="red">物件</font></p>
+</li>
+<li><p><strong>箭頭函式</strong>使用 bind/apply/call 時，<code>this</code> <font color="red">不會</font>有變化，規則一樣是 <font color="red">依據外層函式(function)裡的 this</font> 是什麼就跟著是什麼。</p>
+</li>
+</ul>
+<p><span id="inline-purple">範例 1</span></p>
+<figure class="highlight html"><figcaption><span>DOM</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn"</span>&gt;</span>btn<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><figcaption><span>一般函式</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> b = add.bind(btn);</span><br><span class="line">b(<span class="number">3</span>, <span class="number">5</span>);</span><br><span class="line"></span><br><span class="line">add.apply(btn, [<span class="number">3</span>, <span class="number">5</span>]);</span><br><span class="line">add.call(btn, <span class="number">3</span>, <span class="number">5</span>);</span><br></pre></td></tr></table></figure>
+<p><span id="inline-purple">範例 2</span></p>
+<figure class="highlight html"><figcaption><span>DOM</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"btn"</span>&gt;</span>btn<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><figcaption><span>箭頭函式</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> add = <span class="function">(<span class="params">x, y</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> b = add.bind(btn);</span><br><span class="line">b(<span class="number">3</span>, <span class="number">5</span>);</span><br><span class="line"></span><br><span class="line">add.apply(btn, [<span class="number">3</span>, <span class="number">5</span>]);</span><br><span class="line">add.call(btn, <span class="number">3</span>, <span class="number">5</span>);</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
         <category>JS</category>
-      </categories>
-      <tags>
-        <tag>JS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>ES6-樣板字串 (Template String)</title>
-    <url>/2021/08/24/ES6-TemplateString/</url>
-    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/08/24/ES6-TemplateString/ES6.jpg"></p>
-<font style="font-size:20px;">Template String 樣板字串</font>
-</blockquote>
-<a id="more"></a>
-<hr>
-<h2 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h2><figure class="highlight js"><figcaption><span>新舊寫法比較</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> people = [<span class="string">"老大"</span>, <span class="string">"老二"</span>, <span class="string">"老么"</span>];</span><br><span class="line"></span><br><span class="line"><span class="comment">//======================過去寫法======================</span></span><br><span class="line"><span class="keyword">let</span> oldUl =</span><br><span class="line">  <span class="string">"&lt;ul&gt;"</span> +</span><br><span class="line">  <span class="string">"&lt;li&gt;我叫做 "</span> +</span><br><span class="line">  people[<span class="number">0</span>] +</span><br><span class="line">  <span class="string">"&lt;/li&gt;"</span> +</span><br><span class="line">  <span class="string">"&lt;li&gt;我叫做 "</span> +</span><br><span class="line">  people[<span class="number">1</span>] +</span><br><span class="line">  <span class="string">"&lt;/li&gt;"</span> +</span><br><span class="line">  <span class="string">"&lt;li&gt;我叫做 "</span> +</span><br><span class="line">  people[<span class="number">2</span>] +</span><br><span class="line">  <span class="string">"&lt;/li&gt;"</span> +</span><br><span class="line">  <span class="string">"&lt;/ul&gt;"</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(oldUl);</span><br><span class="line"><span class="comment">//"&lt;ul&gt;&lt;li&gt;我叫做 老大&lt;/li&gt;&lt;li&gt;我叫做 老二&lt;/li&gt;&lt;li&gt;我叫做 老么&lt;/li&gt;&lt;/ul&gt;"</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//======================新的寫法======================</span></span><br><span class="line"><span class="keyword">let</span> newUl = <span class="string">`</span></span><br><span class="line"><span class="string">  &lt;ul&gt;</span></span><br><span class="line"><span class="string">    &lt;li&gt;我叫做 <span class="subst">$&#123;people[<span class="number">0</span>]&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">    &lt;li&gt;我叫做 <span class="subst">$&#123;people[<span class="number">1</span>]&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">    &lt;li&gt;我叫做 <span class="subst">$&#123;people[<span class="number">2</span>]&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">  &lt;/ul&gt;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"><span class="built_in">console</span>.log(newUl);</span><br><span class="line"><span class="comment">//  &lt;ul&gt;</span></span><br><span class="line"><span class="comment">//    &lt;li&gt;我叫做 老大&lt;/li&gt;</span></span><br><span class="line"><span class="comment">//    &lt;li&gt;我叫做 老二&lt;/li&gt;</span></span><br><span class="line"><span class="comment">//    &lt;li&gt;我叫做 老么&lt;/li&gt;</span></span><br><span class="line"><span class="comment">//  &lt;/ul&gt;</span></span><br></pre></td></tr></table></figure>
-<p>甚至可以在 <font color="red">${}</font> 內使用<font color="red">函式</font> (${}裡再包\${})。</p>
-<figure class="highlight js"><figcaption><span>使用.map組字串(結果與上例一樣)</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">let</span> newUl = <span class="string">`</span></span><br><span class="line"><span class="string">  &lt;ul&gt;</span></span><br><span class="line"><span class="string">    <span class="subst">$&#123;people.map(person =&gt; <span class="string">`&lt;li&gt;我叫做 <span class="subst">$&#123;person&#125;</span>&lt;/li&gt;`</span>).join(<span class="string">""</span>)&#125;</span></span></span><br><span class="line"><span class="string">  &lt;/ul&gt;</span></span><br><span class="line"><span class="string">`</span>;</span><br></pre></td></tr></table></figure>
-<p>也可以在函式內增添<font color="red">更多的判斷式</font>。</p>
-<figure class="highlight js"><figcaption><span>新增if判斷式</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> people = [</span><br><span class="line">  &#123;</span><br><span class="line">    name: <span class="string">"老大"</span>,</span><br><span class="line">    friends: <span class="number">2</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    name: <span class="string">"老二"</span>,</span><br><span class="line">    friends: <span class="number">16</span></span><br><span class="line">  &#125;,</span><br><span class="line">  &#123;</span><br><span class="line">    name: <span class="string">"老么"</span>,</span><br><span class="line">    friends: <span class="number">0</span></span><br><span class="line">  &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> newUl = <span class="string">`</span></span><br><span class="line"><span class="string">  &lt;ul&gt;</span></span><br><span class="line"><span class="string">    <span class="subst">$&#123;people</span></span></span><br><span class="line"><span class="string"><span class="subst">      .map(person =&gt; &#123;</span></span></span><br><span class="line"><span class="string"><span class="subst">        <span class="keyword">if</span> (person.friends) &#123;</span></span></span><br><span class="line"><span class="string"><span class="subst">          <span class="keyword">return</span> <span class="string">`&lt;li&gt;<span class="subst">$&#123;person.name&#125;</span> 有 <span class="subst">$&#123;person.friends&#125;</span> 朋友&lt;/li&gt;`</span>;</span></span></span><br><span class="line"><span class="string"><span class="subst">        &#125;</span> else &#123;</span></span><br><span class="line"><span class="string">          return `</span>&lt;li&gt;$&#123;person.name&#125; 沒朋友&lt;<span class="regexp">/li&gt;`;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">      &#125;)</span></span><br><span class="line"><span class="regexp">      .join("")&#125;</span></span><br><span class="line"><span class="regexp">  &lt;/u</span>l&gt;</span><br><span class="line"><span class="string">`;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">console.log(newUl);</span></span><br><span class="line"><span class="string">//  &lt;ul&gt;</span></span><br><span class="line"><span class="string">//    &lt;li&gt;老大 有 2 朋友&lt;/li&gt;&lt;li&gt;老二 有 999 朋友&lt;/li&gt;&lt;li&gt;老么 邊緣人&lt;/li&gt;</span></span><br><span class="line"><span class="string">//  &lt;/ul&gt;</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="巢狀-String-Template"><a href="#巢狀-String-Template" class="headerlink" title="巢狀 String Template"></a>巢狀 String Template</h2><p>如同上述的方法 <font color="red">${}</font> 內可以加入<font color="red">函式</font>及其更內層的 Template String，<br>所以也可以在 <font color="red">${}</font> 插入<font color="red">另一組的函式</font>的 Template String。</p>
-<figure class="highlight js"><figcaption><span>在$&#123;&#125;裡呼叫function</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> travelers = &#123;</span><br><span class="line">  leader: <span class="string">"爸爸"</span>,</span><br><span class="line">  partner: [</span><br><span class="line">    &#123;</span><br><span class="line">      name: <span class="string">"老大"</span>,</span><br><span class="line">      friends: <span class="number">2</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      name: <span class="string">"老二"</span>,</span><br><span class="line">      friends: <span class="number">16</span></span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      name: <span class="string">"老么"</span>,</span><br><span class="line">      friends: <span class="number">0</span></span><br><span class="line">    &#125;</span><br><span class="line">  ]</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">renderList</span>(<span class="params">people</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="string">`</span></span><br><span class="line"><span class="string">    &lt;div&gt;上車名單&lt;/div&gt;</span></span><br><span class="line"><span class="string">    &lt;ul&gt;</span></span><br><span class="line"><span class="string">      <span class="subst">$&#123;people.map(person =&gt; <span class="string">`&lt;li&gt;<span class="subst">$&#123;person.name&#125;</span>&lt;/li&gt;`</span>).join(<span class="string">""</span>)&#125;</span></span></span><br><span class="line"><span class="string">    &lt;/ul&gt;</span></span><br><span class="line"><span class="string">  `</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> template = <span class="string">`</span></span><br><span class="line"><span class="string">  &lt;div class="template"&gt;</span></span><br><span class="line"><span class="string">  &lt;h2&gt;開車：<span class="subst">$&#123;travelers.leader&#125;</span>&lt;/h2&gt;</span></span><br><span class="line"><span class="string">  <span class="subst">$&#123;renderList(travelers.partner)&#125;</span></span></span><br><span class="line"><span class="string">  &lt;/div&gt;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(template);</span><br><span class="line"><span class="comment">// &lt;div class=\"template\"&gt;</span></span><br><span class="line"><span class="comment">// &lt;h2&gt;開車：爸爸&lt;/h2&gt;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">//   &lt;div&gt;上車名單&lt;/div&gt;</span></span><br><span class="line"><span class="comment">//   &lt;ul&gt;</span></span><br><span class="line"><span class="comment">//     &lt;li&gt;老大&lt;/li&gt;&lt;li&gt;老二&lt;/li&gt;&lt;li&gt;老么&lt;/li&gt;</span></span><br><span class="line"><span class="comment">//   &lt;/ul&gt;</span></span><br><span class="line"><span class="comment">//</span></span><br><span class="line"><span class="comment">// &lt;/div&gt;</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="跳脫字元"><a href="#跳脫字元" class="headerlink" title="跳脫字元"></a>跳脫字元</h2><p>如果有需要插入<font color="red">特殊字元</font>，一樣可以使用 <font color="red">\</font> 反斜線來插入：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">`\\`</span>); <span class="comment">// "\"</span></span><br></pre></td></tr></table></figure>
-<p>如果要計算字元數，或是需要將字串做額外處理，<font color="red">跳脫字元是不佔字符數</font>的：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="string">`\\`</span>.length); <span class="comment">// 1</span></span><br></pre></td></tr></table></figure>
-<p>要取得<font color="red">含</font>特殊字元的字串可用 String.raw()：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(<span class="built_in">String</span>.raw<span class="string">`\\`</span>.length); <span class="comment">// 2</span></span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="參考來源"><a href="#參考來源" class="headerlink" title="參考來源"></a>參考來源</h2><div class="note info"><a href="https://ithelp.ithome.com.tw/users/20083608/ironman/1354" target="_blank" rel="noopener">邁向 JavaScript 勇者之路</a></div>
-]]></content>
-      <categories>
-        <category>JS</category>
-        <category>ES6</category>
       </categories>
       <tags>
         <tag>JS</tag>
         <tag>ES6</tag>
-        <tag>樣板字串</tag>
-        <tag>Template String</tag>
+        <tag>this</tag>
       </tags>
   </entry>
   <entry>
@@ -946,6 +1016,45 @@
         <tag>JS</tag>
         <tag>重新認識 JavaScript</tag>
         <tag>event</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JS-立即被呼叫的函式 (IIFE)</title>
+    <url>/2021/08/22/JS-IIFE/</url>
+    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/08/22/JS-IIFE/js_01.png"></p>
+<font style="font-size:20px;">立即被呼叫的函式 (Immediately Invoked Function Expression, IIFE)</font>
+</blockquote>
+<a id="more"></a>
+<hr>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 2018 iT 邦幫忙鐵人賽，看到 Kuro 大的重新認識 JavaScript 系列文，仔細的閱讀後，紀錄自己觀念不足的部份，也非常推薦給大家觀看此系列文。</p>
+<div class="note info"><a href="https://ithelp.ithome.com.tw/users/20065504/ironman/1259?page=1" target="_blank" rel="noopener">Kuro-重新認識 JavaScript 系列</a></div>
+
+<hr>
+<h2 id="立即被呼叫的函式-IIFE"><a href="#立即被呼叫的函式-IIFE" class="headerlink" title="立即被呼叫的函式 (IIFE)"></a>立即被呼叫的函式 (IIFE)</h2><p>IIFE 的好處，就是可以<strong>減少「全域變數」的產生，同時也避免了變數名稱衝突的機會</strong>。</p>
+<p>如果你有去看過 jQuery 的原始碼，就會發現 jQuery 也用了相同的手法將 window 與 undefined 保留起來：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params">window, undefined</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 略...</span></span><br><span class="line">&#125;)(<span class="built_in">window</span>);</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="當迴圈遇到-function"><a href="#當迴圈遇到-function" class="headerlink" title="當迴圈遇到 function"></a>當迴圈遇到 function</h2><p>題目：<br>假設想透過迴圈 + setTimeout 來做到，在五秒之內，每秒鐘依序透過<font color="red">console.log</font>印出：<font color="red">0 1 2 3 4</font></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 假設想透過迴圈 + setTimeout 來做到</span></span><br><span class="line"><span class="comment">// 每秒鐘將 i 的值 console 出來</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>真的是這樣嗎？ 我們來看看執行的結果。</p>
+<p>執行的結果是， <font color="red">console.log()</font> 會在「一秒鐘之後」同時印出「五次 <font color="red">5</font>」。</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="number">5</span>;</span><br><span class="line"><span class="number">5</span>;</span><br><span class="line"><span class="number">5</span>;</span><br><span class="line"><span class="number">5</span>;</span><br><span class="line"><span class="number">5</span>;</span><br></pre></td></tr></table></figure>
+<font color="red">「切分變數有效範圍的最小單位是 “function” 」</font><br><font color="red">「切分變數有效範圍的最小單位是 “function” 」</font><br><font color="red">「切分變數有效範圍的最小單位是 “function” 」</font>
+
+<p>很重要，所以要再講三次。</p>
+<p>所以我們利用 <font color="red">IIFE</font> 稍微修改一下：</p>
+<figure class="highlight js"><figcaption><span>IIFE</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">  (<span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 將原本的 1000 改成 1000 * x</span></span><br><span class="line">    <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(x);</span><br><span class="line">    &#125;, <span class="number">1000</span> * x);</span><br><span class="line">  &#125;)(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>像這樣，就可以依序印出我們要的結果囉！</p>
+<hr>
+<h2 id="ES6-let、const"><a href="#ES6-let、const" class="headerlink" title="ES6-let、const"></a>ES6-let、const</h2><p><font color="red">ES6</font> 以後新增了 <font color="red">let</font> 與 <font color="red">const</font>，且改以 <font color="red">{ }</font> 作為它的 Scope。</p>
+<p>換句話說，將範例中的 for 改為 let 就可以做到保留 i 在執行迴圈當下的「值」的效果：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">  <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
       </tags>
   </entry>
   <entry>

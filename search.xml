@@ -73,6 +73,23 @@
       </tags>
   </entry>
   <entry>
+    <title>JS30-05-Flex Panel Gallery</title>
+    <url>/2019/04/30/JS30-05-Flex-Panel-Gallery/</url>
+    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2019/04/30/JS30-05-Flex-Panel-Gallery/Gallery.png"></p>
+</blockquote>
+<a id="more"></a>
+<hr>
+]]></content>
+      <categories>
+        <category>JS</category>
+        <category>JS30</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>JS30</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JS30-07-Array Cardio Day 2</title>
     <url>/2019/05/09/JS30-07-Array%20Cardio%20Day%202/</url>
     <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2019/05/09/JS30-07-Array%20Cardio%20Day%202/arraymethod.jpg"></p>
@@ -120,52 +137,6 @@
 <img src="/2019/05/09/JS30-07-Array%20Cardio%20Day%202/splice.jpg">
 <img src="/2019/05/09/JS30-07-Array%20Cardio%20Day%202/delete.jpg">
 <div class="note info"><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/splice" target="_blank" rel="noopener">MDN-Array​.prototype​.splice()</a></div>
-]]></content>
-      <categories>
-        <category>JS</category>
-        <category>JS30</category>
-      </categories>
-      <tags>
-        <tag>JS</tag>
-        <tag>JS30</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Javascript - 從零開始 Day2</title>
-    <url>/2019/07/21/JS-Starting%20from%20scratch%20D2/</url>
-    <content><![CDATA[<h2 id="第二天"><a href="#第二天" class="headerlink" title="第二天"></a>第二天</h2><a id="more"></a>
-<h3 id="範例-9"><a href="#範例-9" class="headerlink" title="範例 9"></a>範例 9</h3><ol>
-<li>流程<br>(1) 捲動 =&gt; 那一塊 =&gt; addClass<br>(2) 按鈕 =&gt; 那一塊 =&gt; 捲動(1)<br>(3) 回到頂端 =&gt; 捲最上(1)</li>
-<li>卷軸往下 1px 內容往上 1px</li>
-<li>offset(全域座標) vs position(區塊座標)</li>
-<li>寬高比較<br>(1) width(),height() DOM 內容寬高<br>(2) innerWidth(),innerHeight() DOM 內容寬高+padding 寬高<br>(3) outerWidth(),outerHeight() DOM 內容寬高+padding 寬高+border 寬高<br>(4) outerWidth(true),outerHeight(true) DOM 內容寬高+padding 寬高+border 寬高+margin 寬高</li>
-<li>function 中斷不能用 break 要用 return false</li>
-</ol>
-<h3 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 點goTop一下</span></span><br><span class="line">$(<span class="string">"#goTop"</span>).click();</span><br><span class="line"><span class="comment">// 做click事件偵聽</span></span><br><span class="line">$(<span class="string">"#goTop"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;);</span><br></pre></td></tr></table></figure>
-<p>***forEach vs each<br>forEach((obj,index)=&gt;{})<br>each((index,obj)=&gt;{})</p>
-<p>eq : 等於</p>
-<h3 id="動畫-animate"><a href="#動畫-animate" class="headerlink" title="動畫 : animate"></a>動畫 : animate</h3><ol>
-<li>normal: animate(動畫屬性,時間,加減速,完成後的 FUNCTION)</li>
-<li>advence: animate(動畫屬性,設定)</li>
-</ol>
-<p>*建議用第二種用法，需要打到比較多屬性英文，幫助更多了解及記憶</p>
-<p>*事件偵聽要先有偵聽，之後才能觸發</p>
-<h4 id="JQUERY"><a href="#JQUERY" class="headerlink" title="JQUERY"></a>JQUERY</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 請輸入你的程式</span></span><br><span class="line">  <span class="keyword">let</span> $contents = $(<span class="string">"#container &gt; section"</span>);</span><br><span class="line">  <span class="keyword">let</span> completeHandler = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"OK"</span>);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 做click事件偵聽</span></span><br><span class="line">  $(<span class="string">"#goTop"</span>)</span><br><span class="line">    .click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">// 1.normal: animate(動畫屬性,時間,加減速,完成後的FUNCTION)</span></span><br><span class="line">      <span class="comment">// 2.advence: animate(動畫屬性,設定)</span></span><br><span class="line">      <span class="comment">// $("html,body").animate(&#123; scrollTop: 0 &#125;, 1000, "linear", completeHandler);</span></span><br><span class="line">      $(<span class="string">"html,body"</span>).animate(</span><br><span class="line">        &#123; <span class="attr">scrollTop</span>: <span class="number">0</span> &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          duration: <span class="number">1000</span>,</span><br><span class="line">          easing: <span class="string">"linear"</span></span><br><span class="line">          <span class="comment">// complete: completeHandler</span></span><br><span class="line">        &#125;</span><br><span class="line">      );</span><br><span class="line">    &#125;)</span><br><span class="line">    .click();</span><br><span class="line">  <span class="comment">// 點goTop一下(觸發)</span></span><br><span class="line">  <span class="comment">// $("#goTop").click();</span></span><br><span class="line"></span><br><span class="line">  $(<span class="built_in">window</span>)</span><br><span class="line">    .scroll(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">let</span> top = $(<span class="built_in">window</span>).scrollTop() + $(<span class="string">"#nav"</span>).outerHeight(<span class="literal">true</span>);</span><br><span class="line">      <span class="keyword">let</span> bottom = $(<span class="built_in">window</span>).scrollTop() + $(<span class="built_in">window</span>).height();</span><br><span class="line">      <span class="keyword">let</span> target = <span class="number">0</span>;</span><br><span class="line">      $contents.each(<span class="function">(<span class="params">index, section</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> sectionTop = $(section).offset().top;</span><br><span class="line">        <span class="keyword">let</span> secBottom = $(section).offset().top + $(section).outerHeight(<span class="literal">true</span>);</span><br><span class="line">        <span class="comment">// width() ,height() DOM 內容寬高</span></span><br><span class="line">        <span class="comment">// innerWidth() ,innerHeight() DOM 內容寬高 + padding 寬高</span></span><br><span class="line">        <span class="comment">// outerWidth() ,outerHeight() DOM 內容寬高 + padding 寬高 + border 寬高</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// outerWidth(true) ,outerHeight(true)</span></span><br><span class="line">        <span class="comment">// DOM 內容寬高 + padding 寬高 + border 寬高 + margin 寬高</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (sectionTop &gt;= top &amp;&amp; secBottom &gt;= top) &#123;</span><br><span class="line">          target = index;</span><br><span class="line">          <span class="comment">// 中斷</span></span><br><span class="line">          <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">      $(<span class="string">".nav &gt; a"</span>)</span><br><span class="line">        .removeClass(<span class="string">"active"</span>)</span><br><span class="line">        .eq(target)</span><br><span class="line">        .addClass(<span class="string">"active"</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">    .scroll();</span><br><span class="line">  $(<span class="string">".nav &gt; a"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// this =&gt; 按到的按鈕 =&gt; js對象</span></span><br><span class="line">    <span class="comment">// $(this) =&gt; jq對象</span></span><br><span class="line">    <span class="keyword">let</span> index = $(<span class="keyword">this</span>).index(); <span class="comment">// 按鈕編號</span></span><br><span class="line">    <span class="keyword">let</span> $target = $(<span class="string">"#container &gt; section"</span>).eq(index);</span><br><span class="line">    <span class="keyword">let</span> position = $target.offset().top - $(<span class="string">"#nav"</span>).outerHeight(<span class="literal">true</span>);</span><br><span class="line">    $(<span class="string">"html,body"</span>).animate(&#123; <span class="attr">scrollTop</span>: position &#125;, <span class="number">500</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// $(".nav a")</span></span><br><span class="line">  <span class="comment">//   .eq(0)</span></span><br><span class="line">  <span class="comment">//   .addClass("active");</span></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>JS</category>
-      </categories>
-      <tags>
-        <tag>JS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JS30-05-Flex Panel Gallery</title>
-    <url>/2019/04/30/JS30-05-Flex-Panel-Gallery/</url>
-    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2019/04/30/JS30-05-Flex-Panel-Gallery/Gallery.png"></p>
-</blockquote>
-<a id="more"></a>
-<hr>
 ]]></content>
       <categories>
         <category>JS</category>
@@ -295,6 +266,35 @@
       </tags>
   </entry>
   <entry>
+    <title>Javascript - 從零開始 Day2</title>
+    <url>/2019/07/21/JS-Starting%20from%20scratch%20D2/</url>
+    <content><![CDATA[<h2 id="第二天"><a href="#第二天" class="headerlink" title="第二天"></a>第二天</h2><a id="more"></a>
+<h3 id="範例-9"><a href="#範例-9" class="headerlink" title="範例 9"></a>範例 9</h3><ol>
+<li>流程<br>(1) 捲動 =&gt; 那一塊 =&gt; addClass<br>(2) 按鈕 =&gt; 那一塊 =&gt; 捲動(1)<br>(3) 回到頂端 =&gt; 捲最上(1)</li>
+<li>卷軸往下 1px 內容往上 1px</li>
+<li>offset(全域座標) vs position(區塊座標)</li>
+<li>寬高比較<br>(1) width(),height() DOM 內容寬高<br>(2) innerWidth(),innerHeight() DOM 內容寬高+padding 寬高<br>(3) outerWidth(),outerHeight() DOM 內容寬高+padding 寬高+border 寬高<br>(4) outerWidth(true),outerHeight(true) DOM 內容寬高+padding 寬高+border 寬高+margin 寬高</li>
+<li>function 中斷不能用 break 要用 return false</li>
+</ol>
+<h3 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 點goTop一下</span></span><br><span class="line">$(<span class="string">"#goTop"</span>).click();</span><br><span class="line"><span class="comment">// 做click事件偵聽</span></span><br><span class="line">$(<span class="string">"#goTop"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;);</span><br></pre></td></tr></table></figure>
+<p>***forEach vs each<br>forEach((obj,index)=&gt;{})<br>each((index,obj)=&gt;{})</p>
+<p>eq : 等於</p>
+<h3 id="動畫-animate"><a href="#動畫-animate" class="headerlink" title="動畫 : animate"></a>動畫 : animate</h3><ol>
+<li>normal: animate(動畫屬性,時間,加減速,完成後的 FUNCTION)</li>
+<li>advence: animate(動畫屬性,設定)</li>
+</ol>
+<p>*建議用第二種用法，需要打到比較多屬性英文，幫助更多了解及記憶</p>
+<p>*事件偵聽要先有偵聽，之後才能觸發</p>
+<h4 id="JQUERY"><a href="#JQUERY" class="headerlink" title="JQUERY"></a>JQUERY</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 請輸入你的程式</span></span><br><span class="line">  <span class="keyword">let</span> $contents = $(<span class="string">"#container &gt; section"</span>);</span><br><span class="line">  <span class="keyword">let</span> completeHandler = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"OK"</span>);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 做click事件偵聽</span></span><br><span class="line">  $(<span class="string">"#goTop"</span>)</span><br><span class="line">    .click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">// 1.normal: animate(動畫屬性,時間,加減速,完成後的FUNCTION)</span></span><br><span class="line">      <span class="comment">// 2.advence: animate(動畫屬性,設定)</span></span><br><span class="line">      <span class="comment">// $("html,body").animate(&#123; scrollTop: 0 &#125;, 1000, "linear", completeHandler);</span></span><br><span class="line">      $(<span class="string">"html,body"</span>).animate(</span><br><span class="line">        &#123; <span class="attr">scrollTop</span>: <span class="number">0</span> &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          duration: <span class="number">1000</span>,</span><br><span class="line">          easing: <span class="string">"linear"</span></span><br><span class="line">          <span class="comment">// complete: completeHandler</span></span><br><span class="line">        &#125;</span><br><span class="line">      );</span><br><span class="line">    &#125;)</span><br><span class="line">    .click();</span><br><span class="line">  <span class="comment">// 點goTop一下(觸發)</span></span><br><span class="line">  <span class="comment">// $("#goTop").click();</span></span><br><span class="line"></span><br><span class="line">  $(<span class="built_in">window</span>)</span><br><span class="line">    .scroll(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">let</span> top = $(<span class="built_in">window</span>).scrollTop() + $(<span class="string">"#nav"</span>).outerHeight(<span class="literal">true</span>);</span><br><span class="line">      <span class="keyword">let</span> bottom = $(<span class="built_in">window</span>).scrollTop() + $(<span class="built_in">window</span>).height();</span><br><span class="line">      <span class="keyword">let</span> target = <span class="number">0</span>;</span><br><span class="line">      $contents.each(<span class="function">(<span class="params">index, section</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> sectionTop = $(section).offset().top;</span><br><span class="line">        <span class="keyword">let</span> secBottom = $(section).offset().top + $(section).outerHeight(<span class="literal">true</span>);</span><br><span class="line">        <span class="comment">// width() ,height() DOM 內容寬高</span></span><br><span class="line">        <span class="comment">// innerWidth() ,innerHeight() DOM 內容寬高 + padding 寬高</span></span><br><span class="line">        <span class="comment">// outerWidth() ,outerHeight() DOM 內容寬高 + padding 寬高 + border 寬高</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// outerWidth(true) ,outerHeight(true)</span></span><br><span class="line">        <span class="comment">// DOM 內容寬高 + padding 寬高 + border 寬高 + margin 寬高</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (sectionTop &gt;= top &amp;&amp; secBottom &gt;= top) &#123;</span><br><span class="line">          target = index;</span><br><span class="line">          <span class="comment">// 中斷</span></span><br><span class="line">          <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">      $(<span class="string">".nav &gt; a"</span>)</span><br><span class="line">        .removeClass(<span class="string">"active"</span>)</span><br><span class="line">        .eq(target)</span><br><span class="line">        .addClass(<span class="string">"active"</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">    .scroll();</span><br><span class="line">  $(<span class="string">".nav &gt; a"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// this =&gt; 按到的按鈕 =&gt; js對象</span></span><br><span class="line">    <span class="comment">// $(this) =&gt; jq對象</span></span><br><span class="line">    <span class="keyword">let</span> index = $(<span class="keyword">this</span>).index(); <span class="comment">// 按鈕編號</span></span><br><span class="line">    <span class="keyword">let</span> $target = $(<span class="string">"#container &gt; section"</span>).eq(index);</span><br><span class="line">    <span class="keyword">let</span> position = $target.offset().top - $(<span class="string">"#nav"</span>).outerHeight(<span class="literal">true</span>);</span><br><span class="line">    $(<span class="string">"html,body"</span>).animate(&#123; <span class="attr">scrollTop</span>: position &#125;, <span class="number">500</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// $(".nav a")</span></span><br><span class="line">  <span class="comment">//   .eq(0)</span></span><br><span class="line">  <span class="comment">//   .addClass("active");</span></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>JS</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Vue3 Start</title>
     <url>/2021/07/20/Vue3-01/</url>
     <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/07/20/Vue3-01/zMu6v6x.png"></p>
@@ -333,77 +333,6 @@
       <tags>
         <tag>VueJS</tag>
         <tag>Vue3</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Hexo-移植步驟紀錄 及 部署指令</title>
-    <url>/2021/07/21/HexoBackupSolution/</url>
-    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/07/21/HexoBackupSolution/hexo-cover.png"></p>
-<font style="font-size:20px;">換電腦必備</font></blockquote>
-<a id="more"></a>
-<h2 id="環境檢查"><a href="#環境檢查" class="headerlink" title="環境檢查"></a>環境檢查</h2><blockquote>
-<p>是否有安裝 git</p>
-</blockquote>
-<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ git --version</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>是否有安裝 node.js</p>
-</blockquote>
-<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>是否有安裝 hexo</p>
-</blockquote>
-<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo -v</span><br></pre></td></tr></table></figure>
-<h2 id="在新環境初始化-hexo"><a href="#在新環境初始化-hexo" class="headerlink" title="在新環境初始化 hexo"></a>在新環境初始化 hexo</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo init 資料夾名稱  ＃建立一個資料夾（最好跟你原本hexo的資料夾同名）</span><br><span class="line">$ <span class="built_in">cd</span> 資料夾名稱 ＃進入該資料夾下</span><br></pre></td></tr></table></figure>
-<h2 id="將備份檔案複製到新環境"><a href="#將備份檔案複製到新環境" class="headerlink" title="將備份檔案複製到新環境"></a>將備份檔案複製到新環境</h2><p>除了 node_mudules 外，其他檔案都複製過去<br>因為 node_mudules 是存放 library，在執行 npm init 時會裝回來；</p>
-<p>複製完畢後，執行以下指令</p>
-<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ npm init</span><br><span class="line">$ npm install hexo-deploy-git --save</span><br><span class="line">$ npm install hexo-generator-feed --save</span><br><span class="line">$ npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
-<h2 id="本地端運行"><a href="#本地端運行" class="headerlink" title="本地端運行"></a>本地端運行</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo s --debug <span class="comment">#應可透過本機 http://localhost:4001 看到你的hexo環境</span></span><br></pre></td></tr></table></figure>
-<h2 id="編譯出靜態網頁"><a href="#編譯出靜態網頁" class="headerlink" title="編譯出靜態網頁"></a>編譯出靜態網頁</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
-<h2 id="部署到-github"><a href="#部署到-github" class="headerlink" title="部署到 github"></a>部署到 github</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo d <span class="comment">#注意有時須等待github完成部署，可能須等待1~5分鐘不等</span></span><br></pre></td></tr></table></figure>
-<h2 id="若部署遇到問題"><a href="#若部署遇到問題" class="headerlink" title="若部署遇到問題"></a>若部署遇到問題</h2><ul>
-<li>升級 git 版本</li>
-</ul>
-<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ brew upgrade git <span class="comment">#可能會遇到問題，看Ｔerminal訊息排除</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>改用 ssh key 部署<br>參考此網頁資訊建立 ssh key =&gt; <a href="https://www.cnblogs.com/xsilence/%5B/6001938.html" target="_blank" rel="noopener">建立步驟</a></li>
-</ul>
-<h2 id="指令集整理"><a href="#指令集整理" class="headerlink" title="指令集整理"></a>指令集整理</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"postName"</span>  <span class="comment">#新建文章</span></span><br><span class="line">$ hexo clean <span class="comment">#清除快取</span></span><br><span class="line">$ hexo generate <span class="comment">#生成靜態頁面至public目錄</span></span><br><span class="line">$ hexo server <span class="comment">#開啟預覽訪問端口（默認端口4000，'ctrl + c'關閉server）</span></span><br><span class="line">$ hexo deploy  <span class="comment">#將.deploy目錄部署到GitHub</span></span><br><span class="line">$ hexo <span class="built_in">help</span>   <span class="comment">#查看幫助</span></span><br><span class="line">$ hexo version   <span class="comment">#查看Hexo的版本</span></span><br></pre></td></tr></table></figure>
-<p>指令簡寫</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo n == hexo new</span><br><span class="line">hexo g == hexo generate</span><br><span class="line">hexo s == hexo server</span><br><span class="line">hexo d == hexo deploy</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>github SSH keys 建立步驟記錄</title>
-    <url>/2021/07/22/sshKey-Create/</url>
-    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/07/22/sshKey-Create/sshkeys.jpeg"></p>
-<font style="font-size:20px;"></font></blockquote>
-<a id="more"></a>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>移植Ｈ exo 環境時遇到部署失敗，谷歌了一下也有人遇到太久沒部署出錯，可嘗試設置 SSH Key 做部署，<br>怕以後還會遇到，故將過程記錄下來。<br><a href="https://www.cnblogs.com/xsilence/%5B/6001938.html/" target="_blank" rel="noopener">參考連結</a></p>
-<h2 id="新建立-SSH-key"><a href="#新建立-SSH-key" class="headerlink" title="新建立 SSH key"></a>新建立 SSH key</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"github帳號"</span></span><br></pre></td></tr></table></figure>
-<p>輸入密碼後便會自動產生，應該會看到類似畫面：<br><img src="/2021/07/22/sshKey-Create/Snipaste_2021-07-22_01-37-15.png"></p>
-<h2 id="在-github-上設定-SSH-key"><a href="#在-github-上設定-SSH-key" class="headerlink" title="在 github 上設定 SSH key"></a>在 github 上設定 SSH key</h2><p>使用以下指令可看到 SSH key 內容，複製下來做設定</p>
-<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
-<img src="/2021/07/22/sshKey-Create/GitHub.png">
-<img src="/2021/07/22/sshKey-Create/Your_Profile.png">
-<img src="/2021/07/22/sshKey-Create/SSH_and_GPG_keys.png">
-<img src="/2021/07/22/sshKey-Create/Add_new_SSH_keys.png">
-<h2 id="測試設定是否成功"><a href="#測試設定是否成功" class="headerlink" title="測試設定是否成功"></a>測試設定是否成功</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-<p>若看到以下訊息代表成功！！<br><img src="/2021/07/22/sshKey-Create/bryanhsiao_BryanHsiao-mac13____bryanhsiao_和_index_html_—_Vue3.png"></p>
-<h2 id="設定使用者資訊"><a href="#設定使用者資訊" class="headerlink" title="設定使用者資訊"></a>設定使用者資訊</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"輸入使用者名稱"</span></span><br><span class="line">$ git config --global user.email <span class="string">"輸入email"</span></span><br></pre></td></tr></table></figure>
-<h2 id="部署至-github"><a href="#部署至-github" class="headerlink" title="部署至 github"></a>部署至 github</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo d -g</span><br></pre></td></tr></table></figure>
-<p>部署成功！！<br><img src="/2021/07/22/sshKey-Create/bryanhsiao_BryanHsiao-mac13____bryanhsiao_和_2021-07-22-sshKey-Create_md_—__posts.png"></p>
-]]></content>
-      <categories>
-        <category>Hexo</category>
-      </categories>
-      <tags>
-        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -461,6 +390,77 @@
       <tags>
         <tag>VueJS</tag>
         <tag>Vue3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>github SSH keys 建立步驟記錄</title>
+    <url>/2021/07/22/sshKey-Create/</url>
+    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/07/22/sshKey-Create/sshkeys.jpeg"></p>
+<font style="font-size:20px;"></font></blockquote>
+<a id="more"></a>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>移植Ｈ exo 環境時遇到部署失敗，谷歌了一下也有人遇到太久沒部署出錯，可嘗試設置 SSH Key 做部署，<br>怕以後還會遇到，故將過程記錄下來。<br><a href="https://www.cnblogs.com/xsilence/%5B/6001938.html/" target="_blank" rel="noopener">參考連結</a></p>
+<h2 id="新建立-SSH-key"><a href="#新建立-SSH-key" class="headerlink" title="新建立 SSH key"></a>新建立 SSH key</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"github帳號"</span></span><br></pre></td></tr></table></figure>
+<p>輸入密碼後便會自動產生，應該會看到類似畫面：<br><img src="/2021/07/22/sshKey-Create/Snipaste_2021-07-22_01-37-15.png"></p>
+<h2 id="在-github-上設定-SSH-key"><a href="#在-github-上設定-SSH-key" class="headerlink" title="在 github 上設定 SSH key"></a>在 github 上設定 SSH key</h2><p>使用以下指令可看到 SSH key 內容，複製下來做設定</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+<img src="/2021/07/22/sshKey-Create/GitHub.png">
+<img src="/2021/07/22/sshKey-Create/Your_Profile.png">
+<img src="/2021/07/22/sshKey-Create/SSH_and_GPG_keys.png">
+<img src="/2021/07/22/sshKey-Create/Add_new_SSH_keys.png">
+<h2 id="測試設定是否成功"><a href="#測試設定是否成功" class="headerlink" title="測試設定是否成功"></a>測試設定是否成功</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>若看到以下訊息代表成功！！<br><img src="/2021/07/22/sshKey-Create/bryanhsiao_BryanHsiao-mac13____bryanhsiao_和_index_html_—_Vue3.png"></p>
+<h2 id="設定使用者資訊"><a href="#設定使用者資訊" class="headerlink" title="設定使用者資訊"></a>設定使用者資訊</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"輸入使用者名稱"</span></span><br><span class="line">$ git config --global user.email <span class="string">"輸入email"</span></span><br></pre></td></tr></table></figure>
+<h2 id="部署至-github"><a href="#部署至-github" class="headerlink" title="部署至 github"></a>部署至 github</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo d -g</span><br></pre></td></tr></table></figure>
+<p>部署成功！！<br><img src="/2021/07/22/sshKey-Create/bryanhsiao_BryanHsiao-mac13____bryanhsiao_和_2021-07-22-sshKey-Create_md_—__posts.png"></p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo-移植步驟紀錄 及 部署指令</title>
+    <url>/2021/07/21/HexoBackupSolution/</url>
+    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/07/21/HexoBackupSolution/hexo-cover.png"></p>
+<font style="font-size:20px;">換電腦必備</font></blockquote>
+<a id="more"></a>
+<h2 id="環境檢查"><a href="#環境檢查" class="headerlink" title="環境檢查"></a>環境檢查</h2><blockquote>
+<p>是否有安裝 git</p>
+</blockquote>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ git --version</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>是否有安裝 node.js</p>
+</blockquote>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>是否有安裝 hexo</p>
+</blockquote>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo -v</span><br></pre></td></tr></table></figure>
+<h2 id="在新環境初始化-hexo"><a href="#在新環境初始化-hexo" class="headerlink" title="在新環境初始化 hexo"></a>在新環境初始化 hexo</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo init 資料夾名稱  ＃建立一個資料夾（最好跟你原本hexo的資料夾同名）</span><br><span class="line">$ <span class="built_in">cd</span> 資料夾名稱 ＃進入該資料夾下</span><br></pre></td></tr></table></figure>
+<h2 id="將備份檔案複製到新環境"><a href="#將備份檔案複製到新環境" class="headerlink" title="將備份檔案複製到新環境"></a>將備份檔案複製到新環境</h2><p>除了 node_mudules 外，其他檔案都複製過去<br>因為 node_mudules 是存放 library，在執行 npm init 時會裝回來；</p>
+<p>複製完畢後，執行以下指令</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ npm init</span><br><span class="line">$ npm install hexo-deploy-git --save</span><br><span class="line">$ npm install hexo-generator-feed --save</span><br><span class="line">$ npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
+<h2 id="本地端運行"><a href="#本地端運行" class="headerlink" title="本地端運行"></a>本地端運行</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo s --debug <span class="comment">#應可透過本機 http://localhost:4001 看到你的hexo環境</span></span><br></pre></td></tr></table></figure>
+<h2 id="編譯出靜態網頁"><a href="#編譯出靜態網頁" class="headerlink" title="編譯出靜態網頁"></a>編譯出靜態網頁</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+<h2 id="部署到-github"><a href="#部署到-github" class="headerlink" title="部署到 github"></a>部署到 github</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo d <span class="comment">#注意有時須等待github完成部署，可能須等待1~5分鐘不等</span></span><br></pre></td></tr></table></figure>
+<h2 id="若部署遇到問題"><a href="#若部署遇到問題" class="headerlink" title="若部署遇到問題"></a>若部署遇到問題</h2><ul>
+<li>升級 git 版本</li>
+</ul>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ brew upgrade git <span class="comment">#可能會遇到問題，看Ｔerminal訊息排除</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>改用 ssh key 部署<br>參考此網頁資訊建立 ssh key =&gt; <a href="https://www.cnblogs.com/xsilence/%5B/6001938.html" target="_blank" rel="noopener">建立步驟</a></li>
+</ul>
+<h2 id="指令集整理"><a href="#指令集整理" class="headerlink" title="指令集整理"></a>指令集整理</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"postName"</span>  <span class="comment">#新建文章</span></span><br><span class="line">$ hexo clean <span class="comment">#清除快取</span></span><br><span class="line">$ hexo generate <span class="comment">#生成靜態頁面至public目錄</span></span><br><span class="line">$ hexo server <span class="comment">#開啟預覽訪問端口（默認端口4000，'ctrl + c'關閉server）</span></span><br><span class="line">$ hexo deploy  <span class="comment">#將.deploy目錄部署到GitHub</span></span><br><span class="line">$ hexo <span class="built_in">help</span>   <span class="comment">#查看幫助</span></span><br><span class="line">$ hexo version   <span class="comment">#查看Hexo的版本</span></span><br></pre></td></tr></table></figure>
+<p>指令簡寫</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo n == hexo new</span><br><span class="line">hexo g == hexo generate</span><br><span class="line">hexo s == hexo server</span><br><span class="line">hexo d == hexo deploy</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -526,6 +526,55 @@
       </tags>
   </entry>
   <entry>
+    <title>CSS - Float排版問題</title>
+    <url>/2021/08/20/CSS-float/</url>
+    <content><![CDATA[<p>紀錄一下 Float 排版問題</p>
+<a id="more"></a>
+<h2 id="問題："><a href="#問題：" class="headerlink" title="問題："></a>問題：</h2><p>在練習 Bootstrap3 將表單驗證功能加進去，卻遇到畫面「跑版」的問題，<br>目前是查到 「名稱」底下的<br><code>&lt;div class=&quot;help-block with-errors&quot;&gt;&lt;/div&gt;</code><br>所導致。</p>
+<p>可能原因為 float？ margin？</p>
+<p>問題點： 1.單點 「名稱」欄位，就會造成下方欄位跑版。<br><img src="/2021/08/20/CSS-float/Q1.jpg"> 2.若同時有驗證 左右二邊，欄位又有對齊了。<br><img src="/2021/08/20/CSS-float/Q2.jpg"></p>
+<h3 id="codepen：排版偏移程式碼"><a href="#codepen：排版偏移程式碼" class="headerlink" title="codepen：排版偏移程式碼"></a>codepen：<a href="https://codepen.io/bryan-hsaio/pen/NWjQeNy?editors=1000" target="_blank" rel="noopener">排版偏移程式碼</a></h3><h2 id="解決："><a href="#解決：" class="headerlink" title="解決："></a>解決：</h2><img src="/2021/08/20/CSS-float/A1.jpg">
+<p><br><br>如上圖所述，第一個「名稱」腳變長，造成第三個「Email」排不進去被往後推，<br>導致第四個「聯絡電話」也被往後推擠，造成排版歪掉。</p>
+<img src="/2021/08/20/CSS-float/A2.jpg">
+<p><br><br>解法為 外層用 row 包起來，<strong>清除 float 的浮動(clearfix)</strong>。</p>
+<h3 id="codepen：修正後程式碼"><a href="#codepen：修正後程式碼" class="headerlink" title="codepen：修正後程式碼"></a>codepen：<a href="https://codepen.io/bryan-hsaio/pen/Vwboqja" target="_blank" rel="noopener">修正後程式碼</a></h3>]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>float</tag>
+        <tag>排版</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS - Flex</title>
+    <url>/2021/08/20/CSS-Flex/</url>
+    <content><![CDATA[<h2 id="常用屬性"><a href="#常用屬性" class="headerlink" title="常用屬性"></a>常用屬性</h2><img src="/2021/08/20/CSS-Flex/flex-property.png">
+<a id="more"></a>
+<h2 id="概念圖"><a href="#概念圖" class="headerlink" title="概念圖"></a>概念圖</h2><img src="/2021/08/20/CSS-Flex/flex-direction.png">
+<img src="/2021/08/20/CSS-Flex/flex-direction2.png">
+<h2 id="Flex-外容器屬性："><a href="#Flex-外容器屬性：" class="headerlink" title="Flex 外容器屬性："></a>Flex 外容器屬性：</h2><h3 id="flex-direction：決定-flex-主軸線-方向"><a href="#flex-direction：決定-flex-主軸線-方向" class="headerlink" title="flex-direction：決定 flex 主軸線 方向"></a>flex-direction：決定 flex 主軸線 方向</h3><p>[ row | row-reverse | column | column-reverse ]</p>
+<h3 id="justify-content：主要軸線-左右-的對齊"><a href="#justify-content：主要軸線-左右-的對齊" class="headerlink" title="justify-content：主要軸線(左右)的對齊"></a>justify-content：主要軸線(左右)的對齊</h3><p>[ flex-start | flex-end | center | space-between | space-around ]</p>
+<img src="/2021/08/20/CSS-Flex/justify-content.png">
+<h3 id="align-items：交錯軸線-上下-的對齊"><a href="#align-items：交錯軸線-上下-的對齊" class="headerlink" title="align-items：交錯軸線(上下)的對齊"></a>align-items：交錯軸線(上下)的對齊</h3><p>[ flex-start | flex-end | center | baseline | stretch ]</p>
+<img src="/2021/08/20/CSS-Flex/align-items.png">
+<h2 id="Flex-內元件屬性："><a href="#Flex-內元件屬性：" class="headerlink" title="Flex 內元件屬性："></a>Flex 內元件屬性：</h2><h3 id="align-self：單一個物件的交錯軸對齊"><a href="#align-self：單一個物件的交錯軸對齊" class="headerlink" title="align-self：單一個物件的交錯軸對齊"></a>align-self：單一個物件的交錯軸對齊</h3><p>[ auto | flex-start | flex-end | center | baseline | stretch ]</p>
+<img src="/2021/08/20/CSS-Flex/align-self.png">
+<hr>
+<h2 id="參考網站"><a href="#參考網站" class="headerlink" title="參考網站"></a>參考網站</h2><p><a href="https://wcc723.github.io/css/2017/07/21/css-flex/" target="_blank" rel="noopener">圖解：CSS Flex 屬性一點也不難</a></p>
+<p><a href="http://sweeteason.pixnet.net/blog/post/42781628-css-flexbox-layout-%E5%AD%B8%E7%BF%92%E5%BF%83%E5%BE%97" target="_blank" rel="noopener">CSS Flexbox Layout 學習心得筆記</a></p>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>排版</tag>
+        <tag>Flex</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ES6-箭頭函式 (Arrow functions)</title>
     <url>/2021/08/18/ES6-Arrowfunctions/</url>
     <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/08/18/ES6-Arrowfunctions/ES6.jpg"></p>
@@ -568,55 +617,6 @@
         <tag>ES6</tag>
         <tag>箭頭函式</tag>
         <tag>Arrow functions</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSS - Flex</title>
-    <url>/2021/08/20/CSS-Flex/</url>
-    <content><![CDATA[<h2 id="常用屬性"><a href="#常用屬性" class="headerlink" title="常用屬性"></a>常用屬性</h2><img src="/2021/08/20/CSS-Flex/flex-property.png">
-<a id="more"></a>
-<h2 id="概念圖"><a href="#概念圖" class="headerlink" title="概念圖"></a>概念圖</h2><img src="/2021/08/20/CSS-Flex/flex-direction.png">
-<img src="/2021/08/20/CSS-Flex/flex-direction2.png">
-<h2 id="Flex-外容器屬性："><a href="#Flex-外容器屬性：" class="headerlink" title="Flex 外容器屬性："></a>Flex 外容器屬性：</h2><h3 id="flex-direction：決定-flex-主軸線-方向"><a href="#flex-direction：決定-flex-主軸線-方向" class="headerlink" title="flex-direction：決定 flex 主軸線 方向"></a>flex-direction：決定 flex 主軸線 方向</h3><p>[ row | row-reverse | column | column-reverse ]</p>
-<h3 id="justify-content：主要軸線-左右-的對齊"><a href="#justify-content：主要軸線-左右-的對齊" class="headerlink" title="justify-content：主要軸線(左右)的對齊"></a>justify-content：主要軸線(左右)的對齊</h3><p>[ flex-start | flex-end | center | space-between | space-around ]</p>
-<img src="/2021/08/20/CSS-Flex/justify-content.png">
-<h3 id="align-items：交錯軸線-上下-的對齊"><a href="#align-items：交錯軸線-上下-的對齊" class="headerlink" title="align-items：交錯軸線(上下)的對齊"></a>align-items：交錯軸線(上下)的對齊</h3><p>[ flex-start | flex-end | center | baseline | stretch ]</p>
-<img src="/2021/08/20/CSS-Flex/align-items.png">
-<h2 id="Flex-內元件屬性："><a href="#Flex-內元件屬性：" class="headerlink" title="Flex 內元件屬性："></a>Flex 內元件屬性：</h2><h3 id="align-self：單一個物件的交錯軸對齊"><a href="#align-self：單一個物件的交錯軸對齊" class="headerlink" title="align-self：單一個物件的交錯軸對齊"></a>align-self：單一個物件的交錯軸對齊</h3><p>[ auto | flex-start | flex-end | center | baseline | stretch ]</p>
-<img src="/2021/08/20/CSS-Flex/align-self.png">
-<hr>
-<h2 id="參考網站"><a href="#參考網站" class="headerlink" title="參考網站"></a>參考網站</h2><p><a href="https://wcc723.github.io/css/2017/07/21/css-flex/" target="_blank" rel="noopener">圖解：CSS Flex 屬性一點也不難</a></p>
-<p><a href="http://sweeteason.pixnet.net/blog/post/42781628-css-flexbox-layout-%E5%AD%B8%E7%BF%92%E5%BF%83%E5%BE%97" target="_blank" rel="noopener">CSS Flexbox Layout 學習心得筆記</a></p>
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
-        <tag>Flex</tag>
-        <tag>排版</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSS - Float排版問題</title>
-    <url>/2021/08/20/CSS-float/</url>
-    <content><![CDATA[<p>紀錄一下 Float 排版問題</p>
-<a id="more"></a>
-<h2 id="問題："><a href="#問題：" class="headerlink" title="問題："></a>問題：</h2><p>在練習 Bootstrap3 將表單驗證功能加進去，卻遇到畫面「跑版」的問題，<br>目前是查到 「名稱」底下的<br><code>&lt;div class=&quot;help-block with-errors&quot;&gt;&lt;/div&gt;</code><br>所導致。</p>
-<p>可能原因為 float？ margin？</p>
-<p>問題點： 1.單點 「名稱」欄位，就會造成下方欄位跑版。<br><img src="/2021/08/20/CSS-float/Q1.jpg"> 2.若同時有驗證 左右二邊，欄位又有對齊了。<br><img src="/2021/08/20/CSS-float/Q2.jpg"></p>
-<h3 id="codepen：排版偏移程式碼"><a href="#codepen：排版偏移程式碼" class="headerlink" title="codepen：排版偏移程式碼"></a>codepen：<a href="https://codepen.io/bryan-hsaio/pen/NWjQeNy?editors=1000" target="_blank" rel="noopener">排版偏移程式碼</a></h3><h2 id="解決："><a href="#解決：" class="headerlink" title="解決："></a>解決：</h2><img src="/2021/08/20/CSS-float/A1.jpg">
-<p><br><br>如上圖所述，第一個「名稱」腳變長，造成第三個「Email」排不進去被往後推，<br>導致第四個「聯絡電話」也被往後推擠，造成排版歪掉。</p>
-<img src="/2021/08/20/CSS-float/A2.jpg">
-<p><br><br>解法為 外層用 row 包起來，<strong>清除 float 的浮動(clearfix)</strong>。</p>
-<h3 id="codepen：修正後程式碼"><a href="#codepen：修正後程式碼" class="headerlink" title="codepen：修正後程式碼"></a>codepen：<a href="https://codepen.io/bryan-hsaio/pen/Vwboqja" target="_blank" rel="noopener">修正後程式碼</a></h3>]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
-        <tag>排版</tag>
-        <tag>float</tag>
       </tags>
   </entry>
   <entry>
@@ -665,6 +665,42 @@
       </categories>
       <tags>
         <tag>CSS</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>HTML5 - 語義元素</title>
+    <url>/2021/08/22/HTML5-Semantics/</url>
+    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/08/22/HTML5-Semantics/HTML5_01.jpg"><br>重新認識 HTML5 的語義元素</p>
+</blockquote>
+<a id="more"></a>
+<hr>
+<h2 id="常用元素"><a href="#常用元素" class="headerlink" title="常用元素"></a>常用元素</h2><h3 id="lt-header-gt"><a href="#lt-header-gt" class="headerlink" title="&lt;header&gt;"></a><code>&lt;header&gt;</code></h3><p>區塊標題，不要把它只用來取代 <code>&lt;div class=”header”&gt;</code><br>它也可以是文章的標題，一頁可以有好多個 <code>&lt;header&gt;</code>，<code>&lt;header&gt;</code> 裡面至少要有一個 h1~h6。</p>
+<h3 id="lt-nav-gt"><a href="#lt-nav-gt" class="headerlink" title="&lt;nav&gt;"></a><code>&lt;nav&gt;</code></h3><p>導覽列。裡面裝的東西應該只有 <strong>_主要_</strong> 的 navigation links，不要把各種 link 都丟到<code>&lt;nav&gt;</code>裡面。<br>舉例來說，footer 裡面常常會有一排 link，那個就不需要包進<code>&lt;nav&gt;</code>。</p>
+<h3 id="lt-main-gt"><a href="#lt-main-gt" class="headerlink" title="&lt;main&gt;"></a><code>&lt;main&gt;</code></h3><p>一個頁面只有一個! 任何 global 都不能放在 main 裡面( e.g. <code>&lt;header&gt;</code> <code>&lt;footer&gt;</code> logo)</p>
+<h3 id="lt-section-gt"><a href="#lt-section-gt" class="headerlink" title="&lt;section&gt;"></a><code>&lt;section&gt;</code></h3><p>通常用來把一些<strong><em>相關的元素組合在一起</em></strong>，一般來說，裡面都會包含 heading。<br>如果這個區塊的內容可以分成幾個部分的話，那應該使用 article。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>Section title<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra nec</span><br><span class="line">    nulla vitae mollis.</span><br><span class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="lt-article-gt"><a href="#lt-article-gt" class="headerlink" title="&lt;article&gt;"></a><code>&lt;article&gt;</code></h3><p>文章中可以脫離其他部分，獨立出來而又完整，甚至可以復用的一部分，通常有自己的標題，當 article 內嵌 article 時，裡外層的內容應該是相關的，比如一篇文章和它的留言，<br>而 section 雖然也具有獨立表達內容的能力，但是對外層有一定的相依性，例如這篇文章中的一個章節。</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">article</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">header</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/my-blog-post"</span>&gt;</span>My blog post<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra nec</span><br><span class="line">      nulla vitae mollis.</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">footer</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">small</span>&gt;</span></span><br><span class="line">      Posted on <span class="tag">&lt;<span class="name">time</span> <span class="attr">datetime</span>=<span class="string">"2017-04-29T19:00"</span>&gt;</span>Apr 29<span class="tag">&lt;/<span class="name">time</span>&gt;</span> in</span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/category/code"</span>&gt;</span>Code<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">small</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="lt-aside-gt"><a href="#lt-aside-gt" class="headerlink" title="&lt;aside&gt;"></a><code>&lt;aside&gt;</code></h3><p>通常用來包含一些和當前頁面內容有關的額外信息，比如廣告、個人資料信息或相關連結。</p>
+<h3 id="lt-footer-gt"><a href="#lt-footer-gt" class="headerlink" title="&lt;footer&gt;"></a><code>&lt;footer&gt;</code></h3><p>通常包含作者、版權信息或者相關鏈接等。</p>
+<h2 id="簡易分辦-lt-section-gt-lt-article-gt"><a href="#簡易分辦-lt-section-gt-lt-article-gt" class="headerlink" title="簡易分辦 &lt;section&gt;&lt;article&gt;"></a>簡易分辦 <code>&lt;section&gt;&lt;article&gt;</code></h2><p><code>&lt;article&gt;</code>: 就算脫離了整體也是一個可以獨立存在、具有完整內容的區塊，例如這篇文章。<br><code>&lt;section&gt;</code>: 具有獨立表達內容的能力，但是對外層有一定的相依性，例如這篇文章中的一個章節。</p>
+<p>下面是簡單的問題，讓我們決定要用 <code>&lt;section&gt; / &lt;article&gt; / &lt;div&gt;</code></p>
+<ul>
+<li>具有完整內容的區塊，而且可以出現在你的<strong>閱讀器</strong>內嗎? 是的話就是 <code>&lt;article&gt;</code></li>
+<li>跟主要內容是有相關並且列入 outline 裡不會奇怪的? 是的話就是 <code>&lt;section&gt;</code></li>
+<li>跟內容無關或只用來 styling 的? 是的話就是 <code>&lt;div&gt;</code></li>
+</ul>
+<h2 id="建議的架構範例"><a href="#建議的架構範例" class="headerlink" title="建議的架構範例"></a>建議的架構範例</h2><img src="/2021/08/22/HTML5-Semantics/HTML5_02.jpg">
+<img src="/2021/08/22/HTML5-Semantics/HTML5_03.png">
+<hr>
+<h2 id="參考文章"><a href="#參考文章" class="headerlink" title="參考文章"></a>參考文章</h2><div class="note info"><a href="http://techbrood.com/h5b2a?p=html-structure" target="_blank" rel="noopener">结构性元素</a><br><a href="http://apolkingg8.logdown.com/posts/2014/02/04/note-of-semantic-html" target="_blank" rel="noopener">HTML5 Semantic Elements</a><br><a href="http://www.hannahpun.me/performance-optimize2/" target="_blank" rel="noopener">HTML5 Semantics</a><br><a href="http://htmlreference.io/semantic/" target="_blank" rel="noopener">Semantic in HTML5</a><br></div>
+]]></content>
+      <categories>
+        <category>HTML5</category>
+      </categories>
+      <tags>
+        <tag>HTML5</tag>
+        <tag>語義架構</tag>
       </tags>
   </entry>
   <entry>
@@ -737,42 +773,6 @@
         <tag>JS</tag>
         <tag>ES6</tag>
         <tag>Array</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>HTML5 - 語義元素</title>
-    <url>/2021/08/22/HTML5-Semantics/</url>
-    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/08/22/HTML5-Semantics/HTML5_01.jpg"><br>重新認識 HTML5 的語義元素</p>
-</blockquote>
-<a id="more"></a>
-<hr>
-<h2 id="常用元素"><a href="#常用元素" class="headerlink" title="常用元素"></a>常用元素</h2><h3 id="lt-header-gt"><a href="#lt-header-gt" class="headerlink" title="&lt;header&gt;"></a><code>&lt;header&gt;</code></h3><p>區塊標題，不要把它只用來取代 <code>&lt;div class=”header”&gt;</code><br>它也可以是文章的標題，一頁可以有好多個 <code>&lt;header&gt;</code>，<code>&lt;header&gt;</code> 裡面至少要有一個 h1~h6。</p>
-<h3 id="lt-nav-gt"><a href="#lt-nav-gt" class="headerlink" title="&lt;nav&gt;"></a><code>&lt;nav&gt;</code></h3><p>導覽列。裡面裝的東西應該只有 <strong>_主要_</strong> 的 navigation links，不要把各種 link 都丟到<code>&lt;nav&gt;</code>裡面。<br>舉例來說，footer 裡面常常會有一排 link，那個就不需要包進<code>&lt;nav&gt;</code>。</p>
-<h3 id="lt-main-gt"><a href="#lt-main-gt" class="headerlink" title="&lt;main&gt;"></a><code>&lt;main&gt;</code></h3><p>一個頁面只有一個! 任何 global 都不能放在 main 裡面( e.g. <code>&lt;header&gt;</code> <code>&lt;footer&gt;</code> logo)</p>
-<h3 id="lt-section-gt"><a href="#lt-section-gt" class="headerlink" title="&lt;section&gt;"></a><code>&lt;section&gt;</code></h3><p>通常用來把一些<strong><em>相關的元素組合在一起</em></strong>，一般來說，裡面都會包含 heading。<br>如果這個區塊的內容可以分成幾個部分的話，那應該使用 article。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">h2</span>&gt;</span>Section title<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra nec</span><br><span class="line">    nulla vitae mollis.</span><br><span class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="lt-article-gt"><a href="#lt-article-gt" class="headerlink" title="&lt;article&gt;"></a><code>&lt;article&gt;</code></h3><p>文章中可以脫離其他部分，獨立出來而又完整，甚至可以復用的一部分，通常有自己的標題，當 article 內嵌 article 時，裡外層的內容應該是相關的，比如一篇文章和它的留言，<br>而 section 雖然也具有獨立表達內容的能力，但是對外層有一定的相依性，例如這篇文章中的一個章節。</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">article</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">header</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">h3</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/my-blog-post"</span>&gt;</span>My blog post<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">h3</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">section</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec viverra nec</span><br><span class="line">      nulla vitae mollis.</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">section</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">footer</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">small</span>&gt;</span></span><br><span class="line">      Posted on <span class="tag">&lt;<span class="name">time</span> <span class="attr">datetime</span>=<span class="string">"2017-04-29T19:00"</span>&gt;</span>Apr 29<span class="tag">&lt;/<span class="name">time</span>&gt;</span> in</span><br><span class="line">      <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/category/code"</span>&gt;</span>Code<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">small</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">article</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="lt-aside-gt"><a href="#lt-aside-gt" class="headerlink" title="&lt;aside&gt;"></a><code>&lt;aside&gt;</code></h3><p>通常用來包含一些和當前頁面內容有關的額外信息，比如廣告、個人資料信息或相關連結。</p>
-<h3 id="lt-footer-gt"><a href="#lt-footer-gt" class="headerlink" title="&lt;footer&gt;"></a><code>&lt;footer&gt;</code></h3><p>通常包含作者、版權信息或者相關鏈接等。</p>
-<h2 id="簡易分辦-lt-section-gt-lt-article-gt"><a href="#簡易分辦-lt-section-gt-lt-article-gt" class="headerlink" title="簡易分辦 &lt;section&gt;&lt;article&gt;"></a>簡易分辦 <code>&lt;section&gt;&lt;article&gt;</code></h2><p><code>&lt;article&gt;</code>: 就算脫離了整體也是一個可以獨立存在、具有完整內容的區塊，例如這篇文章。<br><code>&lt;section&gt;</code>: 具有獨立表達內容的能力，但是對外層有一定的相依性，例如這篇文章中的一個章節。</p>
-<p>下面是簡單的問題，讓我們決定要用 <code>&lt;section&gt; / &lt;article&gt; / &lt;div&gt;</code></p>
-<ul>
-<li>具有完整內容的區塊，而且可以出現在你的<strong>閱讀器</strong>內嗎? 是的話就是 <code>&lt;article&gt;</code></li>
-<li>跟主要內容是有相關並且列入 outline 裡不會奇怪的? 是的話就是 <code>&lt;section&gt;</code></li>
-<li>跟內容無關或只用來 styling 的? 是的話就是 <code>&lt;div&gt;</code></li>
-</ul>
-<h2 id="建議的架構範例"><a href="#建議的架構範例" class="headerlink" title="建議的架構範例"></a>建議的架構範例</h2><img src="/2021/08/22/HTML5-Semantics/HTML5_02.jpg">
-<img src="/2021/08/22/HTML5-Semantics/HTML5_03.png">
-<hr>
-<h2 id="參考文章"><a href="#參考文章" class="headerlink" title="參考文章"></a>參考文章</h2><div class="note info"><a href="http://techbrood.com/h5b2a?p=html-structure" target="_blank" rel="noopener">结构性元素</a><br><a href="http://apolkingg8.logdown.com/posts/2014/02/04/note-of-semantic-html" target="_blank" rel="noopener">HTML5 Semantic Elements</a><br><a href="http://www.hannahpun.me/performance-optimize2/" target="_blank" rel="noopener">HTML5 Semantics</a><br><a href="http://htmlreference.io/semantic/" target="_blank" rel="noopener">Semantic in HTML5</a><br></div>
-]]></content>
-      <categories>
-        <category>HTML5</category>
-      </categories>
-      <tags>
-        <tag>HTML5</tag>
-        <tag>語義架構</tag>
       </tags>
   </entry>
   <entry>
@@ -849,6 +849,98 @@
         <tag>ES6</tag>
         <tag>樣板字串</tag>
         <tag>Template String</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS-transition 轉場效果</title>
+    <url>/2021/08/29/CSS-Transition/</url>
+    <content><![CDATA[<img src="/2021/08/29/CSS-Transition/transition_01.png">
+<font style="font-size:18px;"><br>轉場是從 A 狀態，轉變成 B 狀態，中間的過程，就叫轉場，在 CSS 中叫做 transition。<br></font>
+
+<a id="more"></a>
+<h2 id="語法"><a href="#語法" class="headerlink" title="語法"></a>語法</h2><figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="attribute">transition</span>: property duration timing-function delay;</span><br><span class="line"><span class="attribute">transition</span>: 套用的屬性 花費時間 時間速率 等待時間;</span><br><span class="line"></span><br><span class="line"><span class="attribute">transition</span>: all <span class="number">2s</span> ease-out <span class="number">1s</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 等同於：</span></span><br><span class="line"><span class="attribute">transition-property</span>: all; <span class="comment">// default: all</span></span><br><span class="line"><span class="attribute">transition-duration</span>: <span class="number">2s</span>; <span class="comment">// default: 0；2s 表示 2 秒；2ms 表示 2 毫秒。</span></span><br><span class="line"><span class="attribute">transition-timing-function</span>: ease-out;</span><br><span class="line"><span class="attribute">transition-delay</span>: <span class="number">1s</span>; <span class="comment">// 開始進行轉場效果之前，所要等待的時間。</span></span><br></pre></td></tr></table></figure>
+<h2 id="transition-timing-function-時間速率"><a href="#transition-timing-function-時間速率" class="headerlink" title="transition-timing-function 時間速率"></a>transition-timing-function 時間速率</h2><img src="/2021/08/29/CSS-Transition/transition-timing-function.png">
+<p><br></p>
+<p></p><p data-height="265" data-theme-id="dark" data-slug-hash="dJyMQw" data-default-tab="result" data-user="Kanboo" data-embed-version="2" data-pen-title="transition 各種速率" class="codepen">See the Pen <a href="https://codepen.io/Kanboo/pen/dJyMQw/" target="_blank" rel="noopener">transition 各種速率</a> by Kanboo (<a href="https://codepen.io/Kanboo" target="_blank" rel="noopener">@Kanboo</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<h2 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h2><h3 id="範例-1：hover"><a href="#範例-1：hover" class="headerlink" title="範例 1：hover"></a>範例 1：hover</h3><p></p><p data-height="265" data-theme-id="0" data-slug-hash="NXWrBw" data-default-tab="result" data-user="Kanboo" data-embed-version="2" data-pen-title="Transition - hover" class="codepen">See the Pen <a href="https://codepen.io/Kanboo/pen/NXWrBw/" target="_blank" rel="noopener">Transition - hover</a> by Kanboo (<a href="https://codepen.io/Kanboo" target="_blank" rel="noopener">@Kanboo</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<h3 id="範例-2：設定-Two-CSS-properties"><a href="#範例-2：設定-Two-CSS-properties" class="headerlink" title="範例 2：設定 Two CSS properties"></a>範例 2：設定 Two CSS properties</h3><p></p><p data-height="265" data-theme-id="0" data-slug-hash="QaWEJm" data-default-tab="css,result" data-user="Kanboo" data-embed-version="2" data-pen-title="Transition - 設定Two CSS properties" class="codepen">See the Pen <a href="https://codepen.io/Kanboo/pen/QaWEJm/" target="_blank" rel="noopener">Transition - 設定Two CSS properties</a> by Kanboo (<a href="https://codepen.io/Kanboo" target="_blank" rel="noopener">@Kanboo</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<p>特別的點：</p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">//設定二個 CSS屬性，設定不同 時間、速率..等</span></span><br><span class="line"><span class="attribute">transition</span>: background <span class="number">0.2s</span> linear, border-radius <span class="number">1s</span> ease-in <span class="number">1s</span>;</span><br></pre></td></tr></table></figure>
+<p>上面案例，特別於在 <strong>:hover</strong> 時，有改變 <strong>背景色</strong> 和 <strong>圓角</strong> 效果，<br>不過在 transition 的設定，分別針對 二個屬性設定不同的時間、速率…等</p>
+<hr>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><a href="http://carlos-studio.com/2017/02/23/css-transition-%E8%BD%89%E5%A0%B4%E6%95%88%E6%9E%9C/" target="_blank" rel="noopener">[CSS][Transition] 轉場效果</a></p>
+<p><a href="https://eyesofkids.gitbooks.io/css3/contents/transitions.html#css3轉場效果transitions" target="_blank" rel="noopener">CSS3 轉場效果(transitions)</a></p>
+<p><a href="https://wcc723.github.io/css/2013/08/24/css-transtion-speed/" target="_blank" rel="noopener">CSS transition 各種速率</a></p>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>transition</tag>
+        <tag>動畫</tag>
+        <tag>轉場效果</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>CSS-垂直置中的方法</title>
+    <url>/2021/08/31/CSS-vertical-align/</url>
+    <content><![CDATA[<blockquote class="blockquote-center"><p>整理常用 CSS 常用的 <span id="inline-blue">垂直置中</span> 的方法。</p>
+</blockquote>
+<a id="more"></a>
+<hr>
+<h2 id="文字的垂直置中方法"><a href="#文字的垂直置中方法" class="headerlink" title="文字的垂直置中方法"></a>文字的垂直置中方法</h2><p>此方法適用 <font style="color:#f90;font-size:20px;">單行</font>，因為是行高，所以會在行內元素的上下都加上行高的 1/2 ，<br>如果<font style="color:#f90;font-size:20px;">多行</font>，第二行與第一行的間距會變超大，就會導致沒有垂直置中的效果。</p>
+<figure class="highlight diff"><table><tr><td class="code"><pre><span class="line">// height 和 line-height 要一樣高</span><br><span class="line"></span><br><span class="line">.div0,.div1 &#123;</span><br><span class="line">  width: 300px;</span><br><span class="line"><span class="addition">+ height: 250px;</span></span><br><span class="line"><span class="addition">+ line-height: 250px;</span></span><br><span class="line">  text-align: center;</span><br><span class="line">  border: 1px solid #000;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p></p><p data-height="326" data-theme-id="0" data-slug-hash="GREobwy" data-default-tab="result" data-user="Kanboo" data-embed-version="2" data-pen-title="垂直置中 - line-height" class="codepen">See the Pen <a href="https://codepen.io/bryan-hsaio/pen/GREobwy" target="_blank" rel="noopener">垂直置中 - line-height</a>.</p><p></p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<hr>
+<h2 id="calc-amp-transform"><a href="#calc-amp-transform" class="headerlink" title="calc &amp; transform"></a>calc &amp; transform</h2><p>使用 <font style="color:red;font-size:20px;">calc</font> 動態計算的能力，讓要置中的 div 的 top 屬性，<br>與上方的距離是<font style="color:#f90;font-size:20px;">「50% 的外框高度 + 50% 的 div 高度」</font>，就可以做到垂直置中。</p>
+<p>範例 1：設定 top：50%，再扣掉 div 的 高度/2</p>
+<ul>
+<li>方法 1：top: calc( 50% - (高度/2) )</li>
+<li>方法 2：top: 50%; margin-top: -(高度/2);</li>
+<li>方法 3：top: 50%; transform: translateY(-50%); <font style="color:red;font-size:16px;"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>自行計算 50%的 div 高度</font></li>
+</ul>
+<figure class="highlight diff"><table><tr><td class="code"><pre><span class="line">.redbox &#123;</span><br><span class="line">    background: #c00;</span><br><span class="line">    float: left;</span><br><span class="line"><span class="addition">+   position: relative; //要宣告position，才能使用 top、left</span></span><br><span class="line">    width: 30px;</span><br><span class="line"><span class="deletion">-   //計算方法1</span></span><br><span class="line"><span class="addition">+   height: 30px;</span></span><br><span class="line"><span class="addition">+   top: calc(50% - 15px); //高：30/2=15</span></span><br><span class="line">  &#125;</span><br><span class="line">  .greenbox &#123;</span><br><span class="line">    background: #0c0;</span><br><span class="line">    float: left;</span><br><span class="line">    position: relative;</span><br><span class="line">    width: 30px;</span><br><span class="line"><span class="deletion">-   //計算方法2</span></span><br><span class="line"><span class="addition">+   height: 80px;</span></span><br><span class="line"><span class="addition">+   top: 50%;</span></span><br><span class="line"><span class="addition">+   margin-top: -40px;  //高：80/2=40</span></span><br><span class="line">  &#125;</span><br><span class="line">  .bluebox &#123;</span><br><span class="line">    background: #00f;</span><br><span class="line">    float: left;</span><br><span class="line">    position: relative;</span><br><span class="line">    width: 30px;</span><br><span class="line">    height: 50px;</span><br><span class="line"><span class="deletion">-   //計算方法3</span></span><br><span class="line"><span class="addition">+   top:50%;</span></span><br><span class="line"><span class="addition">+   transform: translateY(-50%);</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p></p><p data-height="280" data-theme-id="0" data-slug-hash="yLXedPZ" data-default-tab="result" data-user="Bryan" data-embed-version="2" data-pen-title="垂直置中 - calc 動態計算1" class="codepen">See the Pen <a href="https://codepen.io/bryan-hsaio/pen/yLXedPZ" target="_blank" rel="noopener">垂直置中 - calc 動態計算1</a>.</p><p></p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<p>範例 2：將三個 div 設定寬高各 30px，將滑鼠移到黑框內，可觀看效果。</p>
+<p></p><p data-height="277" data-theme-id="0" data-slug-hash="QWgyXaV" data-default-tab="result" data-user="Bryan" data-embed-version="2" data-pen-title="垂直置中 - calc 動態計算2" class="codepen">See the Pen <a href="https://codepen.io/bryan-hsaio/pen/QWgyXaV" target="_blank" rel="noopener">垂直置中 - calc 動態計算2</a>.</p><p></p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<hr>
+<h2 id="絕對定位"><a href="#絕對定位" class="headerlink" title="絕對定位"></a>絕對定位</h2><p>利用絕對位置來指定，要將 <font style="color:red;font-size:20px;">上下</font> 的數值都設為 <font style="color:red;font-size:20px;">0</font>，再搭配一個 <font style="color:red;font-size:20px;">margin:auto</font>，就可以辦到垂直置中。</p>
+<div class="note info">邏輯：<br>這個方法同時設定top和bottom為0，使得這個div完全不可能符合，最後再透過margin這個指令，讓它達到垂直置中的效果<br></div>
+
+<figure class="highlight diff"><table><tr><td class="code"><pre><span class="line">  .redbox &#123;</span><br><span class="line"><span class="deletion">-   // 垂直置中</span></span><br><span class="line">    background: #c00;</span><br><span class="line">    position: absolute; //要宣告，才能使用 top、left</span><br><span class="line"><span class="addition">+   top: 0;</span></span><br><span class="line"><span class="addition">+   bottom: 0;</span></span><br><span class="line"><span class="addition">+   margin: auto;</span></span><br><span class="line">  &#125;</span><br><span class="line">  .bluebox &#123;</span><br><span class="line"><span class="deletion">-   // 垂直置中 + 水平置中</span></span><br><span class="line">    background: blue;</span><br><span class="line">    position: absolute; //要宣告，才能使用 top、left</span><br><span class="line">    top: 0;</span><br><span class="line">    bottom: 0;</span><br><span class="line"><span class="addition">+   left: 0;</span></span><br><span class="line"><span class="addition">+   right: 0;</span></span><br><span class="line">    margin: auto;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p></p><p data-height="230" data-theme-id="0" data-slug-hash="dyRGBZp" data-default-tab="result" data-user="Bryan" data-embed-version="2" data-pen-title="垂直置中 - 絕對定位" class="codepen">See the Pen <a href="https://codepen.io/bryan-hsaio/pen/dyRGBZp" target="_blank" rel="noopener">垂直置中 - 絕對定位</a>.</p><p></p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<hr>
+<h2 id="Flexbox"><a href="#Flexbox" class="headerlink" title="Flexbox"></a>Flexbox</h2><p>CSS3 最威的盒子模型：Flexbox，使用 <font style="color:#f90;font-size:20px;">align-items</font> 或 <font style="color:#f90;font-size:20px;">align-content</font> 的屬性，</p>
+<p>輕輕鬆鬆就可以做到垂直置中的效果喔，Bootstrap 4 也有用喔。</p>
+<figure class="highlight diff"><table><tr><td class="code"><pre><span class="line">.div0 &#123;</span><br><span class="line"><span class="addition">+ display: flex;</span></span><br><span class="line"><span class="addition">+ align-items: center;</span></span><br><span class="line"><span class="addition">+ justify-content: center;</span></span><br><span class="line">  width: 150px;</span><br><span class="line">  height: 150px;</span><br><span class="line">  border: 1px solid #000;</span><br><span class="line"></span><br><span class="line">  .redbox &#123;</span><br><span class="line">    width: 30px;</span><br><span class="line">    height: 30px;</span><br><span class="line">    background: #c00;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p></p><p data-height="225" data-theme-id="0" data-slug-hash="MWoKMvx" data-default-tab="result" data-user="Bryan Hsiao" data-embed-version="2" data-pen-title="垂直置中 - Flexbox" class="codepen">See the Pen <a href="https://codepen.io/bryan-hsaio/pen/MWoKMvx" target="_blank" rel="noopener">垂直置中 - Flexbox</a>.</p><p></p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<hr>
+<h2 id="參考文章"><a href="#參考文章" class="headerlink" title="參考文章"></a>參考文章</h2><div class="note info"><a href="http://www.oxxostudio.tw/articles/201502/css-vertical-align-7methods.html" target="_blank" rel="noopener">CSS 垂直置中的七個方法</a><br><a href="https://pjchender.blogspot.tw/2015/04/css_15.html" target="_blank" rel="noopener">CSS垂直置中的方法</a><br></div>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>vertical-align</tag>
+        <tag>垂直置中</tag>
       </tags>
   </entry>
   <entry>
@@ -1136,43 +1228,6 @@
         <tag>linear-gradient</tag>
         <tag>clip-path</tag>
         <tag>position</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSS-transition 轉場效果</title>
-    <url>/2021/08/29/CSS-Transition/</url>
-    <content><![CDATA[<img src="/2021/08/29/CSS-Transition/transition_01.png">
-<font style="font-size:18px;"><br>轉場是從 A 狀態，轉變成 B 狀態，中間的過程，就叫轉場，在 CSS 中叫做 transition。<br></font>
-
-<a id="more"></a>
-<h2 id="語法"><a href="#語法" class="headerlink" title="語法"></a>語法</h2><figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="attribute">transition</span>: property duration timing-function delay;</span><br><span class="line"><span class="attribute">transition</span>: 套用的屬性 花費時間 時間速率 等待時間;</span><br><span class="line"></span><br><span class="line"><span class="attribute">transition</span>: all <span class="number">2s</span> ease-out <span class="number">1s</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 等同於：</span></span><br><span class="line"><span class="attribute">transition-property</span>: all; <span class="comment">// default: all</span></span><br><span class="line"><span class="attribute">transition-duration</span>: <span class="number">2s</span>; <span class="comment">// default: 0；2s 表示 2 秒；2ms 表示 2 毫秒。</span></span><br><span class="line"><span class="attribute">transition-timing-function</span>: ease-out;</span><br><span class="line"><span class="attribute">transition-delay</span>: <span class="number">1s</span>; <span class="comment">// 開始進行轉場效果之前，所要等待的時間。</span></span><br></pre></td></tr></table></figure>
-<h2 id="transition-timing-function-時間速率"><a href="#transition-timing-function-時間速率" class="headerlink" title="transition-timing-function 時間速率"></a>transition-timing-function 時間速率</h2><img src="/2021/08/29/CSS-Transition/transition-timing-function.png">
-<p><br></p>
-<p></p><p data-height="265" data-theme-id="dark" data-slug-hash="dJyMQw" data-default-tab="result" data-user="Kanboo" data-embed-version="2" data-pen-title="transition 各種速率" class="codepen">See the Pen <a href="https://codepen.io/Kanboo/pen/dJyMQw/" target="_blank" rel="noopener">transition 各種速率</a> by Kanboo (<a href="https://codepen.io/Kanboo" target="_blank" rel="noopener">@Kanboo</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-
-<h2 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h2><h3 id="範例-1：hover"><a href="#範例-1：hover" class="headerlink" title="範例 1：hover"></a>範例 1：hover</h3><p></p><p data-height="265" data-theme-id="0" data-slug-hash="NXWrBw" data-default-tab="result" data-user="Kanboo" data-embed-version="2" data-pen-title="Transition - hover" class="codepen">See the Pen <a href="https://codepen.io/Kanboo/pen/NXWrBw/" target="_blank" rel="noopener">Transition - hover</a> by Kanboo (<a href="https://codepen.io/Kanboo" target="_blank" rel="noopener">@Kanboo</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-
-<h3 id="範例-2：設定-Two-CSS-properties"><a href="#範例-2：設定-Two-CSS-properties" class="headerlink" title="範例 2：設定 Two CSS properties"></a>範例 2：設定 Two CSS properties</h3><p></p><p data-height="265" data-theme-id="0" data-slug-hash="QaWEJm" data-default-tab="css,result" data-user="Kanboo" data-embed-version="2" data-pen-title="Transition - 設定Two CSS properties" class="codepen">See the Pen <a href="https://codepen.io/Kanboo/pen/QaWEJm/" target="_blank" rel="noopener">Transition - 設定Two CSS properties</a> by Kanboo (<a href="https://codepen.io/Kanboo" target="_blank" rel="noopener">@Kanboo</a>) on <a href="https://codepen.io" target="_blank" rel="noopener">CodePen</a>.</p><p></p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-
-<p>特別的點：</p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">//設定二個 CSS屬性，設定不同 時間、速率..等</span></span><br><span class="line"><span class="attribute">transition</span>: background <span class="number">0.2s</span> linear, border-radius <span class="number">1s</span> ease-in <span class="number">1s</span>;</span><br></pre></td></tr></table></figure>
-<p>上面案例，特別於在 <strong>:hover</strong> 時，有改變 <strong>背景色</strong> 和 <strong>圓角</strong> 效果，<br>不過在 transition 的設定，分別針對 二個屬性設定不同的時間、速率…等</p>
-<hr>
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><a href="http://carlos-studio.com/2017/02/23/css-transition-%E8%BD%89%E5%A0%B4%E6%95%88%E6%9E%9C/" target="_blank" rel="noopener">[CSS][Transition] 轉場效果</a></p>
-<p><a href="https://eyesofkids.gitbooks.io/css3/contents/transitions.html#css3轉場效果transitions" target="_blank" rel="noopener">CSS3 轉場效果(transitions)</a></p>
-<p><a href="https://wcc723.github.io/css/2013/08/24/css-transtion-speed/" target="_blank" rel="noopener">CSS transition 各種速率</a></p>
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
-        <tag>transition</tag>
-        <tag>動畫</tag>
-        <tag>轉場效果</tag>
       </tags>
   </entry>
   <entry>

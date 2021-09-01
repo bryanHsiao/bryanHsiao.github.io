@@ -89,7 +89,7 @@
 <meta property="og:site_name" content="Bryan&#39;s Notes">
 <meta property="og:description" content="整理常用 CSS 常用的 垂直置中 的方法。">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2021-08-31T14:09:16.273Z">
+<meta property="og:updated_time" content="2021-08-31T14:39:57.991Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS-垂直置中的方法">
 <meta name="twitter:description" content="整理常用 CSS 常用的 垂直置中 的方法。">
@@ -362,7 +362,7 @@
 <hr>
 <h2 id="文字的垂直置中方法"><a href="#文字的垂直置中方法" class="headerlink" title="文字的垂直置中方法"></a>文字的垂直置中方法</h2><p>此方法適用 <font style="color:#f90;font-size:20px;">單行</font>，因為是行高，所以會在行內元素的上下都加上行高的 1/2 ，<br>如果<font style="color:#f90;font-size:20px;">多行</font>，第二行與第一行的間距會變超大，就會導致沒有垂直置中的效果。</p>
 <figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">// height 和 line-height 要一樣高</span><br><span class="line"></span><br><span class="line">.div0,.div1 &#123;</span><br><span class="line">  width: 300px;</span><br><span class="line"><span class="addition">+ height: 250px;</span></span><br><span class="line"><span class="addition">+ line-height: 250px;</span></span><br><span class="line">  text-align: center;</span><br><span class="line">  border: 1px solid #000;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p></p><p data-height="326" data-theme-id="0" data-slug-hash="GREobwy" data-default-tab="result" data-user="Kanboo" data-embed-version="2" data-pen-title="垂直置中 - line-height" class="codepen">See the Pen <a href="https://codepen.io/bryan-hsaio/pen/GREobwy" target="_blank" rel="noopener">垂直置中 - line-height</a>.</p><p></p>
+<p></p><p data-height="326" data-theme-id="0" data-slug-hash="GREobwy" data-default-tab="css,result" data-user="Kanboo" data-embed-version="2" data-pen-title="垂直置中 - line-height" class="codepen">See the Pen <a href="https://codepen.io/bryan-hsaio/pen/GREobwy" target="_blank" rel="noopener">垂直置中 - line-height</a>.</p><p></p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 <hr>
@@ -374,11 +374,11 @@
 <li>方法 3：top: 50%; transform: translateY(-50%); <font style="color:red;font-size:16px;"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i>自行計算 50%的 div 高度</font></li>
 </ul>
 <figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">.redbox &#123;</span><br><span class="line">    background: #c00;</span><br><span class="line">    float: left;</span><br><span class="line"><span class="addition">+   position: relative; //要宣告position，才能使用 top、left</span></span><br><span class="line">    width: 30px;</span><br><span class="line"><span class="deletion">-   //計算方法1</span></span><br><span class="line"><span class="addition">+   height: 30px;</span></span><br><span class="line"><span class="addition">+   top: calc(50% - 15px); //高：30/2=15</span></span><br><span class="line">  &#125;</span><br><span class="line">  .greenbox &#123;</span><br><span class="line">    background: #0c0;</span><br><span class="line">    float: left;</span><br><span class="line">    position: relative;</span><br><span class="line">    width: 30px;</span><br><span class="line"><span class="deletion">-   //計算方法2</span></span><br><span class="line"><span class="addition">+   height: 80px;</span></span><br><span class="line"><span class="addition">+   top: 50%;</span></span><br><span class="line"><span class="addition">+   margin-top: -40px;  //高：80/2=40</span></span><br><span class="line">  &#125;</span><br><span class="line">  .bluebox &#123;</span><br><span class="line">    background: #00f;</span><br><span class="line">    float: left;</span><br><span class="line">    position: relative;</span><br><span class="line">    width: 30px;</span><br><span class="line">    height: 50px;</span><br><span class="line"><span class="deletion">-   //計算方法3</span></span><br><span class="line"><span class="addition">+   top:50%;</span></span><br><span class="line"><span class="addition">+   transform: translateY(-50%);</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p></p><p data-height="280" data-theme-id="0" data-slug-hash="yLXedPZ" data-default-tab="result" data-user="Bryan" data-embed-version="2" data-pen-title="垂直置中 - calc 動態計算1" class="codepen">See the Pen <a href="https://codepen.io/bryan-hsaio/pen/yLXedPZ" target="_blank" rel="noopener">垂直置中 - calc 動態計算1</a>.</p><p></p>
+<p></p><p data-height="280" data-theme-id="0" data-slug-hash="yLXedPZ" data-default-tab="css,result" data-user="Bryan" data-embed-version="2" data-pen-title="垂直置中 - calc 動態計算1" class="codepen">See the Pen <a href="https://codepen.io/bryan-hsaio/pen/yLXedPZ" target="_blank" rel="noopener">垂直置中 - calc 動態計算1</a>.</p><p></p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 <p>範例 2：將三個 div 設定寬高各 30px，將滑鼠移到黑框內，可觀看效果。</p>
-<p></p><p data-height="277" data-theme-id="0" data-slug-hash="QWgyXaV" data-default-tab="result" data-user="Bryan" data-embed-version="2" data-pen-title="垂直置中 - calc 動態計算2" class="codepen">See the Pen <a href="https://codepen.io/bryan-hsaio/pen/QWgyXaV" target="_blank" rel="noopener">垂直置中 - calc 動態計算2</a>.</p><p></p>
+<p></p><p data-height="277" data-theme-id="0" data-slug-hash="QWgyXaV" data-default-tab="css,result" data-user="Bryan" data-embed-version="2" data-pen-title="垂直置中 - calc 動態計算2" class="codepen">See the Pen <a href="https://codepen.io/bryan-hsaio/pen/QWgyXaV" target="_blank" rel="noopener">垂直置中 - calc 動態計算2</a>.</p><p></p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 <hr>
@@ -386,14 +386,14 @@
 <div class="note info">邏輯：<br>這個方法同時設定top和bottom為0，使得這個div完全不可能符合，最後再透過margin這個指令，讓它達到垂直置中的效果<br></div>
 
 <figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">  .redbox &#123;</span><br><span class="line"><span class="deletion">-   // 垂直置中</span></span><br><span class="line">    background: #c00;</span><br><span class="line">    position: absolute; //要宣告，才能使用 top、left</span><br><span class="line"><span class="addition">+   top: 0;</span></span><br><span class="line"><span class="addition">+   bottom: 0;</span></span><br><span class="line"><span class="addition">+   margin: auto;</span></span><br><span class="line">  &#125;</span><br><span class="line">  .bluebox &#123;</span><br><span class="line"><span class="deletion">-   // 垂直置中 + 水平置中</span></span><br><span class="line">    background: blue;</span><br><span class="line">    position: absolute; //要宣告，才能使用 top、left</span><br><span class="line">    top: 0;</span><br><span class="line">    bottom: 0;</span><br><span class="line"><span class="addition">+   left: 0;</span></span><br><span class="line"><span class="addition">+   right: 0;</span></span><br><span class="line">    margin: auto;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p></p><p data-height="230" data-theme-id="0" data-slug-hash="dyRGBZp" data-default-tab="result" data-user="Bryan" data-embed-version="2" data-pen-title="垂直置中 - 絕對定位" class="codepen">See the Pen <a href="https://codepen.io/bryan-hsaio/pen/dyRGBZp" target="_blank" rel="noopener">垂直置中 - 絕對定位</a>.</p><p></p>
+<p></p><p data-height="230" data-theme-id="0" data-slug-hash="dyRGBZp" data-default-tab="css,result" data-user="Bryan" data-embed-version="2" data-pen-title="垂直置中 - 絕對定位" class="codepen">See the Pen <a href="https://codepen.io/bryan-hsaio/pen/dyRGBZp" target="_blank" rel="noopener">垂直置中 - 絕對定位</a>.</p><p></p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 <hr>
 <h2 id="Flexbox"><a href="#Flexbox" class="headerlink" title="Flexbox"></a>Flexbox</h2><p>CSS3 最威的盒子模型：Flexbox，使用 <font style="color:#f90;font-size:20px;">align-items</font> 或 <font style="color:#f90;font-size:20px;">align-content</font> 的屬性，</p>
 <p>輕輕鬆鬆就可以做到垂直置中的效果喔，Bootstrap 4 也有用喔。</p>
 <figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">.div0 &#123;</span><br><span class="line"><span class="addition">+ display: flex;</span></span><br><span class="line"><span class="addition">+ align-items: center;</span></span><br><span class="line"><span class="addition">+ justify-content: center;</span></span><br><span class="line">  width: 150px;</span><br><span class="line">  height: 150px;</span><br><span class="line">  border: 1px solid #000;</span><br><span class="line"></span><br><span class="line">  .redbox &#123;</span><br><span class="line">    width: 30px;</span><br><span class="line">    height: 30px;</span><br><span class="line">    background: #c00;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p></p><p data-height="225" data-theme-id="0" data-slug-hash="MWoKMvx" data-default-tab="result" data-user="Bryan Hsiao" data-embed-version="2" data-pen-title="垂直置中 - Flexbox" class="codepen">See the Pen <a href="https://codepen.io/bryan-hsaio/pen/MWoKMvx" target="_blank" rel="noopener">垂直置中 - Flexbox</a>.</p><p></p>
+<p></p><p data-height="225" data-theme-id="0" data-slug-hash="MWoKMvx" data-default-tab="css,result" data-user="Bryan Hsiao" data-embed-version="2" data-pen-title="垂直置中 - Flexbox" class="codepen">See the Pen <a href="https://codepen.io/bryan-hsaio/pen/MWoKMvx" target="_blank" rel="noopener">垂直置中 - Flexbox</a>.</p><p></p>
 <script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
 
 <hr>
@@ -441,6 +441,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2021/09/01/CSS-Webfont/" rel="prev" title="CSS-webfont 字體">
+                CSS-webfont 字體 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -517,7 +521,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">文章</span>
                 </a>
               </div>
@@ -539,7 +543,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">36</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">標籤</span>
                 </a>
               </div>

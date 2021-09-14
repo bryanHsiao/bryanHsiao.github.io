@@ -295,47 +295,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Vue3 Start</title>
-    <url>/2021/07/20/Vue3-01/</url>
-    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/07/20/Vue3-01/zMu6v6x.png"></p>
-<font style="font-size:20px;">資料驅動畫面</font>
-</blockquote>
-<a id="more"></a>
-<p><a href="https://v3.vuejs.org/guide/installation.html#vue-devtools" target="_blank" rel="noopener">CDN 連結</a><br>語法：<code>&lt;script src=&quot;https://unpkg.com/vue@next&quot;&gt;&lt;/script&gt;</code><br>請務必記下來，以下三個值，在後續開發會一直出現：</p>
-<blockquote>
-<p>起手式 1：data 資料邏輯<br>起手式 2：methods 方法<br>起手式 3：mounted 生命週期</p>
-</blockquote>
-<h3 id="關注點分離"><a href="#關注點分離" class="headerlink" title="關注點分離"></a>關注點分離</h3><img src="/2021/07/20/Vue3-01/zMu6v6x.png">
-<div class="note primary">重要觀念：先定義資料，才能在 html 中使用</div>
-
-<p>範例程式碼：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 這裡是 html --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">  &#123;&#123; text &#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 這裡是 Vue</span></span><br><span class="line">Vue.createApp(&#123;</span><br><span class="line">  <span class="comment">// data 函式</span></span><br><span class="line">  data: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 一定是用 return</span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      text: <span class="string">"卡斯伯好帥"</span>,</span><br><span class="line">      name: <span class="string">"小明"</span>,</span><br><span class="line">      num: <span class="number">0</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// methods 方法</span></span><br><span class="line">  methods: &#123;&#125;,</span><br><span class="line">  <span class="comment">// mounted 函式</span></span><br><span class="line">  mounted: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">&#125;).mount(<span class="string">"#app"</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><ul>
-<li><p>v-model：和 html 雙向綁定 data 資料（會同步兩邊資料）</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">v-model</span>=<span class="string">"num"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>v-bind：在 html 標籤上進行屬性綁定</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">v-bind:src</span>=<span class="string">"person.image"</span> <span class="attr">:alt</span>=<span class="string">"person.name"</span> <span class="attr">width</span>=<span class="string">"100"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>省略語法：直接在屬性前加上 <code>:</code> 省略 <code>v-bind</code></p>
-</li>
-<li>v-if：將判斷式寫入 <code>&quot;&quot;</code> 中，若是 true 則會顯示，false 則不會顯示</li>
-<li>v-else：不用加判斷式，但需要搭配 v-if 一起使用（若要還需要判斷，則使用 v-else-if）</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">v-if</span>=<span class="string">"person.gender === 'male'"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">v-else-if</span>=<span class="string">"person.gender === 'female'"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">v-else</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<div class="note primary">v-if 和 v-else 要搭配一起使用才會有效果</div><br>- v-for：多筆資料透過迴圈方式將資料迭代出來<br><br><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"item in people"</span>&gt;</span></span><br><span class="line">    &#123;&#123; item.name &#125;&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span>&gt;</span>增加<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">"item.image"</span> <span class="attr">:alt</span>=<span class="string">"item.name"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">i</span> <span class="attr">v-if</span>=<span class="string">"item.gender === 'male'"</span> <span class="attr">class</span>=<span class="string">"bi bi-gender-male"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">    &gt;</span><br><span class="line">    <span class="tag">&lt;<span class="name">i</span> <span class="attr">v-else</span> <span class="attr">class</span>=<span class="string">"bi bi-gender-male"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">    &#123;&#123; item.cash &#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure><br><br>- people Array<br><br>  - people 是 data 中的陣列<br>  - item 代表 people 中，每一個獨立的物件， item 可自定義名稱<br>  - v-for 必須帶 key<br>  - 示意圖：<img src="/2021/07/20/Vue3-01/EHNwlax.png"><br><br>- @click<br><br>  - 在 DOM 元素上加入監聽事件，下方示範 vue 監聽事件以及 jQuery 監聽事件差異<br><br>  <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 這是 jQuery 的寫法</span></span><br><span class="line">$(<span class="string">`#button`</span>).on(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;);</span><br></pre></td></tr></table></figure><br><br>  <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--  這是 Vue 在 html 上綁定事件的做法  --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> @<span class="attr">click</span>=<span class="string">"item.cash++"</span>&gt;</span></span><br><span class="line">  增加</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure><br><br>- methods 函式<br><br>  <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 這是 Vue 透過 methods 給函式</span></span><br><span class="line">methods: &#123;</span><br><span class="line">clickAlert() &#123; <span class="comment">// 建議可以縮寫就縮寫（提升程式碼閱讀性）</span></span><br><span class="line">  alert(<span class="string">'我被觸發了'</span>);</span><br><span class="line"> &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br>- mounted 生命週期<br><br>  - 使用 this 方式取 data 的值<br><br>  <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">mounted: funtcion() &#123;</span><br><span class="line"> <span class="built_in">console</span>.log(<span class="keyword">this</span>.text);</span><br><span class="line"> <span class="comment">// this.clickAlert();</span></span><br><span class="line"> <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line"> <span class="comment">// this 本身是個很複雜的知識，但在 Vue 中把它簡單化了。</span></span><br><span class="line"> <span class="built_in">console</span>.log(<span class="keyword">this</span>.person.image);</span><br><span class="line"> <span class="comment">// 修改資料範例</span></span><br><span class="line"> <span class="keyword">this</span>.text = <span class="string">'我叫小賀'</span></span><br><span class="line"> <span class="comment">// Ajax 取的的資料放在這邊</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br>  - 網頁載入後只會執行一次，適合做初始化<br><br>### 延伸知識<br><br>- 範例<br><br>  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line"> &#123;&#123; text &#125;&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure><br><br>  <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">Vue.createApp(&#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      text: <span class="string">"我叫卡斯伯"</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;&#125;,</span><br><span class="line">  mounted() &#123;&#125;</span><br><span class="line">&#125;).mount(<span class="string">"#app"</span>);</span><br></pre></td></tr></table></figure><br><br>  <img src="/2021/07/20/Vue3-01/pzMahpd.png"><br><br>一般：<br><br>- 整包載入<br>  ESModule： vuecli 也是使用 ESM<br>- 單一模組<br>- 是分別獨立的一個一個方法，ex：createApp、ref、reactive<br><br>&gt; 擇一使用，不會同時使用兩種載入方法，建議使用 ESModule 的載入方法。<br><br><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"module"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  imoport &#123; createApp &#125; <span class="keyword">from</span> <span class="string">'url'</span>;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure><br><br><div class="note danger">ESM 如果沒有加 type=”module” 使用 import/export 會報錯</div>
-]]></content>
-      <categories>
-        <category>VueJS</category>
-        <category>Vue3</category>
-      </categories>
-      <tags>
-        <tag>VueJS</tag>
-        <tag>Vue3</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Hexo-移植步驟紀錄 及 部署指令</title>
     <url>/2021/07/21/HexoBackupSolution/</url>
     <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/07/21/HexoBackupSolution/hexo-cover.png"></p>
@@ -379,31 +338,44 @@
       </tags>
   </entry>
   <entry>
-    <title>github SSH keys 建立步驟記錄</title>
-    <url>/2021/07/22/sshKey-Create/</url>
-    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/07/22/sshKey-Create/sshkeys.jpeg"></p>
-<font style="font-size:20px;"></font></blockquote>
+    <title>Vue3 Start</title>
+    <url>/2021/07/20/Vue3-01/</url>
+    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/07/20/Vue3-01/zMu6v6x.png"></p>
+<font style="font-size:20px;">資料驅動畫面</font>
+</blockquote>
 <a id="more"></a>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>移植Ｈ exo 環境時遇到部署失敗，谷歌了一下也有人遇到太久沒部署出錯，可嘗試設置 SSH Key 做部署，<br>怕以後還會遇到，故將過程記錄下來。<br><a href="https://www.cnblogs.com/xsilence/%5B/6001938.html/" target="_blank" rel="noopener">參考連結</a></p>
-<h2 id="新建立-SSH-key"><a href="#新建立-SSH-key" class="headerlink" title="新建立 SSH key"></a>新建立 SSH key</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"github帳號"</span></span><br></pre></td></tr></table></figure>
-<p>輸入密碼後便會自動產生，應該會看到類似畫面：<br><img src="/2021/07/22/sshKey-Create/Snipaste_2021-07-22_01-37-15.png"></p>
-<h2 id="在-github-上設定-SSH-key"><a href="#在-github-上設定-SSH-key" class="headerlink" title="在 github 上設定 SSH key"></a>在 github 上設定 SSH key</h2><p>使用以下指令可看到 SSH key 內容，複製下來做設定</p>
-<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
-<img src="/2021/07/22/sshKey-Create/GitHub.png">
-<img src="/2021/07/22/sshKey-Create/Your_Profile.png">
-<img src="/2021/07/22/sshKey-Create/SSH_and_GPG_keys.png">
-<img src="/2021/07/22/sshKey-Create/Add_new_SSH_keys.png">
-<h2 id="測試設定是否成功"><a href="#測試設定是否成功" class="headerlink" title="測試設定是否成功"></a>測試設定是否成功</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-<p>若看到以下訊息代表成功！！<br><img src="/2021/07/22/sshKey-Create/bryanhsiao_BryanHsiao-mac13____bryanhsiao_和_index_html_—_Vue3.png"></p>
-<h2 id="設定使用者資訊"><a href="#設定使用者資訊" class="headerlink" title="設定使用者資訊"></a>設定使用者資訊</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"輸入使用者名稱"</span></span><br><span class="line">$ git config --global user.email <span class="string">"輸入email"</span></span><br></pre></td></tr></table></figure>
-<h2 id="部署至-github"><a href="#部署至-github" class="headerlink" title="部署至 github"></a>部署至 github</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo d -g</span><br></pre></td></tr></table></figure>
-<p>部署成功！！<br><img src="/2021/07/22/sshKey-Create/bryanhsiao_BryanHsiao-mac13____bryanhsiao_和_2021-07-22-sshKey-Create_md_—__posts.png"></p>
+<p><a href="https://v3.vuejs.org/guide/installation.html#vue-devtools" target="_blank" rel="noopener">CDN 連結</a><br>語法：<code>&lt;script src=&quot;https://unpkg.com/vue@next&quot;&gt;&lt;/script&gt;</code><br>請務必記下來，以下三個值，在後續開發會一直出現：</p>
+<blockquote>
+<p>起手式 1：data 資料邏輯<br>起手式 2：methods 方法<br>起手式 3：mounted 生命週期</p>
+</blockquote>
+<h3 id="關注點分離"><a href="#關注點分離" class="headerlink" title="關注點分離"></a>關注點分離</h3><img src="/2021/07/20/Vue3-01/zMu6v6x.png">
+<div class="note primary">重要觀念：先定義資料，才能在 html 中使用</div>
+
+<p>範例程式碼：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 這裡是 html --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">  &#123;&#123; text &#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 這裡是 Vue</span></span><br><span class="line">Vue.createApp(&#123;</span><br><span class="line">  <span class="comment">// data 函式</span></span><br><span class="line">  data: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 一定是用 return</span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      text: <span class="string">"卡斯伯好帥"</span>,</span><br><span class="line">      name: <span class="string">"小明"</span>,</span><br><span class="line">      num: <span class="number">0</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// methods 方法</span></span><br><span class="line">  methods: &#123;&#125;,</span><br><span class="line">  <span class="comment">// mounted 函式</span></span><br><span class="line">  mounted: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">&#125;).mount(<span class="string">"#app"</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><ul>
+<li><p>v-model：和 html 雙向綁定 data 資料（會同步兩邊資料）</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">v-model</span>=<span class="string">"num"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>v-bind：在 html 標籤上進行屬性綁定</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">v-bind:src</span>=<span class="string">"person.image"</span> <span class="attr">:alt</span>=<span class="string">"person.name"</span> <span class="attr">width</span>=<span class="string">"100"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>省略語法：直接在屬性前加上 <code>:</code> 省略 <code>v-bind</code></p>
+</li>
+<li>v-if：將判斷式寫入 <code>&quot;&quot;</code> 中，若是 true 則會顯示，false 則不會顯示</li>
+<li>v-else：不用加判斷式，但需要搭配 v-if 一起使用（若要還需要判斷，則使用 v-else-if）</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">v-if</span>=<span class="string">"person.gender === 'male'"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">v-else-if</span>=<span class="string">"person.gender === 'female'"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">v-else</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<div class="note primary">v-if 和 v-else 要搭配一起使用才會有效果</div><br>- v-for：多筆資料透過迴圈方式將資料迭代出來<br><br><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"item in people"</span>&gt;</span></span><br><span class="line">    &#123;&#123; item.name &#125;&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span>&gt;</span>增加<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">"item.image"</span> <span class="attr">:alt</span>=<span class="string">"item.name"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">i</span> <span class="attr">v-if</span>=<span class="string">"item.gender === 'male'"</span> <span class="attr">class</span>=<span class="string">"bi bi-gender-male"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">    &gt;</span><br><span class="line">    <span class="tag">&lt;<span class="name">i</span> <span class="attr">v-else</span> <span class="attr">class</span>=<span class="string">"bi bi-gender-male"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">    &#123;&#123; item.cash &#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure><br><br>- people Array<br><br>  - people 是 data 中的陣列<br>  - item 代表 people 中，每一個獨立的物件， item 可自定義名稱<br>  - v-for 必須帶 key<br>  - 示意圖：<img src="/2021/07/20/Vue3-01/EHNwlax.png"><br><br>- @click<br><br>  - 在 DOM 元素上加入監聽事件，下方示範 vue 監聽事件以及 jQuery 監聽事件差異<br><br>  <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 這是 jQuery 的寫法</span></span><br><span class="line">$(<span class="string">`#button`</span>).on(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;);</span><br></pre></td></tr></table></figure><br><br>  <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--  這是 Vue 在 html 上綁定事件的做法  --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> @<span class="attr">click</span>=<span class="string">"item.cash++"</span>&gt;</span></span><br><span class="line">  增加</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure><br><br>- methods 函式<br><br>  <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 這是 Vue 透過 methods 給函式</span></span><br><span class="line">methods: &#123;</span><br><span class="line">clickAlert() &#123; <span class="comment">// 建議可以縮寫就縮寫（提升程式碼閱讀性）</span></span><br><span class="line">  alert(<span class="string">'我被觸發了'</span>);</span><br><span class="line"> &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br>- mounted 生命週期<br><br>  - 使用 this 方式取 data 的值<br><br>  <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">mounted: funtcion() &#123;</span><br><span class="line"> <span class="built_in">console</span>.log(<span class="keyword">this</span>.text);</span><br><span class="line"> <span class="comment">// this.clickAlert();</span></span><br><span class="line"> <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line"> <span class="comment">// this 本身是個很複雜的知識，但在 Vue 中把它簡單化了。</span></span><br><span class="line"> <span class="built_in">console</span>.log(<span class="keyword">this</span>.person.image);</span><br><span class="line"> <span class="comment">// 修改資料範例</span></span><br><span class="line"> <span class="keyword">this</span>.text = <span class="string">'我叫小賀'</span></span><br><span class="line"> <span class="comment">// Ajax 取的的資料放在這邊</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br>  - 網頁載入後只會執行一次，適合做初始化<br><br>### 延伸知識<br><br>- 範例<br><br>  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line"> &#123;&#123; text &#125;&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure><br><br>  <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">Vue.createApp(&#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      text: <span class="string">"我叫卡斯伯"</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;&#125;,</span><br><span class="line">  mounted() &#123;&#125;</span><br><span class="line">&#125;).mount(<span class="string">"#app"</span>);</span><br></pre></td></tr></table></figure><br><br>  <img src="/2021/07/20/Vue3-01/pzMahpd.png"><br><br>一般：<br><br>- 整包載入<br>  ESModule： vuecli 也是使用 ESM<br>- 單一模組<br>- 是分別獨立的一個一個方法，ex：createApp、ref、reactive<br><br>&gt; 擇一使用，不會同時使用兩種載入方法，建議使用 ESModule 的載入方法。<br><br><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"module"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  imoport &#123; createApp &#125; <span class="keyword">from</span> <span class="string">'url'</span>;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure><br><br><div class="note danger">ESM 如果沒有加 type=”module” 使用 import/export 會報錯</div>
 ]]></content>
       <categories>
-        <category>Hexo</category>
+        <category>VueJS</category>
+        <category>Vue3</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
+        <tag>VueJS</tag>
+        <tag>Vue3</tag>
       </tags>
   </entry>
   <entry>
@@ -461,6 +433,34 @@
       <tags>
         <tag>VueJS</tag>
         <tag>Vue3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>github SSH keys 建立步驟記錄</title>
+    <url>/2021/07/22/sshKey-Create/</url>
+    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/07/22/sshKey-Create/sshkeys.jpeg"></p>
+<font style="font-size:20px;"></font></blockquote>
+<a id="more"></a>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>移植Ｈ exo 環境時遇到部署失敗，谷歌了一下也有人遇到太久沒部署出錯，可嘗試設置 SSH Key 做部署，<br>怕以後還會遇到，故將過程記錄下來。<br><a href="https://www.cnblogs.com/xsilence/%5B/6001938.html/" target="_blank" rel="noopener">參考連結</a></p>
+<h2 id="新建立-SSH-key"><a href="#新建立-SSH-key" class="headerlink" title="新建立 SSH key"></a>新建立 SSH key</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"github帳號"</span></span><br></pre></td></tr></table></figure>
+<p>輸入密碼後便會自動產生，應該會看到類似畫面：<br><img src="/2021/07/22/sshKey-Create/Snipaste_2021-07-22_01-37-15.png"></p>
+<h2 id="在-github-上設定-SSH-key"><a href="#在-github-上設定-SSH-key" class="headerlink" title="在 github 上設定 SSH key"></a>在 github 上設定 SSH key</h2><p>使用以下指令可看到 SSH key 內容，複製下來做設定</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ cat ~/.ssh/id_rsa.pub</span><br></pre></td></tr></table></figure>
+<img src="/2021/07/22/sshKey-Create/GitHub.png">
+<img src="/2021/07/22/sshKey-Create/Your_Profile.png">
+<img src="/2021/07/22/sshKey-Create/SSH_and_GPG_keys.png">
+<img src="/2021/07/22/sshKey-Create/Add_new_SSH_keys.png">
+<h2 id="測試設定是否成功"><a href="#測試設定是否成功" class="headerlink" title="測試設定是否成功"></a>測試設定是否成功</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p>若看到以下訊息代表成功！！<br><img src="/2021/07/22/sshKey-Create/bryanhsiao_BryanHsiao-mac13____bryanhsiao_和_index_html_—_Vue3.png"></p>
+<h2 id="設定使用者資訊"><a href="#設定使用者資訊" class="headerlink" title="設定使用者資訊"></a>設定使用者資訊</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ git config --global user.name <span class="string">"輸入使用者名稱"</span></span><br><span class="line">$ git config --global user.email <span class="string">"輸入email"</span></span><br></pre></td></tr></table></figure>
+<h2 id="部署至-github"><a href="#部署至-github" class="headerlink" title="部署至 github"></a>部署至 github</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo d -g</span><br></pre></td></tr></table></figure>
+<p>部署成功！！<br><img src="/2021/07/22/sshKey-Create/bryanhsiao_BryanHsiao-mac13____bryanhsiao_和_2021-07-22-sshKey-Create_md_—__posts.png"></p>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -571,6 +571,28 @@
       </tags>
   </entry>
   <entry>
+    <title>CSS - Float排版問題</title>
+    <url>/2021/08/20/CSS-float/</url>
+    <content><![CDATA[<p>紀錄一下 Float 排版問題</p>
+<a id="more"></a>
+<h2 id="問題："><a href="#問題：" class="headerlink" title="問題："></a>問題：</h2><p>在練習 Bootstrap3 將表單驗證功能加進去，卻遇到畫面「跑版」的問題，<br>目前是查到 「名稱」底下的<br><code>&lt;div class=&quot;help-block with-errors&quot;&gt;&lt;/div&gt;</code><br>所導致。</p>
+<p>可能原因為 float？ margin？</p>
+<p>問題點： 1.單點 「名稱」欄位，就會造成下方欄位跑版。<br><img src="/2021/08/20/CSS-float/Q1.jpg"> 2.若同時有驗證 左右二邊，欄位又有對齊了。<br><img src="/2021/08/20/CSS-float/Q2.jpg"></p>
+<h3 id="codepen：排版偏移程式碼"><a href="#codepen：排版偏移程式碼" class="headerlink" title="codepen：排版偏移程式碼"></a>codepen：<a href="https://codepen.io/bryan-hsaio/pen/NWjQeNy?editors=1000" target="_blank" rel="noopener">排版偏移程式碼</a></h3><h2 id="解決："><a href="#解決：" class="headerlink" title="解決："></a>解決：</h2><img src="/2021/08/20/CSS-float/A1.jpg">
+<p><br><br>如上圖所述，第一個「名稱」腳變長，造成第三個「Email」排不進去被往後推，<br>導致第四個「聯絡電話」也被往後推擠，造成排版歪掉。</p>
+<img src="/2021/08/20/CSS-float/A2.jpg">
+<p><br><br>解法為 外層用 row 包起來，<strong>清除 float 的浮動(clearfix)</strong>。</p>
+<h3 id="codepen：修正後程式碼"><a href="#codepen：修正後程式碼" class="headerlink" title="codepen：修正後程式碼"></a>codepen：<a href="https://codepen.io/bryan-hsaio/pen/Vwboqja" target="_blank" rel="noopener">修正後程式碼</a></h3>]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>float</tag>
+        <tag>排版</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CSS - Flex</title>
     <url>/2021/08/20/CSS-Flex/</url>
     <content><![CDATA[<h2 id="常用屬性"><a href="#常用屬性" class="headerlink" title="常用屬性"></a>常用屬性</h2><img src="/2021/08/20/CSS-Flex/flex-property.png">
@@ -593,30 +615,8 @@
       </categories>
       <tags>
         <tag>CSS</tag>
+        <tag>排版</tag>
         <tag>Flex</tag>
-        <tag>排版</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSS - Float排版問題</title>
-    <url>/2021/08/20/CSS-float/</url>
-    <content><![CDATA[<p>紀錄一下 Float 排版問題</p>
-<a id="more"></a>
-<h2 id="問題："><a href="#問題：" class="headerlink" title="問題："></a>問題：</h2><p>在練習 Bootstrap3 將表單驗證功能加進去，卻遇到畫面「跑版」的問題，<br>目前是查到 「名稱」底下的<br><code>&lt;div class=&quot;help-block with-errors&quot;&gt;&lt;/div&gt;</code><br>所導致。</p>
-<p>可能原因為 float？ margin？</p>
-<p>問題點： 1.單點 「名稱」欄位，就會造成下方欄位跑版。<br><img src="/2021/08/20/CSS-float/Q1.jpg"> 2.若同時有驗證 左右二邊，欄位又有對齊了。<br><img src="/2021/08/20/CSS-float/Q2.jpg"></p>
-<h3 id="codepen：排版偏移程式碼"><a href="#codepen：排版偏移程式碼" class="headerlink" title="codepen：排版偏移程式碼"></a>codepen：<a href="https://codepen.io/bryan-hsaio/pen/NWjQeNy?editors=1000" target="_blank" rel="noopener">排版偏移程式碼</a></h3><h2 id="解決："><a href="#解決：" class="headerlink" title="解決："></a>解決：</h2><img src="/2021/08/20/CSS-float/A1.jpg">
-<p><br><br>如上圖所述，第一個「名稱」腳變長，造成第三個「Email」排不進去被往後推，<br>導致第四個「聯絡電話」也被往後推擠，造成排版歪掉。</p>
-<img src="/2021/08/20/CSS-float/A2.jpg">
-<p><br><br>解法為 外層用 row 包起來，<strong>清除 float 的浮動(clearfix)</strong>。</p>
-<h3 id="codepen：修正後程式碼"><a href="#codepen：修正後程式碼" class="headerlink" title="codepen：修正後程式碼"></a>codepen：<a href="https://codepen.io/bryan-hsaio/pen/Vwboqja" target="_blank" rel="noopener">修正後程式碼</a></h3>]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
-        <tag>排版</tag>
-        <tag>float</tag>
       </tags>
   </entry>
   <entry>
@@ -949,6 +949,89 @@
       </tags>
   </entry>
   <entry>
+    <title>CSS-切版練習</title>
+    <url>/2021/08/27/CSS-RWDlayout/</url>
+    <content><![CDATA[<img src="/2021/08/27/CSS-RWDlayout/Exercise.png">
+<font style="font-size:18px;"><br>紀錄練習切版時，遇到卡卡的問題<br></font>
+
+<a id="more"></a>
+<hr>
+<h2 id="icon-利用-position-位移"><a href="#icon-利用-position-位移" class="headerlink" title="icon 利用 position 位移"></a>icon 利用 position 位移</h2><h3 id="示意圖"><a href="#示意圖" class="headerlink" title="示意圖"></a>示意圖</h3><img src="/2021/08/27/CSS-RWDlayout/icon_position.png">
+<h3 id="重點"><a href="#重點" class="headerlink" title="重點"></a>重點</h3><ol>
+<li>row 的 position 設置 <strong><em>relative</em></strong>;</li>
+<li>icon 的 position 設置 <strong><em>absolute</em></strong>;</li>
+<li>移動 icon 的位置， top 、 left</li>
+<li>將 icon 移進去在 input 時，input 需增加 <em><strong>左邊 padding</strong></em>，保留位置給 icon。</li>
+</ol>
+<h3 id="HTML-程式碼"><a href="#HTML-程式碼" class="headerlink" title="HTML 程式碼"></a>HTML 程式碼</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"email"</span>&gt;</span>Email Address*<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"email"</span> <span class="attr">class</span>=<span class="string">"icon"</span>&gt;</span><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-envelope-o"</span> <span class="attr">aria-hidden</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">name</span>=<span class="string">"email"</span> <span class="attr">id</span>=<span class="string">"email"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="SCSS-程式碼"><a href="#SCSS-程式碼" class="headerlink" title="SCSS 程式碼"></a>SCSS 程式碼</h3><figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">//記得input的左邊要留padding,保留一些位置給icon</span></span><br><span class="line"><span class="selector-tag">input</span> &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">6px</span> <span class="number">0</span> <span class="number">6px</span> <span class="number">28px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//位移 icon 至 input 裡</span></span><br><span class="line"><span class="selector-class">.row</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.icon</span> &#123;</span><br><span class="line">        <span class="attribute">position</span>: absolute;</span><br><span class="line">        <span class="attribute">top</span>: <span class="number">26px</span>;</span><br><span class="line">        <span class="attribute">left</span>: <span class="number">9px</span>;</span><br><span class="line">        <span class="attribute">font-size</span>: <span class="number">16px</span>;</span><br><span class="line">        <span class="attribute">z-index</span>: <span class="number">10</span>;</span><br><span class="line">        <span class="attribute">color</span>: rgba(<span class="number">61</span>, <span class="number">17</span>, <span class="number">1</span>, <span class="number">0.5</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p></p><p data-height="450" data-theme-id="dark" data-slug-hash="wveMVWN" data-default-tab="css,result" data-user="bryan-hsiao" data-embed-version="2" data-pen-title="LoginForm&icon位移至input" class="codepen">See the Pen <a href="https://codepen.io/bryan-hsaio/pen/wveMVWN" target="_blank" rel="noopener">LoginForm&amp;icon位移至input</a>.</p><p></p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<h2 id="緞帶效果"><a href="#緞帶效果" class="headerlink" title="緞帶效果"></a>緞帶效果</h2><img src="/2021/08/27/CSS-RWDlayout/ribbon.png">
+<h3 id="重點-1"><a href="#重點-1" class="headerlink" title="重點"></a>重點</h3><ul>
+<li><font style="color:blue;">.tag-wrap 為 藍色框線</font></li>
+<li><font style="color:red;">.tag 為 紅色框線(熱賣)</font>
+</li>
+</ul>
+<ol>
+<li><font style="color:blue;"><strong><em>.tag-wrap</em></strong></font> 的 position 設置 <strong><em>absolute</em></strong> ，並且位移要<strong><em>超出原有的框架</em></strong>，才能做出緞帶效果;</li>
+<li>新增 <font style="color:red;">.tag</font> 的 width、background-color…等屬性</li>
+<li>利用 <strong><em>transform</em></strong> ，位移翻轉 <font style="color:red;">.tag</font></li>
+<li>移動好 <font style="color:red;">.tag</font> 後，在 <font style="color:blue;">.tag-wrap</font> 新增 <em><strong>overflow: hidden;</strong></em>， 將多餘的部份隱藏</li>
+<li>利用 <font style="color:red;">.tag</font> 的偽元素 <strong><em>:before、:after</em></strong>，新增 <strong><em>小三角 ▲</em></strong></li>
+</ol>
+<h3 id="html-程式碼"><a href="#html-程式碼" class="headerlink" title="html 程式碼"></a>html 程式碼</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card"</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--  不影響結構  --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tag-wrap"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tag"</span>&gt;</span></span><br><span class="line">      熱賣!!</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!--  主要結構  --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card-block"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="SCSS-程式碼-1"><a href="#SCSS-程式碼-1" class="headerlink" title="SCSS 程式碼"></a>SCSS 程式碼</h3><figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.card</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">230px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//緞帶效果</span></span><br><span class="line"><span class="selector-class">.tag-wrap</span> &#123;</span><br><span class="line">  <span class="variable">$p</span>: <span class="number">5px</span>;</span><br><span class="line">  <span class="variable">$size</span>: <span class="number">80px</span>;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="comment">//位移要超出原有的框架，才能做出緞帶效果</span></span><br><span class="line">  <span class="attribute">top</span>: -<span class="variable">$p</span>;</span><br><span class="line">  <span class="attribute">right</span>: -<span class="variable">$p</span>;</span><br><span class="line">  <span class="comment">//超出的部份隱藏</span></span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">width</span>: <span class="variable">$size</span> * <span class="number">2</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="variable">$size</span> * <span class="number">2</span>;</span><br><span class="line">  <span class="comment">//查看位置</span></span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid blue;</span><br><span class="line"></span><br><span class="line">  <span class="selector-class">.tag</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">width</span>: <span class="variable">$size</span> * <span class="number">2</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: orange;</span><br><span class="line">    <span class="attribute">padding-top</span>: <span class="number">0.25rem</span>;</span><br><span class="line">    <span class="attribute">padding-bottom</span>: <span class="number">0.25rem</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">margin-top</span>: -<span class="variable">$p</span> * <span class="number">2</span>;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="comment">//rotate為旋轉、translate為移動、skew為傾斜、scale為縮放</span></span><br><span class="line">    <span class="attribute">transform</span>: translateX(<span class="number">50%</span>) rotate(<span class="number">45deg</span>) translateY(<span class="number">150%</span>);</span><br><span class="line">    <span class="comment">//查看位置</span></span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line"></span><br><span class="line">    &amp;:before &#123;</span><br><span class="line">      <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">      <span class="attribute">position</span>: absolute;</span><br><span class="line">      <span class="comment">//利用 加粗邊框 + 邊框上方顏色，達到小三角的效果</span></span><br><span class="line">      <span class="attribute">border</span>: <span class="variable">$p</span> solid transparent;</span><br><span class="line">      <span class="attribute">border-top-color</span>: darken(orange, <span class="number">15%</span>);</span><br><span class="line">      <span class="attribute">bottom</span>: -<span class="number">10px</span>;</span><br><span class="line">      <span class="attribute">left</span>: <span class="number">6px</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &amp;:after &#123;</span><br><span class="line">      <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">      <span class="attribute">position</span>: absolute;</span><br><span class="line">      <span class="comment">//利用 加粗邊框 + 邊框上方顏色，達到小三角的效果</span></span><br><span class="line">      <span class="attribute">border</span>: <span class="variable">$p</span> solid transparent;</span><br><span class="line">      <span class="attribute">border-top-color</span>: darken(orange, <span class="number">15%</span>);</span><br><span class="line">      <span class="attribute">bottom</span>: -<span class="number">10px</span>;</span><br><span class="line">      <span class="attribute">right</span>: <span class="number">14px</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>codepen 範例: <a href="https://codepen.io/bryan-hsaio/pen/JjJGgEJ" target="_blank" rel="noopener">CSS-緞帶效果(乾淨版本)</a><br>codepen 範例: <a href="https://codepen.io/bryan-hsaio/pen/RwgrXpJ" target="_blank" rel="noopener">CSS-緞帶效果</a></p>
+</blockquote>
+<hr>
+<h2 id="觀念補充"><a href="#觀念補充" class="headerlink" title="觀念補充"></a>觀念補充</h2><h3 id="六角範例"><a href="#六角範例" class="headerlink" title="六角範例"></a>六角範例</h3><p><a href="https://www.youtube.com/watch?v=ev9bGi_XCqU" target="_blank" rel="noopener">從 Sketch 設計到 CSS 切版</a></p>
+<p><a href="https://codepen.io/Wcc723/pen/zEYXdN" target="_blank" rel="noopener">本日範例：https://codepen.io/Wcc723/pen/zEYXdN</a></p>
+<p><a href="https://codepen.io/Wcc723/pen/pWzxXO" target="_blank" rel="noopener">本日設計參考：https://codepen.io/Wcc723/pen/pWzxXO</a></p>
+<h3 id="transform"><a href="#transform" class="headerlink" title="transform"></a>transform</h3><img src="/2021/08/27/CSS-RWDlayout/transform.png">
+<h3 id="CSS-程式碼"><a href="#CSS-程式碼" class="headerlink" title="CSS 程式碼"></a>CSS 程式碼</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">rotate為旋轉</span></span><br><span class="line"><span class="comment">skew為傾斜</span></span><br><span class="line"><span class="comment">scale為縮放</span></span><br><span class="line"><span class="comment">translate為移動 </span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 範例1：移動X軸 → 旋轉 → 移動Y軸 */</span></span><br><span class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">translateX</span>(150%) <span class="selector-tag">rotate</span>(45<span class="selector-tag">deg</span>) <span class="selector-tag">translateY</span>(50%);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 範例2：旋轉 → 移動X軸 → 移動Y軸 */</span></span><br><span class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">rotate</span>(45<span class="selector-tag">deg</span>) <span class="selector-tag">translateX</span>(150%) <span class="selector-tag">translateY</span>(50%);</span><br></pre></td></tr></table></figure>
+<img src="/2021/08/27/CSS-RWDlayout/transform_order.png">
+<p>上列 CSS 程式碼 「<em><strong>範例 1 、 範例 2</strong></em>」，<br>雖然同樣都做了「移動 X 軸、移動 Y 軸、旋轉」的動作，<br>但是因為 <strong><em>執行順序</em></strong> 不同，<br>所以二個範例呈現出來的結果也會<strong>不一樣</strong>。</p>
+<p></p><p data-height="450" data-theme-id="dark" data-slug-hash="qBjbemP" data-default-tab="css,result" data-user="bryan-hsiao" data-embed-version="2" data-pen-title="transform_執行順序" class="codepen">See the Pen <a href="https://codepen.io/bryan-hsaio/pen/qBjbemP" target="_blank" rel="noopener">transform_執行順序</a>.</p><p></p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<blockquote>
+<p><a href="https://www.great-good.tw/learn/css-transform/" target="_blank" rel="noopener">transform 基本介紹</a> &gt;<a href="https://wcc723.github.io/css/2013/10/08/css-transform/" target="_blank" rel="noopener">1.CSS transform 概觀</a> &gt;<a href="https://wcc723.github.io/css/2013/10/09/css-transform-mistake/" target="_blank" rel="noopener">2.CSS transform 軸線的謊言</a> &gt;<a href="https://wcc723.github.io/css/2013/10/10/css-transform-origin/" target="_blank" rel="noopener">3.CSS transform-origin</a> &gt;<a href="https://wcc723.github.io/css/2013/10/11/css-perspective/" target="_blank" rel="noopener">4.CSS transform-3D 的透視</a></p>
+</blockquote>
+<h3 id="SCSS-顏色函數範例"><a href="#SCSS-顏色函數範例" class="headerlink" title="SCSS 顏色函數範例"></a>SCSS 顏色函數範例</h3><figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: rgba(<span class="number">#000</span>, <span class="number">0.5</span>); <span class="comment">//變半透明</span></span><br><span class="line">  <span class="attribute">background</span>: invert(<span class="number">#f00</span>); <span class="comment">//變反向色彩</span></span><br><span class="line">  <span class="attribute">background</span>: lighten(<span class="number">#06c</span>, <span class="number">30%</span>); <span class="comment">//變亮</span></span><br><span class="line">  <span class="attribute">background</span>: darken(<span class="number">#06c</span>, <span class="number">15%</span>); <span class="comment">//變暗</span></span><br><span class="line">  <span class="attribute">background</span>: saturate(<span class="number">#06c</span>, <span class="number">50%</span>); <span class="comment">//提高飽和度</span></span><br><span class="line">  <span class="attribute">background</span>: desaturate(<span class="number">#06c</span>, <span class="number">50%</span>); <span class="comment">//降低飽和度</span></span><br><span class="line">  <span class="attribute">background</span>: grayscale(<span class="number">#06c</span>); <span class="comment">//灰階</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="https://blog.user.today/scss/" target="_blank" rel="noopener">SCSS 相關</a></p>
+</blockquote>
+<h3 id="linear-gradient-讓顏色有漸層效果"><a href="#linear-gradient-讓顏色有漸層效果" class="headerlink" title="linear-gradient 讓顏色有漸層效果"></a>linear-gradient 讓顏色有漸層效果</h3><img src="/2021/08/27/CSS-RWDlayout/deg.png">
+<h3 id="CSS-程式碼-1"><a href="#CSS-程式碼-1" class="headerlink" title="CSS 程式碼"></a>CSS 程式碼</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line">background-image: linear-gradient(165deg, white, white 50%, $bg-color 50%);</span><br></pre></td></tr></table></figure>
+<p>background: linear-gradient( 方向, 第一個顏色, 第二個顏色, … );</p>
+<blockquote>
+<p><a href="http://www.jianshu.com/p/7a2eb94c91da" target="_blank" rel="noopener">背景色  —  线性渐变</a> &gt;<a href="https://medium.com/@savemuse/%E6%87%89%E7%94%A8css3-gradients%E8%A3%BD%E4%BD%9C%E6%BC%B8%E5%B1%A4%E6%95%88%E6%9E%9C-490cf0efd634" target="_blank" rel="noopener">背景色  —  漸層效果</a></p>
+</blockquote>
+<h3 id="繪製幾何圖形-支援度不高"><a href="#繪製幾何圖形-支援度不高" class="headerlink" title="繪製幾何圖形(支援度不高)"></a>繪製幾何圖形(支援度不高)</h3><img src="/2021/08/27/CSS-RWDlayout/clip.png">
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">clip-path</span>: <span class="selector-tag">polygon</span>(0 0, 280<span class="selector-tag">px</span> 0, 370<span class="selector-tag">px</span> 100%, 0% 100%);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><a href="http://www.css88.com/tool/css-clip-path" target="_blank" rel="noopener">CSS clip-path 生成器</a> &gt;<a href="https://www.webdesigns.com.tw/css_clip-path.asp" target="_blank" rel="noopener">利用 CSS 繪製更多形狀</a> &gt;<a href="https://juejin.im/entry/59a6dab4f265da24976003d3" target="_blank" rel="noopener">不可思议的 CSS 之 CLIP-PATH</a></p>
+</blockquote>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>transform</tag>
+        <tag>translateX</tag>
+        <tag>rotate</tag>
+        <tag>translateY</tag>
+        <tag>SCSS</tag>
+        <tag>linear-gradient</tag>
+        <tag>clip-path</tag>
+        <tag>position</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JS-一次搞懂 JavaScript 的 this</title>
     <url>/2021/08/26/JS-this/</url>
     <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/08/26/JS-this/es6_js.png"></p>
@@ -1055,89 +1138,6 @@
         <tag>JS</tag>
         <tag>ES6</tag>
         <tag>this</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSS-切版練習</title>
-    <url>/2021/08/27/CSS-RWDlayout/</url>
-    <content><![CDATA[<img src="/2021/08/27/CSS-RWDlayout/Exercise.png">
-<font style="font-size:18px;"><br>紀錄練習切版時，遇到卡卡的問題<br></font>
-
-<a id="more"></a>
-<hr>
-<h2 id="icon-利用-position-位移"><a href="#icon-利用-position-位移" class="headerlink" title="icon 利用 position 位移"></a>icon 利用 position 位移</h2><h3 id="示意圖"><a href="#示意圖" class="headerlink" title="示意圖"></a>示意圖</h3><img src="/2021/08/27/CSS-RWDlayout/icon_position.png">
-<h3 id="重點"><a href="#重點" class="headerlink" title="重點"></a>重點</h3><ol>
-<li>row 的 position 設置 <strong><em>relative</em></strong>;</li>
-<li>icon 的 position 設置 <strong><em>absolute</em></strong>;</li>
-<li>移動 icon 的位置， top 、 left</li>
-<li>將 icon 移進去在 input 時，input 需增加 <em><strong>左邊 padding</strong></em>，保留位置給 icon。</li>
-</ol>
-<h3 id="HTML-程式碼"><a href="#HTML-程式碼" class="headerlink" title="HTML 程式碼"></a>HTML 程式碼</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"row"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"email"</span>&gt;</span>Email Address*<span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">label</span> <span class="attr">for</span>=<span class="string">"email"</span> <span class="attr">class</span>=<span class="string">"icon"</span>&gt;</span><span class="tag">&lt;<span class="name">i</span> <span class="attr">class</span>=<span class="string">"fa fa-envelope-o"</span> <span class="attr">aria-hidden</span>=<span class="string">"true"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span><span class="tag">&lt;/<span class="name">label</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">name</span>=<span class="string">"email"</span> <span class="attr">id</span>=<span class="string">"email"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="SCSS-程式碼"><a href="#SCSS-程式碼" class="headerlink" title="SCSS 程式碼"></a>SCSS 程式碼</h3><figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">//記得input的左邊要留padding,保留一些位置給icon</span></span><br><span class="line"><span class="selector-tag">input</span> &#123;</span><br><span class="line">    <span class="attribute">padding</span>: <span class="number">6px</span> <span class="number">0</span> <span class="number">6px</span> <span class="number">28px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//位移 icon 至 input 裡</span></span><br><span class="line"><span class="selector-class">.row</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line"></span><br><span class="line">    <span class="selector-class">.icon</span> &#123;</span><br><span class="line">        <span class="attribute">position</span>: absolute;</span><br><span class="line">        <span class="attribute">top</span>: <span class="number">26px</span>;</span><br><span class="line">        <span class="attribute">left</span>: <span class="number">9px</span>;</span><br><span class="line">        <span class="attribute">font-size</span>: <span class="number">16px</span>;</span><br><span class="line">        <span class="attribute">z-index</span>: <span class="number">10</span>;</span><br><span class="line">        <span class="attribute">color</span>: rgba(<span class="number">61</span>, <span class="number">17</span>, <span class="number">1</span>, <span class="number">0.5</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p></p><p data-height="450" data-theme-id="dark" data-slug-hash="wveMVWN" data-default-tab="css,result" data-user="bryan-hsiao" data-embed-version="2" data-pen-title="LoginForm&icon位移至input" class="codepen">See the Pen <a href="https://codepen.io/bryan-hsaio/pen/wveMVWN" target="_blank" rel="noopener">LoginForm&amp;icon位移至input</a>.</p><p></p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-
-<h2 id="緞帶效果"><a href="#緞帶效果" class="headerlink" title="緞帶效果"></a>緞帶效果</h2><img src="/2021/08/27/CSS-RWDlayout/ribbon.png">
-<h3 id="重點-1"><a href="#重點-1" class="headerlink" title="重點"></a>重點</h3><ul>
-<li><font style="color:blue;">.tag-wrap 為 藍色框線</font></li>
-<li><font style="color:red;">.tag 為 紅色框線(熱賣)</font>
-</li>
-</ul>
-<ol>
-<li><font style="color:blue;"><strong><em>.tag-wrap</em></strong></font> 的 position 設置 <strong><em>absolute</em></strong> ，並且位移要<strong><em>超出原有的框架</em></strong>，才能做出緞帶效果;</li>
-<li>新增 <font style="color:red;">.tag</font> 的 width、background-color…等屬性</li>
-<li>利用 <strong><em>transform</em></strong> ，位移翻轉 <font style="color:red;">.tag</font></li>
-<li>移動好 <font style="color:red;">.tag</font> 後，在 <font style="color:blue;">.tag-wrap</font> 新增 <em><strong>overflow: hidden;</strong></em>， 將多餘的部份隱藏</li>
-<li>利用 <font style="color:red;">.tag</font> 的偽元素 <strong><em>:before、:after</em></strong>，新增 <strong><em>小三角 ▲</em></strong></li>
-</ol>
-<h3 id="html-程式碼"><a href="#html-程式碼" class="headerlink" title="html 程式碼"></a>html 程式碼</h3><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card"</span>&gt;</span></span><br><span class="line">  <span class="comment">&lt;!--  不影響結構  --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tag-wrap"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tag"</span>&gt;</span></span><br><span class="line">      熱賣!!</span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="comment">&lt;!--  主要結構  --&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"card-block"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="SCSS-程式碼-1"><a href="#SCSS-程式碼-1" class="headerlink" title="SCSS 程式碼"></a>SCSS 程式碼</h3><figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.card</span> &#123;</span><br><span class="line">  <span class="attribute">width</span>: <span class="number">230px</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">200px</span>;</span><br><span class="line">  <span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//緞帶效果</span></span><br><span class="line"><span class="selector-class">.tag-wrap</span> &#123;</span><br><span class="line">  <span class="variable">$p</span>: <span class="number">5px</span>;</span><br><span class="line">  <span class="variable">$size</span>: <span class="number">80px</span>;</span><br><span class="line">  <span class="attribute">position</span>: absolute;</span><br><span class="line">  <span class="comment">//位移要超出原有的框架，才能做出緞帶效果</span></span><br><span class="line">  <span class="attribute">top</span>: -<span class="variable">$p</span>;</span><br><span class="line">  <span class="attribute">right</span>: -<span class="variable">$p</span>;</span><br><span class="line">  <span class="comment">//超出的部份隱藏</span></span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">width</span>: <span class="variable">$size</span> * <span class="number">2</span>;</span><br><span class="line">  <span class="attribute">height</span>: <span class="variable">$size</span> * <span class="number">2</span>;</span><br><span class="line">  <span class="comment">//查看位置</span></span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid blue;</span><br><span class="line"></span><br><span class="line">  <span class="selector-class">.tag</span> &#123;</span><br><span class="line">    <span class="attribute">position</span>: relative;</span><br><span class="line">    <span class="attribute">width</span>: <span class="variable">$size</span> * <span class="number">2</span>;</span><br><span class="line">    <span class="attribute">background-color</span>: orange;</span><br><span class="line">    <span class="attribute">padding-top</span>: <span class="number">0.25rem</span>;</span><br><span class="line">    <span class="attribute">padding-bottom</span>: <span class="number">0.25rem</span>;</span><br><span class="line">    <span class="attribute">text-align</span>: center;</span><br><span class="line">    <span class="attribute">margin-top</span>: -<span class="variable">$p</span> * <span class="number">2</span>;</span><br><span class="line">    <span class="attribute">color</span>: white;</span><br><span class="line">    <span class="comment">//rotate為旋轉、translate為移動、skew為傾斜、scale為縮放</span></span><br><span class="line">    <span class="attribute">transform</span>: translateX(<span class="number">50%</span>) rotate(<span class="number">45deg</span>) translateY(<span class="number">150%</span>);</span><br><span class="line">    <span class="comment">//查看位置</span></span><br><span class="line">    <span class="attribute">border</span>: <span class="number">1px</span> solid red;</span><br><span class="line"></span><br><span class="line">    &amp;:before &#123;</span><br><span class="line">      <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">      <span class="attribute">position</span>: absolute;</span><br><span class="line">      <span class="comment">//利用 加粗邊框 + 邊框上方顏色，達到小三角的效果</span></span><br><span class="line">      <span class="attribute">border</span>: <span class="variable">$p</span> solid transparent;</span><br><span class="line">      <span class="attribute">border-top-color</span>: darken(orange, <span class="number">15%</span>);</span><br><span class="line">      <span class="attribute">bottom</span>: -<span class="number">10px</span>;</span><br><span class="line">      <span class="attribute">left</span>: <span class="number">6px</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &amp;:after &#123;</span><br><span class="line">      <span class="attribute">content</span>: <span class="string">""</span>;</span><br><span class="line">      <span class="attribute">position</span>: absolute;</span><br><span class="line">      <span class="comment">//利用 加粗邊框 + 邊框上方顏色，達到小三角的效果</span></span><br><span class="line">      <span class="attribute">border</span>: <span class="variable">$p</span> solid transparent;</span><br><span class="line">      <span class="attribute">border-top-color</span>: darken(orange, <span class="number">15%</span>);</span><br><span class="line">      <span class="attribute">bottom</span>: -<span class="number">10px</span>;</span><br><span class="line">      <span class="attribute">right</span>: <span class="number">14px</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>codepen 範例: <a href="https://codepen.io/bryan-hsaio/pen/JjJGgEJ" target="_blank" rel="noopener">CSS-緞帶效果(乾淨版本)</a><br>codepen 範例: <a href="https://codepen.io/bryan-hsaio/pen/RwgrXpJ" target="_blank" rel="noopener">CSS-緞帶效果</a></p>
-</blockquote>
-<hr>
-<h2 id="觀念補充"><a href="#觀念補充" class="headerlink" title="觀念補充"></a>觀念補充</h2><h3 id="六角範例"><a href="#六角範例" class="headerlink" title="六角範例"></a>六角範例</h3><p><a href="https://www.youtube.com/watch?v=ev9bGi_XCqU" target="_blank" rel="noopener">從 Sketch 設計到 CSS 切版</a></p>
-<p><a href="https://codepen.io/Wcc723/pen/zEYXdN" target="_blank" rel="noopener">本日範例：https://codepen.io/Wcc723/pen/zEYXdN</a></p>
-<p><a href="https://codepen.io/Wcc723/pen/pWzxXO" target="_blank" rel="noopener">本日設計參考：https://codepen.io/Wcc723/pen/pWzxXO</a></p>
-<h3 id="transform"><a href="#transform" class="headerlink" title="transform"></a>transform</h3><img src="/2021/08/27/CSS-RWDlayout/transform.png">
-<h3 id="CSS-程式碼"><a href="#CSS-程式碼" class="headerlink" title="CSS 程式碼"></a>CSS 程式碼</h3><figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* </span></span><br><span class="line"><span class="comment">rotate為旋轉</span></span><br><span class="line"><span class="comment">skew為傾斜</span></span><br><span class="line"><span class="comment">scale為縮放</span></span><br><span class="line"><span class="comment">translate為移動 </span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 範例1：移動X軸 → 旋轉 → 移動Y軸 */</span></span><br><span class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">translateX</span>(150%) <span class="selector-tag">rotate</span>(45<span class="selector-tag">deg</span>) <span class="selector-tag">translateY</span>(50%);</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 範例2：旋轉 → 移動X軸 → 移動Y軸 */</span></span><br><span class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">rotate</span>(45<span class="selector-tag">deg</span>) <span class="selector-tag">translateX</span>(150%) <span class="selector-tag">translateY</span>(50%);</span><br></pre></td></tr></table></figure>
-<img src="/2021/08/27/CSS-RWDlayout/transform_order.png">
-<p>上列 CSS 程式碼 「<em><strong>範例 1 、 範例 2</strong></em>」，<br>雖然同樣都做了「移動 X 軸、移動 Y 軸、旋轉」的動作，<br>但是因為 <strong><em>執行順序</em></strong> 不同，<br>所以二個範例呈現出來的結果也會<strong>不一樣</strong>。</p>
-<p></p><p data-height="450" data-theme-id="dark" data-slug-hash="qBjbemP" data-default-tab="css,result" data-user="bryan-hsiao" data-embed-version="2" data-pen-title="transform_執行順序" class="codepen">See the Pen <a href="https://codepen.io/bryan-hsaio/pen/qBjbemP" target="_blank" rel="noopener">transform_執行順序</a>.</p><p></p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-
-<blockquote>
-<p><a href="https://www.great-good.tw/learn/css-transform/" target="_blank" rel="noopener">transform 基本介紹</a> &gt;<a href="https://wcc723.github.io/css/2013/10/08/css-transform/" target="_blank" rel="noopener">1.CSS transform 概觀</a> &gt;<a href="https://wcc723.github.io/css/2013/10/09/css-transform-mistake/" target="_blank" rel="noopener">2.CSS transform 軸線的謊言</a> &gt;<a href="https://wcc723.github.io/css/2013/10/10/css-transform-origin/" target="_blank" rel="noopener">3.CSS transform-origin</a> &gt;<a href="https://wcc723.github.io/css/2013/10/11/css-perspective/" target="_blank" rel="noopener">4.CSS transform-3D 的透視</a></p>
-</blockquote>
-<h3 id="SCSS-顏色函數範例"><a href="#SCSS-顏色函數範例" class="headerlink" title="SCSS 顏色函數範例"></a>SCSS 顏色函數範例</h3><figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="selector-class">.box</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: rgba(<span class="number">#000</span>, <span class="number">0.5</span>); <span class="comment">//變半透明</span></span><br><span class="line">  <span class="attribute">background</span>: invert(<span class="number">#f00</span>); <span class="comment">//變反向色彩</span></span><br><span class="line">  <span class="attribute">background</span>: lighten(<span class="number">#06c</span>, <span class="number">30%</span>); <span class="comment">//變亮</span></span><br><span class="line">  <span class="attribute">background</span>: darken(<span class="number">#06c</span>, <span class="number">15%</span>); <span class="comment">//變暗</span></span><br><span class="line">  <span class="attribute">background</span>: saturate(<span class="number">#06c</span>, <span class="number">50%</span>); <span class="comment">//提高飽和度</span></span><br><span class="line">  <span class="attribute">background</span>: desaturate(<span class="number">#06c</span>, <span class="number">50%</span>); <span class="comment">//降低飽和度</span></span><br><span class="line">  <span class="attribute">background</span>: grayscale(<span class="number">#06c</span>); <span class="comment">//灰階</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><a href="https://blog.user.today/scss/" target="_blank" rel="noopener">SCSS 相關</a></p>
-</blockquote>
-<h3 id="linear-gradient-讓顏色有漸層效果"><a href="#linear-gradient-讓顏色有漸層效果" class="headerlink" title="linear-gradient 讓顏色有漸層效果"></a>linear-gradient 讓顏色有漸層效果</h3><img src="/2021/08/27/CSS-RWDlayout/deg.png">
-<h3 id="CSS-程式碼-1"><a href="#CSS-程式碼-1" class="headerlink" title="CSS 程式碼"></a>CSS 程式碼</h3><figure class="highlight"><table><tr><td class="code"><pre><span class="line">background-image: linear-gradient(165deg, white, white 50%, $bg-color 50%);</span><br></pre></td></tr></table></figure>
-<p>background: linear-gradient( 方向, 第一個顏色, 第二個顏色, … );</p>
-<blockquote>
-<p><a href="http://www.jianshu.com/p/7a2eb94c91da" target="_blank" rel="noopener">背景色  —  线性渐变</a> &gt;<a href="https://medium.com/@savemuse/%E6%87%89%E7%94%A8css3-gradients%E8%A3%BD%E4%BD%9C%E6%BC%B8%E5%B1%A4%E6%95%88%E6%9E%9C-490cf0efd634" target="_blank" rel="noopener">背景色  —  漸層效果</a></p>
-</blockquote>
-<h3 id="繪製幾何圖形-支援度不高"><a href="#繪製幾何圖形-支援度不高" class="headerlink" title="繪製幾何圖形(支援度不高)"></a>繪製幾何圖形(支援度不高)</h3><img src="/2021/08/27/CSS-RWDlayout/clip.png">
-<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">clip-path</span>: <span class="selector-tag">polygon</span>(0 0, 280<span class="selector-tag">px</span> 0, 370<span class="selector-tag">px</span> 100%, 0% 100%);</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><a href="http://www.css88.com/tool/css-clip-path" target="_blank" rel="noopener">CSS clip-path 生成器</a> &gt;<a href="https://www.webdesigns.com.tw/css_clip-path.asp" target="_blank" rel="noopener">利用 CSS 繪製更多形狀</a> &gt;<a href="https://juejin.im/entry/59a6dab4f265da24976003d3" target="_blank" rel="noopener">不可思议的 CSS 之 CLIP-PATH</a></p>
-</blockquote>
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
-        <tag>transform</tag>
-        <tag>translateX</tag>
-        <tag>rotate</tag>
-        <tag>translateY</tag>
-        <tag>SCSS</tag>
-        <tag>linear-gradient</tag>
-        <tag>clip-path</tag>
-        <tag>position</tag>
       </tags>
   </entry>
   <entry>
@@ -1322,6 +1322,49 @@
       </tags>
   </entry>
   <entry>
+    <title>JS-Pass by sharing</title>
+    <url>/2018/01/15/JS-Passbysharing/</url>
+    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2018/01/15/JS-Passbysharing/js_01.png"></p>
+<font style="font-size:20px;">JavaScript 是「傳值」或「傳址」？</font>
+</blockquote>
+<a id="more"></a>
+<hr>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 2018 iT 邦幫忙鐵人賽，看到 Kuro 大的重新認識 JavaScript 系列文，仔細的閱讀後，紀錄自己觀念不足的部份，也非常推薦給大家觀看此系列文。</p>
+<div class="note info"><a href="https://ithelp.ithome.com.tw/users/20065504/ironman/1259?page=1" target="_blank" rel="noopener">Kuro-重新認識 JavaScript 系列</a></div>
+
+<hr>
+<h2 id="「傳值」或「傳址」？"><a href="#「傳值」或「傳址」？" class="headerlink" title="「傳值」或「傳址」？"></a>「傳值」或「傳址」？</h2><p>所以我說那個 JavaScript 是「傳值」或「傳址」呢？</p>
+<p>在大多數的情況下，基本型別是「<font color="red">傳值</font>」，而物件型別會是「<font color="red">傳址</font>」的方式，但凡事都有例外。</p>
+<p>我們來看看下面這個例子：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> coin1 = &#123; <span class="attr">value</span>: <span class="number">10</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeValue</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  obj = &#123; <span class="attr">value</span>: <span class="number">123</span> &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">changeValue(coin1);</span><br><span class="line"><span class="built_in">console</span>.log(coin1); <span class="comment">// ？</span></span><br></pre></td></tr></table></figure>
+<p>猜猜看，經過 <font color="red">changeValue(coin1)</font> 操作後的 <font color="red">coin1</font> 會是什麼？</p>
+<p>答案仍是 <font color="red">{ value: 10 }</font> 。</p>
+<p>剛剛說過，物件型別會是「傳址」的方式來更新資料，那應該會是 <font color="red">{ value: 123 }</font> 才對，為什麼依然不變？</p>
+<p>事實上，JavaScript 不屬於單純的傳值或傳址。<br>更準確一點來說，JavaScript 應該屬於透過 <font color="red">pass by sharing</font> 來傳遞資料。</p>
+<p>「傳值」或「傳址」對大多數的開發者來說應該都不陌生，那麼「<font color="red">pass by sharing</font>」又是什麼呢？</p>
+<hr>
+<h2 id="Pass-by-sharing"><a href="#Pass-by-sharing" class="headerlink" title="Pass by sharing"></a>Pass by sharing</h2><p>「Pass by sharing」的特點在於，<br>當 <font color="red">function</font> 的參數，如 function changeValue(obj){ … } 中的 <font color="red">obj</font> 被<font color="red">重新賦值</font>的時候，<br>外部變數的內容是不會被影響的。</p>
+<figure class="highlight js"><figcaption><span>function裡，重新賦值</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> coin1 = &#123; <span class="attr">value</span>: <span class="number">10</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeValue</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  obj = &#123; <span class="attr">value</span>: <span class="number">123</span> &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">changeValue(coin1);</span><br><span class="line"><span class="built_in">console</span>.log(coin1); <span class="comment">// 此時 coin1 仍是 &#123; value: 10 &#125;</span></span><br></pre></td></tr></table></figure>
+<p>如果不是重新賦值的情況，則又會回到大家所熟悉的狀況：</p>
+<figure class="highlight js"><figcaption><span>function裡，無 重新賦值</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> coin1 = &#123; <span class="attr">value</span>: <span class="number">10</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeValue</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 僅更新 obj.value，並未重新賦值</span></span><br><span class="line">  obj.value = <span class="number">123</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">changeValue(coin1);</span><br><span class="line"><span class="built_in">console</span>.log(coin1); <span class="comment">// 此時 coin1 則會變成 &#123; value: 123 &#125;</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="Pass-by-sharing-說明-2"><a href="#Pass-by-sharing-說明-2" class="headerlink" title="Pass by sharing 說明 2"></a>Pass by sharing 說明 2</h2><p>用下例說明，<br>因為 <code>b變數</code> 原本是指向 <code>a變數</code> 的記憶體位置，共用同一個記憶體，<br>不過當重新給予 <code>null</code> 值時，<code>b變數</code> 就改指向 <code>null</code> 了，<br>此時 <code>b變數</code> 就不再指向 <code>a變數</code> 的記憶體位置。</p>
+<figure class="highlight js"><figcaption><span>完全重新賦值</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123; <span class="attr">name</span>: <span class="string">"Kanboo"</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> b = a; <span class="comment">// b變數 指向 a變數的記憶體位置</span></span><br><span class="line"></span><br><span class="line">b = <span class="literal">null</span>; <span class="comment">// 完全重新賦值</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// &#123;name: "Kanboo"&#125;</span></span><br></pre></td></tr></table></figure>
+<p>若不是 <font color="red">完全重新賦值</font> 的話，就跟傳址的狀況一樣。</p>
+<figure class="highlight js"><figcaption><span>用 b變數 去更新值</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123; <span class="attr">name</span>: <span class="string">"Kanboo"</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> b = a; <span class="comment">// b變數 指向 a變數的記憶體位置</span></span><br><span class="line"></span><br><span class="line">b.name = <span class="string">"Lucas"</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// &#123;name: "Lucas"&#125;</span></span><br></pre></td></tr></table></figure>
+<div class="note primary"><a href="https://objcer.com/2017/02/26/js-pass-by-value-or-by-reference/" target="_blank" rel="noopener">JS中是 pass by value 还是 pass by reference</a></div>
+]]></content>
+      <categories>
+        <category>JS</category>
+        <category>重新認識 JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>重新認識 JavaScript</tag>
+        <tag>Pass by sharing</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JS-事件機制的原理</title>
     <url>/2021/09/06/JS-Bubbling-Capturing/</url>
     <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/09/06/JS-Bubbling-Capturing/js_01.png"></p>
@@ -1434,46 +1477,87 @@
       </tags>
   </entry>
   <entry>
-    <title>JS-Pass by sharing</title>
-    <url>/2018/01/15/JS-Passbysharing/</url>
-    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2018/01/15/JS-Passbysharing/js_01.png"></p>
-<font style="font-size:20px;">JavaScript 是「傳值」或「傳址」？</font>
+    <title>JS-事件效能處理</title>
+    <url>/2021/09/14/JS-debounce-throttle/</url>
+    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/09/14/JS-debounce-throttle/throttle-vs-debounce.png"></p>
+<font style="font-size:20px;">了解 debounce &amp; throttle 來處理事件效能的問題。</font>
 </blockquote>
 <a id="more"></a>
 <hr>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 2018 iT 邦幫忙鐵人賽，看到 Kuro 大的重新認識 JavaScript 系列文，仔細的閱讀後，紀錄自己觀念不足的部份，也非常推薦給大家觀看此系列文。</p>
-<div class="note info"><a href="https://ithelp.ithome.com.tw/users/20065504/ironman/1259?page=1" target="_blank" rel="noopener">Kuro-重新認識 JavaScript 系列</a></div>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 Youtube 直播看到 <strong>Alex 大大</strong> 線上分享 JS 的運用，這次分享處理事件效能的問題，<br>在此紀錄相關資訊，方便以後複習。</p>
+<div class="note info">Youtube：<a href="https://youtu.be/PnoZU60qvho" target="_blank" rel="noopener">Alex 宅幹嘛 - Javascript 30 #6 捲軸動畫與事件效能處理
+</a></div>
 
 <hr>
-<h2 id="「傳值」或「傳址」？"><a href="#「傳值」或「傳址」？" class="headerlink" title="「傳值」或「傳址」？"></a>「傳值」或「傳址」？</h2><p>所以我說那個 JavaScript 是「傳值」或「傳址」呢？</p>
-<p>在大多數的情況下，基本型別是「<font color="red">傳值</font>」，而物件型別會是「<font color="red">傳址</font>」的方式，但凡事都有例外。</p>
-<p>我們來看看下面這個例子：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> coin1 = &#123; <span class="attr">value</span>: <span class="number">10</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeValue</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  obj = &#123; <span class="attr">value</span>: <span class="number">123</span> &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">changeValue(coin1);</span><br><span class="line"><span class="built_in">console</span>.log(coin1); <span class="comment">// ？</span></span><br></pre></td></tr></table></figure>
-<p>猜猜看，經過 <font color="red">changeValue(coin1)</font> 操作後的 <font color="red">coin1</font> 會是什麼？</p>
-<p>答案仍是 <font color="red">{ value: 10 }</font> 。</p>
-<p>剛剛說過，物件型別會是「傳址」的方式來更新資料，那應該會是 <font color="red">{ value: 123 }</font> 才對，為什麼依然不變？</p>
-<p>事實上，JavaScript 不屬於單純的傳值或傳址。<br>更準確一點來說，JavaScript 應該屬於透過 <font color="red">pass by sharing</font> 來傳遞資料。</p>
-<p>「傳值」或「傳址」對大多數的開發者來說應該都不陌生，那麼「<font color="red">pass by sharing</font>」又是什麼呢？</p>
+<h2 id="連續畫面的渲染-requestAnimationFrame"><a href="#連續畫面的渲染-requestAnimationFrame" class="headerlink" title="連續畫面的渲染 requestAnimationFrame"></a>連續畫面的渲染 requestAnimationFrame</h2><p>如果我們有利用 <code>setTimeout</code> 或 <code>setInterval</code> 要處理連續渲染畫面的需求的話，<br>建議可以改使用 <code>requestAnimationFrame</code> ，<br>避免有時會因為 <code>setTimeout</code> 或 <code>setInterval</code> 設定的時間不正確或太密集的話，<br>導致畫面 LAG 或不正常的情況發生。</p>
+<div class="note info"><a href="https://developers.google.com/web/fundamentals/performance/rendering/optimize-javascript-execution?hl=zh-tw" target="_blank" rel="noopener">requestAnimationFrame</a></div>
+
 <hr>
-<h2 id="Pass-by-sharing"><a href="#Pass-by-sharing" class="headerlink" title="Pass by sharing"></a>Pass by sharing</h2><p>「Pass by sharing」的特點在於，<br>當 <font color="red">function</font> 的參數，如 function changeValue(obj){ … } 中的 <font color="red">obj</font> 被<font color="red">重新賦值</font>的時候，<br>外部變數的內容是不會被影響的。</p>
-<figure class="highlight js"><figcaption><span>function裡，重新賦值</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> coin1 = &#123; <span class="attr">value</span>: <span class="number">10</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeValue</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  obj = &#123; <span class="attr">value</span>: <span class="number">123</span> &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">changeValue(coin1);</span><br><span class="line"><span class="built_in">console</span>.log(coin1); <span class="comment">// 此時 coin1 仍是 &#123; value: 10 &#125;</span></span><br></pre></td></tr></table></figure>
-<p>如果不是重新賦值的情況，則又會回到大家所熟悉的狀況：</p>
-<figure class="highlight js"><figcaption><span>function裡，無 重新賦值</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> coin1 = &#123; <span class="attr">value</span>: <span class="number">10</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeValue</span>(<span class="params">obj</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 僅更新 obj.value，並未重新賦值</span></span><br><span class="line">  obj.value = <span class="number">123</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">changeValue(coin1);</span><br><span class="line"><span class="built_in">console</span>.log(coin1); <span class="comment">// 此時 coin1 則會變成 &#123; value: 123 &#125;</span></span><br></pre></td></tr></table></figure>
+<h2 id="事件效能問題"><a href="#事件效能問題" class="headerlink" title="事件效能問題"></a>事件效能問題</h2><p>當 JS 遇到頻繁觸發事件(如：監聽 window 的 scroll、resize 事件、user 瘋狂 Click 按鈕…等) 的情況，<br>有時可能會造成效能問題，而且<font color="red">常理來說</font>也不太可能會在幾毫秒間，就需要那麼頻繁觸發 Event，<br>所以我們就可以利用 <font color="red">延遲執行</font> 這種方法，來減緩觸發 Event 的次數，<br>下列分別介紹 <code>debounce</code> 與 <code>throttle</code> 二種差異與用法。</p>
 <hr>
-<h2 id="Pass-by-sharing-說明-2"><a href="#Pass-by-sharing-說明-2" class="headerlink" title="Pass by sharing 說明 2"></a>Pass by sharing 說明 2</h2><p>用下例說明，<br>因為 <code>b變數</code> 原本是指向 <code>a變數</code> 的記憶體位置，共用同一個記憶體，<br>不過當重新給予 <code>null</code> 值時，<code>b變數</code> 就改指向 <code>null</code> 了，<br>此時 <code>b變數</code> 就不再指向 <code>a變數</code> 的記憶體位置。</p>
-<figure class="highlight js"><figcaption><span>完全重新賦值</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123; <span class="attr">name</span>: <span class="string">"Kanboo"</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> b = a; <span class="comment">// b變數 指向 a變數的記憶體位置</span></span><br><span class="line"></span><br><span class="line">b = <span class="literal">null</span>; <span class="comment">// 完全重新賦值</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// &#123;name: "Kanboo"&#125;</span></span><br></pre></td></tr></table></figure>
-<p>若不是 <font color="red">完全重新賦值</font> 的話，就跟傳址的狀況一樣。</p>
-<figure class="highlight js"><figcaption><span>用 b變數 去更新值</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> a = &#123; <span class="attr">name</span>: <span class="string">"Kanboo"</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> b = a; <span class="comment">// b變數 指向 a變數的記憶體位置</span></span><br><span class="line"></span><br><span class="line">b.name = <span class="string">"Lucas"</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">// &#123;name: "Lucas"&#125;</span></span><br></pre></td></tr></table></figure>
-<div class="note primary"><a href="https://objcer.com/2017/02/26/js-pass-by-value-or-by-reference/" target="_blank" rel="noopener">JS中是 pass by value 还是 pass by reference</a></div>
+<h2 id="debounce"><a href="#debounce" class="headerlink" title="debounce"></a>debounce</h2><p>因為 <code>debounce</code> 有很多版本的寫法，所以附上我說明的版本。</p>
+<figure class="highlight js"><figcaption><span>debounce</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">func, wait = <span class="number">20</span>, immediate = true</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> timeout;</span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> context = <span class="keyword">this</span>,</span><br><span class="line">      args = <span class="built_in">arguments</span>;</span><br><span class="line">    <span class="keyword">var</span> later = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      timeout = <span class="literal">null</span>;</span><br><span class="line">      <span class="keyword">if</span> (!immediate) func.apply(context, args);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">var</span> callNow = immediate &amp;&amp; !timeout;</span><br><span class="line">    clearTimeout(timeout);</span><br><span class="line">    timeout = setTimeout(later, wait);</span><br><span class="line">    <span class="keyword">if</span> (callNow) func.apply(context, args);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><span id="inline-green">情境描述：</span></p>
+<p><code>debounce(function, wait, [immediate])</code></p>
+<ul>
+<li>function = 給糖果</li>
+<li>wait： 需要冷靜的時間</li>
+<li>immediate： 先給或後給</li>
+</ul>
+<p>假設我設定 <strong>wait：10 秒</strong> 以及 <strong>immediate：先給</strong> 的情況下，</p>
+<p>有一個小孩<font color="blue">第一次</font>跟媽媽吵著要糖吃(觸發事件，如 Scroll、resize…)，<br>而 debounce 媽媽<font color="blue">先給</font>小孩糖果(完成任務)，<br>接著小孩立馬即時瞬間不間斷的，又要瘋狂吵鬧要吃糖(瘋狂觸發事件)，<br>媽媽說你要<font color="blue">有達到</font>冷靜 10 秒後，才會再給糖果，否則就不給糖。</p>
+<p>這時有二種情況</p>
+<ol>
+<li>小孩依舊瘋狂吵要吃糖，沒有冷靜超過 10 秒以上，這時媽媽怎樣都不會給糖。</li>
+<li>小孩吵了一陣子，終於 <font color="red">有</font>冷靜 10 秒以上，這時媽媽才再給他一顆糖。</li>
+</ol>
+<p>說了那麼多，總結來說就是</p>
+<p>當觸發事件完成任務後，下次要再可以成功觸發完成任務的條件，<br>就是需<font color="red">停止觸發事件且超過 wait 設定的時間</font>，才可以再觸發完成一次任務。</p>
+<div class="note info"><a href="https://youtu.be/PnoZU60qvho?t=1h16m3s" target="_blank" rel="noopener">Youtube-debounce解說</a><br><a href="https://youtu.be/PnoZU60qvho?t=1h20m53s" target="_blank" rel="noopener">Youtube-debounce隱性的問題</a></div>
+
+<hr>
+<h2 id="throttle"><a href="#throttle" class="headerlink" title="throttle"></a>throttle</h2><p>附上解說的版本，若 <code>limit = 0</code> 的話，就等於 debounce 了。</p>
+<figure class="highlight js"><figcaption><span>throttle</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">throttle</span>(<span class="params">fun, &#123; wait = <span class="number">33</span>, limit = <span class="number">0</span>, immediate = false &#125;</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> timer;</span><br><span class="line">  <span class="keyword">let</span> startTime = <span class="literal">null</span>;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> context = <span class="keyword">this</span>,</span><br><span class="line">      args = <span class="built_in">arguments</span>;</span><br><span class="line">    <span class="keyword">let</span> currentTime = <span class="keyword">new</span> <span class="built_in">Date</span>().getTime();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (startTime === <span class="literal">null</span>) &#123;</span><br><span class="line">      <span class="keyword">if</span> (!immediate) startTime = currentTime;</span><br><span class="line">      <span class="keyword">else</span> startTime = currentTime - limit;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> waitFun = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      fun.apply(context, args);</span><br><span class="line">      startTime = <span class="literal">null</span>;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    clearTimeout(timer);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (limit &amp;&amp; currentTime - startTime &gt;= limit) &#123;</span><br><span class="line">      fun.apply(context, args);</span><br><span class="line">      startTime = currentTime;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">      timer = setTimeout(waitFun, wait);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><span id="inline-green">情境描述：</span></p>
+<p>一樣是「會吵的孩子有糖吃」的故事。</p>
+<p><code>throttle(fun, { wait = 33, limit = 0, immediate = false })</code></p>
+<ul>
+<li>fun = 給糖果</li>
+<li>wait： 需要冷靜的時間</li>
+<li>limit： 超過最小間隔時間，就給糖</li>
+<li>immediate： 先給或後給</li>
+</ul>
+<p>假設我設定 <strong>wait：10 秒</strong> 、 <strong>limit：5 秒</strong> 以及 <strong>immediate：先給</strong> 的情況下，</p>
+<p>小孩第一次要糖吃時，throttle 媽媽一樣先給小孩糖果，<br>但天下小孩一樣白目(有白色的眼球)，立馬又吵要糖吃，<br>小孩吵鬧依舊沒停止且超過 10 秒，不過 throttle 媽媽就比較心軟，<br>小孩雖然一直吵，但媽媽只要<font color="red">每超過 5 秒一次</font>就會心軟給小孩一個糖吃。</p>
+<p>最後總結來說就是</p>
+<p>當觸發事件完成任務後，有二種情況可以再觸發完成一次任務</p>
+<ol>
+<li>停止觸發事件 且 超過<font color="red">wait</font>設定的時間。</li>
+<li>連續觸發時，中間間隔時間有超過 <font color="red">limit</font>設定的時間。</li>
+</ol>
+<div class="note info"><a href="https://youtu.be/PnoZU60qvho?t=1h23m48s" target="_blank" rel="noopener">Youtube-throttle解說</a><br><a href="https://codepen.io/achen224/pen/pVRJLw" target="_blank" rel="noopener">Alex大-codepen範例</a></div>
+
+<hr>
+<h2 id="閉包（Closure）"><a href="#閉包（Closure）" class="headerlink" title="閉包（Closure）"></a>閉包（Closure）</h2><p>上述 <code>debounce</code> 與 <code>throttle</code> 這二段程式碼中，都有使用到 <font color="red">閉包（Closure）</font>的用法了。</p>
+<p>以 <code>debounce</code> 為例，他利用 <code>timeout</code> 這變數來紀錄且進行一些判斷，下列為他的生命週期</p>
+<ol>
+<li>判斷是否第一次執行，再看 <code>immediate</code> 變數，是設定 先執行 or 後執行。</li>
+<li>若是連續觸發時，就清除上一次的<code>setTimeout</code>。</li>
+<li>當連續觸發的最後一次時，就會執行 <code>later函式</code>，並清空<code>timeout</code>變數。</li>
+</ol>
+<p>這樣下次連續觸發時，就會再回到 <code>1.</code>開始重新判斷。</p>
+<figure class="highlight js"><figcaption><span>debounce解說</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">debounce</span>(<span class="params">func, wait = <span class="number">20</span>, immediate = true</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"debounce~~~~in"</span>);</span><br><span class="line">  <span class="comment">// 紀錄 setTimeout 給的 timeoutID</span></span><br><span class="line">  <span class="keyword">var</span> timeout;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"function~~~~in"</span>);</span><br><span class="line">    <span class="keyword">var</span> context = <span class="keyword">this</span>,</span><br><span class="line">      args = <span class="built_in">arguments</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> later = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">// 清空 setTimeout 給的 timeoutID</span></span><br><span class="line">      timeout = <span class="literal">null</span>;</span><br><span class="line">      <span class="comment">// 若 immediate 是設定「fals(後執行)」時，就會執行func</span></span><br><span class="line">      <span class="keyword">if</span> (!immediate) func.apply(context, args);</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 判斷是否 先執行 且 第一次</span></span><br><span class="line">    <span class="keyword">var</span> callNow = immediate &amp;&amp; !timeout;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 當連續觸發時，用來清除上次的setTimeout</span></span><br><span class="line">    clearTimeout(timeout);</span><br><span class="line">    <span class="comment">// 連續觸發的最後一次，會執行 later函式</span></span><br><span class="line">    timeout = setTimeout(later, wait);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 若符合「先執行 且 第一次」，就執行func</span></span><br><span class="line">    <span class="keyword">if</span> (callNow) func.apply(context, args);</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<div class="note warning">補充：(提醒自己，不要腦補程式碼跑法)<br>1. 當宣告addEventListener時，會執一次<code>debounce函式</code>，並回傳新的函式，此時就完成<font color="red">閉包（Closure）</font>的寫法。<br>2. 之後每當觸發事件時，都是執行<code>新的函式</code>，就是上例的第 6 ~ 27 之間，而 <code>timeout</code> 就<font color="red">有點像</font>是新函式的全域變數，但不是真的在window的全域變數。(<a href="http://jsbin.com/dodijijuye/edit?js,output" target="_blank" rel="noopener">jsbin-捲動畫面並開console看</a>)<br>3. JS是由上往下逐行執行，記得看到<font color="red">最後一行</font>才算結束。<br>4. <code>later函式</code>一開始只是宣告，沒執行，最後要等<code>setTimeout</code>才會執行</div>
 ]]></content>
       <categories>
         <category>JS</category>
-        <category>重新認識 JavaScript</category>
       </categories>
       <tags>
         <tag>JS</tag>
-        <tag>重新認識 JavaScript</tag>
-        <tag>Pass by sharing</tag>
+        <tag>requestAnimationFrame</tag>
+        <tag>debounce</tag>
+        <tag>throttle</tag>
+        <tag>事件效能</tag>
       </tags>
   </entry>
   <entry>
@@ -1609,8 +1693,8 @@
       </categories>
       <tags>
         <tag>CSS</tag>
-        <tag>Flex</tag>
         <tag>排版</tag>
+        <tag>Flex</tag>
       </tags>
   </entry>
   <entry>
@@ -1980,6 +2064,98 @@
       </tags>
   </entry>
   <entry>
+    <title>JS-Callback Function</title>
+    <url>/2021/09/11/JS-CallbackFunction/</url>
+    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/09/11/JS-CallbackFunction/js_01.png"></p>
+<font style="font-size:20px;">Callback Function &amp; Promise</font>
+</blockquote>
+<a id="more"></a>
+<hr>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 2018 iT 邦幫忙鐵人賽，看到 Kuro 大的重新認識 JavaScript 系列文，仔細的閱讀後，紀錄自己觀念不足的部份，也非常推薦給大家觀看此系列文。</p>
+<div class="note info"><a href="https://ithelp.ithome.com.tw/users/20065504/ironman/1259?page=1" target="_blank" rel="noopener">Kuro-重新認識 JavaScript 系列</a></div>
+
+<hr>
+<h2 id="Callback-Function"><a href="#Callback-Function" class="headerlink" title="Callback Function"></a>Callback Function</h2><p>概念就如同：</p>
+<p><em><strong>辦公室電話響了 (事件被觸發 Event fired) -&gt; 接電話 (處理事件 Event Handler)</strong></em></p>
+<p>而寫成程式碼就類似：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 註：這裡只是比喻，並沒有電話響這個事件 XD</span></span><br><span class="line">Office.addEventListener(</span><br><span class="line">  <span class="string">"電話響"</span>,</span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">/* 接電話 */</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="literal">false</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>可以看到，<font color="red">Office</font> 透過 <font color="red">addEventListener</font> 方法註冊了一個事件，當這個事件被觸發時，它會去執行我們所指定的第二個參數，也就是某個「函式」(接電話)。</p>
+<p>換句話說，這個函式只會在滿足了某個條件才會被動地去執行，我們就可以說這是一個 Callback function。</p>
+<hr>
+<h2 id="波動拳-a-k-a-“Callback-Hell”"><a href="#波動拳-a-k-a-“Callback-Hell”" class="headerlink" title="波動拳 (a.k.a. “Callback Hell”)"></a>波動拳 (a.k.a. “Callback Hell”)</h2><p>除了事件以外，還有另一個會需要用到 Callback function 的場景，就是「控制多個函式間執行的順序」。</p>
+<p>下面舉例從簡單的事情慢慢演變成複雜時，會發生什麼情形</p>
+<p>這裡定義了兩個 <font color="red">function</font>：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> funcA = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"function A"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> funcB = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"function B"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">funcA();</span><br><span class="line">funcB();</span><br></pre></td></tr></table></figure>
+<p>因為 <font color="red">funcA</font> 與 <font color="red">funcB</font> 都會立即執行，所以執行結果必定為：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="string">"function A"</span>;</span><br><span class="line"><span class="string">"function B"</span>;</span><br></pre></td></tr></table></figure>
+<p>但是，假設我們改成這樣，加上一個<font color="red">隨機生成的等待時間</font>：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> funcA = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> i = <span class="built_in">Math</span>.random() + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"function A"</span>);</span><br><span class="line">  &#125;, i * <span class="number">1000</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> funcB = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> i = <span class="built_in">Math</span>.random() + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"function B"</span>);</span><br><span class="line">  &#125;, i * <span class="number">1000</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">funcA();</span><br><span class="line">funcB();</span><br></pre></td></tr></table></figure>
+<p>這時候就沒辦法確定是 <font color="red">“function A”</font> 會先出現還是 <font color="red">“function B”</font> 會先出現了對吧？</p>
+<p>像這種時候，為了確保執行的順序，就會透過 Callback function 的形式來處理：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 為了確保先執行 funcA 再執行 funcB</span></span><br><span class="line"><span class="comment">// 我們在 funcA 加上 callback 參數</span></span><br><span class="line"><span class="keyword">var</span> funcA = <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> i = <span class="built_in">Math</span>.random() + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"function A"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 如果 callback 是個函式就呼叫它</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> callback === <span class="string">"function"</span>) &#123;</span><br><span class="line">      callback();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, i * <span class="number">1000</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> funcB = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> i = <span class="built_in">Math</span>.random() + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"function B"</span>);</span><br><span class="line">  &#125;, i * <span class="number">1000</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 將 funcB 作為參數帶入 funcA()</span></span><br><span class="line">funcA(funcB);</span><br></pre></td></tr></table></figure>
+<p>像這樣，無論 <font color="red">funcA</font> 在執行的時候要等多久， <font color="red">funcB</font> 都會等到 <font color="red">console.log(‘function A’);</font> 之後才執行。</p>
+<p>不過需要注意的是，當函式之間的相依過深，callback 多層之後產生的「波動拳」維護起來就會很可怕！</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">getData(<span class="function"><span class="keyword">function</span> (<span class="params">a</span>) </span>&#123;</span><br><span class="line">  getMoreData(a, <span class="function"><span class="keyword">function</span> (<span class="params">b</span>) </span>&#123;</span><br><span class="line">    getMoreData(b, <span class="function"><span class="keyword">function</span> (<span class="params">c</span>) </span>&#123;</span><br><span class="line">      getMoreData(c, <span class="function"><span class="keyword">function</span> (<span class="params">d</span>) </span>&#123;</span><br><span class="line">        getMoreData(d, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">          ...</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<img src="/2021/09/11/JS-CallbackFunction/js_02.jpg">
+<hr>
+<h2 id="再見-Callback-Hell"><a href="#再見-Callback-Hell" class="headerlink" title="再見 Callback Hell"></a>再見 Callback Hell</h2><p>執行順序的問題是一個，還有另一個常見的狀況是這樣，再回到 「Overcooked」 的場景。</p>
+<div class="note info">用 Overcooked (遊戲名稱：煮過頭)  比喻 同步(Synchronous)的概念<br>假設邊緣人如我，只能自己一人玩 Overcooked，在領完食材原料之後，一樣會有青菜、番茄需要處理。<br><br>因為只有<font color="red">一個廚師</font>，所以要嘛先處理青菜、要嘛先處理番茄，必須先弄完一項之後再去處理另一項，整個流程會被前一個步驟卡住。<br><br>像這樣「<font color="red">先完成 A 才能做 B、C、D …</font>」的運作方式我們就會把它稱作「<font color="red">同步</font>」(Synchronous) 。</div>
+
+<p>當我要確保「切青菜、切番茄、擺盤」三個動作<font color="red">都完成</font>之後，我才能繼續「<font color="red">上菜</font>」這個動作。</p>
+<p>在面臨這種問題的時候，我要怎麼確保三個動作都完成之後，才繼續執行後面的程式呢？</p>
+<p>最直覺的方式是新增一個變數來管理狀態：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> result = []; <span class="comment">//紀錄已完成的事件</span></span><br><span class="line"><span class="keyword">var</span> step = <span class="number">3</span>; <span class="comment">//全部完成的總數量</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 假設 funcA、funcB、funcC 分別代表「切青菜、切番茄、擺盤」</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcA</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    result.push(<span class="string">"A"</span>); <span class="comment">//紀錄 A 完成</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"A"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (result.length === step) &#123;</span><br><span class="line">      funcD();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, (<span class="built_in">Math</span>.random() + <span class="number">1</span>) * <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcB</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    result.push(<span class="string">"B"</span>); <span class="comment">//紀錄 B 完成</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"B"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (result.length === step) &#123;</span><br><span class="line">      funcD();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, (<span class="built_in">Math</span>.random() + <span class="number">1</span>) * <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcC</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    result.push(<span class="string">"C"</span>); <span class="comment">//紀錄 C 完成</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"C"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (result.length === step) &#123;</span><br><span class="line">      funcD();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, (<span class="built_in">Math</span>.random() + <span class="number">1</span>) * <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcD</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"上菜！"</span>);</span><br><span class="line">  result = [];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">funcA();</span><br><span class="line">funcB();</span><br><span class="line">funcC();</span><br></pre></td></tr></table></figure>
+<p>像上面這樣，當我們依序執行了 <font color="red">funcA()</font>、<font color="red">funcB()</font>、<font color="red">funcC()</font>，由於內部 <font color="red">setTimeout</font> 會等待亂數時間的關係，我們無法得知誰先誰後。 但可以確定的是，當這三個函式執行的時候就會去檢查 <font color="red">result.length === step</font> ，如果成立，就表示三個任務都已經完成，那麼就可以再去呼叫 <font color="red">funcD</font> 執行後續的事情。</p>
+<p>如果不希望使用<font color="blue">全域變數來污染執行環境</font>的話，甚至可以包裝成一個通用的函式：</p>
+<figure class="highlight js"><figcaption><span>閉包的概念</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">serials</span>(<span class="params">tasks, callback</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> step = tasks.length;</span><br><span class="line">  <span class="keyword">var</span> result = [];</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 檢查的邏輯寫在這裡</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">check</span>(<span class="params">r</span>) </span>&#123;</span><br><span class="line">    result.push(r);</span><br><span class="line">    <span class="keyword">if</span> (result.length === step) &#123;</span><br><span class="line">      callback();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  tasks.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">f</span>) </span>&#123;</span><br><span class="line">    f(check);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>那麼改寫一下 <font color="red">funcA()</font>、<font color="red">funcB()</font>、<font color="red">funcC()</font>:</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcA</span>(<span class="params">check</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"A"</span>);</span><br><span class="line">    check(<span class="string">"A"</span>);</span><br><span class="line">  &#125;, (<span class="built_in">Math</span>.random() + <span class="number">1</span>) * <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcB</span>(<span class="params">check</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"B"</span>);</span><br><span class="line">    check(<span class="string">"B"</span>);</span><br><span class="line">  &#125;, (<span class="built_in">Math</span>.random() + <span class="number">1</span>) * <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcC</span>(<span class="params">check</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"C"</span>);</span><br><span class="line">    check(<span class="string">"C"</span>);</span><br><span class="line">  &#125;, (<span class="built_in">Math</span>.random() + <span class="number">1</span>) * <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcD</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"上菜！"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最後呼叫的時候，我們就可以透過這樣呼叫 <font color="red">serials()</font> ：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">serials([funcA, funcB, funcC], funcD);</span><br></pre></td></tr></table></figure>
+<p>把想要提前執行的函式以<font color="red">陣列的方式</font>傳進 <font color="red">serials()</font> 作為第一個參數，當<font color="red">陣列中的函式都執行完畢</font>後，才會呼叫第二個參數的 <font color="red">funcD()</font>。</p>
+<hr>
+<h2 id="Promise-物件"><a href="#Promise-物件" class="headerlink" title="Promise 物件"></a>Promise 物件</h2><p>為了解決同步/非同步的問題，自從 <font color="red">ES6</font> 開始新增了一個叫做 <font color="red">Promise</font> 的特殊物件。</p>
+<p>簡單來說，<font color="red">Promise</font> 按字面上的翻譯就是「承諾、約定」之意，回傳的結果要嘛是「<strong>完成</strong>」，要嘛是「<strong>拒絕</strong>」。</p>
+<p>實際寫成 Promise 的程式碼大概像這樣：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> myFirstPromise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  resolve(someValue); <span class="comment">// 完成</span></span><br><span class="line">  reject(<span class="string">"failure reason"</span>); <span class="comment">// 拒絕</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>要提供一個函式 promise 功能，讓它回傳一個 promise 物件即可：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myAsyncFunction</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// resolve() or reject()</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>當 Promise 被<font color="red">完成</font>的時候，我們就可以呼叫 <font color="red">resolve()</font>，然後將取得的資料傳遞出去。 或是說想要<font color="red">拒絕</font> Promise ， 那麼就呼叫 <font color="red">reject()</font> 來拒絕。</p>
+<hr>
+<p>一般來說， <font color="red">Promise</font> 物件會有這幾種狀態：</p>
+<ul>
+<li>pending: 初始狀態，不是 fulfilled 或 rejected。</li>
+<li>fulfilled: 表示操作成功地完成。</li>
+<li>rejected: 表示操作失敗。</li>
+</ul>
+<img src="/2021/09/11/JS-CallbackFunction/js_03.png">
+<p>整個 <font color="red">Promise</font> 流程可以用這張圖表示：</p>
+<img src="/2021/09/11/JS-CallbackFunction/js_04.png">
+<hr>
+<p>如果我們需要<font color="red"><strong>依序</strong></font>串連執行多個 promise 功能的話，可以透過 <font color="red">.then()</font> 來做到。</p>
+<p>以剛剛的 <font color="red">funcA()</font>、<font color="red">funcB()</font>、<font color="red">funcC()</font> 來當範例，我們將這三個函式分別透過 Promise 包裝：</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcA</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"A"</span>);</span><br><span class="line">      resolve(<span class="string">"A"</span>); <span class="comment">// 完成</span></span><br><span class="line">    &#125;, (<span class="built_in">Math</span>.random() + <span class="number">1</span>) * <span class="number">1000</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcB</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"B"</span>);</span><br><span class="line">      resolve(<span class="string">"B"</span>); <span class="comment">// 完成</span></span><br><span class="line">    &#125;, (<span class="built_in">Math</span>.random() + <span class="number">1</span>) * <span class="number">1000</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcC</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"C"</span>);</span><br><span class="line">      resolve(<span class="string">"C"</span>); <span class="comment">// 完成</span></span><br><span class="line">    &#125;, (<span class="built_in">Math</span>.random() + <span class="number">1</span>) * <span class="number">1000</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>最後透過呼叫</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">funcA()</span><br><span class="line">  .then(funcB)</span><br><span class="line">  .then(funcC);</span><br></pre></td></tr></table></figure>
+<p>就可以做到等 <font color="red">funcA()</font> 被 「<strong>resolve</strong>」之後再執行 <font color="red">funcB()</font>，然後 resolve 再執行 <font color="red">funcC()</font> 的順序了。</p>
+<hr>
+<p>如果我們不在乎 <font color="red">funcA()</font>、<font color="red">funcB()</font>、<font color="red">funcC()</font> 誰先誰後，只關心這三個是否已經完成呢？</p>
+<p>那就可以透過 <font color="red">Promise.all()</font> 來做到：</p>
+<figure class="highlight js"><figcaption><span>Promise.all()</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment">// funcA, funcB, funcC 的先後順序不重要</span></span><br><span class="line"><span class="comment">// 直到這三個函式都回覆 resolve 或是「其中一個」 reject 才會繼續後續的行為</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Promise</span>.all([funcA(), funcB(), funcC()]).then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"上菜"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>JS</category>
+        <category>重新認識 JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>重新認識 JavaScript</tag>
+        <tag>Promise</tag>
+        <tag>Callback Function</tag>
+        <tag>Callback Hell</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>JS-基礎用法</title>
     <url>/2021/09/12/JS-studynotes/</url>
     <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/09/12/JS-studynotes/js_01.png"></p>
@@ -2076,98 +2252,6 @@
       </categories>
       <tags>
         <tag>JS</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>JS-Callback Function</title>
-    <url>/2021/09/11/JS-CallbackFunction/</url>
-    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/09/11/JS-CallbackFunction/js_01.png"></p>
-<font style="font-size:20px;">Callback Function &amp; Promise</font>
-</blockquote>
-<a id="more"></a>
-<hr>
-<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>在 2018 iT 邦幫忙鐵人賽，看到 Kuro 大的重新認識 JavaScript 系列文，仔細的閱讀後，紀錄自己觀念不足的部份，也非常推薦給大家觀看此系列文。</p>
-<div class="note info"><a href="https://ithelp.ithome.com.tw/users/20065504/ironman/1259?page=1" target="_blank" rel="noopener">Kuro-重新認識 JavaScript 系列</a></div>
-
-<hr>
-<h2 id="Callback-Function"><a href="#Callback-Function" class="headerlink" title="Callback Function"></a>Callback Function</h2><p>概念就如同：</p>
-<p><em><strong>辦公室電話響了 (事件被觸發 Event fired) -&gt; 接電話 (處理事件 Event Handler)</strong></em></p>
-<p>而寫成程式碼就類似：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 註：這裡只是比喻，並沒有電話響這個事件 XD</span></span><br><span class="line">Office.addEventListener(</span><br><span class="line">  <span class="string">"電話響"</span>,</span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">/* 接電話 */</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="literal">false</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
-<p>可以看到，<font color="red">Office</font> 透過 <font color="red">addEventListener</font> 方法註冊了一個事件，當這個事件被觸發時，它會去執行我們所指定的第二個參數，也就是某個「函式」(接電話)。</p>
-<p>換句話說，這個函式只會在滿足了某個條件才會被動地去執行，我們就可以說這是一個 Callback function。</p>
-<hr>
-<h2 id="波動拳-a-k-a-“Callback-Hell”"><a href="#波動拳-a-k-a-“Callback-Hell”" class="headerlink" title="波動拳 (a.k.a. “Callback Hell”)"></a>波動拳 (a.k.a. “Callback Hell”)</h2><p>除了事件以外，還有另一個會需要用到 Callback function 的場景，就是「控制多個函式間執行的順序」。</p>
-<p>下面舉例從簡單的事情慢慢演變成複雜時，會發生什麼情形</p>
-<p>這裡定義了兩個 <font color="red">function</font>：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> funcA = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"function A"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> funcB = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"function B"</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">funcA();</span><br><span class="line">funcB();</span><br></pre></td></tr></table></figure>
-<p>因為 <font color="red">funcA</font> 與 <font color="red">funcB</font> 都會立即執行，所以執行結果必定為：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="string">"function A"</span>;</span><br><span class="line"><span class="string">"function B"</span>;</span><br></pre></td></tr></table></figure>
-<p>但是，假設我們改成這樣，加上一個<font color="red">隨機生成的等待時間</font>：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> funcA = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> i = <span class="built_in">Math</span>.random() + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"function A"</span>);</span><br><span class="line">  &#125;, i * <span class="number">1000</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> funcB = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> i = <span class="built_in">Math</span>.random() + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"function B"</span>);</span><br><span class="line">  &#125;, i * <span class="number">1000</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">funcA();</span><br><span class="line">funcB();</span><br></pre></td></tr></table></figure>
-<p>這時候就沒辦法確定是 <font color="red">“function A”</font> 會先出現還是 <font color="red">“function B”</font> 會先出現了對吧？</p>
-<p>像這種時候，為了確保執行的順序，就會透過 Callback function 的形式來處理：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 為了確保先執行 funcA 再執行 funcB</span></span><br><span class="line"><span class="comment">// 我們在 funcA 加上 callback 參數</span></span><br><span class="line"><span class="keyword">var</span> funcA = <span class="function"><span class="keyword">function</span>(<span class="params">callback</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> i = <span class="built_in">Math</span>.random() + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"function A"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 如果 callback 是個函式就呼叫它</span></span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">typeof</span> callback === <span class="string">"function"</span>) &#123;</span><br><span class="line">      callback();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, i * <span class="number">1000</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> funcB = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> i = <span class="built_in">Math</span>.random() + <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"function B"</span>);</span><br><span class="line">  &#125;, i * <span class="number">1000</span>);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 將 funcB 作為參數帶入 funcA()</span></span><br><span class="line">funcA(funcB);</span><br></pre></td></tr></table></figure>
-<p>像這樣，無論 <font color="red">funcA</font> 在執行的時候要等多久， <font color="red">funcB</font> 都會等到 <font color="red">console.log(‘function A’);</font> 之後才執行。</p>
-<p>不過需要注意的是，當函式之間的相依過深，callback 多層之後產生的「波動拳」維護起來就會很可怕！</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">getData(<span class="function"><span class="keyword">function</span> (<span class="params">a</span>) </span>&#123;</span><br><span class="line">  getMoreData(a, <span class="function"><span class="keyword">function</span> (<span class="params">b</span>) </span>&#123;</span><br><span class="line">    getMoreData(b, <span class="function"><span class="keyword">function</span> (<span class="params">c</span>) </span>&#123;</span><br><span class="line">      getMoreData(c, <span class="function"><span class="keyword">function</span> (<span class="params">d</span>) </span>&#123;</span><br><span class="line">        getMoreData(d, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">          ...</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<img src="/2021/09/11/JS-CallbackFunction/js_02.jpg">
-<hr>
-<h2 id="再見-Callback-Hell"><a href="#再見-Callback-Hell" class="headerlink" title="再見 Callback Hell"></a>再見 Callback Hell</h2><p>執行順序的問題是一個，還有另一個常見的狀況是這樣，再回到 「Overcooked」 的場景。</p>
-<div class="note info">用 Overcooked (遊戲名稱：煮過頭)  比喻 同步(Synchronous)的概念<br>假設邊緣人如我，只能自己一人玩 Overcooked，在領完食材原料之後，一樣會有青菜、番茄需要處理。<br><br>因為只有<font color="red">一個廚師</font>，所以要嘛先處理青菜、要嘛先處理番茄，必須先弄完一項之後再去處理另一項，整個流程會被前一個步驟卡住。<br><br>像這樣「<font color="red">先完成 A 才能做 B、C、D …</font>」的運作方式我們就會把它稱作「<font color="red">同步</font>」(Synchronous) 。</div>
-
-<p>當我要確保「切青菜、切番茄、擺盤」三個動作<font color="red">都完成</font>之後，我才能繼續「<font color="red">上菜</font>」這個動作。</p>
-<p>在面臨這種問題的時候，我要怎麼確保三個動作都完成之後，才繼續執行後面的程式呢？</p>
-<p>最直覺的方式是新增一個變數來管理狀態：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> result = []; <span class="comment">//紀錄已完成的事件</span></span><br><span class="line"><span class="keyword">var</span> step = <span class="number">3</span>; <span class="comment">//全部完成的總數量</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 假設 funcA、funcB、funcC 分別代表「切青菜、切番茄、擺盤」</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcA</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    result.push(<span class="string">"A"</span>); <span class="comment">//紀錄 A 完成</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"A"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (result.length === step) &#123;</span><br><span class="line">      funcD();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, (<span class="built_in">Math</span>.random() + <span class="number">1</span>) * <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcB</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    result.push(<span class="string">"B"</span>); <span class="comment">//紀錄 B 完成</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"B"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (result.length === step) &#123;</span><br><span class="line">      funcD();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, (<span class="built_in">Math</span>.random() + <span class="number">1</span>) * <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcC</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    result.push(<span class="string">"C"</span>); <span class="comment">//紀錄 C 完成</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"C"</span>);</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (result.length === step) &#123;</span><br><span class="line">      funcD();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;, (<span class="built_in">Math</span>.random() + <span class="number">1</span>) * <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcD</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"上菜！"</span>);</span><br><span class="line">  result = [];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">funcA();</span><br><span class="line">funcB();</span><br><span class="line">funcC();</span><br></pre></td></tr></table></figure>
-<p>像上面這樣，當我們依序執行了 <font color="red">funcA()</font>、<font color="red">funcB()</font>、<font color="red">funcC()</font>，由於內部 <font color="red">setTimeout</font> 會等待亂數時間的關係，我們無法得知誰先誰後。 但可以確定的是，當這三個函式執行的時候就會去檢查 <font color="red">result.length === step</font> ，如果成立，就表示三個任務都已經完成，那麼就可以再去呼叫 <font color="red">funcD</font> 執行後續的事情。</p>
-<p>如果不希望使用<font color="blue">全域變數來污染執行環境</font>的話，甚至可以包裝成一個通用的函式：</p>
-<figure class="highlight js"><figcaption><span>閉包的概念</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">serials</span>(<span class="params">tasks, callback</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> step = tasks.length;</span><br><span class="line">  <span class="keyword">var</span> result = [];</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 檢查的邏輯寫在這裡</span></span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">check</span>(<span class="params">r</span>) </span>&#123;</span><br><span class="line">    result.push(r);</span><br><span class="line">    <span class="keyword">if</span> (result.length === step) &#123;</span><br><span class="line">      callback();</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  tasks.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">f</span>) </span>&#123;</span><br><span class="line">    f(check);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>那麼改寫一下 <font color="red">funcA()</font>、<font color="red">funcB()</font>、<font color="red">funcC()</font>:</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcA</span>(<span class="params">check</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"A"</span>);</span><br><span class="line">    check(<span class="string">"A"</span>);</span><br><span class="line">  &#125;, (<span class="built_in">Math</span>.random() + <span class="number">1</span>) * <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcB</span>(<span class="params">check</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"B"</span>);</span><br><span class="line">    check(<span class="string">"B"</span>);</span><br><span class="line">  &#125;, (<span class="built_in">Math</span>.random() + <span class="number">1</span>) * <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcC</span>(<span class="params">check</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"C"</span>);</span><br><span class="line">    check(<span class="string">"C"</span>);</span><br><span class="line">  &#125;, (<span class="built_in">Math</span>.random() + <span class="number">1</span>) * <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcD</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"上菜！"</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>最後呼叫的時候，我們就可以透過這樣呼叫 <font color="red">serials()</font> ：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">serials([funcA, funcB, funcC], funcD);</span><br></pre></td></tr></table></figure>
-<p>把想要提前執行的函式以<font color="red">陣列的方式</font>傳進 <font color="red">serials()</font> 作為第一個參數，當<font color="red">陣列中的函式都執行完畢</font>後，才會呼叫第二個參數的 <font color="red">funcD()</font>。</p>
-<hr>
-<h2 id="Promise-物件"><a href="#Promise-物件" class="headerlink" title="Promise 物件"></a>Promise 物件</h2><p>為了解決同步/非同步的問題，自從 <font color="red">ES6</font> 開始新增了一個叫做 <font color="red">Promise</font> 的特殊物件。</p>
-<p>簡單來說，<font color="red">Promise</font> 按字面上的翻譯就是「承諾、約定」之意，回傳的結果要嘛是「<strong>完成</strong>」，要嘛是「<strong>拒絕</strong>」。</p>
-<p>實際寫成 Promise 的程式碼大概像這樣：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> myFirstPromise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  resolve(someValue); <span class="comment">// 完成</span></span><br><span class="line">  reject(<span class="string">"failure reason"</span>); <span class="comment">// 拒絕</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>要提供一個函式 promise 功能，讓它回傳一個 promise 物件即可：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myAsyncFunction</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// resolve() or reject()</span></span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>當 Promise 被<font color="red">完成</font>的時候，我們就可以呼叫 <font color="red">resolve()</font>，然後將取得的資料傳遞出去。 或是說想要<font color="red">拒絕</font> Promise ， 那麼就呼叫 <font color="red">reject()</font> 來拒絕。</p>
-<hr>
-<p>一般來說， <font color="red">Promise</font> 物件會有這幾種狀態：</p>
-<ul>
-<li>pending: 初始狀態，不是 fulfilled 或 rejected。</li>
-<li>fulfilled: 表示操作成功地完成。</li>
-<li>rejected: 表示操作失敗。</li>
-</ul>
-<img src="/2021/09/11/JS-CallbackFunction/js_03.png">
-<p>整個 <font color="red">Promise</font> 流程可以用這張圖表示：</p>
-<img src="/2021/09/11/JS-CallbackFunction/js_04.png">
-<hr>
-<p>如果我們需要<font color="red"><strong>依序</strong></font>串連執行多個 promise 功能的話，可以透過 <font color="red">.then()</font> 來做到。</p>
-<p>以剛剛的 <font color="red">funcA()</font>、<font color="red">funcB()</font>、<font color="red">funcC()</font> 來當範例，我們將這三個函式分別透過 Promise 包裝：</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcA</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"A"</span>);</span><br><span class="line">      resolve(<span class="string">"A"</span>); <span class="comment">// 完成</span></span><br><span class="line">    &#125;, (<span class="built_in">Math</span>.random() + <span class="number">1</span>) * <span class="number">1000</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcB</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"B"</span>);</span><br><span class="line">      resolve(<span class="string">"B"</span>); <span class="comment">// 完成</span></span><br><span class="line">    &#125;, (<span class="built_in">Math</span>.random() + <span class="number">1</span>) * <span class="number">1000</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">funcC</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">window</span>.setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">"C"</span>);</span><br><span class="line">      resolve(<span class="string">"C"</span>); <span class="comment">// 完成</span></span><br><span class="line">    &#125;, (<span class="built_in">Math</span>.random() + <span class="number">1</span>) * <span class="number">1000</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>最後透過呼叫</p>
-<figure class="highlight js"><table><tr><td class="code"><pre><span class="line">funcA()</span><br><span class="line">  .then(funcB)</span><br><span class="line">  .then(funcC);</span><br></pre></td></tr></table></figure>
-<p>就可以做到等 <font color="red">funcA()</font> 被 「<strong>resolve</strong>」之後再執行 <font color="red">funcB()</font>，然後 resolve 再執行 <font color="red">funcC()</font> 的順序了。</p>
-<hr>
-<p>如果我們不在乎 <font color="red">funcA()</font>、<font color="red">funcB()</font>、<font color="red">funcC()</font> 誰先誰後，只關心這三個是否已經完成呢？</p>
-<p>那就可以透過 <font color="red">Promise.all()</font> 來做到：</p>
-<figure class="highlight js"><figcaption><span>Promise.all()</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment">// funcA, funcB, funcC 的先後順序不重要</span></span><br><span class="line"><span class="comment">// 直到這三個函式都回覆 resolve 或是「其中一個」 reject 才會繼續後續的行為</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Promise</span>.all([funcA(), funcB(), funcC()]).then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">"上菜"</span>);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>JS</category>
-        <category>重新認識 JavaScript</category>
-      </categories>
-      <tags>
-        <tag>JS</tag>
-        <tag>重新認識 JavaScript</tag>
-        <tag>Promise</tag>
-        <tag>Callback Function</tag>
-        <tag>Callback Hell</tag>
       </tags>
   </entry>
   <entry>

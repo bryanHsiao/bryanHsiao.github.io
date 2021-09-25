@@ -90,35 +90,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Javascript - 從零開始 Day2</title>
-    <url>/2019/07/21/JS-Starting%20from%20scratch%20D2/</url>
-    <content><![CDATA[<h2 id="第二天"><a href="#第二天" class="headerlink" title="第二天"></a>第二天</h2><a id="more"></a>
-<h3 id="範例-9"><a href="#範例-9" class="headerlink" title="範例 9"></a>範例 9</h3><ol>
-<li>流程<br>(1) 捲動 =&gt; 那一塊 =&gt; addClass<br>(2) 按鈕 =&gt; 那一塊 =&gt; 捲動(1)<br>(3) 回到頂端 =&gt; 捲最上(1)</li>
-<li>卷軸往下 1px 內容往上 1px</li>
-<li>offset(全域座標) vs position(區塊座標)</li>
-<li>寬高比較<br>(1) width(),height() DOM 內容寬高<br>(2) innerWidth(),innerHeight() DOM 內容寬高+padding 寬高<br>(3) outerWidth(),outerHeight() DOM 內容寬高+padding 寬高+border 寬高<br>(4) outerWidth(true),outerHeight(true) DOM 內容寬高+padding 寬高+border 寬高+margin 寬高</li>
-<li>function 中斷不能用 break 要用 return false</li>
-</ol>
-<h3 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 點goTop一下</span></span><br><span class="line">$(<span class="string">"#goTop"</span>).click();</span><br><span class="line"><span class="comment">// 做click事件偵聽</span></span><br><span class="line">$(<span class="string">"#goTop"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;);</span><br></pre></td></tr></table></figure>
-<p>***forEach vs each<br>forEach((obj,index)=&gt;{})<br>each((index,obj)=&gt;{})</p>
-<p>eq : 等於</p>
-<h3 id="動畫-animate"><a href="#動畫-animate" class="headerlink" title="動畫 : animate"></a>動畫 : animate</h3><ol>
-<li>normal: animate(動畫屬性,時間,加減速,完成後的 FUNCTION)</li>
-<li>advence: animate(動畫屬性,設定)</li>
-</ol>
-<p>*建議用第二種用法，需要打到比較多屬性英文，幫助更多了解及記憶</p>
-<p>*事件偵聽要先有偵聽，之後才能觸發</p>
-<h4 id="JQUERY"><a href="#JQUERY" class="headerlink" title="JQUERY"></a>JQUERY</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 請輸入你的程式</span></span><br><span class="line">  <span class="keyword">let</span> $contents = $(<span class="string">"#container &gt; section"</span>);</span><br><span class="line">  <span class="keyword">let</span> completeHandler = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"OK"</span>);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 做click事件偵聽</span></span><br><span class="line">  $(<span class="string">"#goTop"</span>)</span><br><span class="line">    .click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">// 1.normal: animate(動畫屬性,時間,加減速,完成後的FUNCTION)</span></span><br><span class="line">      <span class="comment">// 2.advence: animate(動畫屬性,設定)</span></span><br><span class="line">      <span class="comment">// $("html,body").animate(&#123; scrollTop: 0 &#125;, 1000, "linear", completeHandler);</span></span><br><span class="line">      $(<span class="string">"html,body"</span>).animate(</span><br><span class="line">        &#123; <span class="attr">scrollTop</span>: <span class="number">0</span> &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          duration: <span class="number">1000</span>,</span><br><span class="line">          easing: <span class="string">"linear"</span></span><br><span class="line">          <span class="comment">// complete: completeHandler</span></span><br><span class="line">        &#125;</span><br><span class="line">      );</span><br><span class="line">    &#125;)</span><br><span class="line">    .click();</span><br><span class="line">  <span class="comment">// 點goTop一下(觸發)</span></span><br><span class="line">  <span class="comment">// $("#goTop").click();</span></span><br><span class="line"></span><br><span class="line">  $(<span class="built_in">window</span>)</span><br><span class="line">    .scroll(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">let</span> top = $(<span class="built_in">window</span>).scrollTop() + $(<span class="string">"#nav"</span>).outerHeight(<span class="literal">true</span>);</span><br><span class="line">      <span class="keyword">let</span> bottom = $(<span class="built_in">window</span>).scrollTop() + $(<span class="built_in">window</span>).height();</span><br><span class="line">      <span class="keyword">let</span> target = <span class="number">0</span>;</span><br><span class="line">      $contents.each(<span class="function">(<span class="params">index, section</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> sectionTop = $(section).offset().top;</span><br><span class="line">        <span class="keyword">let</span> secBottom = $(section).offset().top + $(section).outerHeight(<span class="literal">true</span>);</span><br><span class="line">        <span class="comment">// width() ,height() DOM 內容寬高</span></span><br><span class="line">        <span class="comment">// innerWidth() ,innerHeight() DOM 內容寬高 + padding 寬高</span></span><br><span class="line">        <span class="comment">// outerWidth() ,outerHeight() DOM 內容寬高 + padding 寬高 + border 寬高</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// outerWidth(true) ,outerHeight(true)</span></span><br><span class="line">        <span class="comment">// DOM 內容寬高 + padding 寬高 + border 寬高 + margin 寬高</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (sectionTop &gt;= top &amp;&amp; secBottom &gt;= top) &#123;</span><br><span class="line">          target = index;</span><br><span class="line">          <span class="comment">// 中斷</span></span><br><span class="line">          <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">      $(<span class="string">".nav &gt; a"</span>)</span><br><span class="line">        .removeClass(<span class="string">"active"</span>)</span><br><span class="line">        .eq(target)</span><br><span class="line">        .addClass(<span class="string">"active"</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">    .scroll();</span><br><span class="line">  $(<span class="string">".nav &gt; a"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// this =&gt; 按到的按鈕 =&gt; js對象</span></span><br><span class="line">    <span class="comment">// $(this) =&gt; jq對象</span></span><br><span class="line">    <span class="keyword">let</span> index = $(<span class="keyword">this</span>).index(); <span class="comment">// 按鈕編號</span></span><br><span class="line">    <span class="keyword">let</span> $target = $(<span class="string">"#container &gt; section"</span>).eq(index);</span><br><span class="line">    <span class="keyword">let</span> position = $target.offset().top - $(<span class="string">"#nav"</span>).outerHeight(<span class="literal">true</span>);</span><br><span class="line">    $(<span class="string">"html,body"</span>).animate(&#123; <span class="attr">scrollTop</span>: position &#125;, <span class="number">500</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// $(".nav a")</span></span><br><span class="line">  <span class="comment">//   .eq(0)</span></span><br><span class="line">  <span class="comment">//   .addClass("active");</span></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>JS</category>
-      </categories>
-      <tags>
-        <tag>JS</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>JS30-07-Array Cardio Day 2</title>
     <url>/2019/05/09/JS30-07-Array%20Cardio%20Day%202/</url>
     <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2019/05/09/JS30-07-Array%20Cardio%20Day%202/arraymethod.jpg"></p>
@@ -177,87 +148,32 @@
       </tags>
   </entry>
   <entry>
-    <title>Hexo-移植步驟紀錄 及 部署指令</title>
-    <url>/2021/07/21/HexoBackupSolution/</url>
-    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/07/21/HexoBackupSolution/hexo-cover.png"></p>
-<font style="font-size:20px;">換電腦必備</font></blockquote>
-<a id="more"></a>
-<h2 id="環境檢查"><a href="#環境檢查" class="headerlink" title="環境檢查"></a>環境檢查</h2><blockquote>
-<p>是否有安裝 git</p>
-</blockquote>
-<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ git --version</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>是否有安裝 node.js</p>
-</blockquote>
-<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>是否有安裝 hexo</p>
-</blockquote>
-<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo -v</span><br></pre></td></tr></table></figure>
-<h2 id="在新環境初始化-hexo"><a href="#在新環境初始化-hexo" class="headerlink" title="在新環境初始化 hexo"></a>在新環境初始化 hexo</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo init 資料夾名稱  ＃建立一個資料夾（最好跟你原本hexo的資料夾同名）</span><br><span class="line">$ <span class="built_in">cd</span> 資料夾名稱 ＃進入該資料夾下</span><br></pre></td></tr></table></figure>
-<h2 id="將備份檔案複製到新環境"><a href="#將備份檔案複製到新環境" class="headerlink" title="將備份檔案複製到新環境"></a>將備份檔案複製到新環境</h2><p>除了 node_mudules 外，其他檔案都複製過去<br>因為 node_mudules 是存放 library，在執行 npm init 時會裝回來；</p>
-<p>複製完畢後，執行以下指令</p>
-<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ npm init</span><br><span class="line">$ npm install hexo-deploy-git --save</span><br><span class="line">$ npm install hexo-generator-feed --save</span><br><span class="line">$ npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
-<h2 id="本地端運行"><a href="#本地端運行" class="headerlink" title="本地端運行"></a>本地端運行</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo s --debug <span class="comment">#應可透過本機 http://localhost:4001 看到你的hexo環境</span></span><br></pre></td></tr></table></figure>
-<h2 id="編譯出靜態網頁"><a href="#編譯出靜態網頁" class="headerlink" title="編譯出靜態網頁"></a>編譯出靜態網頁</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
-<h2 id="部署到-github"><a href="#部署到-github" class="headerlink" title="部署到 github"></a>部署到 github</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo d <span class="comment">#注意有時須等待github完成部署，可能須等待1~5分鐘不等</span></span><br></pre></td></tr></table></figure>
-<h2 id="若部署遇到問題"><a href="#若部署遇到問題" class="headerlink" title="若部署遇到問題"></a>若部署遇到問題</h2><ul>
-<li>升級 git 版本</li>
-</ul>
-<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ brew upgrade git <span class="comment">#可能會遇到問題，看Ｔerminal訊息排除</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>改用 ssh key 部署<br>參考此網頁資訊建立 ssh key =&gt; <a href="https://www.cnblogs.com/xsilence/%5B/6001938.html" target="_blank" rel="noopener">建立步驟</a></li>
-</ul>
-<h2 id="指令集整理"><a href="#指令集整理" class="headerlink" title="指令集整理"></a>指令集整理</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"postName"</span>  <span class="comment">#新建文章</span></span><br><span class="line">$ hexo clean <span class="comment">#清除快取</span></span><br><span class="line">$ hexo generate <span class="comment">#生成靜態頁面至public目錄</span></span><br><span class="line">$ hexo server <span class="comment">#開啟預覽訪問端口（默認端口4000，'ctrl + c'關閉server）</span></span><br><span class="line">$ hexo deploy  <span class="comment">#將.deploy目錄部署到GitHub</span></span><br><span class="line">$ hexo <span class="built_in">help</span>   <span class="comment">#查看幫助</span></span><br><span class="line">$ hexo version   <span class="comment">#查看Hexo的版本</span></span><br></pre></td></tr></table></figure>
-<p>指令簡寫</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo n == hexo new</span><br><span class="line">hexo g == hexo generate</span><br><span class="line">hexo s == hexo server</span><br><span class="line">hexo d == hexo deploy</span><br></pre></td></tr></table></figure>
+    <title>Javascript - 從零開始 Day2</title>
+    <url>/2019/07/21/JS-Starting%20from%20scratch%20D2/</url>
+    <content><![CDATA[<h2 id="第二天"><a href="#第二天" class="headerlink" title="第二天"></a>第二天</h2><a id="more"></a>
+<h3 id="範例-9"><a href="#範例-9" class="headerlink" title="範例 9"></a>範例 9</h3><ol>
+<li>流程<br>(1) 捲動 =&gt; 那一塊 =&gt; addClass<br>(2) 按鈕 =&gt; 那一塊 =&gt; 捲動(1)<br>(3) 回到頂端 =&gt; 捲最上(1)</li>
+<li>卷軸往下 1px 內容往上 1px</li>
+<li>offset(全域座標) vs position(區塊座標)</li>
+<li>寬高比較<br>(1) width(),height() DOM 內容寬高<br>(2) innerWidth(),innerHeight() DOM 內容寬高+padding 寬高<br>(3) outerWidth(),outerHeight() DOM 內容寬高+padding 寬高+border 寬高<br>(4) outerWidth(true),outerHeight(true) DOM 內容寬高+padding 寬高+border 寬高+margin 寬高</li>
+<li>function 中斷不能用 break 要用 return false</li>
+</ol>
+<h3 id="jQuery"><a href="#jQuery" class="headerlink" title="jQuery"></a>jQuery</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 點goTop一下</span></span><br><span class="line">$(<span class="string">"#goTop"</span>).click();</span><br><span class="line"><span class="comment">// 做click事件偵聽</span></span><br><span class="line">$(<span class="string">"#goTop"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;);</span><br></pre></td></tr></table></figure>
+<p>***forEach vs each<br>forEach((obj,index)=&gt;{})<br>each((index,obj)=&gt;{})</p>
+<p>eq : 等於</p>
+<h3 id="動畫-animate"><a href="#動畫-animate" class="headerlink" title="動畫 : animate"></a>動畫 : animate</h3><ol>
+<li>normal: animate(動畫屬性,時間,加減速,完成後的 FUNCTION)</li>
+<li>advence: animate(動畫屬性,設定)</li>
+</ol>
+<p>*建議用第二種用法，需要打到比較多屬性英文，幫助更多了解及記憶</p>
+<p>*事件偵聽要先有偵聽，之後才能觸發</p>
+<h4 id="JQUERY"><a href="#JQUERY" class="headerlink" title="JQUERY"></a>JQUERY</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// 請輸入你的程式</span></span><br><span class="line">  <span class="keyword">let</span> $contents = $(<span class="string">"#container &gt; section"</span>);</span><br><span class="line">  <span class="keyword">let</span> completeHandler = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"OK"</span>);</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  <span class="comment">// 做click事件偵聽</span></span><br><span class="line">  $(<span class="string">"#goTop"</span>)</span><br><span class="line">    .click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="comment">// 1.normal: animate(動畫屬性,時間,加減速,完成後的FUNCTION)</span></span><br><span class="line">      <span class="comment">// 2.advence: animate(動畫屬性,設定)</span></span><br><span class="line">      <span class="comment">// $("html,body").animate(&#123; scrollTop: 0 &#125;, 1000, "linear", completeHandler);</span></span><br><span class="line">      $(<span class="string">"html,body"</span>).animate(</span><br><span class="line">        &#123; <span class="attr">scrollTop</span>: <span class="number">0</span> &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">          duration: <span class="number">1000</span>,</span><br><span class="line">          easing: <span class="string">"linear"</span></span><br><span class="line">          <span class="comment">// complete: completeHandler</span></span><br><span class="line">        &#125;</span><br><span class="line">      );</span><br><span class="line">    &#125;)</span><br><span class="line">    .click();</span><br><span class="line">  <span class="comment">// 點goTop一下(觸發)</span></span><br><span class="line">  <span class="comment">// $("#goTop").click();</span></span><br><span class="line"></span><br><span class="line">  $(<span class="built_in">window</span>)</span><br><span class="line">    .scroll(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">let</span> top = $(<span class="built_in">window</span>).scrollTop() + $(<span class="string">"#nav"</span>).outerHeight(<span class="literal">true</span>);</span><br><span class="line">      <span class="keyword">let</span> bottom = $(<span class="built_in">window</span>).scrollTop() + $(<span class="built_in">window</span>).height();</span><br><span class="line">      <span class="keyword">let</span> target = <span class="number">0</span>;</span><br><span class="line">      $contents.each(<span class="function">(<span class="params">index, section</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> sectionTop = $(section).offset().top;</span><br><span class="line">        <span class="keyword">let</span> secBottom = $(section).offset().top + $(section).outerHeight(<span class="literal">true</span>);</span><br><span class="line">        <span class="comment">// width() ,height() DOM 內容寬高</span></span><br><span class="line">        <span class="comment">// innerWidth() ,innerHeight() DOM 內容寬高 + padding 寬高</span></span><br><span class="line">        <span class="comment">// outerWidth() ,outerHeight() DOM 內容寬高 + padding 寬高 + border 寬高</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// outerWidth(true) ,outerHeight(true)</span></span><br><span class="line">        <span class="comment">// DOM 內容寬高 + padding 寬高 + border 寬高 + margin 寬高</span></span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (sectionTop &gt;= top &amp;&amp; secBottom &gt;= top) &#123;</span><br><span class="line">          target = index;</span><br><span class="line">          <span class="comment">// 中斷</span></span><br><span class="line">          <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">      $(<span class="string">".nav &gt; a"</span>)</span><br><span class="line">        .removeClass(<span class="string">"active"</span>)</span><br><span class="line">        .eq(target)</span><br><span class="line">        .addClass(<span class="string">"active"</span>);</span><br><span class="line">    &#125;)</span><br><span class="line">    .scroll();</span><br><span class="line">  $(<span class="string">".nav &gt; a"</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// this =&gt; 按到的按鈕 =&gt; js對象</span></span><br><span class="line">    <span class="comment">// $(this) =&gt; jq對象</span></span><br><span class="line">    <span class="keyword">let</span> index = $(<span class="keyword">this</span>).index(); <span class="comment">// 按鈕編號</span></span><br><span class="line">    <span class="keyword">let</span> $target = $(<span class="string">"#container &gt; section"</span>).eq(index);</span><br><span class="line">    <span class="keyword">let</span> position = $target.offset().top - $(<span class="string">"#nav"</span>).outerHeight(<span class="literal">true</span>);</span><br><span class="line">    $(<span class="string">"html,body"</span>).animate(&#123; <span class="attr">scrollTop</span>: position &#125;, <span class="number">500</span>);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line">  <span class="comment">// $(".nav a")</span></span><br><span class="line">  <span class="comment">//   .eq(0)</span></span><br><span class="line">  <span class="comment">//   .addClass("active");</span></span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>Hexo</category>
+        <category>JS</category>
       </categories>
       <tags>
-        <tag>Hexo</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Vue3 Start</title>
-    <url>/2021/07/20/Vue3-01/</url>
-    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/07/20/Vue3-01/zMu6v6x.png"></p>
-<font style="font-size:20px;">資料驅動畫面</font>
-</blockquote>
-<a id="more"></a>
-<p><a href="https://v3.vuejs.org/guide/installation.html#vue-devtools" target="_blank" rel="noopener">CDN 連結</a><br>語法：<code>&lt;script src=&quot;https://unpkg.com/vue@next&quot;&gt;&lt;/script&gt;</code><br>請務必記下來，以下三個值，在後續開發會一直出現：</p>
-<blockquote>
-<p>起手式 1：data 資料邏輯<br>起手式 2：methods 方法<br>起手式 3：mounted 生命週期</p>
-</blockquote>
-<h3 id="關注點分離"><a href="#關注點分離" class="headerlink" title="關注點分離"></a>關注點分離</h3><img src="/2021/07/20/Vue3-01/zMu6v6x.png">
-<div class="note primary">重要觀念：先定義資料，才能在 html 中使用</div>
-
-<p>範例程式碼：</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 這裡是 html --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">  &#123;&#123; text &#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 這裡是 Vue</span></span><br><span class="line">Vue.createApp(&#123;</span><br><span class="line">  <span class="comment">// data 函式</span></span><br><span class="line">  data: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 一定是用 return</span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      text: <span class="string">"卡斯伯好帥"</span>,</span><br><span class="line">      name: <span class="string">"小明"</span>,</span><br><span class="line">      num: <span class="number">0</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// methods 方法</span></span><br><span class="line">  methods: &#123;&#125;,</span><br><span class="line">  <span class="comment">// mounted 函式</span></span><br><span class="line">  mounted: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">&#125;).mount(<span class="string">"#app"</span>);</span><br></pre></td></tr></table></figure>
-<h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><ul>
-<li><p>v-model：和 html 雙向綁定 data 資料（會同步兩邊資料）</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">v-model</span>=<span class="string">"num"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>v-bind：在 html 標籤上進行屬性綁定</p>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">v-bind:src</span>=<span class="string">"person.image"</span> <span class="attr">:alt</span>=<span class="string">"person.name"</span> <span class="attr">width</span>=<span class="string">"100"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>省略語法：直接在屬性前加上 <code>:</code> 省略 <code>v-bind</code></p>
-</li>
-<li>v-if：將判斷式寫入 <code>&quot;&quot;</code> 中，若是 true 則會顯示，false 則不會顯示</li>
-<li>v-else：不用加判斷式，但需要搭配 v-if 一起使用（若要還需要判斷，則使用 v-else-if）</li>
-</ul>
-<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">v-if</span>=<span class="string">"person.gender === 'male'"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">v-else-if</span>=<span class="string">"person.gender === 'female'"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">v-else</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<div class="note primary">v-if 和 v-else 要搭配一起使用才會有效果</div><br>- v-for：多筆資料透過迴圈方式將資料迭代出來<br><br><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"item in people"</span>&gt;</span></span><br><span class="line">    &#123;&#123; item.name &#125;&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span>&gt;</span>增加<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">"item.image"</span> <span class="attr">:alt</span>=<span class="string">"item.name"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">i</span> <span class="attr">v-if</span>=<span class="string">"item.gender === 'male'"</span> <span class="attr">class</span>=<span class="string">"bi bi-gender-male"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">    &gt;</span><br><span class="line">    <span class="tag">&lt;<span class="name">i</span> <span class="attr">v-else</span> <span class="attr">class</span>=<span class="string">"bi bi-gender-male"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">    &#123;&#123; item.cash &#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure><br><br>- people Array<br><br>  - people 是 data 中的陣列<br>  - item 代表 people 中，每一個獨立的物件， item 可自定義名稱<br>  - v-for 必須帶 key<br>  - 示意圖：<img src="/2021/07/20/Vue3-01/EHNwlax.png"><br><br>- @click<br><br>  - 在 DOM 元素上加入監聽事件，下方示範 vue 監聽事件以及 jQuery 監聽事件差異<br><br>  <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 這是 jQuery 的寫法</span></span><br><span class="line">$(<span class="string">`#button`</span>).on(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;);</span><br></pre></td></tr></table></figure><br><br>  <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--  這是 Vue 在 html 上綁定事件的做法  --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> @<span class="attr">click</span>=<span class="string">"item.cash++"</span>&gt;</span></span><br><span class="line">  增加</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure><br><br>- methods 函式<br><br>  <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 這是 Vue 透過 methods 給函式</span></span><br><span class="line">methods: &#123;</span><br><span class="line">clickAlert() &#123; <span class="comment">// 建議可以縮寫就縮寫（提升程式碼閱讀性）</span></span><br><span class="line">  alert(<span class="string">'我被觸發了'</span>);</span><br><span class="line"> &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br>- mounted 生命週期<br><br>  - 使用 this 方式取 data 的值<br><br>  <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">mounted: funtcion() &#123;</span><br><span class="line"> <span class="built_in">console</span>.log(<span class="keyword">this</span>.text);</span><br><span class="line"> <span class="comment">// this.clickAlert();</span></span><br><span class="line"> <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line"> <span class="comment">// this 本身是個很複雜的知識，但在 Vue 中把它簡單化了。</span></span><br><span class="line"> <span class="built_in">console</span>.log(<span class="keyword">this</span>.person.image);</span><br><span class="line"> <span class="comment">// 修改資料範例</span></span><br><span class="line"> <span class="keyword">this</span>.text = <span class="string">'我叫小賀'</span></span><br><span class="line"> <span class="comment">// Ajax 取的的資料放在這邊</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br>  - 網頁載入後只會執行一次，適合做初始化<br><br>### 延伸知識<br><br>- 範例<br><br>  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line"> &#123;&#123; text &#125;&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure><br><br>  <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">Vue.createApp(&#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      text: <span class="string">"我叫卡斯伯"</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;&#125;,</span><br><span class="line">  mounted() &#123;&#125;</span><br><span class="line">&#125;).mount(<span class="string">"#app"</span>);</span><br></pre></td></tr></table></figure><br><br>  <img src="/2021/07/20/Vue3-01/pzMahpd.png"><br><br>一般：<br><br>- 整包載入<br>  ESModule： vuecli 也是使用 ESM<br>- 單一模組<br>- 是分別獨立的一個一個方法，ex：createApp、ref、reactive<br><br>&gt; 擇一使用，不會同時使用兩種載入方法，建議使用 ESModule 的載入方法。<br><br><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"module"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  imoport &#123; createApp &#125; <span class="keyword">from</span> <span class="string">'url'</span>;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure><br><br><div class="note danger">ESM 如果沒有加 type=”module” 使用 import/export 會報錯</div>
-]]></content>
-      <categories>
-        <category>VueJS</category>
-        <category>Vue3</category>
-      </categories>
-      <tags>
-        <tag>VueJS</tag>
-        <tag>Vue3</tag>
+        <tag>JS</tag>
       </tags>
   </entry>
   <entry>
@@ -376,6 +292,90 @@
       <tags>
         <tag>Hexo</tag>
         <tag>MarkDown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Vue3 Start</title>
+    <url>/2021/07/20/Vue3-01/</url>
+    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/07/20/Vue3-01/zMu6v6x.png"></p>
+<font style="font-size:20px;">資料驅動畫面</font>
+</blockquote>
+<a id="more"></a>
+<p><a href="https://v3.vuejs.org/guide/installation.html#vue-devtools" target="_blank" rel="noopener">CDN 連結</a><br>語法：<code>&lt;script src=&quot;https://unpkg.com/vue@next&quot;&gt;&lt;/script&gt;</code><br>請務必記下來，以下三個值，在後續開發會一直出現：</p>
+<blockquote>
+<p>起手式 1：data 資料邏輯<br>起手式 2：methods 方法<br>起手式 3：mounted 生命週期</p>
+</blockquote>
+<h3 id="關注點分離"><a href="#關注點分離" class="headerlink" title="關注點分離"></a>關注點分離</h3><img src="/2021/07/20/Vue3-01/zMu6v6x.png">
+<div class="note primary">重要觀念：先定義資料，才能在 html 中使用</div>
+
+<p>範例程式碼：</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 這裡是 html --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"app"</span>&gt;</span></span><br><span class="line">  &#123;&#123; text &#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 這裡是 Vue</span></span><br><span class="line">Vue.createApp(&#123;</span><br><span class="line">  <span class="comment">// data 函式</span></span><br><span class="line">  data: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 一定是用 return</span></span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      text: <span class="string">"卡斯伯好帥"</span>,</span><br><span class="line">      name: <span class="string">"小明"</span>,</span><br><span class="line">      num: <span class="number">0</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// methods 方法</span></span><br><span class="line">  methods: &#123;&#125;,</span><br><span class="line">  <span class="comment">// mounted 函式</span></span><br><span class="line">  mounted: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">&#125;).mount(<span class="string">"#app"</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h3><ul>
+<li><p>v-model：和 html 雙向綁定 data 資料（會同步兩邊資料）</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">v-model</span>=<span class="string">"num"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>v-bind：在 html 標籤上進行屬性綁定</p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">v-bind:src</span>=<span class="string">"person.image"</span> <span class="attr">:alt</span>=<span class="string">"person.name"</span> <span class="attr">width</span>=<span class="string">"100"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>省略語法：直接在屬性前加上 <code>:</code> 省略 <code>v-bind</code></p>
+</li>
+<li>v-if：將判斷式寫入 <code>&quot;&quot;</code> 中，若是 true 則會顯示，false 則不會顯示</li>
+<li>v-else：不用加判斷式，但需要搭配 v-if 一起使用（若要還需要判斷，則使用 v-else-if）</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">v-if</span>=<span class="string">"person.gender === 'male'"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">v-else-if</span>=<span class="string">"person.gender === 'female'"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">i</span> <span class="attr">v-else</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<div class="note primary">v-if 和 v-else 要搭配一起使用才會有效果</div><br>- v-for：多筆資料透過迴圈方式將資料迭代出來<br><br><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span> <span class="attr">v-for</span>=<span class="string">"item in people"</span>&gt;</span></span><br><span class="line">    &#123;&#123; item.name &#125;&#125;</span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span>&gt;</span>增加<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">"item.image"</span> <span class="attr">:alt</span>=<span class="string">"item.name"</span> /&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">i</span> <span class="attr">v-if</span>=<span class="string">"item.gender === 'male'"</span> <span class="attr">class</span>=<span class="string">"bi bi-gender-male"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">    &gt;</span><br><span class="line">    <span class="tag">&lt;<span class="name">i</span> <span class="attr">v-else</span> <span class="attr">class</span>=<span class="string">"bi bi-gender-male"</span>&gt;</span><span class="tag">&lt;/<span class="name">i</span>&gt;</span></span><br><span class="line">    &#123;&#123; item.cash &#125;&#125;</span><br><span class="line">  <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure><br><br>- people Array<br><br>  - people 是 data 中的陣列<br>  - item 代表 people 中，每一個獨立的物件， item 可自定義名稱<br>  - v-for 必須帶 key<br>  - 示意圖：<img src="/2021/07/20/Vue3-01/EHNwlax.png"><br><br>- @click<br><br>  - 在 DOM 元素上加入監聽事件，下方示範 vue 監聽事件以及 jQuery 監聽事件差異<br><br>  <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 這是 jQuery 的寫法</span></span><br><span class="line">$(<span class="string">`#button`</span>).on(<span class="string">"click"</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;);</span><br></pre></td></tr></table></figure><br><br>  <figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="comment">&lt;!--  這是 Vue 在 html 上綁定事件的做法  --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"button"</span> @<span class="attr">click</span>=<span class="string">"item.cash++"</span>&gt;</span></span><br><span class="line">  增加</span><br><span class="line"><span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure><br><br>- methods 函式<br><br>  <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 這是 Vue 透過 methods 給函式</span></span><br><span class="line">methods: &#123;</span><br><span class="line">clickAlert() &#123; <span class="comment">// 建議可以縮寫就縮寫（提升程式碼閱讀性）</span></span><br><span class="line">  alert(<span class="string">'我被觸發了'</span>);</span><br><span class="line"> &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br>- mounted 生命週期<br><br>  - 使用 this 方式取 data 的值<br><br>  <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">mounted: funtcion() &#123;</span><br><span class="line"> <span class="built_in">console</span>.log(<span class="keyword">this</span>.text);</span><br><span class="line"> <span class="comment">// this.clickAlert();</span></span><br><span class="line"> <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line"> <span class="comment">// this 本身是個很複雜的知識，但在 Vue 中把它簡單化了。</span></span><br><span class="line"> <span class="built_in">console</span>.log(<span class="keyword">this</span>.person.image);</span><br><span class="line"> <span class="comment">// 修改資料範例</span></span><br><span class="line"> <span class="keyword">this</span>.text = <span class="string">'我叫小賀'</span></span><br><span class="line"> <span class="comment">// Ajax 取的的資料放在這邊</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br><br>  - 網頁載入後只會執行一次，適合做初始化<br><br>### 延伸知識<br><br>- 範例<br><br>  <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line"> &#123;&#123; text &#125;&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure><br><br>  <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">Vue.createApp(&#123;</span><br><span class="line">  data() &#123;</span><br><span class="line">    <span class="keyword">return</span> &#123;</span><br><span class="line">      text: <span class="string">"我叫卡斯伯"</span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;&#125;,</span><br><span class="line">  mounted() &#123;&#125;</span><br><span class="line">&#125;).mount(<span class="string">"#app"</span>);</span><br></pre></td></tr></table></figure><br><br>  <img src="/2021/07/20/Vue3-01/pzMahpd.png"><br><br>一般：<br><br>- 整包載入<br>  ESModule： vuecli 也是使用 ESM<br>- 單一模組<br>- 是分別獨立的一個一個方法，ex：createApp、ref、reactive<br><br>&gt; 擇一使用，不會同時使用兩種載入方法，建議使用 ESModule 的載入方法。<br><br><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"module"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">  imoport &#123; createApp &#125; <span class="keyword">from</span> <span class="string">'url'</span>;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure><br><br><div class="note danger">ESM 如果沒有加 type=”module” 使用 import/export 會報錯</div>
+]]></content>
+      <categories>
+        <category>VueJS</category>
+        <category>Vue3</category>
+      </categories>
+      <tags>
+        <tag>VueJS</tag>
+        <tag>Vue3</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Hexo-移植步驟紀錄 及 部署指令</title>
+    <url>/2021/07/21/HexoBackupSolution/</url>
+    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/07/21/HexoBackupSolution/hexo-cover.png"></p>
+<font style="font-size:20px;">換電腦必備</font></blockquote>
+<a id="more"></a>
+<h2 id="環境檢查"><a href="#環境檢查" class="headerlink" title="環境檢查"></a>環境檢查</h2><blockquote>
+<p>是否有安裝 git</p>
+</blockquote>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ git --version</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>是否有安裝 node.js</p>
+</blockquote>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ node -v</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>是否有安裝 hexo</p>
+</blockquote>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo -v</span><br></pre></td></tr></table></figure>
+<h2 id="在新環境初始化-hexo"><a href="#在新環境初始化-hexo" class="headerlink" title="在新環境初始化 hexo"></a>在新環境初始化 hexo</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo init 資料夾名稱  ＃建立一個資料夾（最好跟你原本hexo的資料夾同名）</span><br><span class="line">$ <span class="built_in">cd</span> 資料夾名稱 ＃進入該資料夾下</span><br></pre></td></tr></table></figure>
+<h2 id="將備份檔案複製到新環境"><a href="#將備份檔案複製到新環境" class="headerlink" title="將備份檔案複製到新環境"></a>將備份檔案複製到新環境</h2><p>除了 node_mudules 外，其他檔案都複製過去<br>因為 node_mudules 是存放 library，在執行 npm init 時會裝回來；</p>
+<p>複製完畢後，執行以下指令</p>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ npm init</span><br><span class="line">$ npm install hexo-deploy-git --save</span><br><span class="line">$ npm install hexo-generator-feed --save</span><br><span class="line">$ npm install hexo-generator-sitemap --save</span><br></pre></td></tr></table></figure>
+<h2 id="本地端運行"><a href="#本地端運行" class="headerlink" title="本地端運行"></a>本地端運行</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo s --debug <span class="comment">#應可透過本機 http://localhost:4001 看到你的hexo環境</span></span><br></pre></td></tr></table></figure>
+<h2 id="編譯出靜態網頁"><a href="#編譯出靜態網頁" class="headerlink" title="編譯出靜態網頁"></a>編譯出靜態網頁</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
+<h2 id="部署到-github"><a href="#部署到-github" class="headerlink" title="部署到 github"></a>部署到 github</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo d <span class="comment">#注意有時須等待github完成部署，可能須等待1~5分鐘不等</span></span><br></pre></td></tr></table></figure>
+<h2 id="若部署遇到問題"><a href="#若部署遇到問題" class="headerlink" title="若部署遇到問題"></a>若部署遇到問題</h2><ul>
+<li>升級 git 版本</li>
+</ul>
+<figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ brew upgrade git <span class="comment">#可能會遇到問題，看Ｔerminal訊息排除</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>改用 ssh key 部署<br>參考此網頁資訊建立 ssh key =&gt; <a href="https://www.cnblogs.com/xsilence/%5B/6001938.html" target="_blank" rel="noopener">建立步驟</a></li>
+</ul>
+<h2 id="指令集整理"><a href="#指令集整理" class="headerlink" title="指令集整理"></a>指令集整理</h2><figure class="highlight zsh"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"postName"</span>  <span class="comment">#新建文章</span></span><br><span class="line">$ hexo clean <span class="comment">#清除快取</span></span><br><span class="line">$ hexo generate <span class="comment">#生成靜態頁面至public目錄</span></span><br><span class="line">$ hexo server <span class="comment">#開啟預覽訪問端口（默認端口4000，'ctrl + c'關閉server）</span></span><br><span class="line">$ hexo deploy  <span class="comment">#將.deploy目錄部署到GitHub</span></span><br><span class="line">$ hexo <span class="built_in">help</span>   <span class="comment">#查看幫助</span></span><br><span class="line">$ hexo version   <span class="comment">#查看Hexo的版本</span></span><br></pre></td></tr></table></figure>
+<p>指令簡寫</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">hexo n == hexo new</span><br><span class="line">hexo g == hexo generate</span><br><span class="line">hexo s == hexo server</span><br><span class="line">hexo d == hexo deploy</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
       </tags>
   </entry>
   <entry>
@@ -1141,6 +1141,43 @@
       </tags>
   </entry>
   <entry>
+    <title>CSS-transition 轉場效果</title>
+    <url>/2021/08/29/CSS-Transition/</url>
+    <content><![CDATA[<img src="/2021/08/29/CSS-Transition/transition_01.png">
+<font style="font-size:18px;"><br>轉場是從 A 狀態，轉變成 B 狀態，中間的過程，就叫轉場，在 CSS 中叫做 transition。<br></font>
+
+<a id="more"></a>
+<h2 id="語法"><a href="#語法" class="headerlink" title="語法"></a>語法</h2><figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="attribute">transition</span>: property duration timing-function delay;</span><br><span class="line"><span class="attribute">transition</span>: 套用的屬性 花費時間 時間速率 等待時間;</span><br><span class="line"></span><br><span class="line"><span class="attribute">transition</span>: all <span class="number">2s</span> ease-out <span class="number">1s</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 等同於：</span></span><br><span class="line"><span class="attribute">transition-property</span>: all; <span class="comment">// default: all</span></span><br><span class="line"><span class="attribute">transition-duration</span>: <span class="number">2s</span>; <span class="comment">// default: 0；2s 表示 2 秒；2ms 表示 2 毫秒。</span></span><br><span class="line"><span class="attribute">transition-timing-function</span>: ease-out;</span><br><span class="line"><span class="attribute">transition-delay</span>: <span class="number">1s</span>; <span class="comment">// 開始進行轉場效果之前，所要等待的時間。</span></span><br></pre></td></tr></table></figure>
+<h2 id="transition-timing-function-時間速率"><a href="#transition-timing-function-時間速率" class="headerlink" title="transition-timing-function 時間速率"></a>transition-timing-function 時間速率</h2><img src="/2021/08/29/CSS-Transition/transition-timing-function.png">
+<p><br></p>
+<p></p><p data-height="450" data-theme-id="dark" data-slug-hash="oNwbKvw" data-default-tab="css,result" data-user="bryan-hsiao" data-embed-version="2" data-pen-title="transition 各種速率" class="codepen">See the Pen <a href="https://codepen.io/bryan-hsaio/pen/oNwbKvw" target="_blank" rel="noopener">transition 各種速率</a>.</p><p></p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<h2 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h2><h3 id="範例-1：hover"><a href="#範例-1：hover" class="headerlink" title="範例 1：hover"></a>範例 1：hover</h3><p></p><p data-height="265" data-theme-id="0" data-slug-hash="eYRJqmN" data-default-tab="css,result" data-user="Bryan-Hsiao" data-embed-version="2" data-pen-title="Transition - hover" class="codepen">See the Pen <a href="https://codepen.io/bryan-hsaio/pen/eYRJqmN" target="_blank" rel="noopener">Transition - hover</a>.</p><p></p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<h3 id="範例-2：設定-Two-CSS-properties"><a href="#範例-2：設定-Two-CSS-properties" class="headerlink" title="範例 2：設定 Two CSS properties"></a>範例 2：設定 Two CSS properties</h3><p></p><p data-height="265" data-theme-id="0" data-slug-hash="MWoKNwY" data-default-tab="css,result" data-user="Bryan-Hsiao" data-embed-version="2" data-pen-title="Transition - 設定Two CSS properties" class="codepen">See the Pen <a href="https://codepen.io/bryan-hsaio/pen/MWoKNwY" target="_blank" rel="noopener">Transition - 設定Two CSS properties</a>.</p><p></p>
+<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
+
+<p>特別的點：</p>
+<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">//設定二個 CSS屬性，設定不同 時間、速率..等</span></span><br><span class="line"><span class="attribute">transition</span>: background <span class="number">0.2s</span> linear, border-radius <span class="number">1s</span> ease-in <span class="number">1s</span>;</span><br></pre></td></tr></table></figure>
+<p>上面案例，特別於在 <strong>:hover</strong> 時，有改變 <strong>背景色</strong> 和 <strong>圓角</strong> 效果，<br>不過在 transition 的設定，分別針對 二個屬性設定不同的時間、速率…等</p>
+<hr>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><a href="http://carlos-studio.com/2017/02/23/css-transition-%E8%BD%89%E5%A0%B4%E6%95%88%E6%9E%9C/" target="_blank" rel="noopener">[CSS][Transition] 轉場效果</a></p>
+<p><a href="https://eyesofkids.gitbooks.io/css3/contents/transitions.html#css3轉場效果transitions" target="_blank" rel="noopener">CSS3 轉場效果(transitions)</a></p>
+<p><a href="https://wcc723.github.io/css/2013/08/24/css-transtion-speed/" target="_blank" rel="noopener">CSS transition 各種速率</a></p>
+]]></content>
+      <categories>
+        <category>CSS</category>
+      </categories>
+      <tags>
+        <tag>CSS</tag>
+        <tag>transition</tag>
+        <tag>動畫</tag>
+        <tag>轉場效果</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>CSS-垂直置中的方法</title>
     <url>/2021/08/31/CSS-vertical-align/</url>
     <content><![CDATA[<blockquote class="blockquote-center"><p>整理常用 CSS 常用的 <span id="inline-blue">垂直置中</span> 的方法。</p>
@@ -1193,43 +1230,6 @@
         <tag>CSS</tag>
         <tag>vertical-align</tag>
         <tag>垂直置中</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>CSS-transition 轉場效果</title>
-    <url>/2021/08/29/CSS-Transition/</url>
-    <content><![CDATA[<img src="/2021/08/29/CSS-Transition/transition_01.png">
-<font style="font-size:18px;"><br>轉場是從 A 狀態，轉變成 B 狀態，中間的過程，就叫轉場，在 CSS 中叫做 transition。<br></font>
-
-<a id="more"></a>
-<h2 id="語法"><a href="#語法" class="headerlink" title="語法"></a>語法</h2><figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="attribute">transition</span>: property duration timing-function delay;</span><br><span class="line"><span class="attribute">transition</span>: 套用的屬性 花費時間 時間速率 等待時間;</span><br><span class="line"></span><br><span class="line"><span class="attribute">transition</span>: all <span class="number">2s</span> ease-out <span class="number">1s</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 等同於：</span></span><br><span class="line"><span class="attribute">transition-property</span>: all; <span class="comment">// default: all</span></span><br><span class="line"><span class="attribute">transition-duration</span>: <span class="number">2s</span>; <span class="comment">// default: 0；2s 表示 2 秒；2ms 表示 2 毫秒。</span></span><br><span class="line"><span class="attribute">transition-timing-function</span>: ease-out;</span><br><span class="line"><span class="attribute">transition-delay</span>: <span class="number">1s</span>; <span class="comment">// 開始進行轉場效果之前，所要等待的時間。</span></span><br></pre></td></tr></table></figure>
-<h2 id="transition-timing-function-時間速率"><a href="#transition-timing-function-時間速率" class="headerlink" title="transition-timing-function 時間速率"></a>transition-timing-function 時間速率</h2><img src="/2021/08/29/CSS-Transition/transition-timing-function.png">
-<p><br></p>
-<p></p><p data-height="450" data-theme-id="dark" data-slug-hash="oNwbKvw" data-default-tab="css,result" data-user="bryan-hsiao" data-embed-version="2" data-pen-title="transition 各種速率" class="codepen">See the Pen <a href="https://codepen.io/bryan-hsaio/pen/oNwbKvw" target="_blank" rel="noopener">transition 各種速率</a>.</p><p></p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-
-<h2 id="範例"><a href="#範例" class="headerlink" title="範例"></a>範例</h2><h3 id="範例-1：hover"><a href="#範例-1：hover" class="headerlink" title="範例 1：hover"></a>範例 1：hover</h3><p></p><p data-height="265" data-theme-id="0" data-slug-hash="eYRJqmN" data-default-tab="css,result" data-user="Bryan-Hsiao" data-embed-version="2" data-pen-title="Transition - hover" class="codepen">See the Pen <a href="https://codepen.io/bryan-hsaio/pen/eYRJqmN" target="_blank" rel="noopener">Transition - hover</a>.</p><p></p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-
-<h3 id="範例-2：設定-Two-CSS-properties"><a href="#範例-2：設定-Two-CSS-properties" class="headerlink" title="範例 2：設定 Two CSS properties"></a>範例 2：設定 Two CSS properties</h3><p></p><p data-height="265" data-theme-id="0" data-slug-hash="MWoKNwY" data-default-tab="css,result" data-user="Bryan-Hsiao" data-embed-version="2" data-pen-title="Transition - 設定Two CSS properties" class="codepen">See the Pen <a href="https://codepen.io/bryan-hsaio/pen/MWoKNwY" target="_blank" rel="noopener">Transition - 設定Two CSS properties</a>.</p><p></p>
-<script async src="https://production-assets.codepen.io/assets/embed/ei.js"></script>
-
-<p>特別的點：</p>
-<figure class="highlight scss"><table><tr><td class="code"><pre><span class="line"><span class="comment">//設定二個 CSS屬性，設定不同 時間、速率..等</span></span><br><span class="line"><span class="attribute">transition</span>: background <span class="number">0.2s</span> linear, border-radius <span class="number">1s</span> ease-in <span class="number">1s</span>;</span><br></pre></td></tr></table></figure>
-<p>上面案例，特別於在 <strong>:hover</strong> 時，有改變 <strong>背景色</strong> 和 <strong>圓角</strong> 效果，<br>不過在 transition 的設定，分別針對 二個屬性設定不同的時間、速率…等</p>
-<hr>
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><a href="http://carlos-studio.com/2017/02/23/css-transition-%E8%BD%89%E5%A0%B4%E6%95%88%E6%9E%9C/" target="_blank" rel="noopener">[CSS][Transition] 轉場效果</a></p>
-<p><a href="https://eyesofkids.gitbooks.io/css3/contents/transitions.html#css3轉場效果transitions" target="_blank" rel="noopener">CSS3 轉場效果(transitions)</a></p>
-<p><a href="https://wcc723.github.io/css/2013/08/24/css-transtion-speed/" target="_blank" rel="noopener">CSS transition 各種速率</a></p>
-]]></content>
-      <categories>
-        <category>CSS</category>
-      </categories>
-      <tags>
-        <tag>CSS</tag>
-        <tag>transition</tag>
-        <tag>動畫</tag>
-        <tag>轉場效果</tag>
       </tags>
   </entry>
   <entry>
@@ -1477,67 +1477,6 @@
       </tags>
   </entry>
   <entry>
-    <title>JS30-03-CSS-Variables</title>
-    <url>/2021/09/23/JS30-03-CSS-Variables/</url>
-    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/09/23/JS30-03-CSS-Variables/Scoped_CSS_Variables_and_JS.png"></p>
-<font style="font-size:20px;">利用 <font color="red">CSS 變數</font> 與 <font color="red">JS</font> 即時更新圖片的 內距、邊框色、模糊 效果</font>
-</blockquote>
-<a id="more"></a>
-<hr>
-<h2 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h2><ul>
-<li>使用 CSS 變數 功能</li>
-<li>透過 JS 更改 CSS 變數值，達到即時更新 內距、邊框色、模糊 的效果</li>
-</ul>
-<h2 id="實踐步驟"><a href="#實踐步驟" class="headerlink" title="實踐步驟"></a>實踐步驟</h2><ol>
-<li><p>在 CSS 的 :root 宣告 CSS 變數</p>
-<ul>
-<li>宣告方法：使用兩個<code>-</code>符號，代表「變數」，如：--spacing</li>
-<li>使用方法：使用 var()代表「使用變數」，如：var(--spacing)</li>
-</ul>
-</li>
-<li><p>分別監聽(change、mousemove)三個 input 的值</p>
-<ul>
-<li>利用 <code>dataset</code> 取得自定義的資料，如：this.dataset.sizing</li>
-<li>透過 <code>document.documentElement.style.setProperty(&#39;--base&#39;, &#39;#fff&#39;);</code> 更改 CSS 的變數</li>
-</ul>
-</li>
-</ol>
-<hr>
-<h2 id="CSS-學習紀錄"><a href="#CSS-學習紀錄" class="headerlink" title="CSS 學習紀錄"></a>CSS 學習紀錄</h2><p>使用 CSS 的變數 功能，不過在 <a href="https://caniuse.com/#feat=css-variables" target="_blank" rel="noopener">IE</a> 上，好像還不支援。</p>
-<figure class="highlight css"><figcaption><span>CSS變數說明</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 在CSS 的 :root(全局)設定 變數 */</span></span><br><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">  <span class="attribute">--base</span>: <span class="number">#ffc600</span>;</span><br><span class="line">  <span class="attribute">--spacing</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">--blur</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 使用CSS變數方法：var(變數名稱) */</span></span><br><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="built_in">var</span>(--spacing);</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">var</span>(--base);</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">blur</span>(var(--blur)); <span class="comment">/* CSS濾鏡效果：模糊 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.hl</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="built_in">var</span>(--base);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="root-偽元素-全局"><a href="#root-偽元素-全局" class="headerlink" title=":root 偽元素(全局)"></a>:root 偽元素(全局)</h3><p><code>:root</code> 這個偽元素是文檔的根元素，等同於 <code>&lt;html&gt;</code> 標籤，所以常用於聲明<font color="red">全局</font>的 CSS 變量：</p>
-<figure class="highlight css"><figcaption><span>設定變數(全局)</span></figcaption><table><tr><td class="code"><pre><span class="line">：<span class="selector-tag">root</span> &#123;</span><br><span class="line">   --color：#fff ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>在 CSS style 要使用時，用 <code>var(變數名稱)</code>，如下：</p>
-<figure class="highlight css"><figcaption><span>在CSS使用變數</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">   background： var(--color);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>若是要在 JS 使用的話，語法如下：</p>
-<figure class="highlight js"><figcaption><span>用JS更改CSS變數</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment">// ：root = 文檔的根元素 = &lt;html&gt; = document.documentElement</span></span><br><span class="line"><span class="built_in">document</span>.documentElement.style.setProperty(<span class="string">"--color"</span>, <span class="string">"#000"</span>);</span><br></pre></td></tr></table></figure>
-<div class="note info"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank" rel="noopener">CSS Variables</a></div>
-
-<hr>
-<h3 id="filter-濾鏡"><a href="#filter-濾鏡" class="headerlink" title="filter 濾鏡"></a>filter 濾鏡</h3><p>CSS3 的濾鏡功能，其中 <code>blur</code> 是高斯模糊，參數越高越模糊</p>
-<div class="note info"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter" target="_blank" rel="noopener">MDN-filter</a></div>
-
-<hr>
-<h2 id="JS-學習紀錄"><a href="#JS-學習紀錄" class="headerlink" title="JS 學習紀錄"></a>JS 學習紀錄</h2><h3 id="dataset"><a href="#dataset" class="headerlink" title="dataset"></a>dataset</h3><p>利用 <code>dataset</code> 可取得自定義的資料，另外也可使用 <code>getAttribute</code> 取得資料。</p>
-<figure class="highlight html"><figcaption><span>HTML</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"blur"</span> <span class="attr">type</span>=<span class="string">"range"</span> <span class="attr">name</span>=<span class="string">"blur"</span> <span class="attr">value</span>=<span class="string">"10"</span> <span class="attr">data-sizing</span>=<span class="string">"px"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><figcaption><span>JS取得dataset</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment">//方法1</span></span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">"#blur"</span>).dataset.sizing; <span class="comment">// 輸出：px</span></span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">"#blur"</span>).dataset[sizing]; <span class="comment">// 輸出：px</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//方法2</span></span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">"#blur"</span>).getAttribute(<span class="string">"data-sizing"</span>); <span class="comment">// 輸出：px</span></span><br></pre></td></tr></table></figure>
-<div class="note info"><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset" target="_blank" rel="noopener">MDN-dataset</a></div>
-
-<hr>
-<h3 id="style-setProperty"><a href="#style-setProperty" class="headerlink" title="style.setProperty"></a>style.setProperty</h3><p>下列三種方法，皆可達到修改 CSS 的效果，不過實務上用<code>方法2</code>，會比較容易帶 <code>參數</code> 及 <code>可讀性</code> 較佳。</p>
-<figure class="highlight js"><figcaption><span>修改CSS</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> DOM = <span class="built_in">document</span>.querySelector(<span class="string">"img"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//方法1</span></span><br><span class="line">DOM.setAttribute(<span class="string">"style"</span>, <span class="string">`padding: 10px`</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//方法2</span></span><br><span class="line">DOM.style.setProperty(<span class="string">"padding"</span>, <span class="string">"10px"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//方法3</span></span><br><span class="line">DOM.style.padding = <span class="string">"10px"</span>;</span><br></pre></td></tr></table></figure>
-<div class="note info"><a href="https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/setProperty" target="_blank" rel="noopener">MDN-setProperty</a></div>
-]]></content>
-      <categories>
-        <category>JS</category>
-        <category>JS30</category>
-      </categories>
-      <tags>
-        <tag>JS</tag>
-        <tag>JS30</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>CSS-Flex-進階</title>
     <url>/2021/09/13/CSS-Flex-advanced/</url>
     <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/09/13/CSS-Flex-advanced/flex-property.png" title="常用屬性"></p>
@@ -1756,6 +1695,134 @@
         <tag>debounce</tag>
         <tag>throttle</tag>
         <tag>事件效能</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JS30-03-CSS-Variables</title>
+    <url>/2021/09/23/JS30-03-CSS-Variables/</url>
+    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/09/23/JS30-03-CSS-Variables/Scoped_CSS_Variables_and_JS.png"></p>
+<font style="font-size:20px;">利用 <font color="red">CSS 變數</font> 與 <font color="red">JS</font> 即時更新圖片的 內距、邊框色、模糊 效果</font>
+</blockquote>
+<a id="more"></a>
+<hr>
+<h2 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h2><ul>
+<li>使用 CSS 變數 功能</li>
+<li>透過 JS 更改 CSS 變數值，達到即時更新 內距、邊框色、模糊 的效果</li>
+</ul>
+<h2 id="實踐步驟"><a href="#實踐步驟" class="headerlink" title="實踐步驟"></a>實踐步驟</h2><ol>
+<li><p>在 CSS 的 :root 宣告 CSS 變數</p>
+<ul>
+<li>宣告方法：使用兩個<code>-</code>符號，代表「變數」，如：--spacing</li>
+<li>使用方法：使用 var()代表「使用變數」，如：var(--spacing)</li>
+</ul>
+</li>
+<li><p>分別監聽(change、mousemove)三個 input 的值</p>
+<ul>
+<li>利用 <code>dataset</code> 取得自定義的資料，如：this.dataset.sizing</li>
+<li>透過 <code>document.documentElement.style.setProperty(&#39;--base&#39;, &#39;#fff&#39;);</code> 更改 CSS 的變數</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="CSS-學習紀錄"><a href="#CSS-學習紀錄" class="headerlink" title="CSS 學習紀錄"></a>CSS 學習紀錄</h2><p>使用 CSS 的變數 功能，不過在 <a href="https://caniuse.com/#feat=css-variables" target="_blank" rel="noopener">IE</a> 上，好像還不支援。</p>
+<figure class="highlight css"><figcaption><span>CSS變數說明</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment">/* 在CSS 的 :root(全局)設定 變數 */</span></span><br><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">  <span class="attribute">--base</span>: <span class="number">#ffc600</span>;</span><br><span class="line">  <span class="attribute">--spacing</span>: <span class="number">50px</span>;</span><br><span class="line">  <span class="attribute">--blur</span>: <span class="number">10px</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 使用CSS變數方法：var(變數名稱) */</span></span><br><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="built_in">var</span>(--spacing);</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">var</span>(--base);</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">blur</span>(var(--blur)); <span class="comment">/* CSS濾鏡效果：模糊 */</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.hl</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: <span class="built_in">var</span>(--base);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="root-偽元素-全局"><a href="#root-偽元素-全局" class="headerlink" title=":root 偽元素(全局)"></a>:root 偽元素(全局)</h3><p><code>:root</code> 這個偽元素是文檔的根元素，等同於 <code>&lt;html&gt;</code> 標籤，所以常用於聲明<font color="red">全局</font>的 CSS 變量：</p>
+<figure class="highlight css"><figcaption><span>設定變數(全局)</span></figcaption><table><tr><td class="code"><pre><span class="line">：<span class="selector-tag">root</span> &#123;</span><br><span class="line">   --color：#fff ;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在 CSS style 要使用時，用 <code>var(變數名稱)</code>，如下：</p>
+<figure class="highlight css"><figcaption><span>在CSS使用變數</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">img</span> &#123;</span><br><span class="line">   background： var(--color);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>若是要在 JS 使用的話，語法如下：</p>
+<figure class="highlight js"><figcaption><span>用JS更改CSS變數</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment">// ：root = 文檔的根元素 = &lt;html&gt; = document.documentElement</span></span><br><span class="line"><span class="built_in">document</span>.documentElement.style.setProperty(<span class="string">"--color"</span>, <span class="string">"#000"</span>);</span><br></pre></td></tr></table></figure>
+<div class="note info"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_variables" target="_blank" rel="noopener">CSS Variables</a></div>
+
+<hr>
+<h3 id="filter-濾鏡"><a href="#filter-濾鏡" class="headerlink" title="filter 濾鏡"></a>filter 濾鏡</h3><p>CSS3 的濾鏡功能，其中 <code>blur</code> 是高斯模糊，參數越高越模糊</p>
+<div class="note info"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter" target="_blank" rel="noopener">MDN-filter</a></div>
+
+<hr>
+<h2 id="JS-學習紀錄"><a href="#JS-學習紀錄" class="headerlink" title="JS 學習紀錄"></a>JS 學習紀錄</h2><h3 id="dataset"><a href="#dataset" class="headerlink" title="dataset"></a>dataset</h3><p>利用 <code>dataset</code> 可取得自定義的資料，另外也可使用 <code>getAttribute</code> 取得資料。</p>
+<figure class="highlight html"><figcaption><span>HTML</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"blur"</span> <span class="attr">type</span>=<span class="string">"range"</span> <span class="attr">name</span>=<span class="string">"blur"</span> <span class="attr">value</span>=<span class="string">"10"</span> <span class="attr">data-sizing</span>=<span class="string">"px"</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><figcaption><span>JS取得dataset</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="comment">//方法1</span></span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">"#blur"</span>).dataset.sizing; <span class="comment">// 輸出：px</span></span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">"#blur"</span>).dataset[sizing]; <span class="comment">// 輸出：px</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//方法2</span></span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">"#blur"</span>).getAttribute(<span class="string">"data-sizing"</span>); <span class="comment">// 輸出：px</span></span><br></pre></td></tr></table></figure>
+<div class="note info"><a href="https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/dataset" target="_blank" rel="noopener">MDN-dataset</a></div>
+
+<hr>
+<h3 id="style-setProperty"><a href="#style-setProperty" class="headerlink" title="style.setProperty"></a>style.setProperty</h3><p>下列三種方法，皆可達到修改 CSS 的效果，不過實務上用<code>方法2</code>，會比較容易帶 <code>參數</code> 及 <code>可讀性</code> 較佳。</p>
+<figure class="highlight js"><figcaption><span>修改CSS</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> DOM = <span class="built_in">document</span>.querySelector(<span class="string">"img"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//方法1</span></span><br><span class="line">DOM.setAttribute(<span class="string">"style"</span>, <span class="string">`padding: 10px`</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//方法2</span></span><br><span class="line">DOM.style.setProperty(<span class="string">"padding"</span>, <span class="string">"10px"</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">//方法3</span></span><br><span class="line">DOM.style.padding = <span class="string">"10px"</span>;</span><br></pre></td></tr></table></figure>
+<div class="note info"><a href="https://developer.mozilla.org/en-US/docs/Web/API/CSSStyleDeclaration/setProperty" target="_blank" rel="noopener">MDN-setProperty</a></div>
+]]></content>
+      <categories>
+        <category>JS</category>
+        <category>JS30</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>JS30</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JS30-02-JS-and-CSS-Clock</title>
+    <url>/2021/09/25/JS30-02-JS-and-CSS-Clock/</url>
+    <content><![CDATA[<blockquote class="blockquote-center"><p><img src="/2021/09/25/JS30-02-JS-and-CSS-Clock/JS_CSS_Clock.png"></p>
+<font style="font-size:20px;">利用 JS 與 CSS 搭配作出時鐘效果</font>
+</blockquote>
+<a id="more"></a>
+<hr>
+<h2 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h2><ul>
+<li>顯示目前時間</li>
+<li>利用 JS 與 CSS 搭配作出時鐘效果</li>
+</ul>
+<h2 id="實踐步驟"><a href="#實踐步驟" class="headerlink" title="實踐步驟"></a>實踐步驟</h2><ol>
+<li><p>先調整時鐘的 CSS 樣式</p>
+<p>修改前：</p>
+<img src="/2021/09/25/JS30-02-JS-and-CSS-Clock/JS_CSS_Clock_01.png">
+<p>新增 CSS 修改語法：</p>
+<figure class="highlight css"><table><tr><td class="code"><pre><span class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">rotate</span>(90<span class="selector-tag">deg</span>); <span class="comment">/* 將 時、分、秒針 從 45分 旋轉至 12點 方向 */</span></span><br><span class="line"><span class="selector-tag">transform-origin</span>: 100% 50%; <span class="comment">/* 將旋轉的原點移位 */</span></span><br><span class="line"><span class="selector-tag">transition</span>: <span class="selector-tag">all</span> 0<span class="selector-class">.05s</span> <span class="selector-tag">cubic-bezier</span>(0, 2<span class="selector-class">.95</span>, 1, 1); <span class="comment">/* 讓秒針有跳動的效果 */</span></span><br><span class="line"><span class="selector-tag">border-radius</span>: 50%; <span class="comment">/* 原先是 長方形 ，修改成 圓角 ，比較像 時針 */</span></span><br></pre></td></tr></table></figure>
+<p>修改後：</p>
+<img src="/2021/09/25/JS30-02-JS-and-CSS-Clock/JS_CSS_Clock_02.png">
+</li>
+<li><p>取得目前時間，並每秒更新一次</p>
+<ul>
+<li>利用 <code>setInterval(setDate, 1000)</code> 每秒更新</li>
+<li>使用 <code>new Date()</code> 取得目前 時、分、秒</li>
+</ul>
+</li>
+<li><p>一個圓共 <code>360deg</code>，分別依照 時、分、秒 計算出各自的角度</p>
+<ul>
+<li>秒針：(360 / 60) * seconds + 90</li>
+<li>分針：(360 / 60) * seconds + 90</li>
+<li>時針：(360 / 12) * seconds + 90</li>
+<li>補充說明：最後有加 90 是因原先都指向 45 分的位置，為了指向 12 點方向，所以有先用 CSS 旋轉 90 度 <code>rotate(90deg)</code>。</li>
+</ul>
+</li>
+<li><p>最後用 JS 透過 <code>element.style</code> 修改 時、分、秒 的角度</p>
+<ul>
+<li><code>element.style.tranform = &quot;roate( 角度 )&quot;</code></li>
+</ul>
+</li>
+</ol>
+<hr>
+<h2 id="JS-學習紀錄"><a href="#JS-學習紀錄" class="headerlink" title="JS 學習紀錄"></a>JS 學習紀錄</h2><h3 id="setInterval"><a href="#setInterval" class="headerlink" title="setInterval()"></a>setInterval()</h3><p>如果需要一直持續循環作動，使用 <code>setInterval</code>，例如網頁上每一秒鐘就更新一次時間。</p>
+<p>語法：<code>setInterval(callback, time)</code></p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="comment">//每秒刷新時間</span></span><br><span class="line">setInterval(setDate, <span class="number">1000</span>);</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="Date"><a href="#Date" class="headerlink" title="Date()"></a>Date()</h3><p>取得時間的函數</p>
+<figure class="highlight js"><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> nowDate = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"></span><br><span class="line">nowDate.getSeconds(); <span class="comment">//取得當前秒</span></span><br><span class="line">nowDate.getMinutes(); <span class="comment">//取得當前分鐘</span></span><br><span class="line">nowDate.getHours(); <span class="comment">//取得當前小時</span></span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="element-style"><a href="#element-style" class="headerlink" title="element.style"></a>element.style</h3><p>一開始想說要改 CSS 屬性，就很直覺的使用 <code>第一種</code> 方法，學習過程中，得知 <code>第二種</code> 方法也行。</p>
+<figure class="highlight js"><figcaption><span>修改CSS：第一種</span></figcaption><table><tr><td class="code"><pre><span class="line">secondHand.setAttribute(<span class="string">"style"</span>, <span class="string">`transform: rotate(<span class="subst">$&#123;secondDegrees&#125;</span>deg)`</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight js"><figcaption><span>修改CSS：第二種</span></figcaption><table><tr><td class="code"><pre><span class="line">secondHand.style.transform = <span class="string">`rotate(<span class="subst">$&#123;secondDegrees&#125;</span>deg)`</span>;</span><br></pre></td></tr></table></figure>
+<hr>
+<h2 id="延伸：transform-rotate-的彈跳問題"><a href="#延伸：transform-rotate-的彈跳問題" class="headerlink" title="延伸：transform:rotate 的彈跳問題"></a>延伸：transform:rotate 的彈跳問題</h2><p>當秒針旋轉一圈之後，要開始旋轉第二圈時，角度的計算變化會是 444°→90°→96°，重點就在 444° 變成 90° 時，本來 rotate 都是順時針旋轉，但 444°→90° 那一瞬間會是 逆時針 轉回去，而造成秒針跳動有點怪異，所以解決方式如下</p>
+<p>在角度計算 444°→90° 重新循環時，將 <code>transition</code> 屬性關掉，由於距離短，時間短，將逆時針迴旋的過程瞬間完成。</p>
+<figure class="highlight js"><figcaption><span>修正秒針跳動的效果</span></figcaption><table><tr><td class="code"><pre><span class="line"><span class="keyword">const</span> nowDate = <span class="keyword">new</span> <span class="built_in">Date</span>();</span><br><span class="line"></span><br><span class="line"><span class="comment">//秒針</span></span><br><span class="line"><span class="keyword">const</span> seconds = nowDate.getSeconds();</span><br><span class="line"><span class="keyword">const</span> secondDegrees = (<span class="number">360</span> / <span class="number">60</span>) * seconds + <span class="number">90</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 修正秒針跳動的效果</span></span><br><span class="line"><span class="keyword">if</span> (secondDegrees === <span class="number">90</span>) &#123;</span><br><span class="line">  secondHand.style.transition = <span class="string">"all 0s"</span>;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  secondHand.style.transition = <span class="string">"all 0.05s cubic-bezier(0, 2.95, 1, 1)"</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">secondHand.style.transform = <span class="string">`rotate(<span class="subst">$&#123;secondDegrees&#125;</span>deg)`</span>;</span><br></pre></td></tr></table></figure>
+<div class="note info">延伸問題參考：<a href="https://github.com/soyaine/JavaScript30/tree/master/02%20-%20JS%20%2B%20CSS%20Clock" target="_blank" rel="noopener">soyaine</a>、<a href="https://guahsu.io/2017/05/JavaScript30-02-JS-and-CSS-Clock/" target="_blank" rel="noopener">GuaHsu</a></div>
+]]></content>
+      <categories>
+        <category>JS</category>
+        <category>JS30</category>
+      </categories>
+      <tags>
+        <tag>JS</tag>
+        <tag>JS30</tag>
       </tags>
   </entry>
   <entry>

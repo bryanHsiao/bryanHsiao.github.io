@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>hhttps://bryanhsiao.github.io/2021/10/13/JS30-04-Array-Cardio-Day-1/</loc>
+    
+    <lastmod>2021-10-12</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>hhttps://bryanhsiao.github.io/2021/09/23/JS30-03-CSS-Variables/</loc>
     
     <lastmod>2021-10-12</lastmod>
@@ -424,20 +431,6 @@
   </url>
   
   <url>
-    <loc>hhttps://bryanhsiao.github.io/tags/重新認識-JavaScript/</loc>
-    <lastmod>2021-10-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>hhttps://bryanhsiao.github.io/tags/event/</loc>
-    <lastmod>2021-10-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>hhttps://bryanhsiao.github.io/tags/樣板字串/</loc>
     <lastmod>2021-10-12</lastmod>
     <changefreq>daily</changefreq>
@@ -446,6 +439,20 @@
   
   <url>
     <loc>hhttps://bryanhsiao.github.io/tags/Template-String/</loc>
+    <lastmod>2021-10-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>hhttps://bryanhsiao.github.io/tags/重新認識-JavaScript/</loc>
+    <lastmod>2021-10-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>hhttps://bryanhsiao.github.io/tags/event/</loc>
     <lastmod>2021-10-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -515,6 +522,20 @@
   </url>
   
   <url>
+    <loc>hhttps://bryanhsiao.github.io/tags/vertical-align/</loc>
+    <lastmod>2021-10-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>hhttps://bryanhsiao.github.io/tags/垂直置中/</loc>
+    <lastmod>2021-10-12</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>hhttps://bryanhsiao.github.io/tags/transition/</loc>
     <lastmod>2021-10-12</lastmod>
     <changefreq>daily</changefreq>
@@ -530,20 +551,6 @@
   
   <url>
     <loc>hhttps://bryanhsiao.github.io/tags/轉場效果/</loc>
-    <lastmod>2021-10-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>hhttps://bryanhsiao.github.io/tags/vertical-align/</loc>
-    <lastmod>2021-10-12</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>hhttps://bryanhsiao.github.io/tags/垂直置中/</loc>
     <lastmod>2021-10-12</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
